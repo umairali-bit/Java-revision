@@ -53,7 +53,7 @@ public class Hello {
         }
 
 
-        // above if (idDomestic) statement can also be written as 
+        // above if (idDomestic) statement can also be written as
         String s = (isDomestic) ? "This car is domestic" : "This car is not domestic";
         System.out.println(s);
 
