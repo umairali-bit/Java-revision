@@ -24,7 +24,24 @@ public class Hello {
             System.out.println("Either or both of the conditions are ture");
         }
 
+        int newValue = 50;
+        if (newValue == 50) {
+            System.out.println("This is an error");
+        }
 
+        boolean isCar = false;
+        if(isCar ==  true) {
+            System.out.println("This is not supposed to happen");
+        }
+
+        boolean isCat = true;
+        if (isCat) {
+            System.out.println("Meow");
+        }
+        boolean isLove = false;
+        if (!isLove) {
+            System.out.println("Hugs&Kisses");
+        }
     }
 
 }
