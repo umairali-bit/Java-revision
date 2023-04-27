@@ -42,6 +42,24 @@ public class Hello {
         if (!isLove) {
             System.out.println("Hugs&Kisses");
         }
+
+        // ternanry operator
+
+        String makeOfCar = "Volkswagen";
+        boolean isDomestic = makeOfCar == "Volkswagen" ? false : true;
+
+        if(isDomestic) {
+            System.out.println("This car is domestic to our country");
+        }
+
+
+        // above if (idDomestic) statement can also be written as 
+        String s = (isDomestic) ? "This car is domestic" : "This car is not domestic";
+        System.out.println(s);
+
+        int ageOfClient = 17;
+        String ageText = ageOfClient >= 18 ? "Over Eighteen" : "Still a kid";
+        System.out.println("Our client is " + ageText);
     }
 
 }
