@@ -4,9 +4,6 @@ public class Main {
 
         boolean gameOver = true;
         int score = 5000;
-        int score2 = 4000;
-        int score3 = 800;
-        int score4 = 6000;
         int levelCompleted = 5;
         int bonus = 100;
 
@@ -18,7 +15,7 @@ public class Main {
 
             // using compount assignment operator +=
             finalScore += (levelCompleted * bonus);
-            System.out.println("Your final score was " +finalScore);
+            System.out.println("Your final score was " + finalScore);
         }
 
 
@@ -30,11 +27,10 @@ public class Main {
 
         finalScore = score;
 
-        if(gameOver) {
+        if (gameOver) {
             finalScore += (levelCompleted * bonus);
-            System.out.println("The next final score is " +finalScore);
+            System.out.println("The next final score is " + finalScore);
         }
-
 
 
     }
