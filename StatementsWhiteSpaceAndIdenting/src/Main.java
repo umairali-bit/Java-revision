@@ -1,5 +1,4 @@
-public class StatmentsWhiteSpaceAndIdenting {
-
+public class Main {
     public static void main(String[] args) {
         int myVariable = 50;
 
@@ -25,7 +24,5 @@ public class StatmentsWhiteSpaceAndIdenting {
             System.out.println("It is now zero");
         }
 
-
     }
-
 }
