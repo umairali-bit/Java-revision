@@ -17,9 +17,9 @@ public class Main {
 
     }
 
-    public static int calculateHighScorePosition(int playersScore){
+    public static int calculateHighScorePosition(int playersScore) {
 
-        if(playersScore >= 1000) {
+/*        if(playersScore >= 1000) {
             return 1;
         } else if (playersScore >= 500 && playersScore < 1000){
             return 2;
@@ -29,8 +29,17 @@ public class Main {
 
         } else {
             return 4;
-        }
+        }*/
 
+        int position = 4;
+        if (playersScore >= 1000) {
+            position =1;
+        } else if(playersScore >= 500) {
+            position = 2;
+        } else if (playersScore >=100) {
+            position = 3;
+        }
+        return position;
 
     }
 
@@ -40,8 +49,22 @@ public class Main {
 
 
         //int playersScore =1500; we can do this but the right way is on line 35
-        int playersResult = calculateHighScorePosition(25);
+        int playersResult = calculateHighScorePosition(1500);
         displayHighScorePosition("TIM", playersResult);
+
+        playersResult = calculateHighScorePosition(999);
+        displayHighScorePosition("Bob", playersResult);
+
+        playersResult = calculateHighScorePosition(500);
+        displayHighScorePosition("Percy", playersResult);
+
+        playersResult = calculateHighScorePosition(100);
+        displayHighScorePosition("Gilbert", playersResult);
+
+        playersResult = calculateHighScorePosition(25);
+        displayHighScorePosition("James", playersResult);
+
+
 
 
 
