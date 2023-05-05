@@ -36,9 +36,10 @@ public class Main {
             position =1;
         } else if(playersScore >= 500) {
             position = 2;
-        } else if (playersScore >=100) {
+        } else if (playersScore >= 100) {
             position = 3;
         }
+
         return position;
 
     }
@@ -46,9 +47,6 @@ public class Main {
 
     public static void main(String[] args) {
 
-
-
-        //int playersScore =1500; we can do this but the right way is on line 35
         int playersResult = calculateHighScorePosition(1500);
         displayHighScorePosition("TIM", playersResult);
 
