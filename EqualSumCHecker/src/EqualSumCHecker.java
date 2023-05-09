@@ -2,8 +2,9 @@ public class EqualSumCHecker {
 
     public static boolean hasEqualSum (int a, int b, int c) {
 
+        int sum = (a + b);
 
-        if (a + b == c ) {
+        if (sum == c ) {
             return true;
         }
         return false;
