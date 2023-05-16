@@ -1,9 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ba7c941e-17a5-48a9-8db3-36fb6030a3b8" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../swtichStatement/switchChallenge/src/switchStatement.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../swtichStatement/switchChallenge/src/switchStatement.java" afterDir="false" />
+    <list default="true" id="94f6ce0a-5e44-4836-a840-3290e3d052ab" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/EnhancedSwitchStatement.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/EnhancedSwitchStatement.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MethodsOverloading/Playing Cat/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../MethodsOverloading/Playing Cat/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -23,7 +29,7 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
-  <component name="ProjectId" id="2Psh3DTTsiAJ9lQMIx1NOA8iP2t" />
+  <component name="ProjectId" id="2Pt4uVJxVHoSh65TdrpjEwetsno" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -32,29 +38,30 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
   </component>
   <component name="RunManager">
-    <configuration name="PlayingCat" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="PlayingCat" />
-      <module name="Playing Cat" />
+    <configuration name="EnhancedSwitchStatement" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="EnhancedSwitchStatement" />
+      <module name="EnhancedSwitchStatement" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.PlayingCat" />
+        <item itemvalue="Application.EnhancedSwitchStatement" />
       </list>
     </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="ba7c941e-17a5-48a9-8db3-36fb6030a3b8" name="Changes" comment="" />
-      <created>1684251496576</created>
+      <changelist id="94f6ce0a-5e44-4836-a840-3290e3d052ab" name="Changes" comment="" />
+      <created>1684263269838</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1684251496576</updated>
+      <updated>1684263269838</updated>
     </task>
     <servers />
   </component>
