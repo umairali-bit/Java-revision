@@ -53,7 +53,7 @@ public class Main {
     public static String getQuater(String month){
 
         return switch (month) {
-            case "JANUARY", "FEBURARY", "MARCH" -> {yield "1st";} 
+            case "JANUARY", "FEBURARY", "MARCH" -> {yield "1st";}
             case "APRIL", "MAY", "JUNE" -> "2nd";
             case "JULY", "AUGUST", "SEPTEMBER" -> "3rd";
             case "OCTOBER", "NOVEMBER", "DECEMBER" -> "4th";
