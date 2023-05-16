@@ -35,8 +35,7 @@ public class switchStatement {
             case 'e' -> {yield "EASY";}
             default -> {
 
-                String badEntry = alphabet + " isnt valid ";
-                yield badEntry;
+                yield alphabet + " isnt valid ";
 
             }
         };
