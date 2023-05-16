@@ -31,7 +31,7 @@ public class EnhancedSwitchStatement {
       System.out.println("************************************");
 
       // using printDayOfWeeks method
-        int day = 1;
+        int day = 2;
       System.out.println(day + " stands for " + printDayOfWeeks(day));
     }
 
@@ -47,7 +47,7 @@ public class EnhancedSwitchStatement {
             return "Wednesday";
         }else if(day ==4) {
             return "Thursday";
-        }else if(day ==5) {
+        } else if(day ==5) {
             return "Friday";
         }else if(day ==6) {
             return "Saturday";
