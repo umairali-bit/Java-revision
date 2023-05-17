@@ -8,11 +8,7 @@ public class NumberOfDaysInMonth {
             if (year % 4 == 0 && year % 100 !=0){
                 return true;
 
-            } else if (year % 100 == 0 && year % 400 == 0){
-                return true;
-            } else {
-                return false;
-            }
+            } else return year % 100 == 0 && year % 400 == 0;
 
 
 
@@ -29,38 +25,30 @@ public class NumberOfDaysInMonth {
         }
         int noOfDays = 0;
 
-        switch(month){
-            case 1: case 3: case 5: case 7: case 8: case 10: case 12:
+        switch (month) {
+            case 1, 3, 5, 7, 8, 10, 12 -> {
                 noOfDays = 31;
                 System.out.println(noOfDays);
-                break;
-
-            case 4: case 6: case 9: case 11:
+            }
+            case 4, 6, 9, 11 -> {
                 noOfDays = 30;
                 System.out.println(noOfDays);
-                break;
+            }
 
 
-                // calling isLeapYear() to do the calculations
-            case 2:
-                if(isLeapYear(year)){
+            // calling isLeapYear() to do the calculations
+            case 2 -> {
+                if (isLeapYear(year)) {
                     noOfDays = 29;
                     System.out.println(noOfDays);
                     break;
 
 
-                } noOfDays = 28;
+                }
+                noOfDays = 28;
                 System.out.println("Leap Year " + noOfDays);
-                break;
-
-
-            default:
-                noOfDays = -1;
-                break;
-
-
-
-
+            }
+            default -> noOfDays = -1;
         }
         // can t use because method is not void System.out.println(month + " has and " + year + " has " + noOfDays);
 

@@ -2,8 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="94f6ce0a-5e44-4836-a840-3290e3d052ab" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/../NumberOfDaysInMonth/src/NumberOfDaysInMonth.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../ForLoop/FoorLoop/src/Foorloop.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../NumberOfDaysInMonth/out/production/NumberOfDaysInMonth/NumberOfDaysInMonth.class" beforeDir="false" afterPath="$PROJECT_DIR$/../NumberOfDaysInMonth/out/production/NumberOfDaysInMonth/NumberOfDaysInMonth.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../NumberOfDaysInMonth/src/NumberOfDaysInMonth.java" beforeDir="false" afterPath="$PROJECT_DIR$/../NumberOfDaysInMonth/src/NumberOfDaysInMonth.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
