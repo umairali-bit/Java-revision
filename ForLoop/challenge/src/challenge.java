@@ -1,3 +1,8 @@
+
+
+// count and print first three prime numbers
+// display the count of prime numbers between 10 and 50
+
 public class challenge {
 
     public static void main(String[] args) {
@@ -53,7 +58,7 @@ public class challenge {
         System.out.println("Three prime numbers between 10 and 50 are ");
 
         /*
-        quicker version 
+        quicker version
         for (int i = 10; count < 3 && i <= 50; i++){}
          */
 

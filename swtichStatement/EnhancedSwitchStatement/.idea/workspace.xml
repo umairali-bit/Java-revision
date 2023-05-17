@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="94f6ce0a-5e44-4836-a840-3290e3d052ab" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/../../ForLoop/challenge/src/challenge.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../ForLoop/SumThreeAndFive/src/SumThreeAndFive.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ForLoop/challenge/src/challenge.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../ForLoop/challenge/src/challenge.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
