@@ -1,5 +1,7 @@
 // checking if the number is even or not
 // if the number is not even skipping that number
+// counting the total Even number found
+//terminating for loop after 5 even numbers
 // printing out a single number
 
 
@@ -18,39 +20,47 @@ public class challenge {
     public static boolean isEvenNumber(int number){
 
 
-            if (number % 2 == 0) {
-               return true;
+        return number % 2 == 0;
 
 
-            }
-            return false;
-
-
-        }
+    }
 
 
 
 
-    public static int whileLoop(int number, int finishNumber){
+    public static void whileLoop(int number, int finishNumber){
 
+        int evenCount =0;
+        int oddCount=0;
         while(number <= finishNumber  ){
              number++;
              if(!isEvenNumber(number)){
+
+                 // to count toal odd numbers
+                 oddCount++;
                  continue;
              }
              System.out.println("Even number " +  number);
+
+             // to count even numbers
+             evenCount++;
+
+             if(evenCount >= 5){
+                 break;
+             }
+
+
+
         }
+        System.out.println("Total Odd numbers " + oddCount);
+        System.out.println("Total Even numbers " + evenCount);
 
-
-
-
-        return 0;
 
     }
 
     // printing out a single number
 
-    public static int singleEvenNumber (int number) {
+    public static void singleEvenNumber (int number) {
 
         if(number % 2 == 0){
             System.out.println(number);
@@ -58,7 +68,6 @@ public class challenge {
             System.out.println("The number wasnt EVEN");
         }
 
-        return 0;
     }
 
 
