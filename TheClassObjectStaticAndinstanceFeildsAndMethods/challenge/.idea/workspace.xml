@@ -2,14 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6798353f-7393-4053-97a0-e00305dec111" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/../NumberPalindrome/.idea/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../NumberPalindrome/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../NumberPalindrome/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../NumberPalindrome/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../NumberPalindrome/NumberPalindrome.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../NumberPalindrome/src/numberPalindrome.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../cursoryLevel/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../FirstLastDigitSum/src/FIrstLastDigitSum.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../NumberPalindrome/src/numberPalindrome.java" beforeDir="false" afterPath="$PROJECT_DIR$/../NumberPalindrome/src/numberPalindrome.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
