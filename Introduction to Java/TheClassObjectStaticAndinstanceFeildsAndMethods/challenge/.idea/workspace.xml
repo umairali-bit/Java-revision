@@ -1,11 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="94f6ce0a-5e44-4836-a840-3290e3d052ab" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/../../ForLoop/SumThreeAndFive/src/SumThreeAndFive.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../ForLoop/challenge/src/challenge.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../ForLoop/challenge/src/challenge.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="6798353f-7393-4053-97a0-e00305dec111" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -24,7 +20,7 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
-  <component name="ProjectId" id="2Pt4uVJxVHoSh65TdrpjEwetsno" />
+  <component name="ProjectId" id="2QCmzFijvVp0mMBVA3qEuLzjGqO" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -33,30 +29,15 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-  </component>
-  <component name="RunManager">
-    <configuration name="EnhancedSwitchStatement" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="EnhancedSwitchStatement" />
-      <module name="EnhancedSwitchStatement" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <recent_temporary>
-      <list>
-        <item itemvalue="Application.EnhancedSwitchStatement" />
-      </list>
-    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="94f6ce0a-5e44-4836-a840-3290e3d052ab" name="Changes" comment="" />
-      <created>1684263269838</created>
+      <changelist id="6798353f-7393-4053-97a0-e00305dec111" name="Changes" comment="" />
+      <created>1684866200622</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1684263269838</updated>
+      <updated>1684866200622</updated>
     </task>
     <servers />
   </component>
