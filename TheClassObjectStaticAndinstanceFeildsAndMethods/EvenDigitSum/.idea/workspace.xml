@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="75c7ca5e-9277-424a-975d-064ae94119e0" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Introduction to Java/TheClassObjectStaticAndinstanceFeildsAndMethods/EvenDigitSum/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../Introduction to Java/TheClassObjectStaticAndinstanceFeildsAndMethods/EvenDigitSum/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SharedDigit/src/sharedDigit.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
