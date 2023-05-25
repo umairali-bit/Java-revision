@@ -7,25 +7,29 @@ public class EvenDigitSum {
         System.out.println(getEvenDigitSum(0));
     }
 
-    public static int getEvenDigitSum(int number) {
-        int originalNumber = number;
-        int lastDigit;
-        int sumOfEvenDigits = 0;
-        if (number >= 0) {
-            while (number > 0) {
-                lastDigit = number % 10;
-                if (lastDigit % 2 == 0) {
-                    sumOfEvenDigits += lastDigit;
-                }
-                number /= 10;
-            }
-            if (originalNumber >= 0) {
-                System.out.println("The sum of even digits within a number " + originalNumber + " is equal to:");
-            }
-            return sumOfEvenDigits;
+
+
+    public static int getEvenDigitSum(int number){
+        int sum = 0;
+
+        if (number < 0){
+            return -1;
         }
-        System.out.println("Invalid input:");
-        return -1;
+
+        while(number > 0) {
+            if(number % 2 == 0) {
+                int lastDigit = (number % 10);
+                sum += lastDigit;
+            }
+            number /= 10;  // divide and assignment operator
+
+        }
+
+
+
+
+
+        return sum;
     }
 }
 
