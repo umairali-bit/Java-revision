@@ -1,10 +1,10 @@
 public class GreatestCommonDivisor {
 
-    // right use of return statement
+    // right use of the return statement
     public static void main(String[] args) {
         System.out.println(getGreatestCommonDivisor(12,30));
         System.out.println(getGreatestCommonDivisor(-20,15));
-        //getGreatestCommonDivisor(5,25);
+
 
 
     }
