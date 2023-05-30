@@ -1,8 +1,8 @@
 public class NumberToWords {
 
     public static void main(String[] args) {
-       numberToWords(101);
-       System.out.println(reverse(-2));
+       numberToWords(10);
+       System.out.println(reverse(-21));
        System.out.println(getDigitCount(11));
 
 
@@ -17,11 +17,13 @@ public class NumberToWords {
         } else {
 
             int count = getDigitCount(number);
-            int rev = reverse(number);
+            int reverse = reverse(number);
 
-            while (number > 0) {
-                int lastNumber = number % 10;
-                number  = number / 10;
+
+            // this while loop is continously chopping off the numbers into switch statement
+            while ( count > 0) {
+                int lastNumber = reverse % 10;
+                reverse  = reverse / 10;
                 count--;
 
                 switch (lastNumber) {
@@ -41,7 +43,7 @@ public class NumberToWords {
                         System.out.print("Four ");
                         break;
                     case 5:
-                        System.out.print("Fiv ");
+                        System.out.print("Five ");
                         break;
                     case 6:
                         System.out.print("Six ");
@@ -186,5 +188,5 @@ numberToWords(-12); should print "Invalid Value" since the parameter is negative
 
 
 
-HINT: Use a for loop to print zeroes after reversing the number. As seen in a previous example, 100 reversed becomes 1, but the method numberToWords should print "One Zero Zero". To get the number of zeroes, check the difference between the digit count from the original number and the reversed number. 
+HINT: Use a for loop to print zeroes after reversing the number. As seen in a previous example, 100 reversed becomes 1, but the method numberToWords should print "One Zero Zero". To get the number of zeroes, check the difference between the digit count from the original number and the reversed number.
 * */
