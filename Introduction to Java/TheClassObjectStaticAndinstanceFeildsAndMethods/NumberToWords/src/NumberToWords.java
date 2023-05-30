@@ -70,7 +70,7 @@ public class NumberToWords {
         int reverse = 0;
 
 
-        //if number is negative how to reverse that
+        //if a number is negative how to reverse that
         if(number < 0){
 
             number = -1 * number;
@@ -87,7 +87,7 @@ public class NumberToWords {
 
         }
 
-        //if number is +ve how to reverse that
+        //if a number is +ve how to reverse that
         while (number > 0) {
             int lastDigit = number % 10;
             reverse = lastDigit + reverse * 10;
