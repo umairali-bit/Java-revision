@@ -1,8 +1,9 @@
 public class DIagonalStarChallenge {
     public static void main(String[] args) {
-        //printSquareStar1(4);
-        diagonalPrintStar(5);
-
+         //printSquareStar1(4);
+        //diagonalPrintStar(5);
+        //printingStarsTriangle(5);
+        printingDecreasingTrainagle(5);
     }
 
     public static void printSquareStar1(int number){
@@ -41,6 +42,28 @@ public class DIagonalStarChallenge {
 
             }System.out.println();
             }
+        }
+    }
+
+
+    public static void printingStarsTriangle(int number){
+        if (number < 5){
+            System.out.println("Invaid Input");
+        } else {
+            for (int i = 0; i< number; i++){
+                for (int j = 0; j<i; j++){
+                    System.out.print("*");
+                }
+                System.out.println();
+            }
+        }
+    }
+
+    public static void printingDecreasingTrainagle(int number) {
+        for (int i = 0; i<number; i++){
+            for (int j=i; j<number; j++ ){
+                System.out.print("*");
+            } System.out.println();
         }
     }
 }
