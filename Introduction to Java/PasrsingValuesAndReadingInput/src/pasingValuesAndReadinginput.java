@@ -15,7 +15,7 @@ public class pasingValuesAndReadinginput {
         Syetem.out.println("Age = " (currentYear - usersDateOfBirth); // not allowed
          */
 
-        int currentYear = 2022;
+        int currentYear = 2023;
         String usersDateOfBirth = "1999";
 
         // to convert a String into an int
@@ -40,14 +40,14 @@ public class pasingValuesAndReadinginput {
         // program. In order to run this program from either console or scanner
         // we will throw exception handeling
         try {
-            System.out.println(getInputFromConsole(currentYear2));
+            System.out.println(getInputFromScanner(currentYear2));
         } catch (NullPointerException e) {
             System.out.println(getInputFromScanner(currentYear2));
         }
 
     }
 
-    // reading from console and getting name and age
+/*    // reading from console and getting name and age
     public static String getInputFromConsole(int currentYear2) {
 
         String name = System.console().readLine("Hi, Whats your Name?");
@@ -56,12 +56,14 @@ public class pasingValuesAndReadinginput {
 
         String dateOfBirth = System.console().readLine("What year were you born? ");
 
+
+
         int age = currentYear2 - Integer.parseInt(dateOfBirth);
 
         return "So you are " + age + " years old ";
 
 
-    }
+    }*/
 
 
     // reading from Scanner class
@@ -78,18 +80,38 @@ public class pasingValuesAndReadinginput {
 
         //String dateOfBirth = System.console().readLine("What year were you born? ");
         System.out.println("What year were you born");
-        String dateOfBirth = scanner.nextLine();
-        // getting the age
-        int age = currentYear2 - Integer.parseInt(dateOfBirth);
-        while (age > 0){
-            if (age > 102 ){
-                return "Wrong Input";
-            } else {
-                 return "So you are " + age + " years old ";
-            }
-        }
+        boolean validDOB = false;
+        int age = 0;
 
-        return "";
+        do{
+            System.out.println("Enter a year of birth >= " +
+                    (currentYear2 - 125) + " and <= " + (currentYear2));
+            //getting the data from checkData and using it for validation
+            try {
+                age = checkData(currentYear2, scanner.nextLine());
+                validDOB = age < 0 ? false : true;
+
+            } catch (NumberFormatException badUserData) {
+                System.out.println("Character are not allowed!!! Try again. ");
+            }
+        } while (!validDOB);
+
+
+
+       return "So you are " + age + " years old ";
 
     }
+        public static int checkData(int currentYear2, String dateOfBirth) {
+
+        int dob = Integer.parseInt(dateOfBirth);
+        int minimumYear = currentYear2 -125;
+
+        if((dob < minimumYear) || (dob > currentYear2)){
+            return -1;
+
+        }
+        return (currentYear2 - dob);
+
+        }
+
 }
