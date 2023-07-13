@@ -59,11 +59,11 @@ public class InputCalculator {
 
         // to find average
         if(count == 0) {
-            System.out.println("Sum = 0 AVG = 0");
+            System.out.println("SUM = 0 AVG = 0");
 
         } else {
             avg = Math.round((double)sum / (double) count); //casting to double
-            System.out.print("Sum = " + sum + " AVG = " + (int) avg);
+            System.out.print("SUM = " + sum + " AVG = " + (int) avg);
         }
 
         sc.close();
