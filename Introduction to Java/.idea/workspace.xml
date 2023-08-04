@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="09886045-dadd-4a25-b77f-b2363d9ce91f" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/DiagonalStarChallenge/DiagonalStarChallenge.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ForLoop/SumOddRange/SumOddRange.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ForLoop/SumThreeAndFive/SumThreeAndFive.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/HelloWorld/HelloWorld.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/If&amp;Else/IfKeywordAndCodeBlocks/IfKeywordAndCodeBlocks.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/If&amp;Else/IfThenElseChallenge/IfThenElseChallenge.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/InputCalculator/InputCalculator.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/KeywordsAndExpressions/KeywordsAndExpressions.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/LargestPrimeNumberChallenge/LargestPrimeNumberChallenge.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MethodOverloading/AreaCalculator/AreaCalculator.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MethodOverloading/IntEqualityPrinter/IntEqualityPrinter.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MethodOverloading/MethodOverLoading/MethodOverLoading.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MethodOverloading/MethodOverLoadingChallenge/MethodOverLoadingChallenge.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MethodOverloading/MinutesToYearsDaysCalculator/MinutesToYearsDaysCalculator.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MethodOverloading/Playing Cat/Playing Cat.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MethodOverloading/SecondsAndMinutesChallenge/SecondsAndMinutesChallenge.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Methods/BarkingDog/BarkingDog.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Methods/DecimalComparator/DecimalComparator.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Methods/EqualSumCHecker/EqualSumChecker.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Methods/LeapYearCalculator/LeapYearCalculator.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Methods/MegaBytesConverter/MegaBytesConverter.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Methods/Methods/Methods.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Methods/SpeedConverter/SpeedConverter.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Methods/TeenNumberChecker/TeenNumberChecker.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MinAndMax/MinAndMax.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PaintJob/PaintJob.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PasrsingValuesAndReadingInput/PasrsingValuesAndReadingInput.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/StatementsWhiteSpaceAndIdenting/StatementsWhiteSpaceAndIdenting.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TheClassObjectStaticAndinstanceFeildsAndMethods/EvenDigitSums/EvenDigitSums.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TheClassObjectStaticAndinstanceFeildsAndMethods/FactorPrinter/FactorPrinter.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TheClassObjectStaticAndinstanceFeildsAndMethods/FirstLastDigitSum/FirstLastDigitSum.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TheClassObjectStaticAndinstanceFeildsAndMethods/GreatestCommonDivisor/GreatestCommonDivisor.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TheClassObjectStaticAndinstanceFeildsAndMethods/LastDigitChecker/LastDigitChecker.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TheClassObjectStaticAndinstanceFeildsAndMethods/NumberPalindrome/NumberPalindrome.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TheClassObjectStaticAndinstanceFeildsAndMethods/NumberToWords/NumberToWords.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TheClassObjectStaticAndinstanceFeildsAndMethods/PerfectNumber/PerfectNumber.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TheClassObjectStaticAndinstanceFeildsAndMethods/SharedDigit/SharedDigit.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/do-while/challenge/challenge.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/do-while/do-while/do-while.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/do-while/sumDigits/sumDigits.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/swtichStatement/EnhancedSwitchStatement/EnhancedSwitchStatement.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/swtichStatement/NumberInWord/NumberInWord.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/swtichStatement/NumberOfDaysInMonth/NumberOfDaysInMonth.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/swtichStatement/switchChallenge/switchChallenge.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/swtichStatement/swtichstatement/swtichstatement.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../OOP-Part1-Inheritance/IntoductionToClassesAndObjects/out/production/IntroductionToClassessAndObjects/Car.class" beforeDir="false" afterPath="$PROJECT_DIR$/../OOP-Part1-Inheritance/IntoductionToClassesAndObjects/out/production/IntroductionToClassessAndObjects/Car.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../OOP-Part1-Inheritance/IntoductionToClassesAndObjects/out/production/IntroductionToClassessAndObjects/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/../OOP-Part1-Inheritance/IntoductionToClassesAndObjects/out/production/IntroductionToClassessAndObjects/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../OOP-Part1-Inheritance/IntoductionToClassesAndObjects/src/Car.java" beforeDir="false" afterPath="$PROJECT_DIR$/../OOP-Part1-Inheritance/IntoductionToClassesAndObjects/src/Car.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="ProjectId" id="2TWZKXyz1HIFVFdreZmFivC0pXD" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="09886045-dadd-4a25-b77f-b2363d9ce91f" name="Changes" comment="" />
+      <created>1691160734434</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1691160734434</updated>
+    </task>
+    <servers />
+  </component>
+</project>

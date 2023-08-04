@@ -24,8 +24,8 @@ public class Car {
     }
 
     //get model
-    public int getModel() {
-        return doors;
+    public String getModel() {
+        return model;
     }
 
     //isConvertibel?
