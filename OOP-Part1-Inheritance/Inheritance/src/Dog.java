@@ -5,13 +5,18 @@ public class Dog extends Animal{
     private String earShape;
     private String tailShape;
 
+
+    // calling the super() with arguments
     public Dog(){
         super("Mutt ", "big", 50);
     }
 
+    // subclass constructor with args
     public Dog(String type, double weight){
       this(type, weight, "Perky" , "Curled");
     }
+
+    // chaining the constructors
 
     public Dog(String type, double weight, String earShape, String tailShape) {
         super(type, weight < 15 ? "small" : (weight < 35 ? "medium " : "large"), weight);
@@ -19,6 +24,7 @@ public class Dog extends Animal{
         this.tailShape = tailShape;
     }
 
+    // toString() from the Object class()
     @Override
     public String toString() {
         return "Dog{" +
