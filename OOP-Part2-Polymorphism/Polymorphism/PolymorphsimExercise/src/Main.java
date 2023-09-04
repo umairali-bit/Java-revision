@@ -45,7 +45,7 @@ public class Main {
             if("Qq".contains(type)){
                 break;
             }
-            System.out.println("Enter description of ther car");
+            System.out.println("Enter description of the car");
             String name = s.nextLine();
 
             Car facCar = Car.getCar(type,name);
@@ -53,5 +53,7 @@ public class Main {
             facCar.runEngine();
             facCar.drive();
         }
+
+
     }
 }

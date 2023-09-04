@@ -60,6 +60,11 @@ class GasPoweredCar extends Car{
     protected void runEngine() {
         super.runEngine();
     }
+
+    public void style(){
+        System.out.println(name + " is very stylish");
+    }
+
 }
 
 class ElectricCar extends Car{
