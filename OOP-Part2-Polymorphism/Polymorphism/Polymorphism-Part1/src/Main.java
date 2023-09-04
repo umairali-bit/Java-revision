@@ -38,7 +38,8 @@ public class Main {
             /*
             Polymorphism in action. Its the ability to execute different behavior, for different types, which are
             determined at runtime. Polymorphism enables you to write generic code based on the base class (parent class)
-            and this code in the main method is extendable, meaning it doesnt have to change as new subclass come available
+            and this code in the main method is extendable, meaning it doesnt have to c
+            hange as new subclass come available
             */
             Movie facMovie = Movie.getMovie(type, title);
             facMovie.watchMovie();
