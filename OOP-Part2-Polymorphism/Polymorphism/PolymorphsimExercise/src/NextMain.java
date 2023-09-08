@@ -23,5 +23,25 @@ public class NextMain {
         suzuki.style();
 
 
+        //3 testing runtime methods
+        //assigning the object to a reference that is type of a Object
+        Object unknownObject = Car.getCar("H","Prius");
+        //Method 1
+        if(unknownObject.getClass().getSimpleName()=="HybridCar"){
+            HybridCar hybrid = (HybridCar) unknownObject;
+            hybrid.drive();
+
+            //method 2
+        } else if(unknownObject instanceof GasPoweredCar){
+            ((GasPoweredCar) unknownObject).drive();
+        }
+
+        //method 3
+        else if (unknownObject instanceof ElectricCar elyktrik){
+            elyktrik.drive();
+        }
+
+
+
     }
 }
