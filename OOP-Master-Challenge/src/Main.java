@@ -47,4 +47,19 @@
 
 
 public class Main {
+
+    public static void main(String[] args) {
+
+        //testing drink
+        Item coke = new Item("Coke", "Drink",1.00);
+        coke.printItem();
+        coke.setSize("large");
+        coke.printItem();
+
+        //testing toppings
+        Item avocado = new Item("Avocado", "Topping", 1.50);
+        avocado.printItem();
+
+
+    }
 }
