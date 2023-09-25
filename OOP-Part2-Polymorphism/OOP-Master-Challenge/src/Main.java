@@ -50,15 +50,25 @@ public class Main {
 
     public static void main(String[] args) {
 
-        //testing drink
-        Item coke = new Item("Coke", "Drink",1.00);
-        coke.printItem();
-        coke.setSize("large");
-        coke.printItem();
+//        //testing drink
+//        Item coke = new Item("Coke", "Drink",1.00);
+//        coke.printItem();
+//        coke.setSize("large");
+//        coke.printItem();
+//
+//        //testing toppings
+//        Item avocado = new Item("Avocado", "Topping", 1.50);
+//        avocado.printItem();
+//
+//
+//        Burger burger = new Burger("regular",4.4);
+//        burger.extraToppings("Turkey BACON","CHEESE","AVOCADO");
+//        burger.printItem();
 
-        //testing toppings
-        Item avocado = new Item("Avocado", "Topping", 1.50);
-        avocado.printItem();
+        MealOrder regularMeal = new MealOrder();
+        regularMeal.addBurgerToppings("CHEESE","CHICKEN SALAMI", "AVOCADO");
+        regularMeal.setDrinkSize("LARGE");
+        regularMeal.printItemizedList();
 
 
     }
