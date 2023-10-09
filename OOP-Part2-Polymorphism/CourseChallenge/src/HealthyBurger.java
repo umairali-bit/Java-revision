@@ -21,7 +21,7 @@ public class HealthyBurger extends Hamburger{
 
 
     public HealthyBurger(String meat, double price) {
-        super("Healthy", meat , "Brown Rye",price);
+        super("Healthy", meat , price, "Brown Rye");
     }
 
     public void addHealthyAddition1(String name, double price){
