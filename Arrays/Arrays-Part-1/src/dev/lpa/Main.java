@@ -1,5 +1,5 @@
 package dev.lpa;
-import java.util.Scanner;
+
 
 public class Main {
 
@@ -34,15 +34,12 @@ public class Main {
 
 
 
-        Scanner sc = new Scanner(System.in);
+
         int newArray [];
         newArray = new int[]{5,4,3,2,1};
         //to print out an array
         for(int i = 0; i < newArray.length; i++ ){
             System.out.println(newArray[i] +" ");
-            System.out.println("Press enter");
-
-            break;
 
 
         }
