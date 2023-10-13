@@ -26,6 +26,10 @@ public class Main {
         //to strong method because we are using static method
         System.out.println(Arrays.toString(firstArray));
 
+        //to get a sorted array
+        Arrays.sort(firstArray);
+        System.out.println(Arrays.toString(firstArray));
+
 
     }
 }
