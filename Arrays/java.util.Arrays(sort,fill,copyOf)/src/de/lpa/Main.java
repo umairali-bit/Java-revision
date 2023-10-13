@@ -37,6 +37,22 @@ public class Main {
         Arrays.fill(secondArray,5);
         System.out.println(Arrays.toString(secondArray));// output 10 fives
 
+        int[] thirdArray = getRandomArray(10);
+        System.out.println(Arrays.toString(thirdArray));
+
+        int[] fourthArray = Arrays.copyOf(thirdArray, thirdArray.length);
+        System.out.println(Arrays.toString(fourthArray));
+        Arrays.sort(fourthArray);
+        System.out.println(Arrays.toString(fourthArray));
+        System.out.println(Arrays.toString(thirdArray));
+
+        int[] smallerArray = Arrays.copyOf(thirdArray, 5);
+        System.out.println(Arrays.toString(smallerArray));
+
+        int[] largerArray = Arrays.copyOf(thirdArray, 15);
+        System.out.println(Arrays.toString(largerArray));
+
+
 
 
     }
