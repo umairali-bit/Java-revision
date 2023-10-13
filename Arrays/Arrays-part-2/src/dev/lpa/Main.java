@@ -12,7 +12,7 @@ public class Main {
         }
 
         for (int i = 0; i< newArray.length; i++){
-            System.out.print(newArray[i] + " ");
+           System.out.print(newArray[i] + " ");
 
         }
         System.out.println();

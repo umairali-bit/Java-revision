@@ -31,5 +31,13 @@ public class Main {
         System.out.println(Arrays.toString(firstArray));
 
 
+        //to populate an array with the same element we use fill()
+        int[] secondArray = new int[10];
+        System.out.println(Arrays.toString(secondArray));// output 10 zeros
+        Arrays.fill(secondArray,5);
+        System.out.println(Arrays.toString(secondArray));// output 10 fives
+
+
+
     }
 }
