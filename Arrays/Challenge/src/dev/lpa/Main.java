@@ -1,4 +1,4 @@
-package dev.lap;
+package dev.lpa;
 
 /*
 Sorted Array
@@ -57,16 +57,14 @@ Sorted Array
  */
 
 
-import dev.lpa.SortIntegers;
-
 public class Main {
 
     public static void main(String[] args) {
         System.out.println("/*--- Get integers ---*/");
-        int[] myIntArray = getIntegers.getIntegers(5);
+        int[] myIntArray = GetIntegers.getIntegers(5);
 
         System.out.println("/*--- Print array ---*/");
-        printArray.printArray(myIntArray);
+        PrintArray.printArray(myIntArray);
 
         System.out.println("/*--- Sort integers ---*/");
         SortIntegers.sortIntegers(myIntArray);

@@ -1,7 +1,7 @@
-package dev.lap;
+package dev.lpa;
 import java.util.Scanner;
 
-public class getIntegers {
+public class GetIntegers {
 
     public static int[] getIntegers(int arraySize){
 
