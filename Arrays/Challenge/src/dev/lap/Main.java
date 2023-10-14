@@ -56,6 +56,8 @@ Sorted Array
 
  */
 
+import dev.lap.getIntegers;
+import dev.lap.printArray;
 import dev.lpa.SortIntegers;
 
 public class Main {
