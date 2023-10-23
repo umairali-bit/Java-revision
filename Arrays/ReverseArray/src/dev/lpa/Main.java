@@ -70,7 +70,27 @@ public class Main {
         reverse(myArray);
         System.out.println("Final " + Arrays.toString(myArray));
 
+        int [] reversedCopy = reverseCopy(myArray);
+        System.out.println("After reverse" + Arrays.toString(myArray));
+        System.out.println("reversed copy" + Arrays.toString(reversedCopy));
+
     }
+
+    private static int [] reverseCopy(int [] arr){
+
+
+        int [] reverseArr = new int [arr.length];
+        int maxIndex = arr.length -1;
+
+        for (int el : arr){
+            reverseArr[maxIndex--] = el;
+
+        }
+
+        return reverseArr;
+
+    }
+
 
 
 }
