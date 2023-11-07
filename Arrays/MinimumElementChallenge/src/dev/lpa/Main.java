@@ -51,17 +51,17 @@ import java.util.Arrays;
 import java.util.Scanner;
 
 public class Main {
-    public static Scanner sc=new Scanner(System.in);
 
 
-
-    private static int readIntegers(){
+    private static int readInteger(){
+        Scanner sc=new Scanner(System.in);
 
         System.out.println("Enter the number of values");
         return sc.nextInt();
     }
 
     private static int [] readElements(int input){
+        Scanner sc=new Scanner(System.in);
 
         int [] elements = new int[input];
 
@@ -90,7 +90,7 @@ public class Main {
 
     public static void main(String[] args) {
 
-        int no_Of_Elements = readIntegers();
+        int no_Of_Elements = readInteger();
         int[] read_Elements=readElements(no_Of_Elements);
         int min=findMin(read_Elements);
         System.out.println("Minimum Element in an array is "+min);
