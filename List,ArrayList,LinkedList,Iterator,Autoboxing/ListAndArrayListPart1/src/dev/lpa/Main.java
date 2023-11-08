@@ -56,8 +56,13 @@ public class Main {
         groceryList.add(new GroceryItem("Milk"));
         groceryList.add(new GroceryItem("Oranges","PRODUCE",6));
         //if you want a certain item at a certain index
-        groceryList.add(0,
+        groceryList.add(1,
                 new GroceryItem("Apples","PRODUCE", 4));
+        //another way to do indexing
+        groceryList.set(0,
+                new GroceryItem("Bananas","PRODUCE",8));
+        //removing item from list
+        groceryList.remove(0);//removing bananas from the list
         System.out.println(groceryList);
 
 
