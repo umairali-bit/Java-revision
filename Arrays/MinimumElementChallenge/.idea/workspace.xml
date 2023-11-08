@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cce750ee-27f6-41a7-b548-185572e86041" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/../MinimumNumberChallenge/src/dev/lpa/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/dev/lpa/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dev/lpa/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MinimumNumberChallenge/src/dev/lpa/Main.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

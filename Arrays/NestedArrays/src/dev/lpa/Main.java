@@ -13,13 +13,13 @@ public class Main {
         System.out.println("array2.length = " + array2.length);
         System.out.println("-".repeat(20));
 
-        //printing the null elements in the array2
+        //printing null elements in array2
         for(int[] outer : array2){
             //System.out.print(outer);
             System.out.println(Arrays.toString(outer));
         }
 
-        //looping through multidimensional array
+        //looping through the multidimensional array
         //i is the out loop, j is the inner loop
         for(int i = 0; i < array2.length; i++){
             var innerArray = array2[i];
@@ -30,7 +30,7 @@ public class Main {
         }
         System.out.println("-".repeat(20));
 
-        //another way tp code the nested loop written above with forEach var is used to let jvm know to choose the type
+        //another way to code the nested loop written above with forEach. var is used to let jvm know to choose the type
 
         for (var outer : array2){
             for(var element : outer){
