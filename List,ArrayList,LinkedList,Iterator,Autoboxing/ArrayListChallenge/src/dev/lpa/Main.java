@@ -17,7 +17,6 @@ use the Scanner class, solicit a menu item, 0,1,2 and process them accordingly
 package dev.lpa;
 import java.util.ArrayList;
 import java.util.Comparator;
-import java.util.List;
 import java.util.Scanner;
 public class Main {
 
@@ -32,12 +31,25 @@ public class Main {
 
             switch (Integer.parseInt(scanner.nextLine())) {
                 case 1 -> addItems(groceries);
+                case 2 -> removeItems(groceries);
+                case 3 -> quit();
                 default -> flag = false;
 
             }
             groceries.sort(Comparator.naturalOrder());
             System.out.println(groceries);
         }
+
+    }
+    private static void printActions(){
+
+        String textBlock = """
+                0- to shut down 
+                1- to add item(s)  list (comma delimited list)
+                2- to remove any item(s) (comma delimited list)
+                Enter a number or which action you want to do:""";
+
+        System.out.println(textBlock);
 
     }
 
@@ -54,11 +66,19 @@ public class Main {
         }
     }
 
-    private static void printActions(){
+    private static void removeItems(ArrayList<String> groceries){
+        System.out.println("Remove Items(s) [separated by comma]:");
+        String[] items = scanner.nextLine().split(",");//reads the data and split it on ","
 
-        System.out.println("Enter a number or which action you want to do:\n" +
-                "0- to shut down\n" +
-                "1- to add item(s)  list (comma delimited list)\n" +
-                "2- to remove any item(s) (comma delimited list)");
+
+        for(String i : items){
+            String trimmed = i.trim(); //get rid of white spaces if user added any
+                groceries.remove(trimmed);
+            }
+        }
+
+        private static void quit(){
+        System.out.println("Type zero to quit the program");
+        }
     }
-}
+
