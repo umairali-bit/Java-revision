@@ -22,6 +22,13 @@ public class Main {
         removeElements(placesToVisit);
         System.out.println(placesToVisit);//[Alice Springs, Darwin, Canberra, Hobart, Melbourne, Toowoomba]
 
+
+        addStackElements(placesToVisit);
+        System.out.println(placesToVisit);//[Canberra, Brisbane, Sydney]
+
+
+
+
     }
 
     private static void addMoreElements(LinkedList<String> list){
@@ -60,9 +67,39 @@ public class Main {
         String s3 = list.removeLast(); // removes last element
         System.out.println(s3 + " was removed");//Toowoomba was removed
 
+        //poll methods to remove an element from a Queue
+        //Queue / Dequeue poll methods
+
+        String p1 = list.poll(); // removes first element
+        System.out.println(p1 + " was removed"); //Canberra was removed
+
+        String p2 = list.pollFirst(); // also removes first element
+        System.out.println(p2 + " was removed"); //Hobart was removed
+
+        String p3 = list.pollLast(); // removes last element
+        System.out.println(p3 + " was removed"); //Melbourne was removed
+
+    }
+
+    private static void addStackElements(LinkedList<String> list){
+
+
+        //using push method from stack to populate the list
+        list.push("Sydney");
+        list.push("Brisbane");
+        list.push("Canberra");
+
+        System.out.println(list);
+
+
+        String p4 = list.pop(); // removes first element from the stack
+        System.out.println(p4 + " was removed");//Canberra was removed
 
 
     }
+
+
+
 
 
 
