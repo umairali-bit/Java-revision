@@ -1,8 +1,9 @@
+
+
 package dev.lpa;
 
 public class Contact {
-
-    private static String name;
+    private String name;
     private String phoneNumber;
 
     public Contact(String name, String phoneNumber) {
@@ -18,8 +19,7 @@ public class Contact {
         return phoneNumber;
     }
 
-    public static Contact createContact(String name, String phoneNumber){
+    public static Contact createContact(String name, String phoneNumber) {
         return new Contact(name, phoneNumber);
-
     }
 }

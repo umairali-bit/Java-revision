@@ -9,7 +9,7 @@ public class MobilePhone {
 
     public MobilePhone(String myNumber) {
         this.myNumber = myNumber;
-        this.myContacts = new ArrayList<Contact>();
+        this.myContacts = new ArrayList<>();
     }
 
     public boolean addNewContact(Contact contact) {
@@ -52,11 +52,11 @@ public class MobilePhone {
         return true;
     }
 
-    private int findContact(Contact contact) {
-        return myContacts.indexOf(contact);
+    public int findContact(Contact contact) {
+        return findContact(contact.getName());
     }
 
-    private int findContact(String contactName) {
+    public int findContact(String contactName) {
 
         for (int i = 0; i < myContacts.size(); i++) {
             Contact contact = myContacts.get(i);
