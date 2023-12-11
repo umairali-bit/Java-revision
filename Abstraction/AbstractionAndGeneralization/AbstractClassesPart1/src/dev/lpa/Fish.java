@@ -1,8 +1,8 @@
 package dev.lpa;
 
-public class Dog extends Animal{   //concrete Dog class
+public class Fish extends Animal{   //concrete Dog class
 
-    public Dog(String type, String size, double weight) {   //mandatory constructor
+    public Fish(String type, String size, double weight) {   //mandatory constructor
         super(type, size, weight);
     }
 
