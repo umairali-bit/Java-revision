@@ -11,7 +11,7 @@ public class Main {
         //Instead
         Dog dog = new Dog("Wolf","big",100);
         dog.makeNoise();
-        //doAnimalStuff(dog);
+        doAnimalStuff(dog);
 
         //creating an arrayList of animals
         ArrayList<Animal> animals = new ArrayList<>();
@@ -20,11 +20,17 @@ public class Main {
         animals.add(new Fish("Goldfish", "small", 1));
         animals.add(new Fish("Barracuda", "big", 74));
         animals.add(new Dog("Pug","small", 20));
+        animals.add(new Horse("Clydesdale", "large",1000));
 
 
         for(Animal animal : animals){
 
             doAnimalStuff(animal);
+            //instanceof operator is used to test whether the object is an instance of the specified type (class or subclass or interface).
+            if(animal instanceof Mammal currentMammal){
+                currentMammal.shedHair();
+
+            }
 
         }
 

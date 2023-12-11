@@ -1,6 +1,6 @@
 package dev.lpa;
 
-public class Dog extends Animal{   //concrete Dog class
+public class Dog extends Mammal{   //concrete Dog class
 
     public Dog(String type, String size, double weight) {   //mandatory constructor
         super(type, size, weight);
@@ -10,11 +10,16 @@ public class Dog extends Animal{   //concrete Dog class
     public void move(String speed) {
 
         if(speed.equals("slow")) {
-            System.out.println(type + " walking ");
+            System.out.println(getExplicitType() + " walking ");
         } else {
-            System.out.println(type + " running ");
+            System.out.println(getExplicitType() + " running ");
 
         }
+    }
+
+    @Override
+    public void shedHair() {
+        System.out.println(getExplicitType() + " always shed");
     }
 
     @Override
@@ -27,4 +32,6 @@ public class Dog extends Animal{   //concrete Dog class
         }
     }
 
+
 }
+
