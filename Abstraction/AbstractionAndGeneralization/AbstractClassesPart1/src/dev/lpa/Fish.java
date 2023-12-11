@@ -10,9 +10,9 @@ public class Fish extends Animal{   //concrete Dog class
     public void move(String speed) {
 
         if(speed.equals("slow")) {
-            System.out.println(type + " walking ");
+            System.out.println(type + " lazily swimming ");
         } else {
-            System.out.println(type + " running ");
+            System.out.println(type + " darting frantically ");
 
         }
     }
@@ -20,10 +20,10 @@ public class Fish extends Animal{   //concrete Dog class
     @Override
     public void makeNoise() {
 
-        if(type == "Wolf") {        // type is from Animal abstract
-            System.out.println("Howling");
+        if(type == "Goldfish") {        // type is from Animal abstract
+            System.out.println("swish");
         } else {
-            System.out.println("Woof! ");
+            System.out.println("splash");
         }
     }
 
