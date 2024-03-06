@@ -13,9 +13,9 @@ public class Fish extends Animal {
 
 
         if(speed.equals("slow")) {
-            System.out.println(type + " lazily swimming ");
+            System.out.println(getExplicitType() + " lazily swimming ");
         } else {
-            System.out.println(type + " darting frantically ");
+            System.out.println(getExplicitType() + " darting frantically ");
         }
 
     }
@@ -31,3 +31,4 @@ public class Fish extends Animal {
 
     }
 }
+

@@ -16,12 +16,14 @@ public abstract class Animal {
         this.weight = weight;
     }
 
-    //abstarct methods cannot have a method body, cant be private.
+    //abstract methods cannot have a method body, cant be private.
     public abstract void move(String speed);
     public abstract void makeNoise();
 
-
-
-
+    //concrete method on abstract class
+    public String getExplicitType(){
+        return getClass().getSimpleName() + " (" + type + ")";
+    }
 
 }
+
