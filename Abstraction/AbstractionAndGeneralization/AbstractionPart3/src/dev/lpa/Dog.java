@@ -1,7 +1,7 @@
 package dev.lpa;
 
 //concrete class that extends an abstract class
-public class Dog extends Animal {
+public class Dog extends Mammals {
 
 
     public Dog(String type, String size, double weight) {
@@ -18,6 +18,11 @@ public class Dog extends Animal {
             System.out.println(getExplicitType() + " running ");
         }
 
+    }
+
+    @Override
+    public void shedHair() {
+        System.out.println(getExplicitType() + " sheds all the time");
     }
 
     @Override

@@ -1,5 +1,22 @@
 package dev.lpa;
 
+abstract class Mammals extends Animal {
+
+    public Mammals(String type, String size, double weight) {
+        super(type, size, weight);
+    }
+
+    @Override
+    public void move(String speed) {
+
+        System.out.print(getExplicitType()+ " ");
+        System.out.println(speed.equals("slow") ? "walk" : "runs");
+
+    }
+    //adding an abstract()
+    public abstract void shedHair();
+}
+
 public abstract class Animal {
 
     //3 fields type, size and weight
