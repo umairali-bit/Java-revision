@@ -24,9 +24,9 @@ public class Dog extends Animal {
     public void makeNoise() {
 
         if(type == "Wolf") {    //type could easilt be accessed from the parent class cuz its protected
-            System.out.println("Howling!");
+            System.out.print("Howling! ");
         } else {
-            System.out.println("Woof!");
+            System.out.print("Woof! ");
         }
 
     }

@@ -24,9 +24,9 @@ public class Fish extends Animal {
     public void makeNoise() {
 
         if(type == "Goldfish") {    //type could easily be accessed from the parent class cuz its protected
-            System.out.println("swish!");
+            System.out.print("swish ");
         } else {
-            System.out.println("splash!");
+            System.out.print("splash ");
         }
 
     }

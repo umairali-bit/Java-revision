@@ -21,7 +21,7 @@ public abstract class Animal {
     public abstract void makeNoise();
 
     //concrete method on abstract class
-    public String getExplicitType(){
+    public final String getExplicitType(){
         return getClass().getSimpleName() + " (" + type + ")";
     }
 
