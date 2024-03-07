@@ -14,8 +14,8 @@ public abstract class ProductForSale {
     }
 
     //concrete methods
-    public void PricedItem(int qty){
-        System.out.printf("%2d qty at $8.2f each, %-15s %35s %n",
+    public void printPricedItem(int qty){
+        System.out.printf("%2d qty at $%8.2f each, %-15s %35s %n",
                 qty, price, type, description);
 
     }
