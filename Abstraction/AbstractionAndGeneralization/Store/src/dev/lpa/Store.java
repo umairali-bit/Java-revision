@@ -13,13 +13,18 @@ public class Store {
         storeProducts.add(new ArtObject("Sculpture", 2000,
                 "Bronze work by JFK, produced in 1950"));
 
-        listProducts();
+        //listProducts()
+
+        //if listProducts is not static
+        Store store = new Store();
+        store.listProducts();
 
 
 
     }
 
-    public static void listProducts(){
+    //public static void listProducts()
+    public void listProducts(){
 
         for(var item: storeProducts){
             System.out.println("-".repeat(30));
