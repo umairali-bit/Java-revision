@@ -24,7 +24,7 @@ public class Branch {
 
         if (findCustomer(nameOfCustomer) == null) {
 
-            //customers.add(new Customer(nameOfCustomer, initalTransaction);
+            //customers.add(new Customer(nameOfCustomer, initialTransaction);
 
             Customer customer = new Customer(nameOfCustomer, initialTransaction);
             customers.add(customer);
