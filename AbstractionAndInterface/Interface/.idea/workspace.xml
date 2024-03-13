@@ -2,8 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c1f76103-86e7-4bf9-9cd7-1ddb1fc6cafd" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/../InterfacePart2/InterfacePart2.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../InterfacePart2/out/production/InterfacePart2/dev/lpa/Bird.class" beforeDir="false" afterPath="$PROJECT_DIR$/../InterfacePart2/out/production/InterfacePart2/dev/lpa/Bird.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../InterfacePart2/out/production/InterfacePart2/dev/lpa/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/../InterfacePart2/out/production/InterfacePart2/dev/lpa/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../InterfacePart2/src/dev/lpa/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/../InterfacePart2/src/dev/lpa/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
