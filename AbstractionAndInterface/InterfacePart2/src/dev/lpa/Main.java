@@ -30,6 +30,11 @@ public class Main {
 
         Truck truck = new Truck();
         truck.track();
+
+
+        double kmsTraveled = 100;
+        double milesTraveled = kmsTraveled * FlightEnabled.KM_TO_Miles;
+        System.out.printf("The truck traveled %.2f km or %.2f miles%n", kmsTraveled, milesTraveled);
     }
 
     public static void inFlight(FlightEnabled flier){
