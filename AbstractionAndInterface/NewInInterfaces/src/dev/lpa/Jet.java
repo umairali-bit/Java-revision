@@ -32,4 +32,9 @@ public class Jet extends Animal implements FlightEnabled, Trackable{
         System.out.println(getClass().getSimpleName() + "'s coordinates recorded");
 
     }
+
+    @Override
+    public FlightStages transition(FlightStages stage) {
+        return FlightEnabled.super.transition(stage);
+    }
 }
