@@ -35,7 +35,7 @@ public class Bird extends Animal implements FlightEnabled, Trackable{
     @Override
     public FlightStages transition(FlightStages stage) {
         System.out.println(getClass().getName() + " transitioning");
-        return FlightStages.CRUISE;
+        return FlightEnabled.super.transition(stage);
     }
 }
 
