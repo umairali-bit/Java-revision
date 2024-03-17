@@ -8,6 +8,8 @@ public class Test {
 
         System.out.println("-".repeat(30));
         inFlight(new Bird());
+        System.out.println("-".repeat(30));
+        OrbitEarth.log(" Testing " + new Satellite());
 
 
 

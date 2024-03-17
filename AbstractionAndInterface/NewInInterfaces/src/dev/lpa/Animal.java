@@ -66,6 +66,12 @@ class Satellite implements OrbitEarth{
 
 interface OrbitEarth extends FlightEnabled{
     void achieveOrbit();
+
+    static void log(String description) {
+        var today = new java.util.Date(); //use of var, the Java compiler infers the type from the variable’s initial value
+        System.out.println(today + ": " + description);
+    }
+
 }
 
 
