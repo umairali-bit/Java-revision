@@ -11,6 +11,8 @@ public class Test {
         System.out.println("-".repeat(30));
         OrbitEarth.log(" Testing " + new Satellite());
 
+        orbit(new Satellite());
+
 
 
     }
@@ -25,6 +27,14 @@ public class Test {
         if (flier instanceof Trackable tracked) {
             tracked.track();
         }
+        flier.land();
+    }
+
+    public static void orbit(OrbitEarth flier) {
+
+
+        flier.takeoff();
+        flier.fly();
         flier.land();
     }
 }

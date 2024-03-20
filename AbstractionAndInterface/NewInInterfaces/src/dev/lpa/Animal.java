@@ -72,6 +72,11 @@ interface OrbitEarth extends FlightEnabled{
         System.out.println(today + ": " + description);
     }
 
+    private static void logs(String description) {
+        var today = new java.util.Date(); //use of var, the Java compiler infers the type from the variable’s initial value
+        System.out.println(today + ": " + description);
+    }
+
 }
 
 
