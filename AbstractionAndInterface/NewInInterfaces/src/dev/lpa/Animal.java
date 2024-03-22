@@ -1,30 +1,26 @@
 package dev.lpa;
 
-
 enum FlightStages implements Trackable {GROUNDED, LAUNCH, CRUISE, DATA_COLLECTION;
 
     @Override
     public void track() {
 
-        if( this != GROUNDED) {
+        if (this != GROUNDED) {
             System.out.println("Monitoring " + this);
         }
     }
 
-    public FlightStages getNextStage(){
+    public FlightStages getNextStage() {
 
-        FlightStages [] allStages = values();
-        return allStages[(ordinal()+1) % allStages.length];
+        FlightStages[] allStages = values();
+        return allStages[(ordinal() + 1) % allStages.length];
     }
-
-
-
 }
 
 record DragonFly(String name, String type) implements FlightEnabled {
 
     @Override
-    public void takeoff() {
+    public void takeOff() {
 
     }
 
@@ -39,80 +35,93 @@ record DragonFly(String name, String type) implements FlightEnabled {
     }
 }
 
-class Satellite implements OrbitEarth{
+class Satellite implements OrbitEarth {
 
-    public void achieveOrbit(){
-        System.out.println("Orbit achieved!");
-    };
+    FlightStages stage = FlightStages.GROUNDED;
+
+    public void achieveOrbit() {
+        transition("Orbit achieved!");
+    }
 
     @Override
-    public void takeoff() {
+    public void takeOff() {
 
+        transition("Taking Off");
     }
 
     @Override
     public void land() {
 
+        transition("Landing");
     }
 
     @Override
     public void fly() {
 
+        achieveOrbit();
+        transition("Data Collection while Orbiting");
     }
 
+    public void transition(String description) {
+
+        System.out.println(description);
+        stage = transition(stage);
+        stage.track();
+    }
 }
 
+interface OrbitEarth extends FlightEnabled {
 
-
-interface OrbitEarth extends FlightEnabled{
     void achieveOrbit();
 
-    static void log(String description) {
-        var today = new java.util.Date(); //use of var, the Java compiler infers the type from the variable’s initial value
+    private static void log(String description) {
+
+        var today = new java.util.Date();
         System.out.println(today + ": " + description);
     }
 
-    private static void logs(String description) {
-        var today = new java.util.Date(); //use of var, the Java compiler infers the type from the variable’s initial value
-        System.out.println(today + ": " + description);
+    private void logStage(FlightStages stage, String description) {
+
+        description = stage + ": " + description;
+        log(description);
     }
 
+    @Override
+    default FlightStages transition(FlightStages stage) {
+
+        FlightStages nextStage = FlightEnabled.super.transition(stage);
+        logStage(stage, "Beginning Transition to " + nextStage);
+        return nextStage;
+    }
 }
 
-
-interface FlightEnabled{
+interface FlightEnabled {
 
     double MILES_TO_KM = 1.60934;
-    double KM_TO_Miles = 0.621371;
+    double KM_TO_MILES = 0.621371;
 
-    void takeoff();
+    void takeOff();
     void land();
     void fly();
 
-    //abstract method used in interface before JDK 8. This method will change every class that implements FlightEnabled Interface
-    // FlightStages transition(FlightStages stage);
-
-    //using default method to solve this problem
-    default FlightStages transition (FlightStages stage) {
+    default FlightStages transition(FlightStages stage) {
 //        System.out.println("transition not implemented on " + getClass().getName());
 //        return null;
 
-        FlightStages nextStage = stage.getNextStage(); //stage.getNextStage (calling a method on an object)
-        System.out.println("Transitioning from " + stage + " to " + nextStage );
+        FlightStages nextStage = stage.getNextStage();
+        System.out.println("Transitioning from " + stage + " to " + nextStage);
         return nextStage;
-
-
     }
 
 }
 
-interface Trackable{
+interface Trackable {
+
     void track();
 }
+
 
 public abstract class Animal {
 
     public abstract void move();
 }
-
-
