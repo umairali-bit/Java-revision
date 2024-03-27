@@ -30,7 +30,6 @@ public abstract class ListItem {
     abstract ListItem setNext(ListItem item);
     abstract ListItem previous();
     abstract ListItem setPrevious(ListItem item);
-
     abstract int compareTo(ListItem item);
 
 
