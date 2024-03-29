@@ -127,8 +127,33 @@ NOTE:  Do not add a main method to the solution code.
 
 public class Main {
 
+    public static void main(String[] args) {
+        MyLinkedList list = new MyLinkedList(null);
+        String stringData = "Darwin Brisbane Perth Melbourne Canberra Adelaide Sydney Canberra";
+        String[] data = stringData.split(" ");
+        for (String s : data) {
+            list.addItem(new Node(s));
 
 
+        }
+        list.addItem(new Node("AAAAA"));
+        
+
+
+        list.traverse(list.getRoot());
+
+
+
+
+        MyLinkedList list2 = new MyLinkedList(null);
+        String stringData2 = "7 5 3 9 1 2 8 0 4 6";
+        String[] data2 = stringData2.split(" ");
+        for (String s2 : data2) {
+            list.addItem(new Node(s2));
+       }
+        list2.traverse(list.getRoot());
+
+    }
 
 
 }

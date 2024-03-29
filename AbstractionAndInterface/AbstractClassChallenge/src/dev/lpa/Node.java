@@ -29,25 +29,23 @@ public class Node extends ListItem{
 
     @Override
     ListItem next() {
-        return this.rightLink;
+        return getRightLink();
     }
 
     @Override
     ListItem setNext(ListItem item) {
-        this.leftLink = item;
-        return this.leftLink;
+     return setRightLink(rightLink);
 
     }
 
     @Override
     ListItem previous() {
-        return this.leftLink;
+        return getLeftLink();
     }
 
     @Override
     ListItem setPrevious(ListItem item) {
-        this.rightLink = item;
-        return this.rightLink;
+       return setLeftLink(leftLink);
     }
 
     /*
@@ -58,8 +56,10 @@ public class Node extends ListItem{
      */
 
     @Override
-    int compareTo(ListItem item) {
 
+
+    int compareTo(ListItem item) {
+        //if compare result is same, return 0
         if(item != null){
             return ((String) super.getValue()).compareTo((String) item.getValue());
         } else {
