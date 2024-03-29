@@ -26,10 +26,10 @@ public abstract class ListItem {
      */
 
     abstract ListItem next();
-    abstract ListItem setNext();
+    abstract ListItem setNext(ListItem item);
     abstract ListItem previous();
-    abstract ListItem setPrevious();
-    abstract ListItem compareTo();
+    abstract ListItem setPrevious(ListItem item);
+    abstract int compareTo(ListItem item);
 
 
     public Object getValue() {
