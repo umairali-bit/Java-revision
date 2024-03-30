@@ -125,11 +125,19 @@ NOTE:  All methods are public (unless stated otherwise).
 NOTE:  Do not add a main method to the solution code.
  */
 
-import org.w3c.dom.Node;
-
 public class Main {
 
-    public static void main(String[] args) {}
+    public static void main(String[] args) {
+
+        MyLinkedList list = new MyLinkedList(null);
+        String stringData = "Darwin Brisbane Perth Melbourne Canberra Adelaide Sydney Canberra";
+        String[] data = stringData.split(" ");
+        for (String s : data) {
+            list.addItem(new Node(s));
+        }
+        list.traverse(list.getRoot());
+
+    }
 
 
 

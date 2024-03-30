@@ -13,9 +13,9 @@ NodeList (interface)
 public interface NodeList {
 
     ListItem getRoot();
-    boolean addItem();
+    boolean addItem(ListItem item);
     boolean removeItem();
-    void traverse();
+    void traverse(ListItem item);
 
 
 
