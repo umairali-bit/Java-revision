@@ -43,11 +43,13 @@ public class MyLinkedList implements NodeList {
                 if (currentItem.next() != null){
                     currentItem = currentItem.next();
                 } else {
-                    // if there is no next, so insert at end of list
+                    // if there is no next, then the new item belongs to the extreme right
                     currentItem.setNext(newItem).setPrevious(currentItem);
                     return true;
                 }
-            } else if (comparison > 0){ // if newItem is less than currentItem, move left if possible
+            } else if (comparison > 0){ // if newItem is less than currentItem, add the item before the current item
+
+                //make the previous item's "next" refer to the new item, and the new item's "next" refer to the current item
 
                 if (currentItem.previous() != null) {
                     currentItem.previous().setNext(newItem).setPrevious(currentItem.previous());
