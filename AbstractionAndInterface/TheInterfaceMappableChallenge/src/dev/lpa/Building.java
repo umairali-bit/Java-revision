@@ -15,12 +15,12 @@ public class Building implements Mappable{
 
     @Override
     public String getLabel() {
-        return name + "(" + usage + ")";    //it will print the usage of the building, entertainment, sports etc from enum
+        return name + "(" + usage + ")";    //it will print usage of the building, entertainment, sports etc from enum
     }
 
     @Override
     public Geometry getShape() {
-        return Geometry.POINT;      //Just need to return Point from Geometry enum
+        return Geometry.POINT;      //Just need to return Point from the Geometry enum
     }
 
     @Override
