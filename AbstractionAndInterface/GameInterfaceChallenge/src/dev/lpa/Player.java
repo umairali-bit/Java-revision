@@ -99,7 +99,7 @@ public class Player implements ISaveable{
     }
 
     /*
-    read(), same as interface. Store the values in the List, in the order they appear in toString(). Make sure 
+    read(), same as interface. Store the values in the List, in the order they appear in toString(). Make sure
     the List is not null and the size() is greater than 0 before storing the values.
      */
 
