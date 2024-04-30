@@ -1,5 +1,6 @@
 package dev.lpa;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Monster implements ISaveable{
@@ -26,16 +27,39 @@ public class Monster implements ISaveable{
     public int getStrength() {
         return strength;
     }
-    
-
 
     @Override
-    public List<String> write() {
-        return null;
+    public String toString() {
+        return "Monster{" +
+                "name='" + name + '\'' +
+                ", hitPoints=" + hitPoints +
+                ", strength=" + strength +
+                '}';
     }
 
     @Override
+    public List<String> write() {
+
+        List<String> values = new ArrayList<>();
+        values.add(0,this.name);
+        values.add(1,"" + this.hitPoints);
+        values.add(2,"" + this.strength);
+        return values;
+    }
+
+    /*
+    read(), same as interface. Store the values in the List, in the order they appear in toString(). Make sure the List
+    is not null and the size() is greater than 0 before storing the values.
+     */
+
+    @Override
     public void read(List<String> savedValues) {
+
+        if(savedValues != null && savedValues.size() > 0) {
+            this.name = savedValues.get(0);
+            this.hitPoints = Integer.parseInt(savedValues.get(1));
+            this.strength = Integer.parseInt(savedValues.get(2));
+        }
 
     }
 
