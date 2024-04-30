@@ -63,8 +63,8 @@ public class Player implements ISaveable{
         this.hitPoints = hitPoints;
     }
 
-    public void setStrengths(int strengths) {
-        this.strength = strengths;
+    public void setStrength(int strength) {
+        this.strength = strength;
     }
 
     /*
@@ -73,13 +73,13 @@ public class Player implements ISaveable{
      */
 
     @Override
-    public String toString(){
-        return "Player {" +
-                "name='" + name + '\''+
-                " , hitPoints=" + hitPoints +
+    public String toString() {
+        return "Player{" +
+                "name='" + name + '\'' +
+                ", hitPoints=" + hitPoints +
                 ", strength=" + strength +
                 ", weapon='" + weapon + '\'' +
-                "}";
+                '}';
     }
 
     /*

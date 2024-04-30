@@ -11,6 +11,7 @@ public class Main {
         Player tim = new Player("Tim", 1, 2);
         System.out.println(tim.toString());
         tim.setHitPoints(8);
+        tim.setStrength(20);
         System.out.println(tim);
         System.out.println(tim.getHitPoints());
         saveObject(tim);
