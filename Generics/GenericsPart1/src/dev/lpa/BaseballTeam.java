@@ -33,9 +33,20 @@ public class BaseballTeam {
 
     }
 
-    //if there are no losses no ties the team will be ranked 1
+    //if there are no losses, no ties the team will be ranked 1. The ranked first team cannot be higher than 1
     public int ranking () {
         return (totalLosses * 2) + totalTies + 1;
+    }
+
+    //check the wins
+    public String setScore (int ourScore, int theirScore) {
+         String message = "Lost to:";
+         if(ourScore > theirScore) {
+             totalWins++;
+             message = "beat";
+         }
+         return message;
+
     }
 
 }
