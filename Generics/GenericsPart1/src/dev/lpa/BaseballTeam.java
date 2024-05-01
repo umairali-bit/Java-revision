@@ -32,4 +32,10 @@ public class BaseballTeam {
         System.out.println(teamMembers);
 
     }
+
+    //if there are no losses no ties the team will be ranked 1
+    public int ranking () {
+        return (totalLosses * 2) + totalTies + 1;
+    }
+
 }
