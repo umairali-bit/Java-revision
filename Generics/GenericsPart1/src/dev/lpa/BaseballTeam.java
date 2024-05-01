@@ -54,4 +54,8 @@ public class BaseballTeam {
 
     }
 
+    @Override
+    public String toString() {
+        return teamName + " (Ranked " + ranking() + ")";
+    }
 }
