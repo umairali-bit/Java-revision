@@ -5,6 +5,8 @@ interface Player {}
 // creating a record with two fields. Name and postion.
 record BaseballPlayer(String name, String position) implements Player{}
 
+record FootballPlayer(String name, String position) implements Player{}
+
 public class Main {
 
     public static void main(String[] args) {
@@ -25,11 +27,23 @@ public class Main {
         Phillies.addTeamMember(Marsh);
         Phillies.listTeamMembers();
 
+        //creating a FootBall team
+        SportsTeam afc = new SportsTeam("Adelaide Crows");
+
+        //creating a FootBall Player
+        var tex = new FootballPlayer("Tex Walker", "Center half forward");
+        var guthrie = new BaseballPlayer("Guthrie", "Right Fielder");
+
+        //adding the player to the team
+        afc.addTeamMember(tex);
+        afc.addTeamMember(guthrie); // should be invalid to add a baseball player to add to a Football team. create rules.
+        afc.listTeamMembers();
+
 
 
     }
 
-
+    //creating an overloaded method
 
     public static void scoreResult (BaseballTeam team1, int t1_score,
                                     BaseballTeam team2, int t2_score) {
