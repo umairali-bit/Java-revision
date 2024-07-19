@@ -4,26 +4,26 @@ package dev.lpa;
 import java.util.ArrayList;
 import java.util.List;
 
-public class SportsTeam {
+public class Team<T> {
 
     private String teamName;
 
-    private List<Player> teamMembers = new ArrayList<>();
+    private List<T> teamMembers = new ArrayList<>();
 
     private int totalWins = 0;
     private int totalLoses = 0;
     private int totalTies = 0;
 
 
-    public SportsTeam(String teamName) {
+    public Team(String teamName) {
         this.teamName = teamName;
     }
 
     //Adding a teamMember
-    public void addTeamMember(Player player) {
+    public void addTeamMember(T t) {
 
-        if(!teamMembers.contains(player)) {
-            teamMembers.add(player);
+        if(!teamMembers.contains(t)) {
+            teamMembers.add(t);
 
         }
     }

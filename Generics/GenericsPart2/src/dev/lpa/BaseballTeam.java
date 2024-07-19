@@ -31,7 +31,7 @@ public class BaseballTeam {
 
     //Listing team members
 
-    public void ListTeamMembers() {
+    public void listTeamMembers() {
         System.out.println(teamName + "Roster");
         System.out.println(teamMembers);
     }
