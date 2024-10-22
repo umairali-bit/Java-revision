@@ -11,6 +11,6 @@ public class River extends Line {
 
     @Override
     public String toString() {
-        return name + "River";
+        return name + " River";
     }
 }
