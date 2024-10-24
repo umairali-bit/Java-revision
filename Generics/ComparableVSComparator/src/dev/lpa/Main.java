@@ -42,13 +42,27 @@ public class Main {
 
 
 
-        //Student tim = new Student("Tim");
+        Student tim = new Student("Tim");
         Student [] students = { new Student ("Zach"),
                                 new Student ("Tim"),
                                 new Student ("Ann")};
 
         Arrays.sort(students);
         System.out.println(Arrays.toString(students));
+
+        //System.out.println("result = " + tim.compareTo("Marry")); compare to object is trying to compare a String and an object
+
+
+        Students Tim = new Students("Tim");
+        Students [] studentss = { new Students ("Zach"),
+                new Students ("Tim"),
+                new Students ("Ann")};
+
+        Arrays.sort(students);
+        System.out.println(Arrays.toString(students));
+
+        System.out.println("result = " + Tim.compareTo(new Students("tim")));
+
 
     }
 }
@@ -72,5 +86,28 @@ class Student implements Comparable{
         Student other = (Student) o;
 
         return name.compareTo(other.name);
+    }
+
+
+
+
+}
+
+class Students implements Comparable <Students> {
+
+    private String name;
+
+    public Students (String name) {
+        this.name = name;
+    }
+
+    @Override
+    public String toString() {
+        return name;
+    }
+
+    @Override
+    public int compareTo(Students o) {
+        return name.compareTo(o.name);
     }
 }
