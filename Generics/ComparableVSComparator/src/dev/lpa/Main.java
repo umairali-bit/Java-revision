@@ -68,7 +68,7 @@ public class Main {
 
 
         Comparator<Students> gpaSorter = new StudentsGPAComparator();
-        Arrays.sort(studentss, gpaSorter);
+        Arrays.sort(studentss, gpaSorter.reversed());
         System.out.println(Arrays.toString(studentss));
 
 
