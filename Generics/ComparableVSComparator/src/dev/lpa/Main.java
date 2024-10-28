@@ -1,6 +1,8 @@
 package dev.lpa;
 
 import java.util.Arrays;
+import java.util.Comparator;
+import java.util.Random;
 
 public class Main {
 
@@ -58,14 +60,22 @@ public class Main {
                 new Students ("Tim"),
                 new Students ("Ann")};
 
-        Arrays.sort(students);
-        System.out.println(Arrays.toString(students));
+        Arrays.sort(studentss);
+        System.out.println(Arrays.toString(studentss));
 
         System.out.println("result = " + Tim.compareTo(new Students("tim")));
 
 
+
+        Comparator<Students> gpaSorter = new StudentsGPAComparator();
+        Arrays.sort(studentss, gpaSorter);
+        System.out.println(Arrays.toString(studentss));
+
+
     }
 }
+
+
 
 class Student implements Comparable{
 
@@ -91,23 +101,42 @@ class Student implements Comparable{
 
 
 
+
+}
+
+
+class StudentsGPAComparator implements Comparator<Students> {
+
+    @Override
+    public int compare(Students o1, Students o2) {
+        return (o1.gpa + o1.name).compareTo(o2.gpa + o2.name);
+    }
 }
 
 class Students implements Comparable <Students> {
 
-    private String name;
+
+    private static int LAST_ID = 1000;
+    private static Random random = new Random();
+
+    protected String name;
+    private int id;
+    protected double gpa;
+
 
     public Students (String name) {
         this.name = name;
+        id = LAST_ID++;
+        gpa = random.nextDouble(1.0,4.0);
     }
 
     @Override
     public String toString() {
-        return name;
+        return "%d - %s (%.2f)".formatted(id, name, gpa);
     }
 
     @Override
     public int compareTo(Students o) {
-        return name.compareTo(o.name);
+        return Integer.valueOf(id).compareTo(Integer.valueOf(o.id));
     }
 }
