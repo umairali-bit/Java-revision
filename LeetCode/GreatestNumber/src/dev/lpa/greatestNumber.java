@@ -17,7 +17,7 @@ public class greatestNumber {
     public static void testGreatestNumber (int num1, int num2) {
 
 
-        String result = (num1 > num2) ? "number 1 is the greatest " : (num2 > num1) ? " number 2 is the reatest" :  "both are equal";
+        String result = (num1 > num2) ? "number 1 is the greatest " : (num2 > num1) ? " number 2 is the greatest" :  "both are equal";
         System.out.println(result);
     }
 }
