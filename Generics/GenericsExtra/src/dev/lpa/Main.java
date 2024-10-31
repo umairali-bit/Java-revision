@@ -1,5 +1,6 @@
 package dev.lpa;
 
+import dev.lpa.model.LPAStudent;
 import dev.lpa.model.Student;
 
 import java.util.ArrayList;
@@ -7,36 +8,57 @@ import java.util.List;
 
 public class Main {
 
+
+
     public static void main(String[] args) {
 
         int studentCount = 10;
 
-        List<Student> students = new ArrayList<>();
-        List<Integer> numbers = new ArrayList(studentCount);
+        //List<Student> students = new ArrayList<>();
 
 
-            for (int i = 0; i < studentCount; i++) {
-
-                students.add(new Student());
-            }
+//
 
 
+        List<LPAStudent> lpaStudents = new ArrayList<>();
 
-        printList(students);
+
+        for (int i = 0; i < studentCount; i++) {
+            lpaStudents.add(new LPAStudent());
+        }
+
+
+
+
+
+
+        //printList(students);
+
+        printList(lpaStudents);
 
     }
 
 
 
     //static method to print students
-    public static void printList(List<Student> students) {
+    public static void printList(List  students) {
 
-        for (var student : students) {
-            System.out.println(student);
-        }
-        System.out.println();
+
+
+            for (var student: students) {
+
+
+                System.out.println(student);
+
+            }
+
 
     }
 
 
-}
+
+
+    }
+
+
+
