@@ -16,6 +16,8 @@ public class Student {
 
 
 
+
+
     //random data
     protected static Random random = new Random();
 
@@ -39,6 +41,7 @@ public class Student {
 
 
 
+
     }
 
     @Override
@@ -49,5 +52,6 @@ public class Student {
     public int getYearStarted() {
         return yearStarted;
     }
+
 
 }
