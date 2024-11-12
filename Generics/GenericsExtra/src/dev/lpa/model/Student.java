@@ -1,10 +1,14 @@
 package dev.lpa.model;
 
+import dev.lpa.util.QueryItem;
+import dev.lpa.util.QueryList;
+
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
 import java.util.Random;
 
-public class Student {
+public class Student implements QueryItem {
 
 
     // fields name, course, yearStarted
@@ -54,4 +58,15 @@ public class Student {
     }
 
 
+    @Override
+    public boolean matchFieldValues(String fieldName, String value) {
+        String fName = fieldName.toUpperCase();
+        return switch (fName) {
+
+            case "NAME" -> name.equalsIgnoreCase(value);
+            case "COURSE" -> course.equalsIgnoreCase(value);
+            case "YEARSTARTED" -> yearStarted == (Integer.parseInt(value));
+            default -> false;
+        };
+    }
 }

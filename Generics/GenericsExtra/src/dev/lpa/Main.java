@@ -2,6 +2,7 @@ package dev.lpa;
 
 import dev.lpa.model.LPAStudent;
 import dev.lpa.model.Student;
+import dev.lpa.util.QueryList;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -14,7 +15,11 @@ public class Main {
 
         int studentCount = 10;
 
-        //List<Student> students = new ArrayList<>();
+        List<Student> students = new ArrayList<>();
+
+        for (int i = 0; i < studentCount; i++) {
+            students.add(new Student());
+        }
 
 
         List<LPAStudent> lpaStudents = new ArrayList<>();
@@ -30,6 +35,16 @@ public class Main {
 
         testList(new ArrayList<String>(List.of("Able", "Barry", "Charlie")));
         testList(new ArrayList<Integer>(List.of(1,2,3)));
+
+
+
+        var queryList = new QueryList<>(lpaStudents);
+        var matches = queryList.getMatches("Course","Python");
+        printMoreLists(matches);
+
+        var students2021 = QueryList.getMatches(students, "YearStarted", "2021");
+        printMoreLists(students2021);
+
     }
 
 
@@ -38,7 +53,7 @@ public class Main {
     public static void printMoreLists(List<? extends Student>  students) { // raw version of generics (List students)
 
             for (var student: students) {
-                System.out.println(student.getYearStarted() + ":" + student );
+                System.out.println(student);
             }
     }
 
