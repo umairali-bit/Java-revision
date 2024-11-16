@@ -1,112 +1,53 @@
 package dev.lpa;
 
 import dev.lpa.model.LPAStudent;
+import dev.lpa.model.LPAStudentComparator;
 import dev.lpa.model.Student;
 import dev.lpa.util.QueryList;
 
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 
 public class Main {
 
 
-
     public static void main(String[] args) {
 
-        int studentCount = 10;
+        QueryList<LPAStudent> queryList = new QueryList<>();
 
-        List<Student> students = new ArrayList<>();
-
-        for (int i = 0; i < studentCount; i++) {
-            students.add(new Student());
+        for (int i = 0; i< 25; i++) {
+            queryList.add(new LPAStudent());
         }
 
+        System.out.println("Ordered");
+        queryList.sort(Comparator.naturalOrder());
+        printList(queryList);
 
-        List<LPAStudent> lpaStudents = new ArrayList<>();
+        System.out.println("Matches");
+        var matches = queryList.getMatches("PercentComplete", "50")
+                .getMatches("Course", "Python");
 
-        for (int i = 0; i < studentCount; i++) {
-            lpaStudents.add(new LPAStudent());
-        }
+        matches.sort(new LPAStudentComparator());
 
-        //printList(students);
+        printList(matches);
 
-        printMoreLists(lpaStudents);
+        System.out.println("Ordered");
+        matches.sort(null);
+        printList(matches);
 
-
-        testList(new ArrayList<String>(List.of("Able", "Barry", "Charlie")));
-        testList(new ArrayList<Integer>(List.of(1,2,3)));
-
-
-
-        var queryList = new QueryList<>(lpaStudents);
-        var matches = queryList.getMatches("Course","Python");
-        printMoreLists(matches);
-
-        var students2021 = QueryList.getMatches(students, "YearStarted", "2021");
-        printMoreLists(students2021);
 
     }
 
 
+    public static void printList(List<?> students) {
 
-    //static method to print students
-    public static void printMoreLists(List<? extends Student>  students) { // raw version of generics (List students)
-
-            for (var student: students) {
-                System.out.println(student);
-            }
-    }
-
-    public static void testList(List <?> list) { //type earsure handeling example
-        for (var element : list) {
-            if (element instanceof String s) {
-                System.out.println("String: " + s.toUpperCase());
-            } else if (element instanceof Integer i) {
-                System.out.println("Integer: " + i.floatValue());
-            }
+        for( var student: students) {
+            System.out.println(student);
         }
     }
 
-
-    //    public static void testList (List<String> list) {
-//
-//        for (var element : list) {
-//            System.out.println("String: " + element.toUpperCase());
-//
-//        }
-//    }
-//
-//    public static void testList (List<Integer> list) {
-//
-//        for (var element : list) {
-//            System.out.println("Integer: " + element.floatValue());
-//
-//        }
-//    }
-
-
-    //static generic method to print students
-//    public static <T extends Student> void printList(List<T>  students) { // raw version of generics (List students)
-//
-//
-//
-//        for (var student: students) {
-//
-//
-//            System.out.println(student.getYearStarted() + ":" + student );
-//
-//        }
-//
-//
-//    }
-
-
-
-
-
-
-
-    }
+}
 
 
 

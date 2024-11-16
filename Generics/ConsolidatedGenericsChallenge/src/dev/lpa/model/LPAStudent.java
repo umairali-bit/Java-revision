@@ -1,15 +1,14 @@
 package dev.lpa.model;
 
-public class LPAStudent extends Student{
+public class LPAStudent extends Student {
 
 
     private double percentageComplete;
 
 
-    public LPAStudent () {
+    public LPAStudent() {
         percentageComplete = random.nextDouble(0, 100.001);
     }
-
 
 
     @Override
@@ -19,5 +18,15 @@ public class LPAStudent extends Student{
 
     public double getPercentageComplete() {
         return percentageComplete;
+    }
+
+
+    @Override
+    public boolean matchFieldValues(String fieldName, String value) {
+
+        if (fieldName.equalsIgnoreCase("percentComplete")) {
+            return percentageComplete <= Integer.parseInt(value);
+    }
+    return super.matchFieldValues(fieldName, value);
     }
 }

@@ -4,11 +4,14 @@ import dev.lpa.util.QueryItem;
 
 import java.util.Random;
 
-public class Student implements QueryItem {
+public class Student implements QueryItem, Comparable<Student>{
 
 
     // fields name, course, yearStarted
 
+
+    private static int LAST_ID = 10_000;
+    private int studentID;
     private String name;
     private String course;
     private int yearStarted;
@@ -31,7 +34,7 @@ public class Student implements QueryItem {
     //constructor
     public Student() {
 
-
+        studentID = LAST_ID++;
         int lastNameIndex = random.nextInt(65, 91); //65 is A and 91 is Z
         name = firstNames[random.nextInt(5)] + " " + (char) lastNameIndex;
         course = courses[random.nextInt(3)];
@@ -46,7 +49,7 @@ public class Student implements QueryItem {
 
     @Override
     public String toString() {
-        return "%-15s %-15s %d".formatted(name, course, yearStarted);
+        return "%d %-15s %-15s %d".formatted(studentID, name, course, yearStarted);
     }
 
     public int getYearStarted() {
@@ -64,5 +67,10 @@ public class Student implements QueryItem {
             case "YEARSTARTED" -> yearStarted == (Integer.parseInt(value));
             default -> false;
         };
+    }
+
+    @Override
+    public int compareTo(Student o) {
+        return Integer.valueOf(studentID).compareTo(o.studentID);
     }
 }
