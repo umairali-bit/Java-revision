@@ -3,10 +3,19 @@
 ## Introduction ##
 * Hello World
 * Variables
-* Starting out with Expressions
+* Starting with Expressions
 * Primitive Types
 * Byte, short, long and width
 * Casting in Java
 * Float and Double Primitives
 * Operators, Operands and Expressions
 
+## Expressions and Statements ##
+* Keywords and Expressions
+* Statements, Whitespace and Identation
+* Code Blocks
+* If then else challenge
+* Methods
+* Method overloading
+* Method overriding
+  
