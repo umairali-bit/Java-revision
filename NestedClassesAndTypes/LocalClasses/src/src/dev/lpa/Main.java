@@ -98,6 +98,7 @@ public class Main {
         newList.sort(null); //null will implement the comparable.compareTo()
         for (var dEmployee : newList) {
             System.out.println(dEmployee);
+            System.out.println(dEmployee.originalInstance.getName() + " " +dEmployee.pigLatinName);
         }
 
 
