@@ -56,19 +56,22 @@ public class Main {
 
 
 
+
     }
 
     public static void addPigLatinName (List <? extends StoreEmployee> list) {
 
+        String lastName = "piggy";
         // creating a LocalClass
         // no modifiers
-        class DecoratedEmployee extends StoreEmployee {
+        class DecoratedEmployee extends StoreEmployee
+                implements Comparable<DecoratedEmployee> {
 
             private String pigLatinName;
             private Employee originalInstance;
 
             public DecoratedEmployee(String pigLatinName, Employee originalInstance) {
-                this.pigLatinName = pigLatinName;
+                this.pigLatinName = pigLatinName + " " + lastName;
                 this.originalInstance = originalInstance;
             }
 
@@ -76,6 +79,11 @@ public class Main {
             @Override
             public String toString() {
                 return originalInstance.toString() + " " + pigLatinName;
+            }
+
+            @Override
+            public int compareTo(DecoratedEmployee o) {
+                return pigLatinName.compareTo(o.pigLatinName);
             }
         }
 
@@ -87,6 +95,7 @@ public class Main {
             newList.add(new DecoratedEmployee(pigLatin, employee));
         }
 
+        newList.sort(null); //null will implement the comparable.compareTo()
         for (var dEmployee : newList) {
             System.out.println(dEmployee);
         }
