@@ -51,6 +51,14 @@ public class RunMethods {
         sortIt(storeEmployees, c3);
         sortIt(storeEmployees, c4);
 
+        //creating an anonymous class directly as a method argument (pre-date lambda expressions)
+        sortIt(storeEmployees, new Comparator<StoreEmployee>() {
+            @Override
+            public int compare(StoreEmployee o1, StoreEmployee o2) {
+                return o1.getName().compareTo(o2.getName());
+            }
+        });
+
 
     }
 
