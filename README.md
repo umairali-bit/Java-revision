@@ -44,6 +44,22 @@
 *  LinkedList
 *  Autoboxing and Unboxing
 
+## Abstraction in Java ##
+*  Abstraction & Generalization
+*  Abstract Classes
+*  Interfaces
+*  Interfaces since JDK 8
+*  Interface vs Abstract Class
+
+## Generics ##
+*  Generic Classes
+*  Comparable vs Comparator
+*  Generic class as reference types
+*  Generic methods, wildcards, type erasure
+*  Static methods & multiple upper bounds
+  
+  
+
 
 
 
