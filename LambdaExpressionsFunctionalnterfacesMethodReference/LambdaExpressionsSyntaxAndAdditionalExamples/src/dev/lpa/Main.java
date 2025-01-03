@@ -27,5 +27,25 @@ public class Main {
             char first = myString.charAt(0);
             System.out.println(prefix + " " + myString + " means " + first);
         });
+
+        System.out.println("------");
+
+        int result = calculator((var a, var b) -> {var c = a + b; return c;}, 5, 2);
+        var result2 = calculator((a, b) -> a/b, 10.0, 2.5);
+        var result3 = calculator(
+                (a,b) -> a.toUpperCase() + " " + b.toUpperCase(), "Ralph", "Kramden"
+        );
+
     }
+
+    //public static method with three arguments, instance of interface Operations and two values
+    public static <T> T calculator(Operation<T> functions, T value1, T value2){
+
+        T result = functions.operate(value1,value2);
+        System.out.println("Result of operation: " + result);
+        return result;
+
+    }
+
+
 }
