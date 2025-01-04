@@ -9,7 +9,44 @@ import java.util.function.BinaryOperator;
 public class Main {
 
     public static void main(String[] args) {
-        
+
+        List<String> list = new ArrayList<>(List.of(
+                "alpha","bravo","charlie","delta"
+        ));
+
+        for (String s : list) {
+            System.out.println(s);
+        }
+
+        //alternatively to for loop
+        System.out.println("---------");
+        //using lambda expressions
+        list.forEach((var myString) -> System.out.println(myString));
+
+        //to use multiple statements
+        System.out.println("---------");
+        String prefix = "nato"; //its final. you cannot change it
+        list.forEach((var myString) -> {
+            char first = myString.charAt(0);
+            System.out.println(prefix + " " + myString + " means " + first);
+        });
+
+        System.out.println("------");
+
+
+        list.removeIf(s -> s.equalsIgnoreCase("bravo"));
+        list.forEach(s -> System.out.println(s));
+        list.addAll(List.of("echo", "easy", "earnest"));
+        list.forEach(s -> System.out.println(s));
+
+        System.out.println("------");
+
+        list.removeIf(s-> s.startsWith("ea"));
+
+        list.forEach(s -> System.out.println(s));
+
+
+        System.out.println("------");
 
         int result = calculator((var a, var b) -> {var c = a + b; return c;}, 5, 2);
         var result2 = calculator((a, b) -> a/b, 10.0, 2.5);
