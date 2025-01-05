@@ -1,6 +1,7 @@
 package dev.lpa;
 
 import java.util.Arrays;
+import java.util.Locale;
 import java.util.function.Consumer;
 import java.util.function.Function;
 import java.util.function.UnaryOperator;
@@ -69,6 +70,13 @@ public class Main {
 
 
         };
+        /*
+        challenge 5, call the method from challenge 4, passing the lambda varibale created earlier and the string
+        1234567890, then print the result eturned from the method
+         */
+        String result = everySecondCharacter(everySecondChar,"1234567890");
+        System.out.println(result);
+
 
         UnaryOperator<String> everySecondChar3 = source -> {
 
@@ -81,11 +89,11 @@ public class Main {
 
             return returnVal.toString();
         };
-        // 3. print out with function interface with an argument 1234567890
+        // challenge3. print out with function interface with an argument 1234567890
         System.out.println(everySecondChar3.apply("1234567890"));
 
     }
-        // 2 change the following method into Lambda expression
+        // challenge2 change the following method into Lambda expression
         public static String everySecondChar1 (String source){
 
             StringBuilder returnVal = new StringBuilder();
@@ -96,6 +104,20 @@ public class Main {
             }
 
             return returnVal.toString();
+        }
+
+
+        //challenge 4
+        /*
+        Instead of using the everySecondChar1 function directly.suppose we want to pass it to a method
+        Write a method n your class, called everySecondCharacter. This method should accept the function or a unaryOperator
+        , as a parameter, as well as a second parameter that lets us pass "123456789"
+        The method should execute the functional method on the first argument, passing it to the value of e String passed,
+        from the enclosing method.
+         */
+        public static String everySecondCharacter (Function<String, String> func, String source ) {
+       return func.apply(source);
+
         }
 
 
