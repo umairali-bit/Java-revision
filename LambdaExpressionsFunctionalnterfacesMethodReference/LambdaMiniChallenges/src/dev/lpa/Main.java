@@ -4,6 +4,7 @@ import java.util.Arrays;
 import java.util.Locale;
 import java.util.function.Consumer;
 import java.util.function.Function;
+import java.util.function.Supplier;
 import java.util.function.UnaryOperator;
 
 public class Main {
@@ -76,6 +77,14 @@ public class Main {
          */
         String result = everySecondCharacter(everySecondChar,"1234567890");
         System.out.println(result);
+
+
+        /*
+        challenge 6 and 7: Write a lmabda expression that is declared with the Supplier interface.
+        This lambda should return a String " I Love Java" and assign it to a variable called iloveJava and print it
+         */
+        Supplier<String> iLoveJava = () -> {return "I Love Java";};
+        System.out.println(iLoveJava.get());
 
 
         UnaryOperator<String> everySecondChar3 = source -> {
