@@ -2,6 +2,8 @@ package dev.lpa;
 
 import java.util.Arrays;
 import java.util.function.Consumer;
+import java.util.function.Function;
+import java.util.function.UnaryOperator;
 
 public class Main {
 
@@ -47,12 +49,56 @@ public class Main {
 
         //Ans 1.3
         Consumer<String> printConsiceForeach = sentence -> {
-            Arrays.asList(sentence.split(" ")).forEach (s -> System.out.println(s));
+            Arrays.asList(sentence.split(" ")).forEach(s -> System.out.println(s));
         };
 
         printConsiceForeach.accept("Lets split this up into an array");
 
+
+        //Ans 2
+        Function<String, String> everySecondChar = source -> {
+
+            StringBuilder returnVal = new StringBuilder();
+            for (int i = 0; i < source.length(); i++) {
+                if (i % 2 == 1) {
+                    returnVal.append(source.charAt(i));
+                }
+            }
+
+                return returnVal.toString();
+
+
+        };
+
+        UnaryOperator<String> everySecondChar3 = source -> {
+
+            StringBuilder returnVal = new StringBuilder();
+            for (int i = 0; i < source.length(); i++) {
+                if (i % 2 == 1) {
+                    returnVal.append(source.charAt(i));
+                }
+            }
+
+            return returnVal.toString();
+        };
+        // 3. print out with function interface with an argument 1234567890
+        System.out.println(everySecondChar3.apply("1234567890"));
+
+    }
+        // 2 change the following method into Lambda expression
+        public static String everySecondChar1 (String source){
+
+            StringBuilder returnVal = new StringBuilder();
+            for (int i = 0; i < source.length(); i++) {
+                if (i % 2 == 1) {
+                    returnVal.append(source.charAt(i));
+                }
+            }
+
+            return returnVal.toString();
+        }
+
+
     }
 
 
-}
