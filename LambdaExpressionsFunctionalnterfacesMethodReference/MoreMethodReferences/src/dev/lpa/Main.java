@@ -1,7 +1,9 @@
 package dev.lpa;
 
+import java.util.Locale;
 import java.util.function.BiFunction;
 import java.util.function.BinaryOperator;
+import java.util.function.Function;
 import java.util.function.UnaryOperator;
 
 public class Main {
@@ -36,6 +38,21 @@ public class Main {
         System.out.println(b10.apply("Hello ","World"));
         System.out.println(b20.apply("Hello ", "World"));
         System.out.println(b30.apply("Hello"));
+
+
+        //transform method on String class
+
+        String result = "Hello".transform(b3);
+        System.out.println("Result: " + result);
+
+        // result = result.transform(v1 -> v1.toLowerCase());
+        result = result.transform(String::toLowerCase);
+        System.out.println("Result: " + result);
+
+        //Function<String, Boolean> f0 = s -> s.isEmpty();
+        Function<String, Boolean> f0 = String::isEmpty;
+        boolean resultBoolean = result.transform(f0);
+        System.out.println("Result: " + resultBoolean);
 
 
 
