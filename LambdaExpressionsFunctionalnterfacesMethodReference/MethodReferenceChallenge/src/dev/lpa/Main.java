@@ -9,12 +9,20 @@ Make each name upper case
 Add a random middle initial
 Add a last name, which should be the reverse of the first
 
+Use a mix on Lmabda expressions and method references.
+
+Create a method that takes the name array, and the function list, and applied each function to each name, using the
+transform method on String
+
+All changes should be applied to the original array
 
  */
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Random;
+import java.util.function.UnaryOperator;
 
 public class Main {
 
@@ -22,30 +30,50 @@ public class Main {
 
     public static void main(String[] args) {
 
-        String[] firstNames = {"Bob", "Anna", "Harry", "Hermione","Ron" };
+        String[] names = {"Bob", "Anna", "Harry","Hermione","Ron"};
 
-        //Make each name upper case
-        Arrays.setAll(firstNames, i -> firstNames[i].toUpperCase());
-        System.out.println(Arrays.toString(firstNames));
+        //list of functions
 
-        //Add a random middle initial
-        List <String> backedByArray = Arrays.asList(firstNames);
-        backedByArray.replaceAll( s -> s += " " + getRandom('A', 'D'));
-        System.out.println(Arrays.toString(firstNames));
+        List <UnaryOperator<String>> list = new ArrayList<>(List.of(
 
-        //Add a last name, which should be the reverse of the first
-        backedByArray.replaceAll(s-> s += " " + getReversedName(s.split(" ")[0]));
-        Arrays.asList(firstNames).forEach(System.out::println);
+                //all upperCase
+                String::toUpperCase,
+                //adding random middle initial
+                s -> s += " " + getRandomChar('D', 'M') + ".",
+                s-> s+= " " + reverse(s, 0,s.indexOf(" ")),
+                //reverse the entire string
+                Main::reverse
 
+
+        ));
+
+        applyChanges(names,list);
 
     }
 
-    //adding a random initial
-    public static char getRandom (char startChar, char endChar) {
-        return (char) random.nextInt((int) startChar, (int) endChar + 1);
+    //Create a method that takes the name array, and the function list, and applied each function to each name, using the
+    //transform method on String
+    public static void applyChanges (String [] names, List<UnaryOperator<String>> stringFunctions) {
+
+        List <String> backedByArray = Arrays.asList(names);
+        for (var function : stringFunctions) {
+            backedByArray.replaceAll(s -> s.transform(function));
+            System.out.println(Arrays.toString(names));
+        }
     }
 
-    public static String getReversedName (String firstNames) {
-        return new StringBuilder(firstNames).reverse().toString();
+    public static char getRandomChar (char startChar, char endChar) {
+        return (char) random.nextInt((int) (startChar), (int) (endChar + 1));
     }
+
+    //reverse the whole string
+    private static String  reverse (String s ) {
+        return reverse (s, 0,s.length());
+    }
+    //reverse the name
+    private static String reverse (String s, int start, int end) {
+        return new StringBuilder(s.substring(start,end)).reverse().toString();
+    }
+
+
 }
