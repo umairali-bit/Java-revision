@@ -28,12 +28,22 @@ public class Main {
 
     private static Random random = new Random();
 
+    private record Person (String first) {
+
+        public String last(String s){
+            return first + " " + s.substring(0, s.indexOf(" "));
+
+        }
+    }
+
     public static void main(String[] args) {
 
         String[] names = {"Bob", "Anna", "Harry","Hermione","Ron"};
 
-        //list of functions
+        //setting up a Person (record) in main()
+        Person tim = new Person("Tim");
 
+        //list of functions
         List <UnaryOperator<String>> list = new ArrayList<>(List.of(
 
                 //all upperCase
@@ -45,10 +55,14 @@ public class Main {
                 Main::reverse,
                 
                 //creating a new String
-                s -> new String("Howdy " + s),
+                //s -> new String("Howdy " + s),
                 String::new,
-                //isntead of new we can use valueOf
-                String::valueOf
+                //instead of new we can use valueOf
+                String::valueOf,
+
+                tim::last,//bounded receiver
+                tim::last,
+                (new Person("Marry"))::last
 
 
         ));
