@@ -42,7 +42,13 @@ public class Main {
                 s -> s += " " + getRandomChar('D', 'M') + ".",
                 s-> s+= " " + reverse(s, 0,s.indexOf(" ")),
                 //reverse the entire string
-                Main::reverse
+                Main::reverse,
+                
+                //creating a new String
+                s -> new String("Howdy " + s),
+                String::new,
+                //isntead of new we can use valueOf
+                String::valueOf
 
 
         ));
