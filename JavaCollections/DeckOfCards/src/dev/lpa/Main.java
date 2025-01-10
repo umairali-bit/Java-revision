@@ -32,5 +32,15 @@ ASCII - CLUB = 9827, DIAMOND = 9830, HEART = 9829, SPADE = 9824
 
  */
 
+import java.util.List;
+
 public class Main {
+
+    public static void main(String[] args) {
+
+
+        List<Card> deck = Card.getStandardDeck();
+        Card.printDeck(deck);
+
+    }
 }
