@@ -57,6 +57,24 @@
 *  Generic class as reference types
 *  Generic methods, wildcards, type erasure
 *  Static methods & multiple upper bounds
+
+## Nested Classes and Types ##
+* Static Nested Classes
+* Inner Classes
+* Inner Class Challenge
+* Local Classes
+* Anonymous Classes
+
+
+## Lambda Expressions, Functional Interfaces, and Method References ##
+* Introduction to Lambda
+* Introduction to Functional Interfaces
+* Lambda Expressions
+* Java's Functional Interfaces, Consumer & Predicate
+* Java's Functional Interfaces, Function & Supplier
+* Method Reference
+* Convenience Methods of Functional Interfaces
+* Convenience Methods with Comparator
   
   
 
