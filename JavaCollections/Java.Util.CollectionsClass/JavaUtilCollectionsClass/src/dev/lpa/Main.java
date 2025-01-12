@@ -36,6 +36,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
+import java.util.concurrent.atomic.AtomicReference;
 
 public class Main {
 
@@ -63,6 +64,15 @@ public class Main {
         //to populate the list, collection class has nCopies()
         List<Card> acesOfHearts = Collections.nCopies(13,aceOfHearts);
         Card.printDeck(acesOfHearts, "Aces of Hearts", 1);
+
+
+
+        Card kingOfClubs = Card.getFaceCard(Card.Suit.CLUB, 'K');
+        List<Card> kingsOfClubs = Collections.nCopies(12, kingOfClubs);
+        Card.printDeck(kingsOfClubs,"Kings of Clubs", 1);
+
+
+
 
 
     }
