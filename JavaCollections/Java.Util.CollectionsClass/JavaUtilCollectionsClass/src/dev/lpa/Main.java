@@ -71,6 +71,29 @@ public class Main {
         List<Card> kingsOfClubs = Collections.nCopies(12, kingOfClubs);
         Card.printDeck(kingsOfClubs,"Kings of Clubs", 1);
 
+        //addAll methods in Collections class
+        //1st argument is the list to add elements to
+        //2nd argument for the elements to be added, but unlike list's addAll method, this is a variable argument of elements to be added
+        Collections.addAll(cards, cardArray);
+        //card.addAll(cardArray); Invalid, you cannot pass an arrayList to a list. You can pass a collections to a list or use Array.asList
+        Card.printDeck(cards, "Card Collection with Aces added", 1);
+
+
+        //copy method on collections
+        //1st argument is the destination of the copied elements.
+        //2nd argument is the elements to be copied
+        //you cannot use this method if the number of elements in the current list (kingsOfClubs) is less than the number of the source list (cards)
+        Collections.copy(cards, kingsOfClubs);
+        Card.printDeck(cards, "Card Collection with Kings copied", 1);
+
+
+
+
+
+
+
+
+
 
 
 
