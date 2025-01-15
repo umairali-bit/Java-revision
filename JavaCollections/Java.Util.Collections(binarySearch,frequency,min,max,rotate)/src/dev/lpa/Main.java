@@ -151,6 +151,19 @@ public class Main {
         Collections.replaceAll(deck, tensOfHearts, tensOfClubs);
         Card.printDeck(deck, "Tens row",13);
 
+        if(Collections.replaceAll(deck, tensOfHearts, tensOfClubs)) {
+            System.out.println("Tens of hearts replaced with tens of Clubs");
+        } else {
+            System.out.println("No tens of hearts found in the list");
+        }
+
+        //frequency() checks for duplicates
+        System.out.println("Ten of Clubs Cards = " + Collections.frequency(deck, tensOfClubs));
+
+        //min and max methods in collections
+        System.out.println("Best card = " + Collections.max(deck, sortingAlgorithm));
+        System.out.println("Worst card = " + Collections.min(deck, sortingAlgorithm));
+
 
 
 
