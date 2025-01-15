@@ -105,6 +105,36 @@ public class Main {
         Card.printDeck(deck, "Sorted by rank, suit reversed", 13);
 
 
+        //methods that compare full list to sublist
+        //carving out a couple of smaller lists from the standard deck and passing them to a new ArrayList constructor
+        List<Card> kings = new ArrayList<>(deck.subList(4, 8));
+        Card.printDeck(kings, "Kings in deck", 1);
+
+        List<Card> tens = new ArrayList<>(deck.subList(16, 20));
+        Card.printDeck(tens, "tens in deck", 1);
+
+        //returns an int if sublist is present in the list or -1 if it isnt
+
+        int subListIndex = Collections.indexOfSubList(deck, tens);
+        System.out.println("sublist index for tens = " + subListIndex);
+        System.out.println("Contains = " + deck.containsAll(tens));
+
+        //disjoint method return true if the two collections dont share elements, or false if they do
+        boolean disjoint = Collections.disjoint(deck, tens);
+        System.out.println("disjoint = " + disjoint);// return false
+
+        boolean disjoint2 = Collections.disjoint(kings, tens);
+        System.out.println("disjoint = " + disjoint2);// returns true
+
+
+
+
+
+
+
+
+
+
 
 
 
