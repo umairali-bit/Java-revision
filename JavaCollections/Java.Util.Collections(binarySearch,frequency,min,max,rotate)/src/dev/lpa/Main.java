@@ -140,6 +140,18 @@ public class Main {
         System.out.println("foundIndex = " + deck.indexOf(tensOfHearts));
 
 
+        // collections replaceAll()
+        // it requires to replace 1 or more elements in the list
+        // this method returns a boolean value, true if one or more elements was replaced or false if not
+        Card tensOfClubs = Card.getNumericCard(Card.Suit.CLUB, 10);
+        Collections.replaceAll(deck, tensOfClubs, tensOfHearts);
+        Card.printDeck(deck, "Tens row",13);
+
+
+        Collections.replaceAll(deck, tensOfHearts, tensOfClubs);
+        Card.printDeck(deck, "Tens row",13);
+
+
 
 
 
