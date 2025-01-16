@@ -164,6 +164,14 @@ public class Main {
         System.out.println("Best card = " + Collections.max(deck, sortingAlgorithm));
         System.out.println("Worst card = " + Collections.min(deck, sortingAlgorithm));
 
+        //rotate method
+        //creating new comparator
+        var sortBySuit = Comparator.comparing(Card::suit)
+                .thenComparing(Card::rank);
+        deck.sort(sortBySuit);
+        Card.printDeck(deck, "Sorted by suit", 4);
+
+
 
 
 
