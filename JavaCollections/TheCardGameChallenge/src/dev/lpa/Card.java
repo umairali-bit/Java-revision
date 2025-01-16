@@ -18,5 +18,15 @@ public record Card(Suit suit, String face, int rank) {
         return "%s%c(%d)".formatted( faceString, suit.getImage(),rank );
     }
 
+    public static Card getNumericCard (Suit suit, int cardNumber) {
+
+        if (cardNumber > 1 && cardNumber < 11) {
+            return new Card (suit, String.valueOf(cardNumber), cardNumber - 2);
+        }
+        System.out.println("Invalid Numeric Card selected");
+        return null;
+    }
+
+
 
 }
