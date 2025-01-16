@@ -170,6 +170,18 @@ public class Main {
                 .thenComparing(Card::rank);
         deck.sort(sortBySuit);
         Card.printDeck(deck, "Sorted by suit", 4);
+        //creating a new list and passing the deck in array list constructor
+        List<Card> copied = new ArrayList<>(deck.subList(0, 13));
+        //places last two elements to first two elements
+        Collections.rotate(copied, 2);
+        System.out.println("UnRotated: " + deck.subList(0, 13));
+        System.out.println("Rotated: " + 2 + ": " + copied);
+
+         copied = new ArrayList<>(deck.subList(0, 13));
+         //using a negative number will move the elements starts from the end of the list
+        Collections.rotate(copied, -2);
+        System.out.println("UnRotated: " + deck.subList(0, 13));
+        System.out.println("Rotated: " + -2 + ": " + copied);
 
 
 
