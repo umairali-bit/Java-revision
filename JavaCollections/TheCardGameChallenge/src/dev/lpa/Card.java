@@ -10,7 +10,13 @@ public record Card(Suit suit, String face, int rank) {
         }
     }
 
+    @Override
+    public String toString() {
 
+        int index = face.equals("10") ? 2 : 1;
+        String faceString = face.substring(0, index);
+        return "%s%c(%d)".formatted( faceString, suit.getImage(),rank );
+    }
 
 
 }
