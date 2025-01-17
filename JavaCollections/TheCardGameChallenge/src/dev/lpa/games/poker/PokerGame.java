@@ -25,7 +25,11 @@ public class PokerGame {
         pokerHands = new ArrayList<>(cardsInHand);// setting the capacity to the value contained in cardsInHand
     }
 
+    public void setPlay() {
 
+        Collections.shuffle(deck);
+        Card.printDeck(deck);
+    }
 
 
 
