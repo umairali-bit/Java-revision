@@ -7,7 +7,8 @@ public class Main {
 
     public static void main(String[] args) {
 
-        List<Card> deck = new ArrayList<>();
+        List<Card> deck = Card.getStandardDeck();
+        Card.printDeck(deck);
 
     }
 }
