@@ -48,7 +48,7 @@ public class PokerGame {
         remainingCards = new ArrayList<>(Collections.nCopies(cardsRemaining, null));
         remainingCards.replaceAll(c -> deck.get(cardsDealt + remainingCards.indexOf(c)));
         Card.printDeck(remainingCards, "Remaining Cards", 2);
-        
+
 
     }
 
