@@ -61,6 +61,10 @@ public record Card(Suit suit, String face, int rank) {
         return deck;
     }
 
+    public static void printDeck(List<Card> deck){
+        printDeck(deck, "Current Deck", 4);
+    }
+
     public static void printDeck(List<Card> deck, String description, int rows) {
 
         System.out.println("-".repeat(50));
@@ -80,9 +84,7 @@ public record Card(Suit suit, String face, int rank) {
 
     }
 
-    public static void printDeck(List<Card> deck){
-        printDeck(deck, "Current Deck", 4);
-    }
+
 
 
 
