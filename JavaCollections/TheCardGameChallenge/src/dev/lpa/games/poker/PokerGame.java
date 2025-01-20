@@ -42,6 +42,14 @@ public class PokerGame {
         //print each poker hand
         pokerHands.forEach(System.out::println);
 
+        int cardsDealt = playerCount * cardsInHand;
+        int cardsRemaining = deck.size() - cardsDealt;
+
+        remainingCards = new ArrayList<>(Collections.nCopies(cardsRemaining, null));
+        remainingCards.replaceAll(c -> deck.get(cardsDealt + remainingCards.indexOf(c)));
+        Card.printDeck(remainingCards, "Remaining Cards", 2);
+        
+
     }
 
     private void deal() {
@@ -50,7 +58,7 @@ public class PokerGame {
         Card[][] hands = new Card[playerCount][cardsInHand];
         // to cycle through the deck, one at a time, one card at a time, for each card in hand.
 
-        for (int deckIndex = 0, i = 0; i< cardsInHand; i++){
+        for (int deckIndex = 0,i = 0; i< cardsInHand; i++){
 
             //then loop through each player, assigning each card in each player's hand a unique card off the deck, using the deckIndex variable
             for (int j = 0; j< playerCount; j++) {
