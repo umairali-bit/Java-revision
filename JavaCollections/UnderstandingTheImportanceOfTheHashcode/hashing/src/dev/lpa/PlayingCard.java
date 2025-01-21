@@ -13,7 +13,7 @@ public class PlayingCard {
     public PlayingCard(String suit, String face) {
         this.suit = suit;
         this.face = face;
-        this.internalHash = 1;
+        this.internalHash = (suit.equals("Hearts")? 11 : 12);
 
 
     }
@@ -21,5 +21,18 @@ public class PlayingCard {
     @Override
     public String toString() {
         return face + " of " + suit;
+    }
+
+
+    @Override
+    public int hashCode() {
+        return internalHash;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+
+        System.out.println("---> checking cards equality");
+        return true;
     }
 }
