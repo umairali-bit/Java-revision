@@ -4,6 +4,7 @@ import dev.lpa.Card;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 
 public class PokerHand {
@@ -24,8 +25,10 @@ public class PokerHand {
 
     @Override
     public String toString() {
-        return "%d. %-16s Rank:%d %-40s %s".formatted(
+        return "%d. %-16s Rank:%d %-40s Best:%7s Worst:%6s %s".formatted(
                 playerNo, score, score.ordinal(), hand,
+                Collections.max(hand, Comparator.comparing(Card::rank)),
+                Collections.min(hand, Comparator.comparing(Card::rank)),
                 (discards.size() > 0) ? "Discards:" + discards : "");
 
     }
