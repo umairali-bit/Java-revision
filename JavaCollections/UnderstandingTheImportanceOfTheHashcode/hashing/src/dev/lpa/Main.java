@@ -39,5 +39,15 @@ public class Main {
         mySet = [Hello, hello]
         # of elements = 2
          */
+
+        for (String setValue : mySet) {
+            System.out.print(setValue + ":");
+            for (int i = 0; i < hellos.size(); i ++) {
+                if (setValue == hellos.get(i)) {
+                    System.out.print(i + ",");
+                }
+            }
+            System.out.println(" ");
+        }
     }
 }
