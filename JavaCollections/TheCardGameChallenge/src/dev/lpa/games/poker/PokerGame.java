@@ -3,6 +3,7 @@ package dev.lpa.games.poker;
 import dev.lpa.Card;
 
 import java.util.*;
+import java.util.function.Consumer;
 
 public class PokerGame {
 
@@ -39,8 +40,10 @@ public class PokerGame {
 
         deal();
         System.out.println("-".repeat(30));
+        Consumer<PokerHand> checkHand = PokerHand::evalHand;
         //print each poker hand
-        pokerHands.forEach(System.out::println);
+        pokerHands.forEach(checkHand.andThen(System.out::println));
+
 
         int cardsDealt = playerCount * cardsInHand;
         int cardsRemaining = deck.size() - cardsDealt;
