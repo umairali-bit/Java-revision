@@ -1,13 +1,10 @@
 package dev.lpa;
 
-/*
-Create a Contact Class that has fields, name, a String, emails, a HashSet of String, and phones, another HashSet of String
-4 - constructors. The first just takes a name. The second should have a name, and a single email of type String, The thrid constructor
-should also have two arguments name, and the second parameter being a long, which represents a 10-digit phone number.
- */
 
 import java.util.Collection;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 public class Main {
 
@@ -18,6 +15,21 @@ public class Main {
         printData("Phone list", phones);
         printData("Email List", emails);
 
+        //got a list of names with phone numbers with mobile phone contacts and another list with email contacts
+        //combine these contacts, merging any duplicates into a single contact, with multiple emails and phone numbers on a single record
+
+        //creating two hashsets
+        Set<Contact> emailContacts = new HashSet<>(emails);
+        Set<Contact> phoneContacts = new HashSet<>(phones);
+
+        printData("Phone Contacts",phoneContacts);
+        printData("Email Contacts",emailContacts);
+
+        int index = emails.indexOf(new Contact("Robin Hood"));
+        Contact robinHood = emails.get(index);
+        robinHood.addEmail("Sherwood Forest");
+        robinHood.addEmail("Sherwood Forest");
+        System.out.println(robinHood);
 
 
 

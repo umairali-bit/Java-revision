@@ -1,6 +1,7 @@
 package dev.lpa;
 
 import java.util.HashSet;
+import java.util.Objects;
 import java.util.Set;
 
 public class Contact {
@@ -59,7 +60,39 @@ public class Contact {
 
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
 
+        Contact contact = (Contact) o;
+
+        return getName().equals(contact.getName());
+    }
+
+    @Override
+    public int hashCode() {
+        return 33 * getName().hashCode();
+    }
+
+    //using equals and hashCode() disappeared a few numbers and emails. To overcome this problem, create two methods
+    //addEmail() will generate and add a company email to the current instance's email set
+
+    public void addEmail (String companyName) {
+
+        String[] names = name.split(" "); //splitting names
+        String email = "%c%s@%s.com".formatted(name.charAt(0),names[names.length-1], //email would be first character of name and last name
+                companyName.replaceAll(" ", "").toLowerCase());// followed by the company's name, all lower case and adding .com to it
+
+        //emails.add(email); //add() to email set, passing new String
+
+        if (!emails.add(email)) {
+            System.out.println(name + "already has email  " + email);
+        } else {
+            System.out.println(name + "now has email ");
+        }
+
+    }
 }
 
 
