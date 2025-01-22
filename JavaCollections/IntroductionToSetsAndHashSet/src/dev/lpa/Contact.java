@@ -93,6 +93,16 @@ public class Contact {
         }
 
     }
+
+    public void replaceEmailIfExists (String oldEmail, String newEmail) {
+
+        if (emails.contains(oldEmail)) {
+            emails.remove(oldEmail);
+            emails.add(newEmail);
+
+        }
+
+    }
 }
 
 

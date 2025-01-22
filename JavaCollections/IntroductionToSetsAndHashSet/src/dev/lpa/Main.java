@@ -29,6 +29,7 @@ public class Main {
         Contact robinHood = emails.get(index);
         robinHood.addEmail("Sherwood Forest");
         robinHood.addEmail("Sherwood Forest");
+        robinHood.replaceEmailIfExists("RHood@sherwoodforest.com", "RHood@sherwoodforest.org");
         System.out.println(robinHood);
 
 
