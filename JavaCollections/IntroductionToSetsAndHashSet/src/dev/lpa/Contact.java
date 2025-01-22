@@ -34,5 +34,50 @@ public class Contact {
 
     }
 
+    public String getName() {
+        return name;
+    }
+
+
+    @Override
+    public String toString() {
+        return "%s: %s %s".formatted(name, emails, phones);
+    }
+
+
+
+    //public method that returns a contact
+
+    public Contact mergeContactData(Contact contact) {
+
+        Contact newContact = new Contact(name);
+        newContact.emails = new HashSet<>(this.emails);
+        newContact.phones = new HashSet<>(this.phones);
+        newContact.emails.addAll(contact.emails);
+        newContact.phones.addAll(contact.phones);
+        return newContact;
+
+    }
+
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
