@@ -60,6 +60,15 @@ public class Main {
         BMinusA.removeAll(emailContacts);
         printData("(B - A) phones (B) - email (A)", BMinusA);
 
+        //symmetric difference in both of the sets
+        Set<Contact> symmetricDiff = new HashSet<>(AMinusB);
+        symmetricDiff.addAll(BMinusA);
+        printData("Symmetric Difference: phones and emails", symmetricDiff);
+
+        //the other way to get symmetric differences
+        Set<Contact> symmetricDiff2 = new HashSet<>(unionAB);
+        symmetricDiff2.removeAll(intersectAB);
+        printData("Symmetric Difference: Phones and emails", symmetricDiff2);
 
 
 
