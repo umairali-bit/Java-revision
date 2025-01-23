@@ -16,7 +16,7 @@ public class Task implements Comparable <Task> {
     private Status status;
     private Priority priority;
 
-    public Task(String assignee, String projectName, String description, Status status, Priority priority) {
+    public Task(String projectName, String description, String assignee, Priority priority, Status status) {
 
         this.assignee = assignee;
         this.projectName = projectName;
@@ -26,8 +26,8 @@ public class Task implements Comparable <Task> {
     }
 
     public Task(String projectName, String description, String assignee, Priority priority) {
-        this(assignee, projectName, description,
-                assignee == null ? Status.IN_QUEUE : Status.ASSIGNED, priority);
+        this(assignee, projectName, description, priority,
+                assignee == null ? Status.IN_QUEUE : Status.ASSIGNED);
     }
 
     public Task(String projectName, String description, Priority priority) {
