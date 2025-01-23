@@ -17,6 +17,10 @@ are sorted  by project name and description.
         Set<Task> tasks = TaskData.getTasks("all");
         sortAndPrint("All Tasks", tasks);
 
+        Comparator<Task> sortByPriority = Comparator.comparing(Task::getPriority);
+        Set<Task> annsTasks = TaskData.getTasks("Ann");
+        sortAndPrint("Ann's Tasks", annsTasks,sortByPriority);
+
 
 
 

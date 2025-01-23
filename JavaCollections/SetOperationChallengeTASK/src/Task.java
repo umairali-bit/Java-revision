@@ -1,6 +1,6 @@
 
 
-enum Priority { HIGH, LOW, MEDIUM};
+enum Priority { HIGH, MEDIUM, LOW,};
 
 enum Status {IN_QUEUE, ASSIGNED, IN_PROGRESS}
 
