@@ -33,11 +33,16 @@ public class Main {
         System.out.println(robinHood);
 
         // to perform a union we can use BulkAll()
+        //it will return elements of both of the sets
         Set<Contact> unionAB = new HashSet<>();
         unionAB.addAll(emailContacts);
         unionAB.addAll(phoneContacts);
         printData("(A \u222A B) Union of emails (A) with phones (B)", unionAB);
 
+        //intersection of two or more sets will return only the elements the sets have common.
+        Set<Contact> intersectAB = new HashSet<>(emailContacts);
+        intersectAB.retainAll(phoneContacts);
+        printData("(A \u2229 B) intersects emails (A) with phones (B)", intersectAB);
 
 
 
