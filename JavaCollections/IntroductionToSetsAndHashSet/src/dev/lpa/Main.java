@@ -50,6 +50,17 @@ public class Main {
         printData("(B \u2229 A) intersects emails (B) with phones (A)", intersectBA);
 
 
+        //Asymmetric Sets, A - B
+        Set<Contact> AMinusB = new HashSet<>(emailContacts);
+        AMinusB.removeAll(phoneContacts);
+        printData("(A - B) emails (A) - phones (B)", AMinusB);
+
+        //Asymmetric Sets, B - A
+        Set<Contact> BMinusA = new HashSet<>(phoneContacts);
+        BMinusA.removeAll(emailContacts);
+        printData("(B - A) phones (B) - email (A)", BMinusA);
+
+
 
 
     }
