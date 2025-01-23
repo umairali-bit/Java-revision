@@ -32,6 +32,13 @@ public class Main {
         robinHood.replaceEmailIfExists("RHood@sherwoodforest.com", "RHood@sherwoodforest.org");
         System.out.println(robinHood);
 
+        // to perform a union we can use BulkAll()
+        Set<Contact> unionAB = new HashSet<>();
+        unionAB.addAll(emailContacts);
+        unionAB.addAll(phoneContacts);
+        printData("(A \u222A B) Union of emails (A) with phones (B)", unionAB);
+
+
 
 
     }
