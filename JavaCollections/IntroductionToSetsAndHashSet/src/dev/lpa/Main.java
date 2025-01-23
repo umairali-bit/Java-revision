@@ -44,6 +44,12 @@ public class Main {
         intersectAB.retainAll(phoneContacts);
         printData("(A \u2229 B) intersects emails (A) with phones (B)", intersectAB);
 
+        // to change the order of intersection of the sets
+        Set<Contact> intersectBA = new HashSet<>(phoneContacts);
+        intersectBA.retainAll(emailContacts);
+        printData("(B \u2229 A) intersects emails (B) with phones (A)", intersectBA);
+
+
 
 
     }
