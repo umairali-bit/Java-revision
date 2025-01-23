@@ -4,7 +4,7 @@ enum Priority { HIGH, LOW, MEDIUM};
 
 enum Status {IN_QUEUE, ASSIGNED, IN_PROGRESS}
 
-public class Task implements Comparable<Task>{
+public class Task implements Comparable <Task> {
 
 //Create a class that represents a Task. It should have an assignee, a project name, a task description, a status, a priority,
 //High, Low or Medium. Each of these attributes should be editable.
@@ -37,8 +37,6 @@ public class Task implements Comparable<Task>{
     }
 
  //Each of the attributes should be editable.
-
-
     public String getAssignee() {
         return assignee;
     }
@@ -96,5 +94,26 @@ public class Task implements Comparable<Task>{
     @Override
     public String toString() {
         return "%-20s %-25s %-10s %-10s %s".formatted(projectName, description, priority, assignee, status);
+    }
+
+  //A task should be uniquely identified by its project name and description.
+
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        Task task = (Task) o;
+
+        if (!getProjectName().equals(task.getProjectName())) return false;
+        return getDescription().equals(task.getDescription());
+    }
+
+    @Override
+    public int hashCode() {
+        int result = getProjectName().hashCode();
+        result = 31 * result + getDescription().hashCode();
+        return result;
     }
 }
