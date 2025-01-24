@@ -34,7 +34,8 @@ You've asked your developers to submit what they're working on to you.
 You also have a master set of tasks, which your boss sent to you.
 
 You'll be using that data to answer the following questions.
-What is the full task list? This is the list of all tasks described by your manager, and any additional tasks the employees have, that may not be on that list.
+What is the full task list? This is the list of all tasks described by your manager, and any additional tasks the
+employees have, that may not be on that list.
 Which tasks are assigned to at least one of your 3 team members?
 Which tasks still need to be assigned?
 Which tasks are assigned to multiple employees?
@@ -65,6 +66,47 @@ Create a getDifference method, that takes two Sets and removes the second argume
 
         Set<Task> assignedTask = getUnion(sets);
         sortAndPrint("Assigned Tasks", assignedTask);
+
+        //What is the full task list? This is the list of all tasks described by your manager, and any additional tasks
+        //employees have, that may not be on that list.
+
+        Set<Task> everyTask = getUnion(List.of(tasks, assignedTask));
+        sortAndPrint("The True Task List", everyTask);
+
+
+        //missing tasks
+        Set<Task> missingTasks = getDifference(everyTask, tasks);
+        sortAndPrint("The Missing Tasks", missingTasks);
+
+
+        Set<Task> unassignedTasks = getDifference(tasks, assignedTask);
+        sortAndPrint("The Unassigned Tasks", unassignedTasks);
+
+
+        Set<Task> overlap = getUnion(List.of(
+                getIntersection(annsTasks, bobsTasks),
+                getIntersection(carolsTasks,bobsTasks),
+                getDifference(annsTasks, carolsTasks)
+        ));
+
+        sortAndPrint("Assigned to Multiples", overlap, sortByPriority);
+
+        List<Task> overlapping = new ArrayList<>();
+        for (Set<Task> set : sets) {
+            Set<Task> dupes = getIntersection(set, overlap);
+            overlapping.addAll(dupes);
+
+        }
+
+        Comparator<Task> priorityNatural = sortByPriority.thenComparing(
+                Comparator.naturalOrder());
+
+
+        sortAndPrint("Overlapping", overlapping, priorityNatural);
+
+
+
+
 
 
 
@@ -119,8 +161,6 @@ Create a getDifference method, that takes two Sets and removes the second argume
 
         return result;
     }
-
-
 
 
 }
