@@ -66,7 +66,7 @@ Create a getDifference method, that takes two Sets and removes the second argume
         Set<Task> assignedTask = getUnion(sets);
         sortAndPrint("Assigned Tasks", assignedTask);
 
-   
+
 
 
 
@@ -100,10 +100,7 @@ Create a getDifference method, that takes two Sets and removes the second argume
         for (var task : sets) {
             union.addAll(task);
         }
-
         return union;
-
-
 
     }
 
@@ -113,10 +110,14 @@ Create a getDifference method, that takes two Sets and removes the second argume
         intersection.retainAll(b);
 
         return intersection;
+    }
 
+    private static Set<Task> getDifference (Set<Task> a, Set<Task> b) {
 
+        Set<Task> result = new HashSet<>(a);
+        result.removeAll(b);
 
-
+        return result;
     }
 
 

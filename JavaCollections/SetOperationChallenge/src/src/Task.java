@@ -31,12 +31,12 @@ public class Task implements Comparable <Task> {
     }
 
     public Task(String projectName, String description, Priority priority) {
-        this (projectName, description, null, priority);
+        this(projectName, description, null, priority);
 
 
     }
 
- //Each of the attributes should be editable.
+    //Each of the attributes should be editable.
     public String getAssignee() {
         return assignee;
     }
@@ -96,7 +96,7 @@ public class Task implements Comparable <Task> {
         return "%-20s %-25s %-10s %-10s %s".formatted(projectName, description, priority, assignee, status);
     }
 
-  //A task should be uniquely identified by its project name and description.
+    //A task should be uniquely identified by its project name and description.
 
 
     @Override
@@ -116,4 +116,7 @@ public class Task implements Comparable <Task> {
         result = 31 * result + getDescription().hashCode();
         return result;
     }
+
+
+
 }
