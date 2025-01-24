@@ -66,6 +66,11 @@ Create a getDifference method, that takes two Sets and removes the second argume
         Set<Task> assignedTask = getUnion(sets);
         sortAndPrint("Assigned Tasks", assignedTask);
 
+   
+
+
+
+
 
 
 
@@ -88,7 +93,7 @@ Create a getDifference method, that takes two Sets and removes the second argume
         list.forEach(System.out::println);
     }
 
-    public static Set<Task> getUnion(List<Set<Task>> sets) {
+    private static Set<Task> getUnion(List<Set<Task>> sets) {
 
         Set<Task> union = new HashSet<>();
 
@@ -97,6 +102,18 @@ Create a getDifference method, that takes two Sets and removes the second argume
         }
 
         return union;
+
+
+
+    }
+
+    private static Set<Task> getIntersection (Set<Task> a, Set<Task> b) {
+
+        Set<Task> intersection = new HashSet<>(a);
+        intersection.retainAll(b);
+
+        return intersection;
+
 
 
 
