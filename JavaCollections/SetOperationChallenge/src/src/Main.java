@@ -106,16 +106,6 @@ Create a getDifference method, that takes two Sets and removes the second argume
 
 
 
-
-
-
-
-
-
-
-
-
-
     }
 
     private static void sortAndPrint(String header, Collection<Task> collection) {
