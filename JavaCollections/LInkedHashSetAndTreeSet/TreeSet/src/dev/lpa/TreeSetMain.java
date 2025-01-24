@@ -16,6 +16,13 @@ public class TreeSetMain {
         sorted.addAll(phones);
         sorted.forEach(System.out::println);
 
+        //trees have natural sort order
+        NavigableSet<String> justNames = new TreeSet<>();
+        phones.forEach(c -> justNames.add(c.getName()));
+        System.out.println(justNames);
+
+        
+
 
     }
 }
