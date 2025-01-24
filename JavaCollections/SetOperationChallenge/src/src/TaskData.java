@@ -1,4 +1,4 @@
-/*
+package src;/*
 The task data class will be used to set up and return some test data.
 This class should have a getTask method, that returns a Set of Task. This method should take a String, either the name of one
 of the employees to get a specific Set, or all to get the full task Set
@@ -8,7 +8,6 @@ of the employees to get a specific Set, or all to get the full task Set
 
 import java.util.Arrays;
 import java.util.HashSet;
-import java.util.Locale;
 import java.util.Set;
 
 public class TaskData {
