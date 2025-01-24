@@ -21,8 +21,10 @@ public class TreeSetMain {
         phones.forEach(c -> justNames.add(c.getName()));
         System.out.println(justNames);
 
-        
-
+        //we can also pass a sorted set in the TreeSet constructor
+        NavigableSet<Contact> fullSet = new TreeSet<>(sorted);
+        fullSet.addAll(emails);
+        fullSet.forEach(System.out::println);
 
     }
 }
