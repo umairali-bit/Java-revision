@@ -46,7 +46,7 @@ public class TreeSetMain {
         Contact min = Collections.min(fullSet, fullSet.comparator());
         Contact max = Collections.max(fullSet, fullSet.comparator());
 
-        //SortedInterface also includes first and last methods
+        //SortedInterface also includes first and last methods, which could be a substitute of min and max
         Contact first = fullSet.first();
         Contact last = fullSet.last();
 
@@ -55,7 +55,26 @@ public class TreeSetMain {
         System.out.printf("min = %s, first = %s %n", min.getName(), first.getName());
         System.out.printf("max = %s, last = %s %n", max.getName(), last.getName());
 
+        /*
+        min = Charlie Brown, first = Charlie Brown
+        max = Robin Hood, last = Robin Hood
+         */
+
         System.out.println("-".repeat(9));
+
+        //pollFirst and pollLast removes the 1st and the last sorted element from the set
+
+        //create a copy of the set
+        NavigableSet<Contact> copiedSet = new TreeSet<>(fullSet);
+        System.out.println("First element = " + copiedSet.pollFirst());
+        System.out.println("Last element = " + copiedSet.pollLast());
+
+        copiedSet.forEach(System.out::println);
+        System.out.println("-".repeat(9));
+
+
+
+
 
 
 
