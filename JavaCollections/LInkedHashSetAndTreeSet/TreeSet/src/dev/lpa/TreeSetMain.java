@@ -37,5 +37,31 @@ public class TreeSetMain {
 //        }
         fullList.forEach(System.out::println);
 
+
+            //min and max on trees
+//        Contact min = Collections.min(fullSet);
+//        Contact max = Collections.max(fullSet);
+
+        // The above two methods wont compile because of comparator is not used in Trees
+        Contact min = Collections.min(fullSet, fullSet.comparator());
+        Contact max = Collections.max(fullSet, fullSet.comparator());
+
+        //SortedInterface also includes first and last methods
+        Contact first = fullSet.first();
+        Contact last = fullSet.last();
+
+        System.out.println("-".repeat(9));
+
+        System.out.printf("min = %s, first = %s %n", min.getName(), first.getName());
+        System.out.printf("max = %s, last = %s %n", max.getName(), last.getName());
+
+        System.out.println("-".repeat(9));
+
+
+
+
+
+
+
     }
 }
