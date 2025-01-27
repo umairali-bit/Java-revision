@@ -72,6 +72,11 @@ public class TreeSetMain {
         copiedSet.forEach(System.out::println);
         System.out.println("-".repeat(9));
 
+        Contact daffy = new Contact("Daffy Duck");
+        Contact daisy = new Contact("Daisy Duck");
+        Contact snoopy = new Contact("snoopy");
+        Contact archie = new Contact("Archie");
+
 
 
 
