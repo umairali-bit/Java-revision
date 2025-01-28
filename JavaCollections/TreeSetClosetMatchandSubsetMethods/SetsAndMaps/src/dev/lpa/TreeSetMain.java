@@ -78,7 +78,33 @@ public class TreeSetMain {
         Contact archie = new Contact("Archie");
 
 
+        //ceiling returns the element that is either greater than or equal to the elements passed
+        //higher returns the value that equal to it in a set. It returns the next greater element.
+        for (Contact c: List.of(daffy, daisy, snoopy)) {
+            System.out.printf("ceiling(%s)=%s%n", c.getName(),fullSet.ceiling(c));
+            System.out.printf("higher(%s)=%s%n", c.getName(),fullSet.higher(c));
 
+        }
+        System.out.println("-".repeat(30));
+
+        /*
+        ceiling(Daffy Duck)=Daffy Duck: [daffy@google.com] []
+        higher(Daffy Duck)=Linus Van Pelt: [lvpelt2015@gmail.com] []
+        ceiling(Daisy Duck)=Linus Van Pelt: [lvpelt2015@gmail.com] []
+        higher(Daisy Duck)=Linus Van Pelt: [lvpelt2015@gmail.com] []
+        ceiling(snoopy)=null
+        higher(snoopy)=null
+        ------------------------------
+         */
+
+
+
+        for (Contact c: List.of(daffy, daisy, first, archie)) {//full.first()
+            System.out.printf("floor(%s)=%s%n", c.getName(),fullSet.floor(c));
+            System.out.printf("lower(%s)=%s%n", c.getName(),fullSet.lower(c));
+
+        }
+        System.out.println("-".repeat(30));
 
 
 
