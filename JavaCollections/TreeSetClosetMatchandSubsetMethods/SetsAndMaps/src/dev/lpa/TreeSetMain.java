@@ -123,15 +123,30 @@ public class TreeSetMain {
         //Creating a new name and getting subset from the head or beginning of the SortedSet,
         // or the tail or end of the SortedSet.
         Contact marion = new Contact("Maid Marion");
-        var headSet = fullSet.headSet(marion);
+        var headSet = fullSet.headSet(marion, true);
         fullSet.forEach(System.out::println);
         System.out.println("-".repeat(30));
         headSet.forEach(c -> System.out.println("HeadSet: " + c));
         System.out.println("-".repeat(30));
 
-        var tailSet = fullSet.tailSet(marion);
+        /*
+            HeadSet: Daffy Duck: [daffy@google.com] []
+            HeadSet: Linus Van Pelt: [lvpelt2015@gmail.com] []
+            HeadSet: Lucy Van Pelt: [] [(564) 208-6852]
+            HeadSet: Maid Marion: [] [(123) 456-7890]
+
+         */
+
+        var tailSet = fullSet.tailSet(marion, false);
         tailSet.forEach(c-> System.out.println("tailSet: " + c));
         System.out.println("-".repeat(30));
+
+
+        /*
+        tailSet: Mickey Mouse: [] [(999) 888-7777]
+        tailSet: Minnie Mouse: [] [(456) 780-5666]
+        tailSet: Robin Hood: [] [(564) 789-3000]
+         */
 
 
 
