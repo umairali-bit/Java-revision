@@ -149,6 +149,11 @@ public class TreeSetMain {
          */
 
 
+        Contact linus = new Contact("Linus Van Pelt");
+        var subset = fullSet.subSet(linus, marion);
+        subset.forEach(System.out::println);
+
+
 
 
 
