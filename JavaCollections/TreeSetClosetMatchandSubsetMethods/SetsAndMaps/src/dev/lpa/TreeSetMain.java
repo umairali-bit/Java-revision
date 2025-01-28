@@ -107,6 +107,11 @@ public class TreeSetMain {
         System.out.println("-".repeat(30));
 
 
+        NavigableSet<Contact> descendingSet = fullSet.descendingSet();
+        descendingSet.forEach(System.out::println);//to print each and every element in the set
+        System.out.println("-".repeat(30));
+
+
 
 
 
