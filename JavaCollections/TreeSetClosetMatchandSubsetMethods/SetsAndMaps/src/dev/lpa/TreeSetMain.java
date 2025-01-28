@@ -111,6 +111,27 @@ public class TreeSetMain {
         descendingSet.forEach(System.out::println);//to print each and every element in the set
         System.out.println("-".repeat(30));
 
+        //checking if the fullset has been changed. It did
+        Contact lastContact = descendingSet.pollLast();
+        System.out.println("Removed " + lastContact);
+        descendingSet.forEach(System.out::println);
+        System.out.println("-".repeat(30));
+        fullSet.forEach(System.out::println);
+        System.out.println("-".repeat(30));
+
+
+        //Creating a new name and getting subset from the head or beginning of the SortedSet,
+        // or the tail or end of the SortedSet.
+        Contact marion = new Contact("Maid Marion");
+        var headSet = fullSet.headSet(marion);
+        fullSet.forEach(System.out::println);
+        System.out.println("-".repeat(30));
+        headSet.forEach(c -> System.out.println("HeadSet: " + c));
+        System.out.println("-".repeat(30));
+
+        var tailSet = fullSet.tailSet(marion);
+        tailSet.forEach(c-> System.out.println("tailSet: " + c));
+        System.out.println("-".repeat(30));
 
 
 
