@@ -53,9 +53,22 @@ public class Theatre {
             char rowChar = (char) ( i / seatsPerRow + (int) 'A');// itll be A, B, C
             //to find the seat in the row
             int seatInRow = i % seatsPerRow + 1;
-            //adding the seats to seat
+            //adding the seats to Seat
             seats.add(new Seat(rowChar, seatInRow));
 
         }
     }
+
+    public void printSeatMap() {
+        String separatorLine = "-".repeat(90);
+        System.out.printf("%1$s%n%2$s Seat Map%n%1$s%n", separatorLine, theatreName);
+
+        int index = 0;
+        for (Seat s : seats) {
+            System.out.printf("%-8s%s", s.seatNumber + ((s.reserved) ? "(\u25cf)" : ""),
+                    ((index++ + 1) % seatsPerRow == 0) ? "\n" : "");//include a new line character at the end of seat in a row by using %
+            System.out.println(separatorLine);
+        }
+    }
+
 }
