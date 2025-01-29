@@ -13,6 +13,7 @@ This last field should be a TreeSet.
 
 
 import java.util.NavigableSet;
+import java.util.TreeSet;
 
 public class Theatre {
 
@@ -41,8 +42,20 @@ public class Theatre {
 
     private String theatreName;
     private int seatsPerRow;
-    private NavigableSet<Seat> seats;
+    private NavigableSet<Seat> seats; //collection for the theatre seats
 
+    public Theatre(String theatreName, int rows, int totalSeats) {
+        this.theatreName = theatreName;
+        this.seatsPerRow = totalSeats/rows;
 
+        seats = new TreeSet<>();
+        for (int i = 0; i < totalSeats; i ++) {
+            char rowChar = (char) ( i / seatsPerRow + (int) 'A');// itll be A, B, C
+            //to find the seat in the row
+            int seatInRow = i % seatsPerRow + 1;
+            //adding the seats to seat
+            seats.add(new Seat(rowChar, seatInRow));
 
+        }
+    }
 }
