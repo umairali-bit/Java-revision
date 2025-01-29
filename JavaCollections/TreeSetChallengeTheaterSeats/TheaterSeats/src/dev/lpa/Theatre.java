@@ -23,7 +23,7 @@ public class Theatre {
        private boolean reserved;
 
         public Seat(char rowChar, int seatNo) {
-            this.seatNumber = "%c%d03d".formatted(rowChar,seatNo).toUpperCase();
+            this.seatNumber = "%c%03d".formatted(rowChar,seatNo).toUpperCase();
 
 
         }
@@ -63,12 +63,14 @@ public class Theatre {
         String separatorLine = "-".repeat(90);
         System.out.printf("%1$s%n%2$s Seat Map%n%1$s%n", separatorLine, theatreName);
 
+
         int index = 0;
         for (Seat s : seats) {
             System.out.printf("%-8s%s", s.seatNumber + ((s.reserved) ? "(\u25cf)" : ""),
                     ((index++ + 1) % seatsPerRow == 0) ? "\n" : "");//include a new line character at the end of seat in a row by using %
-            System.out.println(separatorLine);
+
         }
+        System.out.print(separatorLine);
     }
 
 }
