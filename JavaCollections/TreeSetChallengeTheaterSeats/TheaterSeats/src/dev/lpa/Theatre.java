@@ -6,10 +6,13 @@ A Seat should be constructed with a row character and an integer that represents
 Each Seat should have a String and a seat number, in the format 'A005', where A is the row number, and 005 is the seat number within the row, and it should be zero padded up to three digits.
 Seat should also have a field, a boolean, indicating if the seat is reserved or not.
 
+The Theatre class should have three fields, theatre name, an integer for seats in each row, how many seats are in a single row in other words, and a field for the seats themselves.
+This last field should be a TreeSet.
+
  */
 
-import java.util.Comparator;
-import java.util.Locale;
+
+import java.util.NavigableSet;
 
 public class Theatre {
 
@@ -35,4 +38,11 @@ public class Theatre {
             return seatNumber.compareTo(o.seatNumber);
         }
     }
+
+    private String theatreName;
+    private int seatsPerRow;
+    private NavigableSet<Seat> seats;
+
+
+
 }
