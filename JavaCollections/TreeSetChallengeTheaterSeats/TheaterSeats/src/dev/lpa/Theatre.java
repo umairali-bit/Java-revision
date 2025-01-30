@@ -13,6 +13,7 @@ This last field should be a TreeSet.
 
 
 import java.util.NavigableSet;
+import java.util.Set;
 import java.util.TreeSet;
 
 public class Theatre {
@@ -91,6 +92,20 @@ public class Theatre {
             }
         }
         return null;
+    }
+
+    private boolean validate (int count, char first, char last, int min, int max) {
+
+        boolean result = (min > 0 || seatsPerRow >= count || (max - min + 1) >= count);
+        result = result && seats.contains(new Seat(first, min));
+        return result;
+    }
+
+    public Set<Seat> reserveSeats(int count, char minRow, char maxRow, int minSeat, int maxSeat) {
+
+
+        char lastValid = seats.last().seatNumber.charAt(0);
+        maxRow = (maxRow < lastValid) ? maxRow : lastValid;
     }
 
 }
