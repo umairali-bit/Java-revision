@@ -73,4 +73,24 @@ public class Theatre {
         System.out.print(separatorLine);
     }
 
+    public String reverseSeat(char row, int seat) {
+
+        Seat requestedSeat = new Seat(row, seat);
+        Seat requested = seats.floor(requestedSeat);
+
+        if (requested == null || !requested.seatNumber.equals(requestedSeat.seatNumber)) {
+            System.out.println("--> NO such Seat " + requestedSeat);
+            System.out.printf(": Seat must be between %s and %s and %s%n",
+                    seats.first().seatNumber, seats.last().seatNumber);
+        } else {
+            if (!requested.reserved) {
+                requested.reserved = true;
+                return requested.seatNumber;
+            } else {
+                System.out.println("Seat's already reserved.");
+            }
+        }
+        return null;
+    }
+
 }
