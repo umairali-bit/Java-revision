@@ -70,7 +70,7 @@ public class Theatre {
                     ((index++ + 1) % seatsPerRow == 0) ? "\n" : "");//include a new line character at the end of seat in a row by using %
 
         }
-        System.out.print(separatorLine);
+        System.out.println(separatorLine);
     }
 
     public String reverseSeat(char row, int seat) {
@@ -79,8 +79,8 @@ public class Theatre {
         Seat requested = seats.floor(requestedSeat);
 
         if (requested == null || !requested.seatNumber.equals(requestedSeat.seatNumber)) {
-            System.out.println("--> NO such Seat " + requestedSeat);
-            System.out.printf(": Seat must be between %s and %s and %s%n",
+            System.out.print("--> NO such Seat " + requestedSeat);
+            System.out.printf(": Seat must be between %s and %s%n",
                     seats.first().seatNumber, seats.last().seatNumber);
         } else {
             if (!requested.reserved) {

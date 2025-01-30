@@ -40,5 +40,18 @@ public class BookingAgent {
 
         nyc.printSeatMap();
 
+        bookSeat(nyc, 'b', 15);
+    }
+
+    private static void bookSeat(Theatre theatre, char row, int seatNumber) {
+
+        String seat = theatre.reverseSeat(row, seatNumber);
+
+        if (seat != null) {
+            System.out.println("Congratulations! Your reserved seat is " + seat);
+            theatre.printSeatMap();
+        } else {
+            System.out.println("Sorry! Unable to reserve " + row + seatNumber);
+        }
     }
 }
