@@ -157,7 +157,10 @@ public class Theatre {
         Set<Seat> reservedSeats = null;
         if (selected != null) {
             selected.forEach(s-> s.reserved = true);
+            reservedSeats = new TreeSet<>(selected);
         }
+
+        return reservedSeats;
 
     }
 

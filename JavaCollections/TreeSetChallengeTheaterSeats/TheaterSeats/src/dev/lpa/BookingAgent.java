@@ -54,4 +54,15 @@ public class BookingAgent {
             System.out.println("Sorry! Unable to reserve " + row + seatNumber);
         }
     }
+
+    private static void bookSeats (Theatre theatre, int tickets, char minRow, char maxRow, int minSeat, int maxSeat) {
+
+        var seats = theatre.reserveSeats(tickets, minRow, maxRow, minSeat, maxSeat);
+        if (seats != null) {
+            System.out.println("Congratulations! Your reserved seats are " + seats);
+            theatre.printSeatMap();
+        } else {
+            System.out.println("Sorry! No matching contigous seats in rows: " + minRow + " _ " + maxRow);
+        }
+    }
 }
