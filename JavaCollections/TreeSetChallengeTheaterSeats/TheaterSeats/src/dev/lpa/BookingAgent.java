@@ -41,6 +41,8 @@ public class BookingAgent {
         nyc.printSeatMap();
 
         bookSeat(nyc, 'b', 15);
+
+        bookSeats(nyc, 4, 'B', 3, 10);
     }
 
     private static void bookSeat(Theatre theatre, char row, int seatNumber) {
@@ -53,6 +55,11 @@ public class BookingAgent {
         } else {
             System.out.println("Sorry! Unable to reserve " + row + seatNumber);
         }
+    }
+
+    private static void bookSeats(Theatre theatre, int tickets, char minRow, int minSeat, int maxSeat) {
+
+        bookSeats (theatre, tickets, minRow, minRow, minSeat, maxSeat);
     }
 
     private static void bookSeats (Theatre theatre, int tickets, char minRow, char maxRow, int minSeat, int maxSeat) {
