@@ -93,11 +93,24 @@ public class Theatre {
         }
         return null;
     }
+    /*
+        If you want an extra challenge, create a second method on Theatre, that lets an agent specify:
+        The number of reservations being requested.
+        A range of rows (from A to C for example, for front row seats).
+        A range of seats (a number greater than or equal to 1, and less than or equal to the total number of rows per seat).
+        The seats that get reserved should be contiguous within a row.
+     */
 
     private boolean validate (int count, char first, char last, int min, int max) {
 
         boolean result = (min > 0 || seatsPerRow >= count || (max - min + 1) >= count);
         result = result && seats.contains(new Seat(first, min));
+        if (!result) {
+            System.out.printf("Invalid! %1$d seats between " + "%2$c[%3$d-%4$d]-5$c[%3$d-%4$d] Try again", count, first
+                    , min, max, last);
+            System.out.printf(": Seat must be between %s and %s%n",
+                    seats.first().seatNumber,seats.last().seatNumber);
+        }
         return result;
     }
 
@@ -106,6 +119,46 @@ public class Theatre {
 
         char lastValid = seats.last().seatNumber.charAt(0);
         maxRow = (maxRow < lastValid) ? maxRow : lastValid;
+
+        if(!validate(count, minRow, maxRow, minSeat, maxSeat)) {
+            return null;
+        }
+
+        NavigableSet<Seat> selected = null;
+
+        for (char letter = minRow; letter <= maxRow; letter++) {
+
+            NavigableSet<Seat> contigous = seats.subSet(
+                    new Seat(letter, minSeat), true,
+                    new Seat(letter, maxSeat), true);
+
+
+                    int index = 0;
+                    Seat first = null;
+                    for (Seat current : contigous) {
+                        if (current.reserved) {
+                            index = 0;
+                            continue;
+                        }
+                        first = (index == 0) ? current : first;
+                        if(++index == count) {
+                            selected = contigous.subSet(first, true, current, true);
+
+                            break;
+                        }
+                    }
+
+                    if (selected != null) {
+                        break;
+
+            }
+
+        }
+        Set<Seat> reservedSeats = null;
+        if (selected != null) {
+            selected.forEach(s-> s.reserved = true);
+        }
+
     }
 
 }
