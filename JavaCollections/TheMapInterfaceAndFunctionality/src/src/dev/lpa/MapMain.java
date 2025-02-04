@@ -33,6 +33,8 @@ public class MapMain {
 
         System.out.println(contacts.get("Charlie Brown"));
 
+        System.out.println(contacts.get("chuck brown"));
+
 
     }
 }
