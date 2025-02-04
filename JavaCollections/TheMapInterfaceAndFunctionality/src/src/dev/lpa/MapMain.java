@@ -36,5 +36,8 @@ public class MapMain {
         System.out.println(contacts.get("chuck brown"));
 
 
+        Contact defaultContact = new Contact("Chuck Brown");
+        System.out.println(contacts.getOrDefault("Chuck Brown", defaultContact));
+
     }
 }
