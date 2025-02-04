@@ -39,5 +39,11 @@ public class MapMain {
         Contact defaultContact = new Contact("Chuck Brown");
         System.out.println(contacts.getOrDefault("Chuck Brown", defaultContact));
 
+        System.out.println("-".repeat(50));
+        contacts.clear();
+        
+
+
+
     }
 }
