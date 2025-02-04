@@ -11,7 +11,7 @@ public class MapMain {
     public static void main(String[] args) {
 
         List<Contact> phones = ContactData.getData("phone");
-        List<Contact> emails = ContactData.getData("emails");
+        List<Contact> emails = ContactData.getData("email");
 
 
         List<Contact> fullList = new ArrayList<>(phones);
@@ -29,7 +29,9 @@ public class MapMain {
         }
          contacts.forEach((k, v) -> System.out.println("key = " + k + ", value = " + v));
 
+        System.out.println("-".repeat(50));
 
+        System.out.println(contacts.get("Charlie Brown"));
 
 
     }
