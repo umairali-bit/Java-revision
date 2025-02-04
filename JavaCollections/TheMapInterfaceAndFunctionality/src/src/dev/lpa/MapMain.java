@@ -41,7 +41,18 @@ public class MapMain {
 
         System.out.println("-".repeat(50));
         contacts.clear();
-        
+
+        for (Contact contact : fullList) {
+            Contact duplicate = contacts.put(contact.getName(), contact);
+
+            if (duplicate != null) {
+                System.out.println("duplicate = " + duplicate);
+                System.out.println("current = " + contact);
+            }
+
+
+        }
+
 
 
 
