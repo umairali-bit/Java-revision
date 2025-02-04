@@ -46,12 +46,19 @@ public class MapMain {
             Contact duplicate = contacts.put(contact.getName(), contact);
 
             if (duplicate != null) {
-                System.out.println("duplicate = " + duplicate);
-                System.out.println("current = " + contact);
+//                System.out.println("duplicate = " + duplicate);
+//                System.out.println("current = " + contact);
+                contacts.put(contact.getName(), contact.mergeContactData(duplicate));
+
+
+
             }
 
 
         }
+
+        contacts.forEach((k, v) -> System.out.println("key = " + k + ", value = " + v));
+
 
 
 
