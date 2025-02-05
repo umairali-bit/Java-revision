@@ -117,6 +117,22 @@ public class MapMain {
         contacts.forEach((k,v) -> System.out.println("key=" + k + " , value= " + v));
 
 
+        //if all of the duck people work at a family business
+        System.out.println("-".repeat(50));
+
+        for (String contactName : new String[] {"Daisy Duck", "Daffy Duck", "Scrooge McDuck"}) {
+            //contacts.compute(contactName, (k,v) -> new Contact(k));
+            contacts.computeIfPresent(contactName, (k,v) -> {
+                v.addEmail("Fun Place"); return v;
+            });
+        }
+
+        contacts.forEach((k,v) -> System.out.println("key=" + k + " , value= " + v));
+
+
+       
+
+
 
 
 
