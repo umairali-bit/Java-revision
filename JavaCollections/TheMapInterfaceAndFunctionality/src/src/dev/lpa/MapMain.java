@@ -85,11 +85,31 @@ public class MapMain {
         }
         contacts.forEach((k, v) -> System.out.println("key = " + k + ", value = " + v));
 
-
+        //The merge method, it still takes a key and value but third parameter us a BiFunction interface
         System.out.println("-".repeat(50));
         contacts.clear();
+        fullList.forEach(contact -> contacts.merge(contact.getName(), contact,
+                Contact::mergeContactData //lets you merge a bunch of contacts from an ArrayList into a hashmap with a single statement.
 
-        
+                // OR
+
+        //        (previous, current) ->  previous.mergeContactData(current)
+
+                //OR
+        // {
+                    //System.out.println("prev: " + previous + " : current " + current);
+                    //Contact merged = previous.mergeContactData(current);
+                    //System.out.println("merged: " + merged);
+
+                    //return merged;
+    //}
+
+                ));
+        contacts.forEach((k, v) -> System.out.println("key = " + k + ", value = " + v));
+
+
+
+
 
 
 
