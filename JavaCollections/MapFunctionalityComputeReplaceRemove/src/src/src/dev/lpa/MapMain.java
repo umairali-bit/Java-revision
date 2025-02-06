@@ -117,7 +117,7 @@ public class MapMain {
         contacts.forEach((k,v) -> System.out.println("key=" + k + " , value= " + v));
 
 
-        //if all of the duck people work at a family business
+        //if all the duck people work at a family business
         System.out.println("-".repeat(50));
 
         for (String contactName : new String[] {"Daisy Duck", "Daffy Duck", "Scrooge McDuck"}) {
@@ -130,7 +130,22 @@ public class MapMain {
         contacts.forEach((k,v) -> System.out.println("key=" + k + " , value= " + v));
 
 
-       
+        //replaceAll() takes a BiFunction that has two arguments. It takes the key and value, and the function should
+        //return an object the same type as the value.
+
+        System.out.println("-".repeat(50));
+        contacts.replaceAll((k,v) -> {
+            String newEmail = k.replaceAll(" ", "") + "@funplace.com";
+            v.replaceEmailIfExists("DDuck@funplace.com", newEmail);
+            return v;
+        });
+        contacts.forEach((k,v) -> System.out.println("key=" + k + " , value= " + v));
+
+
+
+
+
+
 
 
 
