@@ -1,4 +1,4 @@
-package src.src.dev.lpa;
+package src.src.src.dev.lpa;
 
 import java.util.ArrayList;
 import java.util.HashMap;
