@@ -146,7 +146,7 @@ public class MapMain {
         //replacing just one element in the map, by either matching on key alone, or both key and value
         System.out.println("-".repeat(50));
 
-        Contact daisy = new Contact("Daisy Duck", "daisyj@duck.com");
+        Contact daisy = new Contact("Daisy Jane Duck", "daisyj@duck.com");
 
         Contact replacedContact = contacts.replace("Daisy Duck", daisy);
         System.out.println("daisy = " + daisy);
@@ -159,13 +159,42 @@ public class MapMain {
         System.out.println("-".repeat(50));
         Contact updatedDaisy = replacedContact.mergeContactData(daisy);
         System.out.println("updatedDaisy = " + updatedDaisy);
-        boolean success = contacts.replace("Daisy Duck", replacedContact, updatedDaisy);
+        boolean success = contacts.replace("Daisy Duck", daisy, updatedDaisy);
         if (success) {
             System.out.println("Successfully replaced element");
         } else {
             System.out.println("Did not match on both key: %s and value: %s %n".formatted("Daisy Duck", replacedContact));
         }
         contacts.forEach((k,v) -> System.out.println("key=" + k + ", value= " + v));
+
+        /*
+        two overloaded methods for remove(), the first remove method takes a key, and returns the value that was removed,
+        or null if a value doesnt exist for that key. The second remove method takes both the key and a value, it only removes
+        the element from the map, if the key is in the map, and the element to be removed equals the value passed. This
+        returns a boolean
+
+         */
+
+        System.out.println("-".repeat(50));
+        success = contacts.remove("Daisy Duck", daisy);
+        if(success) {
+            System.out.println("Successfully removed the element");
+        } else {
+            System.out.printf("Did not match on both key: %s and value: %s %n".formatted("Daisy Duck", daisy));
+        }
+
+        contacts.forEach((k,v) -> System.out.println("key=" + k + ", value= " + v));
+
+
+
+
+
+
+
+
+
+
+
 
 
 
