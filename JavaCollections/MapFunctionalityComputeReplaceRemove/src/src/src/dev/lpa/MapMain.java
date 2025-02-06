@@ -143,6 +143,22 @@ public class MapMain {
 
 
 
+        //replacing just one element in the map, by either matching on key alone, or both key and value
+        System.out.println("-".repeat(50));
+
+        Contact daisy = new Contact("Daisy Duck", "daisyj@duck.com");
+
+        Contact replacedContact = contacts.replace("Daisy Duck", daisy);
+        System.out.println("daisy = " + daisy);
+        System.out.println("replacedContact = " + replacedContact);
+        contacts.forEach((k,v) -> System.out.println("key=" + k + ", value= " + v));
+
+
+
+
+
+
+
 
 
 
