@@ -153,6 +153,22 @@ public class MapMain {
         System.out.println("replacedContact = " + replacedContact);
         contacts.forEach((k,v) -> System.out.println("key=" + k + ", value= " + v));
 
+        //replace method has an overloaded version, which lets you specify that you only want to replace the value in
+        //the map
+
+        System.out.println("-".repeat(50));
+        Contact updatedDaisy = replacedContact.mergeContactData(daisy);
+        System.out.println("updatedDaisy = " + updatedDaisy);
+        boolean success = contacts.replace("Daisy Duck", replacedContact, updatedDaisy);
+        if (success) {
+            System.out.println("Successfully replaced element");
+        } else {
+            System.out.println("Did not match on both key: %s and value: %s %n".formatted("Daisy Duck", replacedContact));
+        }
+        contacts.forEach((k,v) -> System.out.println("key=" + k + ", value= " + v));
+
+
+
 
 
 
