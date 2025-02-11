@@ -2,6 +2,7 @@ package src.src.src.dev.lpa;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Set;
 
 public class MapViewMain {
 
@@ -14,6 +15,11 @@ public class MapViewMain {
 
         System.out.println(contacts);
 
+        // to get a view of my keys by the keySet method
+        Set<String> keysView = contacts.keySet();
+        System.out.println(keysView);
+
+        // our key values are: [Lucy Van Pelt, Linus Van Pelt, Minnie Mouse, Maid Marion, Charlie Brown, Robin Hood, Daffy Duck, Mickey Mouse]
 
     }
 }
