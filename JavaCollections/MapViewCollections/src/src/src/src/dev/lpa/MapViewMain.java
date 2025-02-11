@@ -3,6 +3,7 @@ package src.src.src.dev.lpa;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Set;
+import java.util.TreeSet;
 
 public class MapViewMain {
 
@@ -20,6 +21,13 @@ public class MapViewMain {
         System.out.println(keysView);
 
         // our key values are: [Lucy Van Pelt, Linus Van Pelt, Minnie Mouse, Maid Marion, Charlie Brown, Robin Hood, Daffy Duck, Mickey Mouse]
+
+        // to get a sorted value of keys, we can use the tree set
+
+        Set<String> copyOfKeys = new TreeSet<>(contacts.keySet());
+        System.out.println(copyOfKeys);
+
+        // now we have sorted keys [Charlie Brown, Daffy Duck, Linus Van Pelt, Lucy Van Pelt, Maid Marion, Mickey Mouse, Minnie Mouse, Robin Hood]
 
     }
 }
