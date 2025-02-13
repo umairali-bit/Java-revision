@@ -36,5 +36,10 @@ public class MapViewMain {
 
             //Linus and I go way back, so of course I have info
         }
+        contacts.forEach((k,v) -> System.out.println(v));
+
+        keysView.remove("Daffy Duck");
+        System.out.println(keysView);
+        contacts.forEach((k,v) -> System.out.println(v));
     }
 }
