@@ -1,9 +1,6 @@
 package src.src.src.dev.lpa;
 
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Set;
-import java.util.TreeSet;
+import java.util.*;
 
 public class MapViewMain {
 
@@ -48,6 +45,17 @@ public class MapViewMain {
         System.out.println(copyOfKeys);
         contacts.forEach((k,v) -> System.out.println(v));
         //removed "Linus Van Pelt" from the copyOfKeys but not from the original map
+
+
+        // to retain deleted key from the original map
+        keysView.retainAll(List.of("Linus Van Pelt", "Charlie Brown", "Robin Hood", "Mickey Mouse"));
+        System.out.println(keysView);
+        contacts.forEach((k,v) -> System.out.println(v));
+
+        
+
+
+
 
 
     }
