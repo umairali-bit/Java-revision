@@ -41,5 +41,14 @@ public class MapViewMain {
         keysView.remove("Daffy Duck");
         System.out.println(keysView);
         contacts.forEach((k,v) -> System.out.println(v));
+        // removed "Daffy duck" from the keysView and from the original map
+
+
+        copyOfKeys.remove("Linus Van Pelt");
+        System.out.println(copyOfKeys);
+        contacts.forEach((k,v) -> System.out.println(v));
+        //removed "Linus Van Pelt" from the copyOfKeys but not from the original map
+
+
     }
 }
