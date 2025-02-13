@@ -64,8 +64,9 @@ public class MapViewMain {
         ContactData.getData("phone").forEach(c -> contacts.put(c.getName(),c ));
         System.out.println(keysView);
 
-
-
+        // to print the values of a set
+        var values = contacts.values();
+        values.forEach(System.out::println);
 
 
 
