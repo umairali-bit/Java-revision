@@ -73,7 +73,10 @@ public class MapViewMain {
         System.out.println(keysView);
         contacts.forEach((k,v) -> System.out.println(v));
 
-        
+        System.out.println("-".repeat(50));
+        List<Contact> list = new ArrayList<>(values);
+        list.sort(Comparator.comparing(Contact::getNameLastFirst));
+        list.forEach(c -> System.out.println(c.getNameLastFirst() + ": " + c));
 
 
 
