@@ -68,6 +68,11 @@ public class MapViewMain {
         var values = contacts.values();
         values.forEach(System.out::println);
 
+        // changing anything in values view will also change in the keysView
+        values.retainAll(ContactData.getData("email"));
+        System.out.println(keysView);
+        contacts.forEach((k,v) -> System.out.println(v));
+
 
 
 
