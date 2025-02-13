@@ -52,7 +52,19 @@ public class MapViewMain {
         System.out.println(keysView);
         contacts.forEach((k,v) -> System.out.println(v));
 
-        
+        keysView.clear();
+        System.out.println(contacts);
+
+        //we cannot use add to the Set, the following will give us an error
+       // keysView.add("Daffy Duck");
+      //  System.out.println(contacts);
+
+        //to add elements to our set
+        ContactData.getData("email").forEach(c -> contacts.put(c.getName(), c));
+        ContactData.getData("phone").forEach(c -> contacts.put(c.getName(),c ));
+        System.out.println(keysView);
+
+
 
 
 
