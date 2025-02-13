@@ -29,5 +29,12 @@ public class MapViewMain {
 
         // now we have sorted keys [Charlie Brown, Daffy Duck, Linus Van Pelt, Lucy Van Pelt, Maid Marion, Mickey Mouse, Minnie Mouse, Robin Hood]
 
+
+        //searching by the key
+        if (contacts.containsKey("Linus Van Pelt")) {
+            System.out.println("Linus and I go way back, so of course I have info");
+
+            //Linus and I go way back, so of course I have info
+        }
     }
 }
