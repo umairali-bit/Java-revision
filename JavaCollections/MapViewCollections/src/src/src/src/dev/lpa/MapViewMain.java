@@ -86,7 +86,29 @@ public class MapViewMain {
         values.forEach(System.out::println);
         keysView.forEach(System.out::println);
 
-        
+        //passing values collection to a HashSet
+        HashSet<Contact> set = new HashSet<>(values);
+        set.forEach(System.out::println);
+        if (set.size() < contacts.keySet().size()) {
+            System.out.println("Duplicate Values are in my map");
+        }
+
+
+        System.out.println("-".repeat(50));
+        //entrySet
+
+        var nodeSet = contacts.entrySet();
+        for (var node: nodeSet) {
+            System.out.println(nodeSet.getClass().getName());
+            if (!node.getKey().equals(node.getValue().getName())) {
+                System.out.println(nodeSet.getClass().getName());
+                System.out.println("Key doesnt match name: " + node.getKey() + ": " + node.getValue());
+            }
+        }
+
+
+
+
 
 
 
