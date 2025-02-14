@@ -3,6 +3,7 @@ package dev.lpa;
 
 import java.util.Arrays;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 public class AdventureGame {
@@ -67,6 +68,25 @@ public class AdventureGame {
 
         adventureMap.forEach((k,v) -> System.out.printf("%s:%s%n", k, v));
     }
+
+    private Map<Compass, String> loadDirections(String nextPlaces) {
+
+        Map<Compass, String> directions = new HashMap<>();
+        List<String> nextSteps = Arrays.asList(nextPlaces.split(","));
+        for (String nextPlace : nextSteps) {
+            String[] splits = nextPlace.split(":");
+            Compass compass = Compass.valueOf(splits[0].trim());
+            String destination = splits[1].trim();
+            directions.put(compass, destination);
+        }
+
+        nextSteps.replaceAll(String::trim);
+
+        return directions;
+
+    }
+
+
 
 
 }
