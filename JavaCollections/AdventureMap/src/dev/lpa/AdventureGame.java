@@ -1,6 +1,8 @@
 package dev.lpa;
 
 
+import java.util.HashMap;
+import java.util.Map;
 
 public class AdventureGame {
 
@@ -27,9 +29,23 @@ public class AdventureGame {
         }
       }
 
-      
+      /*
+    location record, a nested type record with description, and a map called nextPlaces, This method will be keyed by
+    the compass
+       */
+    private record Location (String description, Map<Compass, String> nextPlaces) {}
+
+
+    //two fields on the adventure game, 1 to keep track of my last location and 2 for board locations
+    private String lastPlace;
+    private Map<String, Location> adventureMap = new HashMap<>();
+
+
+
 
     }
+
+
 
 
 
