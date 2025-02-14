@@ -1,6 +1,7 @@
 package dev.lpa;
 
 
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -43,9 +44,31 @@ public class AdventureGame {
     public AdventureGame() {
     }
 
+    //to have the players the ability to customize the map
     public AdventureGame(String customLocations) {
-        
     }
+
+    private void loadLocations(String data) {
+
+        for (String s : data.split("\\R")) { //splitting the text block by each line, by escape sequence
+
+            String[] parts = s.split(",", 3); //splitting the line by , and in 3 parts
+
+            //this part will contain all the data after the second comma, and it will include commas if any
+            Arrays.asList(parts).replaceAll(String::trim);//getting rid of any white spaces
+
+            //creating each Location record, I created a nextPlaces map.
+
+            Map <Compass, String> nextPlaces = loadDirections(parts[2]);
+            Location location = new Location(parts[1], nextPlaces);
+            adventureMap.put(parts[0], location);
+
+        }
+
+        adventureMap.forEach((k,v) -> System.out.printf("%s:%s%n", k, v));
+    }
+
+
 }
 
 
