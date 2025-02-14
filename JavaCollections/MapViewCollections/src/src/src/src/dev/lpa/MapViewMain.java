@@ -79,6 +79,19 @@ public class MapViewMain {
         list.forEach(c -> System.out.println(c.getNameLastFirst() + ": " + c));
 
 
+        // adding a duplicate key under a different keyName
+        System.out.println("-".repeat(50));
+        Contact first = list.get(0);
+        contacts.put(first.getNameLastFirst(), first);
+        values.forEach(System.out::println);
+        keysView.forEach(System.out::println);
+
+        
+
+
+
+
+
 
 
     }
