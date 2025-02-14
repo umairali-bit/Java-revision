@@ -40,10 +40,13 @@ public class AdventureGame {
     private String lastPlace;
     private Map<String, Location> adventureMap = new HashMap<>();
 
-
-
-
+    public AdventureGame() {
     }
+
+    public AdventureGame(String customLocations) {
+        
+    }
+}
 
 
 
