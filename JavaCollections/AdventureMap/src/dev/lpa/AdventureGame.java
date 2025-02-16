@@ -105,6 +105,22 @@ public class AdventureGame {
         System.out.print("Select Your Compass (Q to Quit) >> ");
     }
 
+    public void move (String direction) {
+
+        var nextPlaces = adventureMap.get(lastPlace).nextPlaces;
+        String nextPlace = null;
+
+        if ("ENSW".contains(direction)) {
+            nextPlace = nextPlaces.get(Compass.valueOf(direction));
+            if (nextPlace != null) {
+                play(nextPlace);
+            }
+        } else {
+            System.out.println("!! Invalid direction, try again!!");
+        }
+
+    }
+
 
 
 
