@@ -93,6 +93,21 @@ public class AdventureGame {
 
     }
 
+    private void visit (Location location) {
+
+        System.out.printf("*** You're standing %s *** %n", location.description);
+        System.out.println("\tFrom here, you can see:");
+
+        location.nextPlaces.forEach((k,v) -> {
+            System.out.printf("\t* A %s to the %s (%S) %n", v, k.getString(), k);
+        });
+
+        System.out.print("Select Your Compass (Q to Quit) >> ");
+    }
+
+
+
+
 
 
 
