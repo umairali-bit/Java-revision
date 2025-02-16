@@ -73,7 +73,7 @@ public class AdventureGame {
 
         }
 
-        adventureMap.forEach((k,v) -> System.out.printf("%s:%s%n", k, v));
+        //adventureMap.forEach((k,v) -> System.out.printf("%s:%s%n", k, v));
     }
 
     private Map<Compass, String> loadDirections(String nextPlaces) {
@@ -120,6 +120,25 @@ public class AdventureGame {
         }
 
     }
+
+
+    public void play (String location) {
+
+        if (adventureMap.containsKey(location)) {//.containsKey() to make sure that the location is present in the map
+
+            //retrieving the location from the adeventureMap, using the location key and assiging that to a local variable
+            Location next = adventureMap.get(location);
+
+            //setting the lastPlace field to the location key
+            lastPlace = location;
+            visit(next);
+
+
+        } else {
+            System.out.println(location + " is an invalid location");
+        }
+    }
+
 
 
 
