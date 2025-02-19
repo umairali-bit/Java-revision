@@ -14,8 +14,8 @@ public class Main {
                 cave,at the mouth of Tim's bat cave,E:ocean,W:forest,S:lake
                 """;
 
-        AdventureGame game = new AdventureGame();
-        game.play("road");
+        AdventureGame game = new AdventureGame(myLocations);
+        game.play("lake");
 
         Scanner scanner = new Scanner(System.in);
 
