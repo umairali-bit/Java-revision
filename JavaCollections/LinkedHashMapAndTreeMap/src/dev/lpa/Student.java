@@ -2,6 +2,7 @@ package dev.lpa;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 record Course (String courseId, String name, String subject) {}
@@ -49,4 +50,10 @@ public class Student {
         courseList.add(course);
     }
 
+    @Override
+    public String toString() {
+        String[] courseNames = new String[courseList.size()]; //add course names to the list
+        Arrays.setAll(courseNames, i -> courseList.get(i).name()); // to get the list of the courses
+        return "[%d] : %s".formatted(id, String.join(", ", courseNames));
+    }
 }
