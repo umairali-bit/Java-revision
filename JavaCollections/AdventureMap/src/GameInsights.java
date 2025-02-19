@@ -17,5 +17,12 @@ Continue to play until the user quits, perhaps using Q for quit.
 
 A bonus part of the challenge is to allow customizations to the board locations, as well as the next place directions.
 
+
+
+Lake is already in my map, but I want to customize it, first by describing it, naming it Lake Tim, and then adding two additional destinations from there, a cave to the north, and an ocean to the east.
+The cave and ocean will be additional board locations.
+Right now, from the lake, I can only go west to the forest, or south to the well house.
+
+
      */
 }
