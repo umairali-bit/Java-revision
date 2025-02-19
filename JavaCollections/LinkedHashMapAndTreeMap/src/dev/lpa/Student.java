@@ -14,14 +14,18 @@ record purchase (String courseId, int studentId, double price, int yr, int dayOf
 
 public class Student {
 
-    public static int lastId = 1;
+    public static int lastId = 10001;
+    public static int serialNo = 1;
 
     private String name;
     private int id;
     private List<Course> courseList;
-    private int serialNo;
+    private int serial;
 
-    
-
-
+    public Student(String name, List<Course> courseList) {
+        this.name = name;
+        this.courseList = courseList;
+        id = lastId++;
+        serial = serialNo++;
+    }
 }
