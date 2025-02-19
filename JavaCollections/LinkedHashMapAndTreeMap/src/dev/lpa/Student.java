@@ -44,4 +44,9 @@ public class Student {
     public int getId() {
         return id;
     }
+
+    public void addCourse (Course course) {
+        courseList.add(course);
+    }
+
 }
