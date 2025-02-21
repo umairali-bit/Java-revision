@@ -2,11 +2,16 @@ package dev.lpa;
 
 import java.time.LocalDate;
 import java.util.*;
+import java.util.concurrent.atomic.AtomicInteger;
+import java.util.function.Supplier;
 
 public class Main {
 
     private static Map<String, Purchase> purchases = new LinkedHashMap<>();
     private static NavigableMap<String, Student> students = new TreeMap<>();
+    private static final AtomicInteger counter = new AtomicInteger(0);
+    public static Supplier<Integer> generateSerialNumber = () -> counter.incrementAndGet();
+
 
 
     public static void main(String[] args) {
@@ -23,7 +28,10 @@ public class Main {
 
         purchases.forEach((key, value) -> System.out.println(key + ": " + value));
         System.out.println("------------------");
-        students.forEach((key, value) -> System.out.println(key + ": " + value));
+
+        students.forEach((key, value) -> System.out.println(generateSerialNumber.get() + ". " + key + ": " + value));
+
+
 
         NavigableMap<LocalDate,List<Purchase>> datedPurchases = new TreeMap<>();
 
