@@ -25,8 +25,25 @@ public class Main {
         System.out.println("------------------");
         students.forEach((key, value) -> System.out.println(key + ": " + value));
 
+        NavigableMap<LocalDate,List<Purchase>> datedPurchases = new TreeMap<>();
 
-        
+        for (Purchase p : purchases.values()) {
+            datedPurchases.compute(p.purchaseDate(),
+                    (pdate, plist) -> {
+                        List<Purchase> list =
+                                (plist == null) ? new ArrayList<>() : plist;
+                        list.add(p);
+                        return list;
+
+                    });
+
+
+        }
+        datedPurchases.forEach((key, value) -> System.out.println(key + ": " + value));
+
+
+
+
 
     }
 
