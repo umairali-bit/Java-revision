@@ -84,8 +84,29 @@ public class Main {
 
             LocalDate prevDate = datedPurchases.lowerKey(lastDate);
             previousEntry = datedPurchases.lowerEntry(lastDate);
-            lastDate = prevDate;
+            lastDate = prevDate; // tbis will give the result in descending order.
         }
+
+        //reversing the order
+        System.out.println("-".repeat(50));
+        var reversed = datedPurchases.descendingMap();
+       // System.out.println(reserved);
+        LocalDate firstDate = reversed.firstKey();
+        var nextEntry = reversed.firstEntry();
+
+        while (nextEntry != null) {
+            List<Purchase> lastDaysData = nextEntry.getValue();
+            System.out.println(firstDate + " purchases : " + lastDaysData.size());
+
+            LocalDate nextDate = reversed.higherKey(firstDate);
+            nextEntry = reversed.higherEntry(firstDate);
+            firstDate = nextDate;
+        }
+
+
+
+
+
 
 
 
