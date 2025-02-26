@@ -62,6 +62,14 @@ public class Main {
         Map<LocalDate,List<Purchase>> week1Purchases = datedPurchases.headMap(week1);
         Map<LocalDate, List<Purchase>> week2Purchases = datedPurchases.tailMap(week1);
 
+        System.out.println("-".repeat(50));
+        week1Purchases.forEach((key, value) -> System.out.println(key + ": " + value));
+
+        System.out.println("-".repeat(50));
+        week2Purchases.forEach((key, value) -> System.out.println(key + ": " + value));
+
+
+
 
 
 
