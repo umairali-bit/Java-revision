@@ -72,6 +72,18 @@ public class Main {
         displayStats(1, week1Purchases);
         displayStats(2, week2Purchases);
 
+        System.out.println("-".repeat(50));
+        LocalDate lastDate = datedPurchases.lastKey();
+        //System.out.println(lastDate);
+        var previousEntry = datedPurchases.lastEntry();
+        //System.out.println(previousEntry);
+
+        List<Purchase> lastDaysData = previousEntry.getValue();
+        System.out.println(lastDate + " purchases : " + lastDaysData.size());
+
+
+
+
 
 
     }
