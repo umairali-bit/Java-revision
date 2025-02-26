@@ -69,9 +69,8 @@ public class Main {
         week2Purchases.forEach((key, value) -> System.out.println(key + ": " + value));
 
 
-
-
-
+        displayStats(1, week1Purchases);
+        displayStats(2, week2Purchases);
 
 
 
@@ -96,4 +95,28 @@ public class Main {
 
     }
 
+    //how many of each course were sold for each week
+    private static void displayStats (int period,
+                                      Map<LocalDate, List<Purchase>> periodData) {
+
+        System.out.println("-".repeat(50));
+
+        Map<String, Integer> weeklyCounts = new TreeMap<>();
+        periodData.forEach((key, value) -> {
+            System.out.println(key + ": " + value);
+
+            for (Purchase p : value) {
+                weeklyCounts.merge(p.courseId(),1,(prev, current) -> {
+                    return prev + current;
+                });
+            }
+
+        });
+
+        System.out.printf("Week %d Purchase = %s%n",period, weeklyCounts );
+
+
+
+
+    }
 }
