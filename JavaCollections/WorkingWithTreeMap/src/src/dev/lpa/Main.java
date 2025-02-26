@@ -59,7 +59,8 @@ public class Main {
 
         LocalDate firstDay = LocalDate.ofYearDay(currentYear, 1);
         LocalDate week1 = firstDay.plusDays(7);
-        
+        Map<LocalDate,List<Purchase>> week1Purchases = datedPurchases.headMap(week1);
+        Map<LocalDate, List<Purchase>> week2Purchases = datedPurchases.tailMap(week1);
 
 
 
