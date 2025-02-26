@@ -78,9 +78,14 @@ public class Main {
         var previousEntry = datedPurchases.lastEntry();
         //System.out.println(previousEntry);
 
-        List<Purchase> lastDaysData = previousEntry.getValue();
-        System.out.println(lastDate + " purchases : " + lastDaysData.size());
+        while (previousEntry != null) {
+            List<Purchase> lastDaysData = previousEntry.getValue();
+            System.out.println(lastDate + " purchases : " + lastDaysData.size());
 
+            LocalDate prevDate = datedPurchases.lowerKey(lastDate);
+            previousEntry = datedPurchases.lowerEntry(lastDate);
+            lastDate = prevDate;
+        }
 
 
 
