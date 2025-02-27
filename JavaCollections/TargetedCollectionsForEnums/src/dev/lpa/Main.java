@@ -40,6 +40,10 @@ public class Main {
         System.out.println("-".repeat(30));
         anotherWay.forEach(System.out::println);
 
+        //gives the range between days
+        Set<WeekDay> businessDays = EnumSet.range(WeekDay.MONDAY, WeekDay.FRIDAY);
+        System.out.println("-".repeat(30));
+        businessDays.forEach(System.out::println);
 
 
 
