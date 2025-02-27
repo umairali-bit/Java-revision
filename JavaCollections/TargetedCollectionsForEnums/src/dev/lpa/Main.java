@@ -14,12 +14,13 @@ public class Main {
         //assgining workdays to different employees
         //setting up the list of the days that ann works
 
-        List<WeekDay> annsWorkDays = new ArrayList<>(List.of(WeekDay.MONDAY,WeekDay.TUESDAY,WeekDay.WEDNESDAY,
-                                        WeekDay.THURSDAY, WeekDay.FRIDAY, WeekDay.SATURDAY, WeekDay.SUNDAY));
+        List<WeekDay> annsWorkDays = new ArrayList<>(List.of(WeekDay.MONDAY,WeekDay.TUESDAY,
+                                        WeekDay.THURSDAY, WeekDay.FRIDAY));
 
         //factory method to create a set of Ann's workdays.
         var annsDaysSet = EnumSet.copyOf(annsWorkDays);
         System.out.println(annsDaysSet.getClass().getSimpleName());
+        annsDaysSet.forEach(System.out::println);
 
 
 
