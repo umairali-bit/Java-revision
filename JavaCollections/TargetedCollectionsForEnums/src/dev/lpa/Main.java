@@ -3,6 +3,7 @@ package dev.lpa;
 import java.util.ArrayList;
 import java.util.EnumSet;
 import java.util.List;
+import java.util.Set;
 
 public class Main {
 
@@ -26,7 +27,11 @@ public class Main {
         var allDaysSet = EnumSet.allOf(WeekDay.class);
         System.out.println("-".repeat(30));
         allDaysSet.forEach(System.out::println);
-        
+
+        //factory method complementof will give the difference between annsDaySet and Weekdays
+        Set<WeekDay> newPersonDays = EnumSet.complementOf(annsDaysSet);
+        System.out.println("-".repeat(30));
+        newPersonDays.forEach(System.out::println);
 
 
 
