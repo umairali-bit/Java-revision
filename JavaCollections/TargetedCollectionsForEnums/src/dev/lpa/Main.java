@@ -1,6 +1,7 @@
 package dev.lpa;
 
 import java.util.ArrayList;
+import java.util.EnumSet;
 import java.util.List;
 
 public class Main {
@@ -16,8 +17,11 @@ public class Main {
         List<WeekDay> annsWorkDays = new ArrayList<>(List.of(WeekDay.MONDAY,WeekDay.TUESDAY,WeekDay.WEDNESDAY,
                                         WeekDay.THURSDAY, WeekDay.FRIDAY, WeekDay.SATURDAY, WeekDay.SUNDAY));
 
+        //factory method to create a set of Ann's workdays.
+        var annsDaysSet = EnumSet.copyOf(annsWorkDays);
+        System.out.println(annsDaysSet.getClass().getSimpleName());
 
-      
+
 
 
 
