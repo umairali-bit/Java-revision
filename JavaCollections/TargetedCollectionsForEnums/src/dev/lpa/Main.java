@@ -22,7 +22,11 @@ public class Main {
         System.out.println(annsDaysSet.getClass().getSimpleName());
         annsDaysSet.forEach(System.out::println);
 
-
+        //factory method allof
+        var allDaysSet = EnumSet.allOf(WeekDay.class);
+        System.out.println("-".repeat(30));
+        allDaysSet.forEach(System.out::println);
+        
 
 
 
