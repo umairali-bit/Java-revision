@@ -1,11 +1,25 @@
 package dev.lpa;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Main {
 
-    enum WeekDay {SUNDAY, MONDAY, TUESDAY, WEDNESDAY, THURSDAY, FRIDAY}
+    enum WeekDay {SUNDAY, MONDAY, TUESDAY, WEDNESDAY, THURSDAY, FRIDAY, SATURDAY}
 
 
     public static void main(String[] args) {
+
+        //assgining workdays to different employees
+        //setting up the list of the days that ann works
+
+        List<WeekDay> annsWorkDays = new ArrayList<>(List.of(WeekDay.MONDAY,WeekDay.TUESDAY,WeekDay.WEDNESDAY,
+                                        WeekDay.THURSDAY, WeekDay.FRIDAY, WeekDay.SATURDAY, WeekDay.SUNDAY));
+
+
+      
+
+
 
     }
 }
