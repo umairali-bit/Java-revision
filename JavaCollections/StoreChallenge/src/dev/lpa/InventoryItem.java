@@ -1,5 +1,7 @@
 package dev.lpa;
 
+import java.sql.SQLOutput;
+
 public class InventoryItem {
 
 //private fields
@@ -50,9 +52,38 @@ public class InventoryItem {
     }
 
 
-    //this method will be called when a shopper removes an item from their cart
+
+    /*
+    releaseItem() will be called when a shopper removes an item from their cart
+
+    this will also be called during the automated process of abandoning the carts, removing products from those carts
+    and unreserving their quantity.
+     */
+
     public void releaseItem (int qty) {
         qtyReserved -= qty;
     }
+
+
+    //sellItem() will be called during the checkout process
+    public boolean sellItem (int qty) {
+
+        if (qtyTotal > qty) {
+            qtyTotal -= qty;
+            qtyReserved -= qty;
+            if (qtyTotal <= qtyLow) {
+                placeInventoryOrder();
+            }
+            return true;
+        }
+        return false;
+    }
+
+    private void placeInventoryOrder() {
+
+        System.out.printf("Ordering qty %d : %s%n", qtyReorder, product);
+    }
+
+
 
 }
