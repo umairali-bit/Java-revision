@@ -19,4 +19,20 @@ public class InventoryItem {
         this.qtyLow = qtyLow;
         this.qtyReorder = qtyTotal; //this is the reorder amount.
     }
+
+    public void setProduct(Product product) {
+        this.product = product;
+    }
+
+    public void setPrice(double price) {
+        this.price = price;
+    }
+
+    public Product getProduct() {
+        return product;
+    }
+
+    public double getPrice() {
+        return price;
+    }
 }
