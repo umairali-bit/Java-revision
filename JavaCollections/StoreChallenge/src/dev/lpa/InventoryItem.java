@@ -12,7 +12,11 @@ public class InventoryItem {
     private int qtyLow; //this has to be reached to order more products.
 
 
-    
-
-
+    public InventoryItem(Product product, double price, int qtyTotal, int qtyLow) {
+        this.product = product;
+        this.price = price;
+        this.qtyTotal = qtyTotal;
+        this.qtyLow = qtyLow;
+        this.qtyReorder = qtyTotal; //this is the reorder amount.
+    }
 }
