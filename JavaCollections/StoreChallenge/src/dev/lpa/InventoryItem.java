@@ -47,8 +47,12 @@ public class InventoryItem {
         }
         //if theres not enough inventory for the shopper to buy, return false
         return false;
+    }
 
 
+    //this method will be called when a shopper removes an item from their cart
+    public void releaseItem (int qty) {
+        qtyReserved -= qty;
     }
 
 }
