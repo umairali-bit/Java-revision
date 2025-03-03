@@ -41,5 +41,31 @@ public class Cart {
         this.cartDate = cartDate;
     }
 
-    
+    public void addItem (InventoryItem item, int qty) {
+
+        /*This code, if the items in the map, will add qty to the current qty, but if its not in the map,it will
+        insert a new entry using the qty
+         */
+        products.merge(item.getProduct().sku(),qty,Integer::sum);
+
+        if(!item.reservedItem(qty)) {
+            System.out.println("Ouch, something went wrong, could not add item");
+        }
+
+    }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
