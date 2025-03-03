@@ -77,6 +77,32 @@ public class Cart {
         }
         item.releaseItem(qty);// changes the reserve amount with the qty from above
     }
+
+    public void printSalesSlip(Map<String, InventoryItem> inventory) {
+        double total = 0;
+        System.out.println("-".repeat(50));
+        System.out.println("Thank you for your sale: ");
+        for (var cartItem: products.entrySet()) {
+            var item = inventory.get(cartItem.getKey());
+            int qty = (cartItem.getValue());
+            double itemizedPrice = (item.getPrice() * qty);
+            total += itemizedPrice;
+            System.out.printf("\t%s %-10s (%d)@ $%.2f = $%.2f%n",
+                    cartItem.getKey(), item.getProduct().name(), qty, item.getPrice(), itemizedPrice);
+        }
+        System.out.printf("Total Sale: $%.2f%n", total);
+        System.out.println("-".repeat(50));
+
+    }
+
+    @Override
+    public String toString() {
+        return "Cart{" +
+                "id=" + id +
+                ", cartDate=" + cartDate +
+                ", products=" + products +
+                '}';
+    }
 }
 
 
