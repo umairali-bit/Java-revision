@@ -24,4 +24,22 @@ public class Cart {
     public Cart(int id) {
         this.id = id;
     }
+
+    public int getId() {
+        return id;
+    }
+
+    public LocalDate getCartDate() {
+        return cartDate;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public void setCartDate(LocalDate cartDate) {
+        this.cartDate = cartDate;
+    }
+
+    
 }
