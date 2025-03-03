@@ -20,4 +20,8 @@ public class Cart {
         cartDate = LocalDate.now().minusDays(days);
         products = new HashMap<>();
     }
+
+    public Cart(int id) {
+        this.id = id;
+    }
 }
