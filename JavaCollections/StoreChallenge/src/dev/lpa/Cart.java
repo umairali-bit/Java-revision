@@ -53,6 +53,30 @@ public class Cart {
         }
 
     }
+
+    public void removeItem(InventoryItem item, int qty) {
+
+        //this code works if the quantity in the cart, is less than or equal to the qty passed
+
+        int current = products.get(item.getProduct().sku());
+        if (current <= qty) {
+            qty = current;
+            products.remove(item.getProduct().sku());
+            System.out.printf("Item [%s] removed from the basket%n", item.getProduct().name());
+
+            /*
+            if a shopper had 5 apples, he might want to put back 2, for some reason,
+            this requires an else statement and a merge.
+            Instead of adding the values, oldVal is subtracted from newVal
+            and then print out how many of the products were removed
+             */
+
+        } else {
+            products.merge(item.getProduct().sku(),qty, (oldVal, newVal) -> oldVal - newVal);
+            System.out.printf("%d [%s]s removed%n", qty, item.getProduct().name());
+        }
+        item.releaseItem(qty);// changes the reserve amount with the qty from above
+    }
 }
 
 
