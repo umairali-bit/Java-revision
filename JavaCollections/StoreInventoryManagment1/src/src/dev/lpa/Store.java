@@ -120,6 +120,15 @@ public class Store {
         cart1.addItem(item, 6);
 
         System.out.println(cart1);
+        
+        cart1.addItem(aisleInventory.get(Category.PRODUCE).get("pear"),5);
+        cart1.addItem(aisleInventory.get(Category.BEVERAGE).get("coffee"), 1);
+
+        cart1.removeItem(aisleInventory.get(Category.PRODUCE).get("pear"), 2);
+        System.out.println(cart1);
+
+
+        System.out.println(cart1);
     }
 
 
