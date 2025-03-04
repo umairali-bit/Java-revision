@@ -79,7 +79,13 @@ public class Store {
         inventory.values().forEach(System.out::println);
     }
 
-    
+    private void listProductsByCategory() {
+        aisleInventory.keySet().forEach(k -> {
+            System.out.println("-------\n" + k + "\n--------");
+            aisleInventory.get(k).keySet().forEach(System.out::println);
+        });
+
+    }
 
 
 }
