@@ -16,7 +16,9 @@ public class Store {
 
     public static void main(String[] args) {
 
-        
+        Store myStore = new Store();
+        myStore.stockStore();
+        myStore.listInventory();
 
 
 
