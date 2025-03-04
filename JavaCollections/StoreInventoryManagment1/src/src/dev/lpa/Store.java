@@ -56,11 +56,30 @@ public class Store {
     }
 
 
+    private void stockAisles() {
+
+        aisleInventory = new EnumMap<>(Category.class);
+        for (InventoryItem item : inventory.values()) {
+            Category aisle = item.getProduct().category();
+
+            Map<String, InventoryItem> productMap = aisleInventory.get(aisle);
+            if (productMap == null) {
+                productMap = new HashMap<>();
+            }
+            productMap.put(item.getProduct().name(), item);
+            aisleInventory.putIfAbsent(aisle, productMap);
+        }
+
+    }
+
+
     private void listInventory() {
 
         System.out.println("-".repeat(50));
         inventory.values().forEach(System.out::println);
     }
+
+    
 
 
 }
