@@ -20,6 +20,9 @@ public class Store {
         myStore.stockStore();
         myStore.listInventory();
 
+        myStore.stockAisles();
+        myStore.listProductsByCategory();
+
 
 
     }
