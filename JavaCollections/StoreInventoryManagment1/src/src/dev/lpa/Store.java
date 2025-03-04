@@ -25,6 +25,8 @@ public class Store {
 
         myStore.manageStoreCarts();
 
+        myStore.listProductsByCategory( false,true);
+
 
 
     }
@@ -85,9 +87,23 @@ public class Store {
     }
 
     private void listProductsByCategory() {
+
+
+        listProductsByCategory(true, false);
+
+    }
+
+
+    //to printout inventory by category then product, but with the inventory details.
+    private void listProductsByCategory(boolean includeHeader, boolean includeDetail) {
         aisleInventory.keySet().forEach(k -> {
-            System.out.println("-------\n" + k + "\n--------");
-            aisleInventory.get(k).keySet().forEach(System.out::println);
+            if (includeHeader) System.out.println("-------\n" + k + "\n--------");
+            if (!includeDetail) {
+                aisleInventory.get(k).keySet().forEach(System.out::println);
+            } else {
+                aisleInventory.get(k).values().forEach(System.out::println);
+            }
+
         });
 
     }
