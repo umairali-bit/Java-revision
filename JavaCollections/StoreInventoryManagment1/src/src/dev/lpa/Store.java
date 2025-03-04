@@ -16,11 +16,13 @@ public class Store {
 
     public static void main(String[] args) {
 
+        
+
 
 
     }
 
-    //setting up some products, which be stocked in the store ans aisles
+    //setting up some products, which be stocked in the store an aisles
     private void stockStore () {
 
         //instantiating inventory field to a new HashMap
@@ -49,11 +51,15 @@ public class Store {
 
         products.forEach(p-> inventory.put(p.sku(), new InventoryItem(p,random.nextDouble(0,1.25),
                 1000, 5)));
-        
-
-
-
     }
+
+
+    private void listInventory() {
+
+        System.out.println("-".repeat(50));
+        inventory.values().forEach(System.out::println);
+    }
+
 
 }
 
