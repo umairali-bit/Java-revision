@@ -129,6 +129,12 @@ public class Store {
 
 
         System.out.println(cart1);
+
+
+        //online cart (virtual cart)
+        Cart cart2 = new Cart(Cart.CartType.VIRTUAL, 1);
+        carts.add(cart2);
+        cart2.addItem(inventory.get("L103"), 20);
     }
 
 
