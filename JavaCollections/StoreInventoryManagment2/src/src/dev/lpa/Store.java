@@ -156,7 +156,7 @@ public class Store {
 
 
         for (var cartItem: cart.getProducts().entrySet() ) {
-            
+
         }
         return true;
     }

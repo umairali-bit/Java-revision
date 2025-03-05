@@ -41,6 +41,10 @@ public class Cart {
         this.cartDate = cartDate;
     }
 
+    public Map<String, Integer> getProducts() {
+        return products;
+    }
+
     public void addItem (InventoryItem item, int qty) {
 
         /*This code, if the items in the map, will add qty to the current qty, but if its not in the map,it will
