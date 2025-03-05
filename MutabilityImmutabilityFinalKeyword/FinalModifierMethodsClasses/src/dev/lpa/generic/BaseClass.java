@@ -12,5 +12,17 @@ public class BaseClass {
         System.out.println("[BaseClass.recommendedMethod]: Best way to do it");
         optionalMethod();
         mandatoryMethod();
+
     }
+
+    /*
+    optional() will be protected, meaning only classes that can call it are subclasses or classes in the same
+    package
+     */
+    protected void optionalMethod() {
+        System.out.println("[BaseClass.recommendedMethod]: Customize Optional Method");
+    }
+
+
+
 }
