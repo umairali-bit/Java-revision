@@ -137,6 +137,28 @@ public class Store {
         cart2.addItem(inventory.get("L103"), 20);
         cart2.addItem(inventory.get("B100"), 10);
         System.out.println(cart2);
+
+        Cart cart3 = new Cart(Cart.CartType.VIRTUAL, 0);
+        carts.add(cart3);
+        cart3.addItem(inventory.get("R777"), 998);
+        System.out.println(cart3); // this should execute low threshold code, setting this up starting line 145
+        if (!checkOutCart(cart3)) {
+            System.out.println("Something went wrong, could not check out");
+
+        }
+
+
+
+    }
+
+
+    private boolean checkOutCart (Cart cart) {
+
+
+        for (var cartItem: cart.getProducts().entrySet() ) {
+            
+        }
+        return true;
     }
 
 
