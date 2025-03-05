@@ -160,9 +160,10 @@ public class Store {
             var item = inventory.get(cartItem.getKey());
             int qty = cartItem.getValue();
             if(!item.sellItem(qty)) return false;
-
-
         }
+
+        cart.printSalesSlip(inventory);
+        carts.remove(cart);
         return true;
     }
 
