@@ -24,5 +24,15 @@ public class BaseClass {
     }
 
 
+    /*
+    mandatory() will be private because it shouldnt be altered or override by subclasses
+     */
+
+    private void mandatoryMethod() {
+        System.out.println("[BaseClass.recommendedMethod]: NON-NEGOTIABLE");
+
+    }
+
+
 
 }
