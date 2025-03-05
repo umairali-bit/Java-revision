@@ -147,6 +147,11 @@ public class Store {
 
         }
 
+        Cart cart4 = new Cart(Cart.CartType.PHYSICAL, 0);
+        carts.add(cart4);
+        cart4.addItem(inventory.get("BC99"), 1);
+        System.out.println(cart4);
+
 
 
     }
