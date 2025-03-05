@@ -27,8 +27,7 @@ public class Store {
 
         myStore.listProductsByCategory( false,true);
 
-
-
+        myStore.carts.forEach(System.out::println);
     }
 
     //setting up some products, which be stocked in the store an aisles
@@ -86,11 +85,10 @@ public class Store {
         inventory.values().forEach(System.out::println);
     }
 
+
+
     private void listProductsByCategory() {
-
-
         listProductsByCategory(true, false);
-
     }
 
 
@@ -103,9 +101,7 @@ public class Store {
             } else {
                 aisleInventory.get(k).values().forEach(System.out::println);
             }
-
         });
-
     }
 
 
@@ -127,10 +123,6 @@ public class Store {
         cart1.removeItem(aisleInventory.get(Category.PRODUCE).get("pear"), 2);
         System.out.println(cart1);
 
-
-        System.out.println(cart1);
-
-
         //online cart (virtual cart)
         Cart cart2 = new Cart(Cart.CartType.VIRTUAL, 1);
         carts.add(cart2);
@@ -151,9 +143,6 @@ public class Store {
         carts.add(cart4);
         cart4.addItem(inventory.get("BC99"), 1);
         System.out.println(cart4);
-
-
-
     }
 
 
@@ -161,7 +150,6 @@ public class Store {
 
 
         for (var cartItem: cart.getProducts().entrySet() ) {
-
             var item = inventory.get(cartItem.getKey());
             int qty = cartItem.getValue();
             if(!item.sellItem(qty)) return false;
