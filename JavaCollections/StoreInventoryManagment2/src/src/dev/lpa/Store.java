@@ -157,6 +157,11 @@ public class Store {
 
         for (var cartItem: cart.getProducts().entrySet() ) {
 
+            var item = inventory.get(cartItem.getKey());
+            int qty = cartItem.getValue();
+            if(!item.sellItem(qty)) return false;
+
+
         }
         return true;
     }
