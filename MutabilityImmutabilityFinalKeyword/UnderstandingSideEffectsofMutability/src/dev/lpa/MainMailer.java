@@ -56,7 +56,15 @@ public class MainMailer {
     //mailing a flyer to this population. remove suffixes before printing the name
     private static List<StringBuilder> standardizeNames (List<StringBuilder> list) {
 
-        
+        // setting up a new arraylist
+        List<StringBuilder> newList = new ArrayList<>();
+
+        //loop through the list passed as a method argument
+        for (var name: list) {
+
+        }
+
+        return newList;
     }
 
 
