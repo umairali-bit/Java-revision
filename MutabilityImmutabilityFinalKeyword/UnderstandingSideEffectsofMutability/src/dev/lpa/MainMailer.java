@@ -29,6 +29,10 @@ public class MainMailer {
 
         });
         System.out.println(counts);
+
+        //getting the number of Ann Jones Ph.Ds
+        StringBuilder annJonesPhd = new StringBuilder("Ann Jones Ph.D.");
+        System.out.println("There are " + counts.get(annJonesPhd) + " records for " + annJonesPhd);
     }
 
     //a static method that will create a random list of names
