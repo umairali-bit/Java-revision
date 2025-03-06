@@ -42,14 +42,24 @@ public class Main {
 
         System.out.println("-".repeat(50));
         StringBuilder tracker = new StringBuilder("Step 1 is abc");
-        Logger.logToConsole(tracker);
+        // Logger.logToConsole(tracker);//it clears StringBuilder after everything is printed out
+        Logger.logToConsole(tracker.toString());
         tracker.append(", Step 2 is xyz.");
-        Logger.logToConsole(tracker);
-        System.out.println("After logging, tracker = " + tracker); //it clears StringBuilder after everything is printed out
+        //Logger.logToConsole(tracker);//it clears StringBuilder after everything is printed out
+        Logger.logToConsole(tracker.toString());
+
+        System.out.println("After logging, tracker = " + tracker);
+
         /*
         03/06/25 11:11:08 : Step 1 is abc
         03/06/25 11:11:08 : , Step 2 is xyz.
         After logging, tracker =
+
+
+
+        03/06/25 11:15:19 : Step 1 is abc
+        03/06/25 11:15:19 : Step 1 is abc, Step 2 is xyz.
+        After logging, tracker = Step 1 is abc, Step 2 is xyz.
          */
 
 
