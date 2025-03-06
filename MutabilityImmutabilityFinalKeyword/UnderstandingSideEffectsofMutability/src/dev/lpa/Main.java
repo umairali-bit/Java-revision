@@ -2,6 +2,7 @@ package dev.lpa;
 
 import cosnumer.specific.ChildClass;
 import dev.lpa.generic.BaseClass;
+import external.util.Logger;
 
 public class Main {
 
@@ -36,6 +37,20 @@ public class Main {
         doXYZ(xArgument, 16, zArgument);
         System.out.println("After Method, xArgument: " + xArgument);
         System.out.println("After Method, zArgument: " + zArgument);
+
+
+
+        System.out.println("-".repeat(50));
+        StringBuilder tracker = new StringBuilder("Step 1 is abc");
+        Logger.logToConsole(tracker);
+        tracker.append(", Step 2 is xyz.");
+        Logger.logToConsole(tracker);
+        System.out.println("After logging, tracker = " + tracker); //it clears StringBuilder after everything is printed out
+        /*
+        03/06/25 11:11:08 : Step 1 is abc
+        03/06/25 11:11:08 : , Step 2 is xyz.
+        After logging, tracker =
+         */
 
 
     }
