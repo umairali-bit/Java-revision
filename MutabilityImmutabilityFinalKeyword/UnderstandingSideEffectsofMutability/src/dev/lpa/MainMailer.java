@@ -7,6 +7,8 @@ for each distinct name
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
+import java.util.TreeMap;
 
 public class MainMailer {
 
@@ -17,6 +19,16 @@ public class MainMailer {
 
         List<StringBuilder> population = getNames(names);
         System.out.println(population);
+
+        // setting up a map of the counts of duplicate names, the key will be a StringBuilder and the value is going
+        // to be an integer
+
+        Map<StringBuilder, Integer> counts = new TreeMap<>();
+        population.forEach(s-> {
+            counts.merge(s, 1, Integer::sum); //Lets us add a new name with a value of 1 or increment the value that already in the map
+
+        });
+        System.out.println(counts);
     }
 
     //a static method that will create a random list of names
