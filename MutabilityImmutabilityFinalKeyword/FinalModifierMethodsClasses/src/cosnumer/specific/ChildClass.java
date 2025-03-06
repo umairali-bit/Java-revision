@@ -18,5 +18,9 @@ public class ChildClass extends BaseClass {
 //        System.out.println("[Child:optionalMethod]: I will do things my way");
 //        optionalMethod();
 //    }
+
+    private void mandatoryMethod() {
+        System.out.println("[Child:optionalMethod]: My own important stuff");
+    }
 }
 
