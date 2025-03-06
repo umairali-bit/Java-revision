@@ -12,5 +12,11 @@ public class ChildClass extends BaseClass {
 
     }
 
+    @Override
+    public void recommendedMethod() {
+
+        System.out.println("[Child:optionalMethod]: I will do things my way");
+        optionalMethod();
+    }
 }
 
