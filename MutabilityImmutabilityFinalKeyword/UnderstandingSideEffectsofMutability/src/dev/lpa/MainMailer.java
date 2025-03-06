@@ -33,6 +33,10 @@ public class MainMailer {
         //getting the number of Ann Jones Ph.Ds
         StringBuilder annJonesPhd = new StringBuilder("Ann Jones Ph.D.");
         System.out.println("There are " + counts.get(annJonesPhd) + " records for " + annJonesPhd);
+
+
+       List<StringBuilder> cleanedNames = standardizeNames(population);
+       System.out.println(cleanedNames);
     }
 
     //a static method that will create a random list of names
@@ -61,7 +65,19 @@ public class MainMailer {
 
         //loop through the list passed as a method argument
         for (var name: list) {
+            //looping through possible suffixes
+            for (String suffix : new String[]{"Ph.D.","M.D."}) {
+                //a local variable to hold an index
+                int startIndex = -1;
+                //to check if the sufix is present. If its greater than -1, there is a matching suffix
+                if ((startIndex = name.indexOf(suffix)) > -1 ) {
+                    //replacing the suffix with an empty string
+                    name.replace(startIndex -1, startIndex + suffix.length(), "");
 
+                }
+            }
+            //adding names without the suffix to newList
+            newList.add(name);
         }
 
         return newList;
