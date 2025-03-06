@@ -53,5 +53,12 @@ public class MainMailer {
     }
 
 
+    //mailing a flyer to this population. remove suffixes before printing the name
+    private static List<StringBuilder> standardizeNames (List<StringBuilder> list) {
+
+        
+    }
+
+
 
 }
