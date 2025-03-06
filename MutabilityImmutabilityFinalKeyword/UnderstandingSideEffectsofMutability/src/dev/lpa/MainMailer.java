@@ -14,6 +14,9 @@ public class MainMailer {
 
         String[] names = {"Ann Jones", "Ann Jones Ph.D.", "Bob Jones M.D.", "Carol Jones", "Ed Green Ph.D.",
                             "Ed Green M.D", "Ed Black"};
+
+        List<StringBuilder> population = getNames(names);
+        System.out.println(population);
     }
 
     //a static method that will create a random list of names
@@ -21,6 +24,12 @@ public class MainMailer {
 
         List<StringBuilder> list = new ArrayList<>();
         int index = 3;
+        for (String name : names) {
+            for (int i =0; i < index; i++) {
+                list.add(new StringBuilder(name));
+            }
+            index++;
+        }
 
         return list;
 
