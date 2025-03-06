@@ -33,6 +33,22 @@ public class BaseClass {
 
     }
 
+    //creating three static()
+    public static void recommendedStatic() {
+
+        System.out.println("[BaseClass:recommendedStatic] BEST way to do it");
+        optionalStatic();
+        mandatoryStatic();
+
+    }
+
+    protected static void optionalStatic() {
+        System.out.println("[BaseClass:optionalStatic]: Optional");
+    }
+
+    private static void mandatoryStatic() {
+        System.out.println("[BaseClass:mandatoryStatic]: MANDATORY");
+    }
 
 
 }

@@ -18,5 +18,14 @@ public class Main {
         System.out.println("-".repeat(50));
         child.recommendedMethod();
 
+        System.out.println("-".repeat(50));
+        parent.recommendedStatic();
+        System.out.println("-".repeat(50));
+        childReferredToAsBase.recommendedStatic();
+        System.out.println("-".repeat(50));
+        child.recommendedStatic();
+
+
+
     }
 }
