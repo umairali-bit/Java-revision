@@ -8,7 +8,7 @@ public class BaseClass {
      */
 
     //to control the work flow on the class we have a public method
-    public void recommendedMethod() {
+    public final void recommendedMethod() {
         System.out.println("[BaseClass.recommendedMethod]: Best way to do it");
         optionalMethod();
         mandatoryMethod();
