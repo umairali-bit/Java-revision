@@ -10,8 +10,10 @@ public class Logger {
 
         //to get current date and time
         LocalDateTime dt = LocalDateTime.now();
-
+        System.out.printf("%1$tD %1$tT : %2$s%n", dt, message);
         
+
+
 
 
 
