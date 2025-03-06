@@ -26,6 +26,21 @@ public class Main {
         child.recommendedStatic();
 
 
+        System.out.println("-".repeat(50));
+        BaseClass.recommendedStatic();
+        ChildClass.recommendedStatic();
+
+        System.out.println("-".repeat(50));
+        String xArgument = "This is all I've got to say Section ";
+        doXYZ(xArgument, 16);
+
+
+    }
+
+    private static void doXYZ(String x, int y) {
+
+        final String c = x + y;
+        System.out.println("c = " + c);
 
     }
 }
