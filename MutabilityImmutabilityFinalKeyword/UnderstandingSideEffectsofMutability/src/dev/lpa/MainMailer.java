@@ -37,6 +37,27 @@ public class MainMailer {
 
        List<StringBuilder> cleanedNames = standardizeNames(population);
        System.out.println(cleanedNames);
+
+        System.out.println("There are " + counts.get(annJonesPhd) + " records for " + annJonesPhd); // this will give null
+
+        System.out.println(counts); // all suffixes are gone
+
+        StringBuilder annJones = new StringBuilder("Ann Jones");
+        System.out.println("There are " + counts.get(annJones) + " records for " + annJones); // it will give 4 records
+
+        System.out.println("-".repeat(50));
+        counts.forEach((k,v) -> System.out.println(k + " : " + v)); //to get each entry and each count
+
+        //lets loop through the keySet
+        System.out.println("-".repeat(50));
+        counts.keySet().forEach((k) -> System.out.println(k + " : " + counts.get(k)));
+        
+
+
+
+
+
+
     }
 
     //a static method that will create a random list of names
