@@ -20,6 +20,11 @@ public class Main {
         john.setKids(new Person[]{jane, jim, joe});
         System.out.println(john);
 
+        //john is not immutable
+        john.setName("Jacob");
+        john.setKids(new Person[]{new Person(), new Person()});
+        System.out.println(john);
+
     }
 
 
