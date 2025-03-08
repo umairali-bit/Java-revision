@@ -28,4 +28,8 @@ public record PersonRecord(String name, String dob, PersonRecord[] kids) {
         return name + ", dob = " + dob + ", kids = " + kidString;
     }
 
+    @Override
+    public PersonRecord[] kids() {
+        return kids == null ? null : Arrays.copyOf(kids, kids.length);
+    }
 }

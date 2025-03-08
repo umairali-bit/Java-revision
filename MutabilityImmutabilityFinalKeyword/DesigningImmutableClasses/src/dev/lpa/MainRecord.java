@@ -23,6 +23,8 @@ public class MainRecord {
         kids[1] = new PersonRecord("Ann", "04/04/1936");
         System.out.println(johnCopy);// John, dob = o4/04/1910, kids = Jim , Ann ,  ,  ,  ,  ,  ,  ,  ,  ,  ,  ,  ,  ,  ,  ,  ,  ,  ,
 
+        johnsKids[0] = new PersonRecord("Ann", "04/04/1936");
+        System.out.println(john);
 
 
     }
