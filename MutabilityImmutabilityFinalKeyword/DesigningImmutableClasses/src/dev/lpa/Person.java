@@ -35,14 +35,6 @@ public class Person {
         return kids;
     }
 
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public void setDob(String dob) {
-        this.dob = dob;
-    }
-
     public void setKids(Person[] kids) {
         this.kids = kids;
     }
