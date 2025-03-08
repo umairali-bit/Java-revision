@@ -19,6 +19,10 @@ public class Person {
         this.kids = kids;
     }
 
+    public Person(String name, String dob) {
+        this(name, dob, null);
+    }
+
     public String getName() {
         return name;
     }
