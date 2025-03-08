@@ -50,7 +50,7 @@ public class Main {
         john.setKids(kids);
         System.out.println(john);// John, dob = o4/04/1910, kids = n/a
 
-        
+
 
 
 
