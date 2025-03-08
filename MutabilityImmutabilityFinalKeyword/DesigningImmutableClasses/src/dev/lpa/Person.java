@@ -12,6 +12,13 @@ public class Person {
     private String dob;
     private Person[] kids;
 
+
+    public Person(String name, String dob, Person[] kids) {
+        this.name = name;
+        this.dob = dob;
+        this.kids = kids;
+    }
+
     public String getName() {
         return name;
     }
