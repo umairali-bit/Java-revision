@@ -35,6 +35,36 @@ public class Main {
         Person john = new Person("John", "o4/04/1910", johnsKids);
         System.out.println(john);
 
+        //adding a person to john
+        john.setKids(new Person[]{new Person("Ann", "04/04/1930")});
+        System.out.println(john);//John, dob = o4/04/1910, kids = Ann -> completely changed
+
+        Person[] kids = john.getKids();
+        kids[0] = jim;
+        System.out.println(john); //John, dob = o4/04/1910, kids = Jim -> we dont want that
+
+        //assigning the variable kids to null
+        kids = null;
+        System.out.println(john);//John, dob = o4/04/1910, kids = Jim
+
+        john.setKids(kids);
+        System.out.println(john);// John, dob = o4/04/1910, kids = n/a
+
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
     }
