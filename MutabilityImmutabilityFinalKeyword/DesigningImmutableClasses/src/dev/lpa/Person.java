@@ -50,7 +50,7 @@ public class Person {
             name. Then the join method on String has been used joining all the kids names by comma
              */
             Arrays.setAll(names, i -> names[i] = kids[i] == null ? "" : kids[i].name);
-            kidString = String.join(",", names);
+            kidString = String.join(" , ", names);
 
         }
         return name + ", dob = " + dob + ", kids = " + kidString;
