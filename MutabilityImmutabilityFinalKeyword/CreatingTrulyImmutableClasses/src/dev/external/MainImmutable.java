@@ -1,6 +1,7 @@
 package dev.external;
 
 import dev.external.domain.LivingPerson;
+import dev.hacker.PersonOfInterest;
 import dev.lpa.Person;
 import dev.lpa.PersonImmutable;
 
@@ -34,6 +35,17 @@ public class MainImmutable {
         LivingPerson anne = new LivingPerson("Ann", null);
         johnLiving.addKid(anne);
         System.out.println(johnLiving);
+
+        PersonOfInterest johnCopy = new PersonOfInterest(john);
+        System.out.println(johnCopy);
+
+        kids = johnCopy.getKids();
+        kids[1] = anne;
+        System.out.println(johnCopy);//John, dob = o4/04/1910, kids = Jane , Ann , Joe
+        System.out.println(john);//John, dob = o4/04/1910, kids = Jane , Ann , Joe
+
+
+
 
 
     }
