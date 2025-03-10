@@ -16,7 +16,7 @@ public class PersonImmutable {
     public PersonImmutable(String name, String dob, PersonImmutable[] kids) {
         this.name = name;
         this.dob = dob;
-        this.kids = kids;
+        this.kids = kids == null ? null : Arrays.copyOf(kids, kids.length);
     }
 
     public PersonImmutable(String name, String dob) {
@@ -32,7 +32,7 @@ public class PersonImmutable {
     }
 
     public PersonImmutable[] getKids() {
-        return kids;
+        return kids == null ? null : Arrays.copyOf(kids, kids.length);
     }
 
 
