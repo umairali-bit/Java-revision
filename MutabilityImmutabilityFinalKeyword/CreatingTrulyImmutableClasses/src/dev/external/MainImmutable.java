@@ -31,6 +31,10 @@ public class MainImmutable {
         LivingPerson johnLiving = new LivingPerson(john.getName(), john.getKids());
         System.out.println(johnLiving);
 
+        LivingPerson anne = new LivingPerson("Ann", null);
+        johnLiving.addKid(anne);
+        System.out.println(johnLiving);
+
 
     }
 }
