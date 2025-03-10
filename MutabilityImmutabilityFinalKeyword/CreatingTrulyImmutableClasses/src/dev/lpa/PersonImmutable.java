@@ -64,7 +64,7 @@ public class PersonImmutable {
             kidString = String.join(" , ", names);
 
         }
-        return name + ", dob = " + dob + ", kids = " + kidString;
+        return name + ", dob = " + getDob() + ", kids = " + kidString;
     }
 
 
