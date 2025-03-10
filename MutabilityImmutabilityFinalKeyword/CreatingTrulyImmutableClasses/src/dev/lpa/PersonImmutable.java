@@ -10,7 +10,7 @@ public class PersonImmutable {
 
     private final String name;
     private final String dob;
-    private final PersonImmutable[] kids;
+    protected final PersonImmutable[] kids;//kids should be able to to be accessed directly from subclass
 
 
     public PersonImmutable(String name, String dob, PersonImmutable[] kids) {
@@ -21,6 +21,16 @@ public class PersonImmutable {
 
     public PersonImmutable(String name, String dob) {
         this(name, dob, null);
+    }
+
+    //With the following code a subclass can easily construct a new person, uusing another person object to do it
+    //basically making a copy of the method argument
+
+    protected PersonImmutable (PersonImmutable person) {
+        this.name = person.name;
+        this.dob = person.dob;
+        this.kids = person.kids;
+
     }
 
     public String getName() {
