@@ -1,5 +1,7 @@
 package dev.external;
 
+import dev.external.domain.LivingPerson;
+import dev.lpa.Person;
 import dev.lpa.PersonImmutable;
 
 public class MainImmutable {
@@ -16,7 +18,6 @@ public class MainImmutable {
         PersonImmutable john = new PersonImmutable("John", "o4/04/1910", johnsKids);
         System.out.println(john);
 
-
         PersonImmutable[] kids = john.getKids();
         kids[0] = jim;
         kids[1] = new PersonImmutable("Ann", "04/04/1936");
@@ -24,6 +25,11 @@ public class MainImmutable {
 
         johnsKids[0] = new PersonImmutable("Ann", "04/04/1936");
         System.out.println(john);
+
+
+        //creating a living person
+        LivingPerson johnLiving = new LivingPerson(john.getName(), john.getKids());
+        System.out.println(johnLiving);
 
 
     }
