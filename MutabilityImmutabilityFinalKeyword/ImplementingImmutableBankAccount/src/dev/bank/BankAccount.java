@@ -1,4 +1,4 @@
-package dev.lpa;
+package dev.bank;
 
 /*
 Write Immutable classes for a Bank Account and a Bank Customer
