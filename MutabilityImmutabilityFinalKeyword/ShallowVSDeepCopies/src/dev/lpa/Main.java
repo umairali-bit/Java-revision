@@ -26,13 +26,18 @@ public class Main {
         Person jack = new Person("Jack", "03/03/1963",
                         new Person[]{joe,jim}); //making joe and jim kids of jack and jill
         Person jane = new Person("Jane", "04/04/1964", null);
-        Person jill = new Person("Jill", "05/05/1965", new Person[]{joe,jim});
+        Person jill = new Person("Jill", "05/05/1965",
+                        new Person[]{joe,jim});//making joe and jim kids of jack and jill
 
         //creating an array of person
         Person[] persons = {joe, jim, jack, jane, jill};
         //creating a shallow copy
         Person[] personsCopy = Arrays.copyOf(persons,persons.length);
 
+
+        //getting kills kids
+        var jillsKids = personsCopy[4].kids();
+        jillsKids[1] = jane;//changing kids of jill from jim to jane
         //to confirm that the two arrays are referencing the same record
         for (int i = 0; i <5; i++) {
             if (persons[i] == personsCopy[i]){
