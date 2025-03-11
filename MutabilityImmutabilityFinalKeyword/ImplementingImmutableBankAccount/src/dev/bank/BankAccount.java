@@ -11,19 +11,19 @@ It should have a balance, the initial dollar amount in the account.
 
 public class BankAccount {
 
-    enum Account {SAVING, CHECKING}
 
-    private final Account accountType;
+  public enum AccountType {SAVING, CHECKING}
+
+    private final AccountType accountType;
     private final double balance;
 
 
-    public BankAccount(Account accountType, double balance) {
+    BankAccount(AccountType accountType, double balance) {
         this.accountType = accountType;
         this.balance = balance;
     }
 
-
-    public Account getAccountType() {
+    public AccountType getAccountType() {
         return accountType;
     }
 
