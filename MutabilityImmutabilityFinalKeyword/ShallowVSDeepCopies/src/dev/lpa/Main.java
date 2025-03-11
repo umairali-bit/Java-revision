@@ -23,9 +23,10 @@ public class Main {
 
         Person joe = new Person("Joe", "01/01/1961", null);
         Person jim = new Person("Jim", "02/02/1962", null);
-        Person jack = new Person("Jack", "03/03/1963", null);
+        Person jack = new Person("Jack", "03/03/1963",
+                        new Person[]{joe,jim}); //making joe and jim kids of jack and jill
         Person jane = new Person("Jane", "04/04/1964", null);
-        Person jill = new Person("Jill", "05/05/1965", null);
+        Person jill = new Person("Jill", "05/05/1965", new Person[]{joe,jim});
 
         //creating an array of person
         Person[] persons = {joe, jim, jack, jane, jill};
