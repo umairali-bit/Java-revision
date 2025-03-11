@@ -32,11 +32,22 @@ public class Main {
         //creating an array of person
         Person[] persons = {joe, jim, jack, jane, jill};
         //creating a shallow copy
-        Person[] personsCopy = Arrays.copyOf(persons,persons.length);
+        //Person[] personsCopy = Arrays.copyOf(persons,persons.length);
+
+        Person[] personsCopy = new Person[5];
+
+        for (int i = 0; i < 5; i++) {
+             Person current = persons[i];
+             var kids = current.kids() == null ? null :
+                        Arrays.copyOf(current.kids(), current.kids().length);
+             personsCopy[i] = new Person(current.name(), current.dob(), kids);
+
+        }
+
 
 
         //getting kills kids
-        var jillsKids = personsCopy[4].kids();
+       var jillsKids = personsCopy[4].kids();
         jillsKids[1] = jane;//changing kids of jill from jim to jane
         //to confirm that the two arrays are referencing the same record
         for (int i = 0; i <5; i++) {
@@ -44,6 +55,9 @@ public class Main {
                 System.out.println("Equal References " + persons[i]);
             }
         }
+
+        System.out.println(persons[4]);
+        System.out.println(personsCopy[4]);
 
 
     }
