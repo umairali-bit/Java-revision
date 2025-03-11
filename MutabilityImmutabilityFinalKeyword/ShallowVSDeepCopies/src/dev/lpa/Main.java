@@ -1,6 +1,8 @@
 package dev.lpa;
 
 
+import java.util.Arrays;
+
 record Person (String name, String dob) {}
 
 public class Main {
@@ -16,8 +18,10 @@ public class Main {
         Person jane = new Person("Jane", "04/04/1964");
         Person jill = new Person("Jill", "05/05/1965");
 
-        //creatring an array of person
+        //creating an array of person
         Person[] persons = {joe, jim, jack, jane, jill};
+        //creating a shallow copy
+        Person[] personsCopy = Arrays.copyOf(persons,persons.length);
 
 
     }
