@@ -23,6 +23,13 @@ public class Main {
         //creating a shallow copy
         Person[] personsCopy = Arrays.copyOf(persons,persons.length);
 
+        //to confirm that the two arrays are referencing the same record
+        for (int i = 0; i <5; i++) {
+            if (persons[i] == personsCopy[i]){
+                System.out.println("Equal References " + persons[i]);
+            }
+        }
+
 
     }
 }
