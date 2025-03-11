@@ -16,14 +16,14 @@ public class BankCustomer {
 
     private final String name;
 
-    private final int getLastCustomerId;
+    private final int customerId;
 
     private final List<BankAccount> accounts = new ArrayList<>();
 
-    
-
-
-
-
-
+    public BankCustomer(String name, double checkingAmount, double savingsAmount) {
+        this.name = name;
+        this.customerId = lastCustomerId++;
+        accounts.add(new BankAccount(BankAccount.Account.CHECKING, checkingAmount)); //adding a new BankAccount, a checking account with the passed checkingAmount
+        accounts.add(new BankAccount(BankAccount.Account.SAVING, savingsAmount));//adding a new BankAccount, a savings account with the passed savings amount
+    }
 }
