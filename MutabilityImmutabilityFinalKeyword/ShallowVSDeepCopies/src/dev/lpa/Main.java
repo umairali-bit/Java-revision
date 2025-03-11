@@ -5,6 +5,12 @@ import java.util.Arrays;
 
 record Person (String name, String dob, Person[] kids) {
 
+    public Person(Person p) {
+
+        this(p.name, p.dob,
+                p.kids == null ? null : Arrays.copyOf(p.kids, p.kids.length));
+    }
+
     @Override
     public String toString() {
         return "Person{" +
@@ -34,15 +40,16 @@ public class Main {
         //creating a shallow copy
         //Person[] personsCopy = Arrays.copyOf(persons,persons.length);
 
+        //Person[] personsCopy = persons.clone(); // makes shallow copies
+
         Person[] personsCopy = new Person[5];
-
-        for (int i = 0; i < 5; i++) {
-             Person current = persons[i];
-             var kids = current.kids() == null ? null :
-                        Arrays.copyOf(current.kids(), current.kids().length);
-             personsCopy[i] = new Person(current.name(), current.dob(), kids);
-
-        }
+        Arrays.setAll(personsCopy, i -> new Person(persons[i]));
+//
+//        for (int i = 0; i < 5; i++) {
+//             Person current = persons[i];
+//             personsCopy[i] = new Person(persons[i]);
+//
+//        }
 
 
 
