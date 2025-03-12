@@ -16,6 +16,8 @@ public class Main {
 
         List<Student> students = new ArrayList<>(List.of(bob,bill));
 
+        bobsNotes.append("Bob was one of my students. ");
+
         students.forEach(System.out::println);
         System.out.println("-".repeat(30));
 
