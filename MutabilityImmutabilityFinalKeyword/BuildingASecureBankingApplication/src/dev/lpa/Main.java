@@ -25,11 +25,14 @@ public class Main {
 
         //adding funds to joes account by using doTransaction()
 
-        if (bank.doTransaction(joe.getCustomerId(), BankAccount.AccountType.CHECKING,35));
-        System.out.println(joe);
+        if (bank.doTransaction(joe.getCustomerId(), BankAccount.AccountType.CHECKING,35)) {
+            System.out.println(joe);
 
-        if (bank.doTransaction(joe.getCustomerId(), BankAccount.AccountType.CHECKING,-535));
-        System.out.println(joe);
+        }
+
+        if (bank.doTransaction(joe.getCustomerId(), BankAccount.AccountType.CHECKING,-535.01)) {
+            System.out.println(joe);
+        }
 
 
 
