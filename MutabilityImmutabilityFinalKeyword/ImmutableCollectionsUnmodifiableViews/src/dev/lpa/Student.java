@@ -8,8 +8,16 @@ public class Student {
 
     public Student(String name, StringBuilder studentNotes) {
         this.name = name;
-        this.studentNotes = new StringBuilder(studentNotes);
+        this.studentNotes = studentNotes;
     }
+
+//    protected Student(Student s) {
+//
+//        this.name = s.name;
+//        this.studentNotes = s.studentNotes;
+//
+//
+//    }
 
 
     public String getName() {
