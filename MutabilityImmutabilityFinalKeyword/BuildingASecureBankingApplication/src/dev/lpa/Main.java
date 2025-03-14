@@ -23,6 +23,11 @@ public class Main {
         BankCustomer joe = bank.getCustomer("000000010000000");
         System.out.println(joe);
 
+        //adding funds to joes account by using doTransaction()
+
+        if (bank.doTransaction(joe.getCustomerId(), BankAccount.AccountType.CHECKING,35));
+        System.out.println(joe);
+
 
 
 
