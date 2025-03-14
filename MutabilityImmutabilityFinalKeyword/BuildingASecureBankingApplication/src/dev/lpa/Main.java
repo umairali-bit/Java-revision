@@ -28,6 +28,9 @@ public class Main {
         if (bank.doTransaction(joe.getCustomerId(), BankAccount.AccountType.CHECKING,35));
         System.out.println(joe);
 
+        if (bank.doTransaction(joe.getCustomerId(), BankAccount.AccountType.CHECKING,-535));
+        System.out.println(joe);
+
 
 
 
