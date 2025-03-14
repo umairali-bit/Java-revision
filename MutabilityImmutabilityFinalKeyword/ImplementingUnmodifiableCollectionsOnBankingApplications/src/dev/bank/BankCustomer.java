@@ -5,6 +5,16 @@ create a BankCustomer class that has a customer name, a customer id, and a List 
 Create a couple of instances of bank customers, confirming that you can't change a customer's data at all, after it's initialized.
 Create a subclass of the bank customer and confirm that the subclass can't tamper with the customer's data as well.
 
+
+Modify the BankCustomer class.
+Return the customer id as a 15-digit string, with leading zeros.
+Design this class so that code in other packages can't instantiate a new Bank Customer.
+Return a defensive copy of the accounts, from the getAccounts method.
+
+
+Make the constructor package private
+
+
  */
 
 import java.util.ArrayList;
@@ -21,7 +31,7 @@ public class BankCustomer {
 
     private final List<BankAccount> accounts = new ArrayList<>();
 
-    public BankCustomer(String name, double checkingAmount, double savingsAmount) {
+    BankCustomer(String name, double checkingAmount, double savingsAmount) {
         this.name = name;
         this.customerId = lastCustomerId++;
         accounts.add(new BankAccount(BankAccount.AccountType.CHECKING, checkingAmount)); //adding a new BankAccount, a checking account with the passed checkingAmount
@@ -32,9 +42,30 @@ public class BankCustomer {
         return name;
     }
 
-    public List<BankAccount> getAccounts() {
-        return new ArrayList<>(accounts);
+    //getter for the customer ID to return the customer id as a 15-digit string, with leading zeros.
+    public String getCustomerId() {
+        return "%015d".formatted(customerId);
     }
+
+
+    //change the getAccount() to return an unmodifiable collection
+    public List<BankAccount> getAccounts() {
+        return List.copyOf(accounts);
+    }
+
+    //getting a customer account by the account type
+    public BankAccount getAccount (BankAccount.AccountType type) {
+
+        for (var account : accounts) {
+            if (account.getAccountType() == type) {
+                return account;
+            }
+        }
+        return null;
+    }
+
+
+
 
     @Override
     public String toString() {
