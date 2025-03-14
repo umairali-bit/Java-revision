@@ -10,15 +10,16 @@ Also include a constructor that takes all fields, for ease of use.
 public class Transaction {
 
     private int routingNumber;
-    private int customerId;
     private long transactionId;
-    private double transactionAmount;
+    private int customerId;
 
-    public Transaction(int routingNumber, int customerId, long transactionId, double transactionAmount) {
+    private double amount;
+
+    public Transaction(int routingNumber, long transactionId, int customerId, double amount) {
         this.routingNumber = routingNumber;
-        this.customerId = customerId;
         this.transactionId = transactionId;
-        this.transactionAmount = transactionAmount;
+        this.customerId = customerId;
+        this.amount = amount;
     }
 
     public int getRoutingNumber() {
@@ -34,7 +35,7 @@ public class Transaction {
     }
 
     public double getTransactionAmount() {
-        return transactionAmount;
+        return amount;
     }
 
     public void setRoutingNumber(int routingNumber) {
@@ -50,6 +51,11 @@ public class Transaction {
     }
 
     public void setTransactionAmount(double transactionAmount) {
-        this.transactionAmount = transactionAmount;
+        this.amount = transactionAmount;
+    }
+
+    @Override
+    public String toString() {
+        return "%015d:%020d:%015d:%012.2f".formatted(routingNumber, customerId, transactionId, amount);
     }
 }
