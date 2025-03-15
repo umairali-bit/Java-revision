@@ -4,6 +4,7 @@ public class Parent {
 
     private final String name;
     private final String dob;
+    protected final int siblings;
 
     {
 //        name = "John Doe";
@@ -15,9 +16,10 @@ public class Parent {
 //        System.out.println("In Parent's No Args Constructor");
 //    }
 
-    public Parent(String name, String dob) {
+    public Parent(String name, String dob, int siblings) {
         this.name = name;
         this.dob = dob;
+        this.siblings = siblings;
         System.out.println("In Parent Constructor");
     }
 
