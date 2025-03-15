@@ -6,9 +6,27 @@ public class Parent {
     private final String dob;
 
     {
-        name = "John Doe";
-        dob = "01/01/1900";
+//        name = "John Doe";
+//        dob = "01/01/1900";
+        System.out.println("In Parent Initializer");
     }
+
+//    public Parent() {
+//        System.out.println("In Parent's No Args Constructor");
+//    }
+
+    public Parent(String name, String dob) {
+        this.name = name;
+        this.dob = dob;
+        System.out.println("In Parent Constructor");
+    }
+
+    /*
+    In Parent Initializer
+    In Parent's No Args Constructor
+    In Parent Initializer
+    In Parent's No Args Constructor
+     */
 
     public String getName() {
         return name;
