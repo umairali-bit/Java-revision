@@ -46,14 +46,15 @@ public class Main {
 //                Integer.parseInt(joe.getCustomerId()), 500));
 
 
-        System.out.println("-".repeat(30));
-        for (var tx : transactions.values()) {
-            tx.setCustomerId(2);
-            tx.setTransactionAmount(10000.00);
+//        System.out.println("-".repeat(30));
+//        for (var tx : transactions.values()) {
+//            tx.setCustomerId(2);
+//            tx.setTransactionAmount(10000.00);
+//
+//        }
+//        transactions.forEach((k, v) -> System.out.println(k + ": " + v));
 
-        }
-        transactions.forEach((k, v) -> System.out.println(k + ": " + v));
-
+        joe.getAccount(BankAccount.AccountType.CHECKING).getTransactions().clear();
         System.out.println("-".repeat(30));
 
         joe.getAccount(BankAccount.AccountType.CHECKING).getTransactions()

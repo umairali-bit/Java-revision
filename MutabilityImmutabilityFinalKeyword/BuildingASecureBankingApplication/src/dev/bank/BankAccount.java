@@ -47,8 +47,22 @@ public class BankAccount {
         return balance;
     }
 
+    /*
     public Map<Long, Transaction> getTransactions() {
         return Map.copyOf(transactions); //returning an unmodifiable collection, to try to safeguard this data
+    }
+    instead of returning unmodifiable collection containing mutable data , return a map of immutable instances, Strings.
+    Another map variable txMap. Loop through the entries of transactions while inserting the same key, so tx.getKey, but
+    the value wont be the transaction but rather will be the String value of transaction.
+   */
+
+    public Map<Long, String> getTransactions() {
+        Map<Long, String> txMap = new LinkedHashMap<>();
+        for (var tx : transactions.entrySet()) {
+            txMap.put(tx.getKey(),tx.getValue().toString());
+        }
+        return txMap;
+
     }
 
     @Override
@@ -61,7 +75,7 @@ public class BankAccount {
                            String customerId, double amount) {
 
 
-        balance += amount; //adjusting the balance, A withdrawl would come in a negative number so we can simply add the amount in either case
+        balance += amount; //adjusting the balance, A withdrawal would come in a negative number so we can simply add the amount in either case
 
         //creating a transaction and putting it in this account's map.
         transactions.put(transactionId,
