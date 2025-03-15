@@ -3,6 +3,7 @@ package dev.lpa;
 import dev.bank.Bank;
 import dev.bank.BankAccount;
 import dev.bank.BankCustomer;
+import dev.dto.Transaction;
 
 import java.util.List;
 
@@ -25,17 +26,38 @@ public class Main {
 
         //adding funds to joes account by using doTransaction()
 
-        if (bank.doTransaction(joe.getCustomerId(), BankAccount.AccountType.CHECKING,35)) {
+        if (bank.doTransaction(joe.getCustomerId(), BankAccount.AccountType.CHECKING, 35)) {
             System.out.println(joe);
 
         }
 
-        if (bank.doTransaction(joe.getCustomerId(), BankAccount.AccountType.CHECKING,-535.01)) {
+        if (bank.doTransaction(joe.getCustomerId(), BankAccount.AccountType.CHECKING, -535)) {
             System.out.println(joe);
         }
 
+        //getting the checking account from Joe's BankCustomer instance
+        BankAccount checking = joe.getAccount(BankAccount.AccountType.CHECKING);
+        var transactions = checking.getTransactions();
+        transactions.forEach((k, v) -> System.out.println(k + ": " + v));
 
 
+        //new transaction directly into the variable
+//        transactions.put(3L, new Transaction(1, 1,
+//                Integer.parseInt(joe.getCustomerId()), 500));
+
+
+        System.out.println("-".repeat(30));
+        for (var tx : transactions.values()) {
+            tx.setCustomerId(2);
+            tx.setTransactionAmount(10000.00);
+
+        }
+        transactions.forEach((k, v) -> System.out.println(k + ": " + v));
+
+        System.out.println("-".repeat(30));
+
+        joe.getAccount(BankAccount.AccountType.CHECKING).getTransactions()
+                .forEach((k,v) -> System.out.println(k + ": " + v));
 
 
 
