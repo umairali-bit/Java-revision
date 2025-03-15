@@ -2,6 +2,10 @@ package dev.lpa;
 
 public class Parent {
 
+    static {
+        System.out.println("Parent static initializer: class being constructed");
+    }
+
     private final String name;
     private final String dob;
     protected final int siblings;
