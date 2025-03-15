@@ -2,24 +2,22 @@ package dev.lpa;
 
 public class Parent {
 
-    private String name;
-    private String dob;
+    private final String name;
+    private final String dob;
+
+    {
+        name = "John Doe";
+        dob = "01/01/1900";
+    }
 
     public String getName() {
         return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
     }
 
     public String getDob() {
         return dob;
     }
 
-    public void setDob(String dob) {
-        this.dob = dob;
-    }
 
     @Override
     public String toString() {

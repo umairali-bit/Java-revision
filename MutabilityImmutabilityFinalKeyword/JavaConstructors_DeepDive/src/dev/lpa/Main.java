@@ -9,5 +9,8 @@ public class Main {
         Parent parent = new Parent();
         Child child = new Child();
 
+        System.out.println("Parent:" + parent);
+        System.out.println("Child:" + child);
+
     }
 }
