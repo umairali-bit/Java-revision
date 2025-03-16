@@ -7,7 +7,10 @@ public enum Generations {
     GEN_X,
     BABY_BOOMER,
     SILENT_GENERATION,
-    GREATEST_GENERATION,
+    GREATEST_GENERATION;
 
 
+    Generations() {
+        System.out.println(this);
+    }
 }
