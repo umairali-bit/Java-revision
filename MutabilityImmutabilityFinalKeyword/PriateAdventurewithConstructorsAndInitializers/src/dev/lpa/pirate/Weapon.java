@@ -15,4 +15,25 @@ public enum Weapon {
         this.minLevel = minLevel;
         this.hitPoints = hitPoints;
     }
+
+    public int getMinLevel() {
+        return minLevel;
+    }
+
+    public int getHitPoints() {
+        return hitPoints;
+    }
+
+    public static Weapon getWeaponByChar (char firstInitial) {
+
+        for (var w : values()) {
+            if (w.name().charAt(0) == firstInitial) {
+                return w;
+            }
+        }
+        return values()[0];
+
+    }
+
+
 }
