@@ -15,7 +15,10 @@ public class Main {
 //        console.playGame(playerIndex);
 
         Weapon weapon = Weapon.getWeaponByChar('P');
-        System.out.println(weapon);
+        System.out.println("Weapon = " + weapon + ", hitPoints = " + weapon.getHitPoints() + ", minLevel = "
+                + weapon.getMinLevel());
+
+
 
 
 
