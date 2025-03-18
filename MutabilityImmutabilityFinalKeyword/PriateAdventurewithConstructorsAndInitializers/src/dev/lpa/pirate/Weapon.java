@@ -1,5 +1,9 @@
 package dev.lpa.pirate;
 
+import java.util.ArrayList;
+import java.util.EnumSet;
+import java.util.List;
+
 public enum Weapon {
 
     KNIFE(0,10),
@@ -26,7 +30,7 @@ public enum Weapon {
 
     public static Weapon getWeaponByChar (char firstInitial) {
 
-        for (var w : values()) {
+        for (Weapon w : values()) {
             if (w.name().charAt(0) == firstInitial) {
                 return w;
             }
@@ -34,6 +38,16 @@ public enum Weapon {
         return values()[0];
 
     }
+
+    // returns a list of weapons
+    public static List<Weapon> getWeaponsByLevel (int levelOfPlay) {
+
+        List<Weapon> weapons = new ArrayList<>(EnumSet.allOf(Weapon.class));
+        weapons.removeIf(w -> (w.minLevel > levelOfPlay));
+        return weapons;
+
+    }
+
 
 
 }
