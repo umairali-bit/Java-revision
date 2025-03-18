@@ -4,6 +4,15 @@ import java.util.ArrayList;
 import java.util.EnumSet;
 import java.util.List;
 
+/*
+Use an enum for the Weapon options.
+Weapon should have two fields.
+Hit points that get deducted from a player hit by this weapon.
+Level, which is the minimum level needed to be able to use the weapon.
+Use an enum constructor to set this up.
+
+ */
+
 public enum Weapon {
 
     KNIFE(0,10),
