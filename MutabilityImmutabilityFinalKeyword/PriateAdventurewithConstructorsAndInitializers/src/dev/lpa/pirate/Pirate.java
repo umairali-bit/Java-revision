@@ -51,10 +51,17 @@ public class Pirate implements Player {
     }
 
     //private setValue method. Only the Pirate class will be able to set this value. The return type is void and it
-    //takes a String. This method puts the value in the Map, using the name paseed.
+    //takes a String and an int. This method puts the value in the Map, using the name passed.
 
     private void setValue (String name, int value) {
         gameData.put(name, value);
+    }
+
+    //This method will adjust a value in the data map, will be private,again encapsulated, it takes a field name
+    // and an adjustment value, using the Map's compute method
+    private void adjustValue(String name, int adj) {
+        gameData.compute(name, (k,v) -> v += adj);
+
     }
 
 
