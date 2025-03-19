@@ -64,6 +64,15 @@ public class Pirate implements Player {
 
     }
 
+    // health should not go zero or above hundred
+    private void adjustHealth(int adj) {
+
+        int health = value("health");
+        health += adj;
+        health = (health < 0) ? 0 : (health > 100) ? 100 : health;
+        setValue("health", health);
+    }
+
 
     @Override
     public String name() {
