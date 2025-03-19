@@ -102,6 +102,7 @@ public class Pirate implements Player {
         Arrays.setAll(simpleNames, i-> townsVisited.get(i).split(",")[0]);
         return "------> " + current +
                 "\nPirate "+ name + " " + gameData +
-                "\n\ttownsVisited=" + Arrays.toString(simpleNames);
+                "\n\ttownsVisited=" + Arrays.toString(simpleNames) +
+                "\n\tWeapon = " + Weapon.getWeaponsByLevel(gameData.get("level"));
     }
 }
