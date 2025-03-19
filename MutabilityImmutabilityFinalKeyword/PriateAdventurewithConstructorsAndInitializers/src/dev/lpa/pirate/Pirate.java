@@ -73,6 +73,13 @@ public class Pirate implements Player {
         setValue("health", health);
     }
 
+    boolean useWeapon () {
+        System.out.println("Weapon " + currentWeapon);
+        return false;
+    }
+
+
+
 
     @Override
     public String name() {
