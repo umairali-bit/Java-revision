@@ -50,6 +50,13 @@ public class Pirate implements Player {
         return gameData.get(name);
     }
 
+    //private setValue method. Only the Pirate class will be able to set this value. The return type is void and it
+    //takes a String. This method puts the value in the Map, using the name paseed.
+
+    private void setValue (String name, int value) {
+        gameData.put(name, value);
+    }
+
 
     @Override
     public String name() {
