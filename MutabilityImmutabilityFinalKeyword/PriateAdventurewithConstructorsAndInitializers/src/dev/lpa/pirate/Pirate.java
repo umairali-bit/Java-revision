@@ -33,6 +33,7 @@ public class Pirate implements Player {
                 "level", 0,
                 "townIndex", 0
         ));
+        visitTown();
     }
 
     public Weapon getCurrentWeapon() {
@@ -76,6 +77,16 @@ public class Pirate implements Player {
     boolean useWeapon () {
         System.out.println("Weapon " + currentWeapon);
         return false;
+    }
+
+    boolean visitTown() {
+
+        String town = "My Town, somewhere";
+        if (town != null) {
+            townsVisited.add(town);
+            return false;
+        }
+        return true;
     }
 
 
