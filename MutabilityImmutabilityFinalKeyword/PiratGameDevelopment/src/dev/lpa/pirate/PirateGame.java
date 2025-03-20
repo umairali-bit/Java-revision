@@ -4,6 +4,7 @@ import dev.lpa.game.Game;
 import dev.lpa.game.GameAction;
 
 import java.util.ArrayList;
+import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -39,7 +40,22 @@ public class PirateGame extends Game<Pirate> {
 
     @Override
     public Map<Character, GameAction> getGameActions(int playerIndex) {
-        return null;
+
+        Pirate pirate = getPlayer(playerIndex);
+        System.out.println(pirate);
+        List<Weapon> weapons = Weapon.getWeaponsByLevel(pirate.value("level"));
+
+        Map<Character, GameAction> map = new LinkedHashMap<>();
+
+        for (Weapon weapon : weapons) {
+            char init = weapon.name().charAt(0);
+            map.put(init, new GameAction(init, "Use " + weapon, this::useWeapon));//or i->useWeapon(i)
+        }
+
+        map.putAll(getStandardActions());
+
+
+        return map;
     }
 
     private static void loadData() {
