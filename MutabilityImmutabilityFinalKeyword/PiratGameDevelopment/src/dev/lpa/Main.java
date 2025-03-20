@@ -1,6 +1,7 @@
 package dev.lpa;
 
 import dev.lpa.pirate.Pirate;
+import dev.lpa.pirate.PirateGame;
 import dev.lpa.pirate.Weapon;
 
 public class Main {
@@ -22,6 +23,8 @@ public class Main {
 
         Pirate umair = new Pirate("Umair");
         System.out.println(umair);
+
+        PirateGame.getTowns(1).forEach(System.out::println);
 
 
 
