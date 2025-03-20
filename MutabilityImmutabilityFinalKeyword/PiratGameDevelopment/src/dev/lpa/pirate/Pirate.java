@@ -72,7 +72,7 @@ public class Pirate implements Player {
     }
 
     boolean useWeapon () {
-        System.out.println("Weapon " + currentWeapon);
+        System.out.println("Used " + currentWeapon);
         return false;
     }
 
