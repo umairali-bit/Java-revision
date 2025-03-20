@@ -61,4 +61,15 @@ public class PirateGame extends Game<Pirate> {
         )));
     }
 
+    // to return towns from a specific level
+    public static List<String> getTowns (int level) {
+
+        if (level <= levelMap.size() -1) {
+            return levelMap.get(level);
+        } else {
+            return null;
+        }
+    }
+
+
 }
