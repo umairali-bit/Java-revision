@@ -24,6 +24,7 @@ public class PirateGame extends Game<Pirate> {
             throw new RuntimeException("Could not load data, try later");
 
         }
+        System.out.println("Finished Loading Data.");
     }
 
 
@@ -40,4 +41,24 @@ public class PirateGame extends Game<Pirate> {
     public Map<Character, GameAction> getGameActions(int playerIndex) {
         return null;
     }
+
+    private static void loadData() {
+
+        //level 1 Towns
+        levelMap.add(new ArrayList<>(List.of(
+                "Bridgetown, Barbados",
+                "Fitts Village, Barbados",
+                "Holetown, Barbados"
+
+        )));
+
+        //level 2 Towns
+        levelMap.add(new ArrayList<>(List.of(
+                "Fort-de-France, Martinique",
+                "FSainte-Anne, Martinique",
+                "Le Vauclin, Martinique"
+
+        )));
+    }
+
 }
