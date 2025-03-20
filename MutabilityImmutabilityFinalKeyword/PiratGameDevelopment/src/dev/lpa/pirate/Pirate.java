@@ -113,6 +113,16 @@ public class Pirate implements Player {
         int townIndex = value("townIndex");
         var towns = PirateGame.getTowns(value("level"));
         if (towns == null) return true;
+        if (townIndex >= (towns.size()-1)) {
+            System.out.println("Leveling uup! Bonus: 500 points!");
+            adjustValue("score", 500);
+            adjustValue("level", 1);
+            setValue("townIndex", 0);
+        } else {
+            System.out.println("Sailing to the next town! Bonus: 50 points!");
+            adjustValue("townIndex", 1);
+            adjustValue("score", 50);
+        }
 
         return visitTown();
     }
