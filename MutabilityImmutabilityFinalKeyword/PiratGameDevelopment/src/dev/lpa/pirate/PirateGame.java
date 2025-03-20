@@ -71,5 +71,13 @@ public class PirateGame extends Game<Pirate> {
         }
     }
 
+    private boolean useWeapon (int playerIndex) {
+        return getPlayer(playerIndex).useWeapon();
+    }
 
+    @Override
+    public boolean executeGameAction(int player, GameAction action) {
+        getPlayer(player).setCurrentWeapon(Weapon.getWeaponByChar(action.key()));
+        return super.executeGameAction(player, action);
+    }
 }
