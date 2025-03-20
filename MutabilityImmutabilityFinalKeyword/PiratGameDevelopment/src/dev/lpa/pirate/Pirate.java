@@ -107,4 +107,13 @@ public class Pirate implements Player {
                 "\n\ttownsVisited=" + Arrays.toString(simpleNames) +
                 "\n\tWeapon = " + Weapon.getWeaponsByLevel(gameData.get("level"));
     }
+
+    private boolean visitNextTown() {
+
+        int townIndex = value("townIndex");
+        var towns = PirateGame.getTowns(value("level"));
+        if (towns == null) return true;
+
+        return visitTown();
+    }
 }
