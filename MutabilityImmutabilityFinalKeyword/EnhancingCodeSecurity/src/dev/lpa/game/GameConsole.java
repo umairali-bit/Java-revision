@@ -1,4 +1,4 @@
-package src.dev.lpa.game;
+package dev.lpa.game;
 
 /*
 The game console will be a container to execute some scanner code, to drive a text based game's play.

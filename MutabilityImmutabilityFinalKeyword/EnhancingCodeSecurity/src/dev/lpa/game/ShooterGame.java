@@ -1,4 +1,4 @@
-package src.dev.lpa.game;
+package dev.lpa.game;
 
 import java.util.LinkedHashMap;
 import java.util.Map;

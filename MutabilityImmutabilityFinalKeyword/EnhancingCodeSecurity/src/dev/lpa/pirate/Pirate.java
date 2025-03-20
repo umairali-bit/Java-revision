@@ -1,4 +1,4 @@
-package src.dev.lpa.pirate;
+package dev.lpa.pirate;
 
 // It should have a Pirate class that implements the Player interface.
 

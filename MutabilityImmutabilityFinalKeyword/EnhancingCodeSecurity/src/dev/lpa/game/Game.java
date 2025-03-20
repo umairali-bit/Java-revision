@@ -1,4 +1,4 @@
-package src.dev.lpa.game;
+package dev.lpa.game;
 
 /*
 The Game class should be abstract and generic, and the type parameter should be a type of Player.

@@ -1,4 +1,4 @@
-package src.dev.lpa.pirate;
+package dev.lpa.pirate;
 
 import java.util.ArrayList;
 import java.util.EnumSet;

@@ -1,4 +1,4 @@
-package src.dev.lpa.pirate;
+package dev.lpa.pirate;
 
 import dev.lpa.game.Game;
 import dev.lpa.game.GameAction;
