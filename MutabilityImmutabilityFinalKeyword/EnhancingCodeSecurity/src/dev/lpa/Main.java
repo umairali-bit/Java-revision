@@ -27,7 +27,7 @@ public class Main {
 //        System.out.println("-".repeat(50));
 //        PirateGame.getTowns(1).forEach(System.out::println);
 
-
+//
         var gameConsole = new GameConsole<>(new PirateGame("The Pirate Game"));
        int playerIndex =  gameConsole.addPlayer();
         gameConsole.playGame(playerIndex);
