@@ -6,7 +6,7 @@ import dev.lpa.game.Player;
 
 import java.util.*;
 
-public class Pirate implements Player {
+public class Pirate extends Combatant {
 
     private final String name;
 
