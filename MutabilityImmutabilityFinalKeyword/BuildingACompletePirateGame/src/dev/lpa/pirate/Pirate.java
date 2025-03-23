@@ -6,73 +6,23 @@ import dev.lpa.game.Player;
 
 import java.util.*;
 
-public class Pirate extends Combatant {
-
-    private final String name;
-
-    // to declare fields for score,health, currentTownIndex using a map
-    private final Map<String, Integer> gameData;
+public final class Pirate extends Combatant {
 
     private final List<String> townsVisited = new LinkedList<>();
 
-    private Weapon currentWeapon;
+    private List<Loot> loot;
+
+    private List <Combatant> opponents;
+
+    private List<Feature> features;
 
     public Pirate(String name) {
-        this.name = name;
-    }
-
-    //using instance initializer to initialize gameData
-
-    {
-        gameData = new HashMap<>(Map.of(
-                "health", 100,
-                "score", 0,
-                "level", 0,
-                "townIndex", 0
-        ));
+        super(name, Map.of("level", 0, "townIndex", 0));
         visitTown();
     }
 
-    public Weapon getCurrentWeapon() {
-        return currentWeapon;
-    }
-
-    void setCurrentWeapon(Weapon currentWeapon) {
-        this.currentWeapon = currentWeapon;
-    }
-
-    //setter and getter methods of my own
-    //package private
-
-    int value (String name) {
-        return gameData.get(name);
-    }
-
-    //private setValue method. Only the Pirate class will be able to set this value. The return type is void and it
-    //takes a String and an int. This method puts the value in the Map, using the name passed.
-
-    private void setValue (String name, int value) {
-        gameData.put(name, value);
-    }
-
-    //This method will adjust a value in the data map, will be private,again encapsulated, it takes a field name
-    // and an adjustment value, using the Map's compute method
-    private void adjustValue(String name, int adj) {
-        gameData.compute(name, (k,v) -> v += adj);
-
-    }
-
-    // health should not go zero or above hundred
-    private void adjustHealth(int adj) {
-
-        int health = value("health");
-        health += adj;
-        health = (health < 0) ? 0 : (health > 100) ? 100 : health;
-        setValue("health", health);
-    }
-
     boolean useWeapon () {
-        System.out.println("Used " + currentWeapon);
+        System.out.println("Used " + super.getCurrentWeapon());
         return visitNextTown();
     }
 
@@ -88,24 +38,15 @@ public class Pirate extends Combatant {
         return true;
     }
 
-
-
-
-    @Override
-    public String name() {
-        return name;
-    }
-
-    @Override
-    public String toString() {
+    public String information() {
 
         var current = ((LinkedList<String>) townsVisited).getLast();
         String[] simpleNames = new String[townsVisited.size()];
-        Arrays.setAll(simpleNames, i-> townsVisited.get(i).split(",")[0]);
+        Arrays.setAll(simpleNames, i -> townsVisited.get(i).split(",")[0]);
         return "------> " + current +
-                "\nPirate "+ name + " " + gameData +
-                "\n\ttownsVisited=" + Arrays.toString(simpleNames) +
-                "\n\tWeapon = " + Weapon.getWeaponsByLevel(gameData.get("level"));
+                "\n" + super.information() +
+                "\n\ttownsVisited=" + Arrays.toString(simpleNames);
+
     }
 
     private boolean visitNextTown() {
