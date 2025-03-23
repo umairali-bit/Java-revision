@@ -55,7 +55,7 @@ public final class Pirate extends Combatant {
         var towns = PirateGame.getTowns(value("level"));
         if (towns == null) return true;
         if (townIndex >= (towns.size()-1)) {
-            System.out.println("Leveling uup! Bonus: 500 points!");
+            System.out.println("Leveling up! Bonus: 500 points!");
             adjustValue("score", 500);
             adjustValue("level", 1);
             setValue("townIndex", 0);

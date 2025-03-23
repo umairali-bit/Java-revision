@@ -6,7 +6,7 @@ import dev.lpa.game.Player;
 
 import java.util.*;
 
-public sealed abstract class Combatant implements Player permits Pirate {
+public sealed abstract class Combatant implements Player permits Islander, Pirate, Soldier {
 
     private final String name;
 
@@ -30,8 +30,10 @@ public sealed abstract class Combatant implements Player permits Pirate {
 
     {
         gameData = new HashMap<>(Map.of(
-                "health", 100,
-                "score", 0
+                "score", 0,
+                "health", 100
+
+
 
         ));
 
