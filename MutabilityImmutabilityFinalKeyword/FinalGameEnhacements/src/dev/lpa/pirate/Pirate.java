@@ -34,10 +34,27 @@ public final class Pirate extends Combatant {
         Town town = levelTowns.get(value("townIndex"));
         if (town != null) {
             townsVisited.add(town);
+            loot = town.loot();
+            opponents = town.opponents();
+            features = town.features();
             return false;
         }
         return true;
     }
+
+
+    // two helper methods
+    boolean hasExperiences() {
+        return (features != null && features.size() > 0);
+
+    }
+
+    boolean hasOpponents() {
+        return (opponents != null && opponents.size() > 0);
+
+    }
+
+
 
     public String information() {
 
