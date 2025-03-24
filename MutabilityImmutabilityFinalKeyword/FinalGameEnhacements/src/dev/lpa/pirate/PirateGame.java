@@ -12,7 +12,7 @@ public class PirateGame extends Game<Pirate> {
 
     // A two-dimensional List; the first level (0) will represent the first level of play, the second level (1)
     //will represent the second level of play. This list contains a nested list of towns, the type argument is String.
-    private static final List<List<String>> levelMap;
+    private static final List<List<Town>> levelMap;
 
 
     //---------
@@ -61,24 +61,23 @@ public class PirateGame extends Game<Pirate> {
     private static void loadData() {
 
         //level 1 Towns
-        levelMap.add(new ArrayList<>(List.of(
-                "Bridgetown, Barbados",
-                "Fitts Village, Barbados",
-                "Holetown, Barbados"
-
-        )));
+        levelMap.add(new ArrayList<Town>(List.of(
+               new Town("Bridgetown", "Barbados",0 ) ,
+                new Town ("Fitts Village", "Barbados", 0),
+                new Town ("Holetown", "Barbados",0)
+                )));
 
         //level 2 Towns
-        levelMap.add(new ArrayList<>(List.of(
-                "Fort-de-France, Martinique",
-                "FSainte-Anne, Martinique",
-                "Le Vauclin, Martinique"
+        levelMap.add(new ArrayList<Town>(List.of(
+                new Town ("Fort-de-France", "Martinique", 1),
+                new Town ("FSainte-Anne", "Martinique",1),
+                new Town ("Le Vauclin", "Martinique", 1)
 
         )));
     }
 
     // to return towns from a specific level
-    public static List<String> getTowns (int level) {
+    public static List<Town> getTowns (int level) {
 
         if (level <= levelMap.size() -1) {
             return levelMap.get(level);
