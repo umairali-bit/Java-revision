@@ -23,6 +23,10 @@ public record Town(String name, String island, int level,
         }
     }
 
+    public Town(String name, String island, int level) {
+        this(name, island, level, null, null, null);
+    }
+
     //A generic method that returns a List<T> randomizes the elements in the list and returns a sublist of those elements
     private <T> List<T> randomReduced(List<T> list, int size) {
 
@@ -31,5 +35,8 @@ public record Town(String name, String island, int level,
 
     }
 
-
+    @Override
+    public String toString() {
+        return "Town{}";
+    }
 }
