@@ -46,4 +46,17 @@ public record Town(String name, String island, int level,
                 "\n\tfeatures=" + features +
                 "\n\topponents=" + opponents;
     }
+
+    //custom accessors with defensive copies
+    public List<Loot> loot() {
+        return (loot == null) ? null : new ArrayList<>(loot);
+    }
+
+    public List<Feature> features() {
+        return (features == null) ? null : new ArrayList<>(features);
+    }
+
+    public List<Combatant> opponents() {
+        return (opponents == null) ? null : new ArrayList<>(opponents);
+    }
 }
