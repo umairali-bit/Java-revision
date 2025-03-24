@@ -37,6 +37,13 @@ public record Town(String name, String island, int level,
 
     @Override
     public String toString() {
-        return "Town{}";
+        return name + ", " + island;
+    }
+
+
+    public String information() {
+        return "Town: " + this + "\n\tloot=" + loot +
+                "\n\tfeatures=" + features +
+                "\n\topponents=" + opponents;
     }
 }
