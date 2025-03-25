@@ -79,6 +79,20 @@ public final class Pirate extends Combatant {
     }
 
 
+    boolean experienceFeature() {
+        if (features.size() > 0) {
+
+            Feature item = features.remove(0);
+            System.out.println("Ran into " + item + "!");
+            adjustHealth(item.getHealthPoints());
+            System.out.println(name() + " 's health is now " + value("health"));
+
+        }
+
+        return (value("health") <= 0);
+    }
+
+
 
     private boolean visitNextTown() {
 
