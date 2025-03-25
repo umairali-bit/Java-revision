@@ -53,9 +53,6 @@ public final class Pirate extends Combatant {
         return (opponents != null && opponents.size() > 0);
 
     }
-
-
-
     public String information() {
 
         var current = ((LinkedList<Town>) townsVisited).getLast();
@@ -66,6 +63,22 @@ public final class Pirate extends Combatant {
                 "\n\ttownsVisited=" + Arrays.toString(simpleNames);
 
     }
+
+    boolean findLoot() {
+        if (loot.size() > 0) {
+            Loot item = loot.remove(0);
+            System.out.println("Found " + item + "!");
+            adjustValue("score", item.getWorth());
+            System.out.println(name() + "'s score is now " + value("score"));
+        }
+
+        if (loot.size() == 0) {
+            return visitTown();
+        }
+        return false;
+    }
+
+
 
     private boolean visitNextTown() {
 
