@@ -2,10 +2,7 @@ package dev.lpa.pirate;
 
 // It should have a Pirate class that implements the Player interface.
 
-import java.util.Arrays;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 public final class Pirate extends Combatant {
 
@@ -23,9 +20,22 @@ public final class Pirate extends Combatant {
     }
 
     boolean useWeapon () {
-        System.out.println("Used " + super.getCurrentWeapon());
-        return visitNextTown();
-    }
+
+        int count = opponents.size(); //getting pirates copy of opponnents, getting size
+        if (count > 0) { // if its greater than zero, then there are still living opponents
+            int opponentIndex = count - 1; // setting the default opponentIndex to the count - 1
+            if (count > 1) {//if count> 1, using random number to randomly pick the opponent
+                opponentIndex = new Random().nextInt();
+            }
+            Combatant combatant = opponents.get(opponentIndex); //getting the combatant from the opponents list using randomIndex
+            if (super.useWeapon(combatant)) {//if this is true, that means combatant dies.
+                opponents.remove(opponentIndex);// removing that opponent
+            } else {
+                    return combatant.useWeapon(this);// its the opponents turn
+                }
+            }
+            return false;//if there arent any opponents, the game continues
+        }
 
     boolean visitTown() {
 
