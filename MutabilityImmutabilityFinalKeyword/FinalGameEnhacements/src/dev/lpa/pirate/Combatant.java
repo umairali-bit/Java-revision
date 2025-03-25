@@ -81,10 +81,10 @@ public sealed abstract class Combatant implements Player permits Islander, Pirat
 
     boolean useWeapon (Combatant opponent) {
 
-        System.out.println(name + "used the " + currentWeapon);
+        System.out.print(name + " used the " + currentWeapon);
 
         if (new Random().nextBoolean()) {
-            System.out.println(" and HIT *** " + opponent.name() + "! ***");
+            System.out.println (" and HIT *** " + opponent.name() + "! ***");
             opponent.adjustHealth(-currentWeapon.getHitPoints());
             System.out.printf("%s's health=%d, %s's health=%d%n",
                     name, value("health"),
