@@ -86,7 +86,29 @@ public class Main {
 
 
         Stream.concat(secondStream, firstStream)
-                .forEach(String -> System.out.println(String));
+                .map(s -> s.charAt(0) + "-" + s)
+                .forEach(System.out::println);
+
+
+        Map<Character, int[]> myMap = new LinkedHashMap<>();
+        int bingoIndex = 1;
+        for (char c : "BINGO".toCharArray()) {
+            int[] numbers = new int[15];
+            int labelNumber = bingoIndex;
+            Arrays.setAll(numbers, i-> i + labelNumber);
+            myMap.put(c,numbers);
+            bingoIndex += 15;
+        }
+
+//        myMap.forEach((key, value) -> System.out.println(key + " has range: " +
+//                Arrays.toString(new int[] {value[0],value[value.length -1]})));
+
+
+        myMap.entrySet()
+                .stream()
+                .map(e -> e.getKey() + " has a range: " + e.getValue()[0] + "-" + e.getValue()[e.getValue().length - 1])
+                .forEach(System.out::println);
+
 
 
     }
