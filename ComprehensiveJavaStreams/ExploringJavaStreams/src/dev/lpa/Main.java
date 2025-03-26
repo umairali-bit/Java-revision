@@ -1,6 +1,7 @@
 package dev.lpa;
 
 import java.util.*;
+import java.util.stream.Stream;
 
 public class Main {
 
@@ -78,6 +79,10 @@ public class Main {
         Arrays.stream(strings)
                 .sorted(Comparator.reverseOrder())
                 .forEach(System.out::println);//s -> sout(s)
+
+        Stream.of("Six","Five", "Four")
+                .map(String::toUpperCase) //String -> String.toUpperCasr()
+                .forEach(System.out::println);// String -> sout(String)
 
 
     }
