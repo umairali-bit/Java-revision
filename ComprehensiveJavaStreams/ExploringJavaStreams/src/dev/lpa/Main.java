@@ -100,8 +100,12 @@ public class Main {
             bingoIndex += 15;
         }
 
-//        myMap.forEach((key, value) -> System.out.println(key + " has range: " +
-//                Arrays.toString(new int[] {value[0],value[value.length -1]})));
+
+//       myMap.entrySet()
+//               .forEach((key) -> {
+//                   System.out.println(key.getKey() + " has range: " + key.getValue()[0] + "-" + key.getValue()[key.getValue().length -1]);
+//               });
+
 
 
         myMap.entrySet()
