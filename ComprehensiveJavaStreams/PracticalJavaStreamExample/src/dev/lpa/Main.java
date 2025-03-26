@@ -38,21 +38,21 @@ public class Main {
 
         List<String> firstOnes = bingoPool.subList(0,15);
         firstOnes.sort(Comparator.naturalOrder());
-
-        firstOnes.replaceAll(s-> s.charAt(0) + "-" + s.substring(1));
-        System.out.println(firstOnes);
-
-
-
-//        firstOnes.replaceAll( s -> {
-//            if (s.indexOf("BINGO") == 0) {
-//                String updated = s.charAt(0) + "-" + s.substring(1);
-//                System.out.print(updated + " ");
-//                return updated;
 //
-//            }
-//            return null;
-//        });
+//        firstOnes.replaceAll(s-> s.charAt(0) + "-" + s.substring(1));
+//        System.out.println(firstOnes);
+
+
+
+        firstOnes.replaceAll( s -> {
+            if (s.indexOf('G') == 0 || s.indexOf('O') == 0) {
+                String updated = s.charAt(0) + "-" + s.substring(1);
+                System.out.print(updated + " ");
+                return updated;
+
+            }
+            return s;
+        });
 
 
 
