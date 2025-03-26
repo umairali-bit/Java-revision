@@ -33,7 +33,7 @@ public class Main {
         System.out.println("-".repeat(50));
 
 
-        //List<String> firstOnes = bingoPool.subList(0,15);//original list
+//       List<String> firstOnes = bingoPool.subList(0,15);//original list
         List<String> firstOnes = new ArrayList<>(bingoPool.subList(0, 15));// always a good idea to create a copy of the original list
 
         firstOnes.sort(Comparator.naturalOrder());
@@ -59,7 +59,7 @@ public class Main {
         }
         System.out.println("\n------------------------");
 
-        //chain of listing 5 operations on stream mentioned below is called Pipeline
+//        chain of listing 5 operations on stream mentioned below is called Pipeline
         var tempStream = bingoPool.stream()
                 .limit(15)
                 .filter(s -> s.indexOf('G') == 0 || s.indexOf('O') == 0)
@@ -76,13 +76,17 @@ public class Main {
 
 
         String[] strings = {"One","Two","Three"};
-        Arrays.stream(strings)
-                .sorted(Comparator.reverseOrder())
-                .forEach(System.out::println);//s -> sout(s)
+        var firstStream = Arrays.stream(strings)
+                .sorted(Comparator.reverseOrder());
+//                .forEach(System.out::println);//s -> sout(s)
 
-        Stream.of("Six","Five", "Four")
-                .map(String::toUpperCase) //String -> String.toUpperCasr()
-                .forEach(System.out::println);// String -> sout(String)
+        var secondStream = Stream.of("Six","Five", "Four")
+                .map(String::toUpperCase); //String -> String.toUpperCase()
+//                .forEach(System.out::println);// String -> sout(String)
+
+
+        Stream.concat(secondStream, firstStream)
+                .forEach(String -> System.out.println(String));
 
 
     }
