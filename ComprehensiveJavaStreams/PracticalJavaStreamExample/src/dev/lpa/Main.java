@@ -36,7 +36,9 @@ public class Main {
         System.out.println("-".repeat(50));
 
 
-        List<String> firstOnes = bingoPool.subList(0,15);
+        //List<String> firstOnes = bingoPool.subList(0,15);//original list
+        List<String> firstOnes = new ArrayList<>(bingoPool.subList(0,15));// always a good idea to create a copy of the original list
+
         firstOnes.sort(Comparator.naturalOrder());
 //
 //        firstOnes.replaceAll(s-> s.charAt(0) + "-" + s.substring(1));
@@ -54,7 +56,13 @@ public class Main {
             return s;
         });
 
+        System.out.println("\n------------------------");
 
+
+        for (int i = 0; i < 15; i++) {
+            System.out.println(bingoPool.get(i));
+
+        }
 
 
 
