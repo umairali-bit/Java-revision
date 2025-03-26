@@ -63,6 +63,7 @@ public class Main {
         }
         System.out.println("\n------------------------");
 
+        //chain of listing 5 operations on stream mentioned below is called Pipeline
         bingoPool.stream()
                 .limit(15)
                 .filter(s -> s.indexOf('G') == 0 || s.indexOf('O') == 0)
@@ -71,6 +72,11 @@ public class Main {
                 .forEach(s -> System.out.print(s + " "));
 
         System.out.println("\n------------------------");
+
+
+        for (int i = 0; i < 15; i++) {
+            System.out.println(bingoPool.get(i));
+        }
 
 
 
