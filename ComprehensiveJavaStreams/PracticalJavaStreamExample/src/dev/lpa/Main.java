@@ -2,6 +2,7 @@ package dev.lpa;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 
 public class Main {
@@ -33,7 +34,33 @@ public class Main {
         }
 
         System.out.println("-".repeat(50));
+
+
+        List<String> firstOnes = bingoPool.subList(0,15);
+        firstOnes.sort(Comparator.naturalOrder());
+
+        firstOnes.replaceAll(s-> s.charAt(0) + "-" + s.substring(1));
+        System.out.println(firstOnes);
+
+
+
+//        firstOnes.replaceAll( s -> {
+//            if (s.indexOf("BINGO") == 0) {
+//                String updated = s.charAt(0) + "-" + s.substring(1);
+//                System.out.print(updated + " ");
+//                return updated;
+//
+//            }
+//            return null;
+//        });
+
+
+
+
+
     }
+
+
 
 
 
