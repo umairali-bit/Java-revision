@@ -51,7 +51,6 @@ public class Main {
                 String updated = s.charAt(0) + "-" + s.substring(1);
                 System.out.print(updated + " ");
                 return updated;
-
             }
             return s;
         });
@@ -61,17 +60,24 @@ public class Main {
 
         for (int i = 0; i < 15; i++) {
             System.out.println(bingoPool.get(i));
-
         }
+        System.out.println("\n------------------------");
+
+        bingoPool.stream()
+                .limit(15)
+                .filter(s -> s.indexOf('G') == 0 || s.indexOf('O') == 0)
+                .map(s-> s.charAt(0) + "-" + s.substring(1))
+                .sorted()
+                .forEach(s -> System.out.print(s + " "));
+
+        System.out.println("\n------------------------");
+
+
+
+
+
 
 
 
     }
-
-
-
-
-
-
-
 }
