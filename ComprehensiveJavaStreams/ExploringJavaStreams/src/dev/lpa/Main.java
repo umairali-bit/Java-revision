@@ -153,6 +153,17 @@ public class Main {
                 .forEach(s -> System.out.print(s + " "));
 
 
+        System.out.println();
+        IntStream.range(1, 100) //100 is the upper bound so its really checking between 1 - 99
+                .filter(Main::isPrime)//then filter
+                .forEach(s -> System.out.print(s + " "));
+
+
+        System.out.println();
+        IntStream.rangeClosed(1, 100)
+                .filter(Main::isPrime)//then filter
+                .forEach(s -> System.out.print(s + " "));
+
 
     }
 
