@@ -76,12 +76,12 @@ public class Main {
         //tempStream.forEach(s -> System.out.println(s.toLowerCase() + ""));
 
 
-        String[] strings = {"One","Two","Three"};
+        String[] strings = {"One", "Two", "Three"};
         var firstStream = Arrays.stream(strings)
                 .sorted(Comparator.reverseOrder());
 //                .forEach(System.out::println);//s -> sout(s)
 
-        var secondStream = Stream.of("Six","Five", "Four")
+        var secondStream = Stream.of("Six", "Five", "Four")
                 .map(String::toUpperCase); //String -> String.toUpperCase()
 //                .forEach(System.out::println);// String -> sout(String)
 
@@ -96,8 +96,8 @@ public class Main {
         for (char c : "BINGO".toCharArray()) {
             int[] numbers = new int[15];
             int labelNumber = bingoIndex;
-            Arrays.setAll(numbers, i-> i + labelNumber);
-            myMap.put(c,numbers);
+            Arrays.setAll(numbers, i -> i + labelNumber);
+            myMap.put(c, numbers);
             bingoIndex += 15;
         }
 
@@ -108,7 +108,6 @@ public class Main {
 //               });
 
 
-
         myMap.entrySet()
                 .stream()
                 .map(e -> e.getKey() + " has range: " + e.getValue()[0] + "-" + e.getValue()[e.getValue().length - 1])
@@ -117,14 +116,13 @@ public class Main {
         System.out.println("\n------------------------");
 
 
-
         //static method generate on the Stream interface. This method takes a supplier
         Random random = new Random();
         Stream.generate(() -> random.nextInt(2)) //supplier interface generating a supplier of result.
                 .limit(10)
                 .forEach(s -> System.out.print(s + " "));
 
-        System.out.println("\n------------------------");
+        //System.out.println("\n------------------------");
 
 
         /*
@@ -136,16 +134,41 @@ public class Main {
          */
 
         //using IntStream because well be dealing with integers
-        IntStream.iterate(1, n-> n + 1)//unary operator
+        System.out.println();
+        IntStream.iterate(1, n -> n + 1)//unary operator
+                .filter(Main::isPrime)
                 .limit(20)
                 .forEach(s -> System.out.print(s + " "));
 
 
+        System.out.println();
+        IntStream.iterate(1, n -> n + 1)//unary operator
+                .limit(100) //itll first check the first 100 ints
+                .filter(Main::isPrime)//then filter
+                .forEach(s -> System.out.print(s + " "));
+
+        System.out.println();
+        IntStream.iterate(1, n -> n <= 100, n -> n + 1)//2nd argument as limit
+             .filter(Main::isPrime)//then filter
+                .forEach(s -> System.out.print(s + " "));
 
 
 
+    }
 
 
+    public static boolean isPrime (int wholeNumber) {
+
+        if (wholeNumber <= 2) {
+            return (wholeNumber == 2);
+        }
+
+        for (int divisor = 2; divisor < wholeNumber; divisor++) {
+            if (wholeNumber % divisor == 0) {
+                return false;
+            }
+        }
+        return true;
     }
 
 }
