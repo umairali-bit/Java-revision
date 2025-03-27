@@ -110,10 +110,16 @@ public class Main {
 
         myMap.entrySet()
                 .stream()
-                .map(e -> e.getKey() + " has a range: " + e.getValue()[0] + "-" + e.getValue()[e.getValue().length - 1])
+                .map(e -> e.getKey() + " has range: " + e.getValue()[0] + "-" + e.getValue()[e.getValue().length - 1])
                 .forEach(System.out::println);
 
 
+
+        //static method generate on the Stream interface. This method takes a supplier
+        Random random = new Random();
+        Stream.generate(() -> random.nextInt(2)) //supplier interface generating a supplier of result.
+                .limit(10)
+                .forEach(s -> System.out.print(s + " "));
 
     }
 
