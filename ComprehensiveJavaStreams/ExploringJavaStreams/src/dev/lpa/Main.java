@@ -1,6 +1,7 @@
 package dev.lpa;
 
 import java.util.*;
+import java.util.stream.IntStream;
 import java.util.stream.Stream;
 
 public class Main {
@@ -113,6 +114,8 @@ public class Main {
                 .map(e -> e.getKey() + " has range: " + e.getValue()[0] + "-" + e.getValue()[e.getValue().length - 1])
                 .forEach(System.out::println);
 
+        System.out.println("\n------------------------");
+
 
 
         //static method generate on the Stream interface. This method takes a supplier
@@ -120,6 +123,28 @@ public class Main {
         Stream.generate(() -> random.nextInt(2)) //supplier interface generating a supplier of result.
                 .limit(10)
                 .forEach(s -> System.out.print(s + " "));
+
+        System.out.println("\n------------------------");
+
+
+        /*
+
+        Iterate method on Stream class. It gives us an option to generate either a finite or infinite stream.
+        infinite stream example. The simplest form of Stream.iterate takes two arguments. The first is seed or
+         starting value, and after that its a Unary Operator.
+
+         */
+
+        //using IntStream because well be dealing with integers
+        IntStream.iterate(1, n-> n + 1)//unary operator
+                .limit(20)
+                .forEach(s -> System.out.print(s + " "));
+
+
+
+
+
+
 
     }
 
