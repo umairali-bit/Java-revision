@@ -1,6 +1,8 @@
 package dev.lpa;
 
+import java.sql.Array;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Stream;
 
@@ -17,7 +19,15 @@ public class Main {
                                     .limit(15)
                                         .map(n -> "I" + n);
 
-        streamI.forEach(System.out::println);
+        //getting N char with numbers using Arrays.stream
+        seed += 15;
+        int nSeed = seed;
+
+        String[] oLabels = new String[15];
+        Arrays.setAll(oLabels, i-> "N" + (nSeed + i));
+        var streamN = Arrays.stream(oLabels);
+
+        streamN.forEach(System.out::println);
         }
 
 
