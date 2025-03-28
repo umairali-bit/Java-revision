@@ -1,10 +1,7 @@
 package dev.lpa;
 
-import java.sql.Array;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Random;
+import java.util.*;
+import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 public class Main {
@@ -59,6 +56,9 @@ public class Main {
                 .sorted()
                 .forEach(System.out::println);
 
+        System.out.println(convertString());
+
+
 
     }
 
@@ -66,6 +66,23 @@ public class Main {
         private static int oCounter() {
         return counter++;
         }
+
+
+        public static String convertString() {
+
+        String input = "this is test";
+
+        var result = Arrays.stream(input.split(" "))
+                .map(word -> word.length() > 2 ? word.substring(0,2).toUpperCase() + word.substring(2).toLowerCase()
+                        : word.toUpperCase())
+                .collect(Collectors.joining(" "));
+
+
+
+        return result;
+
+        }
+
 
 
 
