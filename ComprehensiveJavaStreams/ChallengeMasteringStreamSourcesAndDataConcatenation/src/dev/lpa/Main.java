@@ -8,6 +8,8 @@ import java.util.stream.Stream;
 
 public class Main {
 
+    static int counter = 0;
+
     public static void main(String[] args) {
 
         int seed = 1;
@@ -34,9 +36,22 @@ public class Main {
                 "G51","G52","G53","G54","G55","G56","G57","G58","G59","G60");
 
 
+        seed += 15;
+        int rSeed = seed;
+        var streamO = Stream.generate(Main::oCounter)
+                                        .limit(15)
+                                                .map(n -> "O" + (rSeed + n));
 
-        streamG.forEach(System.out::println);
+
+
+        streamO.forEach(System.out::println);
         }
+
+
+        private static int oCounter() {
+        return counter++;
+        }
+
 
 
     }
