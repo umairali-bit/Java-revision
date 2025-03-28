@@ -27,7 +27,15 @@ public class Main {
         Arrays.setAll(oLabels, i-> "N" + (nSeed + i));
         var streamN = Arrays.stream(oLabels);
 
-        streamN.forEach(System.out::println);
+
+        //using stream.of for the next char
+        seed += 15;
+        var streamG = Stream.of("G46", "G47", "G48", "G49","G50",
+                "G51","G52","G53","G54","G55","G56","G57","G58","G59","G60");
+
+
+
+        streamG.forEach(System.out::println);
         }
 
 
