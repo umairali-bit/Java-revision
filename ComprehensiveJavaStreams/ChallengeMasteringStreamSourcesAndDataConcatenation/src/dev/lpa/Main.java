@@ -43,8 +43,15 @@ public class Main {
                                                 .map(n -> "O" + (rSeed + n));
 
 
+        var streamBI = Stream.concat(streamB, streamI);
+        var streamNG = Stream.concat(streamN, streamG);
+        var streamBING = Stream.concat(streamBI,streamNG);
+        Stream.concat(streamBING, streamO)
+                        .forEach(System.out::println);
 
-        streamO.forEach(System.out::println);
+
+
+
         }
 
 
