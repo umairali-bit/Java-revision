@@ -10,6 +10,7 @@ public class Main {
         //IntStream.iterate with three-paramter version of iterate, 1st casting a char, predicate and Unary operator
         // version of stream pipeline without any intermediate operations
         IntStream.iterate ((int) 'A', i -> i <= (int) 'z', i -> i +1)
+                .filter(i -> Character.isAlphabetic(i)) //can be replaced by method reference Character::isAlphabetic
                 .forEach(d -> System.out.printf("%c ", d));
 
     }
