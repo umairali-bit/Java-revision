@@ -1,6 +1,8 @@
 package dev.lpa;
 
+import java.util.Random;
 import java.util.stream.IntStream;
+import java.util.stream.Stream;
 
 public class Main {
 
@@ -17,9 +19,11 @@ public class Main {
          .filter(i -> Character.toUpperCase(i) > 'E')
          takeWhile(i -> i < 'a') for range of alphabets
          .map (i -> Character.toUpperCase(i))
-                .distinct() to just include upperLetters in the output
+                .distinct() to include upperLetters in the output
 
 
+           Using Stream.generate() with Supplier (takes no argument and returns a result) with
+           limit(), distinct(), and sorted()
 
          */
 
@@ -32,6 +36,16 @@ public class Main {
 //                 .skip(5)
 //                .filter(i -> Character.toUpperCase(i) > 'E')
                 .forEach(d -> System.out.printf("%c ", d));
+
+
+        System.out.println();
+        Random random = new Random();
+        Stream.generate(() -> random.nextInt((int) 'A', (int)'Z' + 1))
+                .limit(50)
+                .distinct()
+                .sorted()
+                .forEach(d -> System.out.printf("%c ", d));
+
 
     }
 }
