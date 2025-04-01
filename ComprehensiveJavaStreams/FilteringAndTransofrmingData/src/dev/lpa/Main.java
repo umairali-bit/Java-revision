@@ -16,16 +16,21 @@ public class Main {
          .skip(5)
          .filter(i -> Character.toUpperCase(i) > 'E')
          takeWhile(i -> i < 'a') for range of alphabets
+         .map (i -> Character.toUpperCase(i))
+                .distinct() to just include upperLetters in the output
+
 
 
          */
 
         IntStream.iterate ((int) 'A', i -> i <= (int) 'z', i -> i +1)
                 .filter(i -> Character.isAlphabetic(i))
-                .dropWhile(i-> Character.toUpperCase(i) <= 'E')
-                .takeWhile(i -> i <'a')
-                // .skip(5)
-                //.filter(i -> Character.toUpperCase(i) > 'E')
+                .map (Character::toUpperCase)
+                .distinct()
+//                .dropWhile(i-> Character.toUpperCase(i) <= 'E')
+//                .takeWhile(i -> i <'a')
+//                 .skip(5)
+//                .filter(i -> Character.toUpperCase(i) > 'E')
                 .forEach(d -> System.out.printf("%c ", d));
 
     }
