@@ -11,7 +11,8 @@ public class Main {
         // version of stream pipeline without any intermediate operations
         IntStream.iterate ((int) 'A', i -> i <= (int) 'z', i -> i +1)
                 .filter(i -> Character.isAlphabetic(i)) //can be replaced by method reference Character::isAlphabetic
-                .skip(5)
+                .dropWhile(i-> i <= 'E') // dropWhile() takes a predicate and evaluate until it first becomes false
+               // .skip(5)
                 //.filter(i -> Character.toUpperCase(i) > 'E')
                 .forEach(d -> System.out.printf("%c ", d));
 
