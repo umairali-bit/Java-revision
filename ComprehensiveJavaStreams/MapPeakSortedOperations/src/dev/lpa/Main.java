@@ -56,7 +56,8 @@ public class Main {
                 .map(i -> new Seat((char) ('A' + i / seatsInRow), i % seatsInRow + 1))
                 .mapToDouble(i -> i.price())
 //                .map(i -> i.toString());
-                .mapToObj(i -> "%.2f".formatted(i));
+                .boxed()
+                .map(i -> "%.2f".formatted(i));
 
         stream.forEach(System.out::println);
 
