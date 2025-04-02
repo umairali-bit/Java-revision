@@ -25,6 +25,9 @@ public class Main {
            Using Stream.generate() with Supplier (takes no argument and returns a result) with
            limit(), distinct(), and sorted()
 
+           i.toString() could also be used as a method reference (Seat::toString)
+
+
          */
 
         IntStream.iterate ((int) 'A', i -> i <= (int) 'z', i -> i +1)
@@ -50,7 +53,11 @@ public class Main {
         int maxSeats = 100;
         int seatsInRow = 10;
         var stream = Stream.iterate(0, i -> i < maxSeats, i -> i + 1)
-                .map(i -> new Seat((char) ('A' + i / seatsInRow), i % seatsInRow + 1));
+                .map(i -> new Seat((char) ('A' + i / seatsInRow), i % seatsInRow + 1))
+                .mapToDouble(i -> i.price())
+//                .map(i -> i.toString());
+                .mapToObj(i -> "%.2f".formatted(i));
+
         stream.forEach(System.out::println);
 
 
