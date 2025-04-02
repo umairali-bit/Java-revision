@@ -5,16 +5,16 @@
 * Variables
 * Starting with Expressions
 * Primitive Types
-* Byte, short, long and width
+* Byte, short, long, and width
 * Casting in Java
 * Float and Double Primitives
-* Operators, Operands and Expressions
+* Operators, Operands, and Expressions
 
 ## Expressions and Statements ##
 * Keywords and Expressions
-* Statements, Whitespace and Identation
+* Statements, Whitespace, and Indentation
 * Code Blocks
-* If then else challenge
+* If-then-else challenge
 * Methods
 * Method overloading
 * Method overriding
@@ -36,7 +36,7 @@
 * Two-Dimensional Arrays
 * Multi-dimensional Arrays
 
-## List, ArrayList, LinkedList, Iteratorm Autoboxing ##
+## List, ArrayList, LinkedList, Iteration, Autoboxing ##
 *  List and ArrayList
 *  ArrayList
 *  Arrays vs ArrayLists
@@ -75,7 +75,32 @@
 * Method Reference
 * Convenience Methods of Functional Interfaces
 * Convenience Methods with Comparator
+
+## Java Collections ##
+* Introduction to Java Collections Framework
+* Core Interfaces
+* java.util.Collections: Essential Methods and List Operations
+* Advanced java.util.Collections
+* BinarySearch, frequency, min, max, rotate
+* Hash Code
+* Union Intersection & Difference
+* LinkedHashSet and TreeSet
+* Java Map Interface
+* Advanced Map Operations
+* Map view collections
+* NavigableMap
+* EnumSet and EnumMap
   
+## Mutability, Immutability and Final Keyword in JAVA ##
+* Mutable vs Immutable Objects in Java
+* Final Modifier: Methods, Fields, Classes, Variables
+* Final Modifier: Static Method, Hiding vs Overriding
+* Understanding Side Effects of Mutability
+* Shallow vs Deep copies
+* Java Constructors: No-args, Initializer, Final Fields, and Inheritance
+* Demystifying Record Constructors
+* Final Classes & COnstructor Access Modifiers
+* Sealed Classes and Interfaces
   
 
 
