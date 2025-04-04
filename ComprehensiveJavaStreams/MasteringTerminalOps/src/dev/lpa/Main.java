@@ -36,6 +36,11 @@ public class Main {
                 .anyMatch(i -> i.isReserved());
         System.out.println("hasBookings = " + hasBookings);
 
+        boolean fullyBooked = Arrays
+                .stream(seats)
+                .allMatch(i -> i.isReserved());
+        System.out.println("fullyBooked = " + fullyBooked);
+
 
 
 
