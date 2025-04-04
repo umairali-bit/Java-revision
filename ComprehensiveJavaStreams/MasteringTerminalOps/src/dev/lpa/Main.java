@@ -25,6 +25,13 @@ public class Main {
 //        Arrays.asList(seats).forEach(i -> System.out.println(i));
 
 
+        long reservationCount = Arrays
+                .stream(seats)
+                .filter(i -> i.isReserved())
+                .count();
+        System.out.println("reservationCount = " + reservationCount);
+
+
 
     }
 }
