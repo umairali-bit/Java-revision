@@ -1,5 +1,6 @@
 package dev.lpa;
 
+import java.util.Arrays;
 import java.util.stream.IntStream;
 
 public class Main {
@@ -18,6 +19,12 @@ public class Main {
                 .peek(i -> System.out.print(i + " "))
                 .summaryStatistics();
         System.out.println("\nLeap Year Data = " + leapYear);
+
+        Seat[] seats = new Seat[100];
+        Arrays.setAll(seats, i -> new Seat((char) ('A' + i / 10), i % 10 + 1));
+//        Arrays.asList(seats).forEach(i -> System.out.println(i));
+
+
 
     }
 }
