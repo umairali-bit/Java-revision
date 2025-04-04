@@ -41,6 +41,11 @@ public class Main {
                 .allMatch(i -> i.isReserved());
         System.out.println("fullyBooked = " + fullyBooked);
 
+        boolean eventWashedOut = Arrays
+                .stream(seats)
+                .noneMatch(i -> i.isReserved());
+        System.out.println("eventWashedOut = " + eventWashedOut);
+
 
 
 
