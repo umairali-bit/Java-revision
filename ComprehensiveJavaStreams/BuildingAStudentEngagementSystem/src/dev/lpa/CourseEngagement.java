@@ -11,7 +11,7 @@ The getMonthsSinceActive method should return the months elapsed, since the last
 import java.time.LocalDate;
 import java.time.Period;
 
-public class courseEngagement {
+public class CourseEngagement {
 
     private final Course course;
     private final LocalDate enrollmentDate;
@@ -20,7 +20,7 @@ public class courseEngagement {
     private LocalDate lastActivityDate;
 
 
-    public courseEngagement(Course course, LocalDate enrollmentDate, String engagementType) {
+    public CourseEngagement(Course course, LocalDate enrollmentDate, String engagementType) {
         this.course = course;
         this.enrollmentDate = this.lastActivityDate = enrollmentDate;
         this.engagementType = engagementType;
