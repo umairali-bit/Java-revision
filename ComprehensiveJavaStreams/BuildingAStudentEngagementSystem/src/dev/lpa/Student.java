@@ -87,5 +87,9 @@ public class Student {
         return LocalDate.now().getYear() - yearEnrolled;
     }
 
+    public int getAge() {
+        return ageEnrolled + getYearsSinceEnrolled();
+    }
+
 
 }
