@@ -25,12 +25,12 @@ public class courseEngagement {
         this.engagementType = engagementType;
     }
 
-    public Course getCourse() {
-        return course;
+    public String getCourseCode() {
+        return course.courseCode();
     }
 
-    public LocalDate getEnrollmentDate() {
-        return enrollmentDate;
+    public int getEnrollmentYear() {
+        return enrollmentDate.getYear();
     }
 
     public String getEngagementType() {
@@ -41,7 +41,7 @@ public class courseEngagement {
         return lastLecture;
     }
 
-    public LocalDate getLastActivityDate() {
-        return lastActivityDate;
+    public int getLastActivityYear() {
+        return lastActivityDate.getYear();
     }
 }
