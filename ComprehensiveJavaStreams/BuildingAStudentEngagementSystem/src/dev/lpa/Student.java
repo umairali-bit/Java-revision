@@ -116,5 +116,16 @@ public class Student {
         }
     }
 
-
+    @Override
+    public String toString() {
+        return "Student{" +
+                "studentId=" + studentId +
+                ", countryCode='" + countryCode + '\'' +
+                ", yearEnrolled=" + yearEnrolled +
+                ", ageEnrolled=" + ageEnrolled +
+                ", gender='" + gender + '\'' +
+                ", programmingExperience=" + programmingExperience +
+                ", engagementMap=" + engagementMap +
+                '}';
+    }
 }
