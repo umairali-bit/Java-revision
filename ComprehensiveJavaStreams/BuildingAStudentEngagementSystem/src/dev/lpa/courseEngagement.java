@@ -15,9 +15,9 @@ public class courseEngagement {
 
     private final Course course;
     private final LocalDate enrollmentDate;
-    private final String engagementType;
+    private String engagementType;
     private int lastLecture;
-    private final LocalDate lastActivityDate;
+    private LocalDate lastActivityDate;
 
 
     public courseEngagement(Course course, LocalDate enrollmentDate, String engagementType) {
@@ -63,6 +63,14 @@ public class courseEngagement {
         LocalDate now = LocalDate.now();
         var months = Period.between(lastActivityDate, now).toTotalMonths();
         return (int) months;
+    }
+
+
+    void watchLecture (int lectureNumber, LocalDate currentDate) {
+
+        lastLecture = Math.max(lectureNumber, lastLecture);
+        lastActivityDate = currentDate;
+        engagementType = "Lecture " + lastLecture;
     }
 
 }
