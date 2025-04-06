@@ -51,6 +51,9 @@ public class courseEngagement {
         return "%tb".formatted(lastActivityDate);
     }
 
-
+    //getter for percentage
+    public double getPercentageComplete() {
+        return lastLecture * 100.0 / course.lectureCount();
+    }
 
 }
