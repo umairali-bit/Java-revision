@@ -104,5 +104,11 @@ public class Student {
         return inactiveMonths;
     }
 
+    public double getPercentComplete(String courseCode) {
+        var info = engagementMap.get(courseCode);
+        return (info == null) ? 0 : info.getPercentageComplete();
+
+    }
+
 
 }
