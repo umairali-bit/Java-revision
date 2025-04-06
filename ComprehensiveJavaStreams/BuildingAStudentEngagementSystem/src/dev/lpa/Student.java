@@ -44,8 +44,10 @@ public class Student {
 
     }
 
-
-
+    //overloaded addCourse()
+    public void addCourse(Course newCourse) {
+        addCourse(newCourse, LocalDate.now());
+    }
     //entry to the engagement map
     public void addCourse(Course newCourse, LocalDate enrollDate) {
 
