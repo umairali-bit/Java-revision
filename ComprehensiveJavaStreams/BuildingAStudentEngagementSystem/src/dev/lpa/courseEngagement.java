@@ -9,6 +9,7 @@ The getMonthsSinceActive method should return the months elapsed, since the last
  */
 
 import java.time.LocalDate;
+import java.time.Period;
 
 public class courseEngagement {
 
@@ -54,6 +55,14 @@ public class courseEngagement {
     //getter for percentage
     public double getPercentageComplete() {
         return lastLecture * 100.0 / course.lectureCount();
+    }
+
+    //getMonthsSinceActive()
+    public int getMonthsSinceActive() {
+
+        LocalDate now = LocalDate.now();
+        var months = Period.between(lastActivityDate, now).toTotalMonths();
+        return (int) months;
     }
 
 }
