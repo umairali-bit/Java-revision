@@ -14,12 +14,34 @@ public class courseEngagement {
 
     private final Course course;
     private final LocalDate enrollmentDate;
-    private final String engagenmentType;
-    private final int lastLecture;
+    private final String engagementType;
+    private int lastLecture;
     private final LocalDate lastActivityDate;
 
 
+    public courseEngagement(Course course, LocalDate enrollmentDate, String engagementType) {
+        this.course = course;
+        this.enrollmentDate = this.lastActivityDate = enrollmentDate;
+        this.engagementType = engagementType;
+    }
 
+    public Course getCourse() {
+        return course;
+    }
 
+    public LocalDate getEnrollmentDate() {
+        return enrollmentDate;
+    }
 
+    public String getEngagementType() {
+        return engagementType;
+    }
+
+    public int getLastLecture() {
+        return lastLecture;
+    }
+
+    public LocalDate getLastActivityDate() {
+        return lastActivityDate;
+    }
 }
