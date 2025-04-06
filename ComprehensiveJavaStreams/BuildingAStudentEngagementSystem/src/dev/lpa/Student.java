@@ -1,5 +1,7 @@
 package dev.lpa;
 
+import jdk.jshell.execution.LoaderDelegate;
+
 import java.time.LocalDate;
 import java.util.HashMap;
 import java.util.Map;
@@ -39,5 +41,15 @@ public class Student {
         for (Course course : courses) {
             addCourse(course, LocalDate.of(yearEnrolled,1,1));
         }
+
     }
+
+
+
+    //entry to the engagement map
+    public void addCourse(Course newCourse, LocalDate enrollDate) {
+
+        engagementMap.put(newCourse.courseCode(), new CourseEngagement(newCourse, enrollDate, "Enrollment"));
+    }
+
 }
