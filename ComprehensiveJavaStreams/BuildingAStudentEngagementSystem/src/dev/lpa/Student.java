@@ -96,5 +96,13 @@ public class Student {
         return info == null ? 0 : info.getMonthsSinceActive();
     }
 
+    public int getMonthsSinceActive() {
+        int inactiveMonths = (LocalDate.now().getYear() - 2014) * 12;
+        for (String key : engagementMap.keySet()) {
+            inactiveMonths = Math.min(inactiveMonths, getMonthsSinceActive(key));
+        }
+        return inactiveMonths;
+    }
+
 
 }
