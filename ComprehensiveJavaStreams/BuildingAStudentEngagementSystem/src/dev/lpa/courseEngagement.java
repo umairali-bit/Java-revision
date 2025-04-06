@@ -73,4 +73,9 @@ public class courseEngagement {
         engagementType = "Lecture " + lastLecture;
     }
 
+    @Override
+    public String toString() {
+        return "%s: %s %d %s [%d]".formatted(course.courseCode(),
+                getLastActivityMonth(), getLastActivityYear(), engagementType, getMonthsSinceActive());
+    }
 }
