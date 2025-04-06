@@ -44,4 +44,13 @@ public class courseEngagement {
     public int getLastActivityYear() {
         return lastActivityDate.getYear();
     }
+
+
+    //getter for month
+    public String getLastActivityMonth() {
+        return "%tb".formatted(lastActivityDate);
+    }
+
+
+
 }
