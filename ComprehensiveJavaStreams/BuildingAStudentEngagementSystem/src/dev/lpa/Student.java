@@ -83,5 +83,9 @@ public class Student {
         return Map.copyOf(engagementMap); //defensive copy for map
     }
 
+    public int getYearsSinceEnrolled() {
+        return LocalDate.now().getYear() - yearEnrolled;
+    }
+
 
 }
