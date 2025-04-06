@@ -1,5 +1,6 @@
 package dev.lpa;
 
+import java.time.LocalDate;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Random;
@@ -25,12 +26,18 @@ public class Student {
     private final Map<String, CourseEngagement> engagementMap = new HashMap<>();
 
 
+    public Student(String countryCode, int yearEnrolled, int ageEnrolled,
+                   String gender, boolean programmingExperience, Course... courses) { //varargs
+        studentId = lastStudentId++;
+        this.countryCode = countryCode;
+        this.yearEnrolled = yearEnrolled;
+        this.ageEnrolled = ageEnrolled;
+        this.gender = gender;
+        this.programmingExperience = programmingExperience;
 
 
-
-
-
-
-
-
+        for (Course course : courses) {
+            addCourse(course, LocalDate.of(yearEnrolled,1,1));
+        }
+    }
 }
