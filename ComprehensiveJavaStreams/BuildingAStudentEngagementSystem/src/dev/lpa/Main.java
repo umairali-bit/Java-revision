@@ -11,5 +11,10 @@ public class Main {
                 pymc, jmc);
         System.out.println(joe);
 
+        joe.watchLecture("JMC", 10,5,2019);
+        joe.watchLecture("PYMC",7,7,2020);
+
+        System.out.println(joe);
+
     }
 }
