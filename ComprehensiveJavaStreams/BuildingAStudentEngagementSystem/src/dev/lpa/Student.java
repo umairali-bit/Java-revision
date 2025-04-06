@@ -54,4 +54,34 @@ public class Student {
         engagementMap.put(newCourse.courseCode(), new CourseEngagement(newCourse, enrollDate, "Enrollment"));
     }
 
+
+    public long getStudentId() {
+        return studentId;
+    }
+
+    public String getCountryCode() {
+        return countryCode;
+    }
+
+    public int getYearEnrolled() {
+        return yearEnrolled;
+    }
+
+    public int getAgeEnrolled() {
+        return ageEnrolled;
+    }
+
+    public String getGender() {
+        return gender;
+    }
+
+    public boolean hasProgrammingExperience() {
+        return programmingExperience;
+    }
+
+    public Map<String, CourseEngagement> getEngagementMap() {
+        return Map.copyOf(engagementMap); //defensive copy for map
+    }
+
+
 }
