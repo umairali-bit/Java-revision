@@ -2,6 +2,7 @@ package dev.lpa;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.function.Predicate;
 import java.util.stream.Stream;
 
 public class Main {
@@ -61,6 +62,23 @@ How many students fall into the three age ranges, less than age 30, between 30 a
                     .filter (s -> s.getGender().equals(gender));
             System.out.println("# of " + gender + " students " + myStudents.count());
         }
+
+
+//        getting age groups
+        List<Predicate<Student>> list = List.of (
+                (s) -> s.getAge() < 30,
+                (s) -> s.getAge() >= 30 && s.getAge() < 60
+        );
+
+        long total = 0;
+        for (int i = 0; i < list.size(); i++) {
+            var myStudents = Arrays.stream(students).filter(list.get(i));
+            long cnt = myStudents.count();
+            total += cnt;
+            System.out.printf("# of students (%s) = %d%n",
+                    i == 0 ? " < 30" : ">= 30 & < 60", cnt);
+        }
+        System.out.println("# of students >= 60 = " + (students.length - total));
 
 
     }
