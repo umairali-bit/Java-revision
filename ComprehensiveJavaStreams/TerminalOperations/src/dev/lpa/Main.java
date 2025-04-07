@@ -1,5 +1,7 @@
 package dev.lpa;
 
+import java.util.Arrays;
+import java.util.List;
 import java.util.stream.Stream;
 
 public class Main {
@@ -41,12 +43,24 @@ How many students fall into the three age ranges, less than age 30, between 30 a
 //        System.out.println(students);
 
 
-        var students = Stream.generate(() -> Student.getRandomStudent(jmc,pymc))
-                .limit(1000);
+        Student[] students = new Student[1000];
+        Arrays.setAll(students, i -> Student.getRandomStudent(jmc, pymc));
 
-        var maleStudents = students.filter(s -> s.getGender().equals("M"));
+//        var students = Stream.generate(() -> Student.getRandomStudent(jmc,pymc))
+//                .limit(1000);
 
+//        var maleStudents = students.filter(s -> s.getGender().equals("M"));
+
+        var maleStudents = Arrays.stream(students)
+                        .filter (s -> s.getGender().equals("M"));
         System.out.println("# of male students " + maleStudents.count());
+
+//        calculating all genders
+        for (String gender : List.of("M", "F", "U")) {
+            var myStudents = Arrays.stream(students)
+                    .filter (s -> s.getGender().equals(gender));
+            System.out.println("# of " + gender + " students " + myStudents.count());
+        }
 
 
     }
