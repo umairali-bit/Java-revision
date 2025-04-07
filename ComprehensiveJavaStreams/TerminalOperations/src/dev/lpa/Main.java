@@ -33,12 +33,21 @@ How many students fall into the three age ranges, less than age 30, between 30 a
 
          */
 
+
+//       var students = Stream.generate(() -> Student.getRandomStudent(jmc,pymc))
+//                        .limit(1000)
+//                        .filter(s -> s.getGender().equals("M"))
+//                        .count();
+//        System.out.println(students);
+
+
         var students = Stream.generate(() -> Student.getRandomStudent(jmc,pymc))
                 .limit(1000);
 
-       var maleStudents = students.filter(s -> s.getGender().equals("M"));
+        var maleStudents = students.filter(s -> s.getGender().equals("M"));
 
         System.out.println("# of male students " + maleStudents.count());
+
 
     }
 }
