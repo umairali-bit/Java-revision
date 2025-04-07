@@ -116,6 +116,10 @@ public class Student {
         }
     }
 
+    //helper method to pick random element from the String array
+    private static String getRandomVal(String...data) {
+        return data[random.nextInt(data.length)];
+    }
     @Override
     public String toString() {
         return "Student{" +
