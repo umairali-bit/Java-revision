@@ -134,6 +134,20 @@ public class Student {
                 random.nextBoolean(),
                 courses);
 
+        //random course activity
+        for (Course c : courses) {
+            int lecture = random.nextInt(1, c.lectureCount());
+            int year = random.nextInt(student.getYearEnrolled(), maxYear);
+            int month = random.nextInt(1, 13);
+            if (year == (maxYear - 1)) {
+                if (month > LocalDate.now().getMonthValue()) {
+                    month = LocalDate.now().getMonthValue();
+                }
+            }
+            student.watchLecture(c.courseCode(), lecture, month, year);
+        }
+
+
         return student;
     }
 
