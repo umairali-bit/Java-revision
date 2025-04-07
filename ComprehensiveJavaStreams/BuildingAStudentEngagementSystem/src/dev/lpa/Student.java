@@ -120,6 +120,23 @@ public class Student {
     private static String getRandomVal(String...data) {
         return data[random.nextInt(data.length)];
     }
+
+    //get random student method that will populate data
+    public static Student getRandomStudent (Course... courses) {
+
+        int maxYear = LocalDate.now().getYear() + 1;
+
+        Student student = new Student(
+                getRandomVal("AU", "CA", "CN", "GB","IN", "UA", "US"),
+                random.nextInt(2015, maxYear),
+                random.nextInt(18,90),
+                getRandomVal("M","F","U"),
+                random.nextBoolean(),
+                courses);
+
+        return student;
+    }
+
     @Override
     public String toString() {
         return "Student{" +
