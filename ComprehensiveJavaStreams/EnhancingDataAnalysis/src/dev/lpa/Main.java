@@ -88,6 +88,13 @@ How many students fall into the three age ranges, less than age 30, between 30 a
                 .mapToInt(i -> i.getAge());
         System.out.println("Stats for Current age = " + currentAgeStream.summaryStatistics());
 
+//        getting country codes
+        Arrays.stream(students)
+                .map(i -> i.getCountryCode())
+                .distinct()
+                .sorted()
+                .forEach(i -> System.out.print(i + " "));
+
 
 
     }
