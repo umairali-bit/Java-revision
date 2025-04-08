@@ -79,6 +79,12 @@ How many students fall into the three age ranges, less than age 30, between 30 a
         }
         System.out.println("# of students >= 60 = " + (students.length - total));
 
+//       getting summaryStatistics
+        var ageStream = Arrays.stream(students)
+                .mapToInt(i -> i.getAgeEnrolled());
+        System.out.println("Stats for Enrollment Age = " + ageStream.summaryStatistics());
+
+
 
     }
 }
