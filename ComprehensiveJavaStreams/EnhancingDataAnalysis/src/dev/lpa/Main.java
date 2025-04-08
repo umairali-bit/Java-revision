@@ -95,6 +95,13 @@ How many students fall into the three age ranges, less than age 30, between 30 a
                 .sorted()
                 .forEach(i -> System.out.print(i + " "));
 
+//        getting enrollment age greater than 7 years
+        System.out.println();
+        boolean longTerm = Arrays.stream(students)
+                .anyMatch(s -> (s.getAge() - s.getAgeEnrolled() >= 7) &&
+                        (s.getMonthsSinceActive() < 12));
+        System.out.println("longTerm Students? " + longTerm);
+
 
 
     }
