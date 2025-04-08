@@ -102,6 +102,12 @@ How many students fall into the three age ranges, less than age 30, between 30 a
                         (s.getMonthsSinceActive() < 12));
         System.out.println("longTerm Students? " + longTerm);
 
+//        getting longTerm Count
+        long longTermCount = Arrays.stream(students)
+                .filter(s -> (s.getAge() - s.getAgeEnrolled() >=7) && (s.getMonthsSinceActive() < 12))
+                .count();
+        System.out.println("longTerm students? " + longTermCount);
+
 
 
     }
