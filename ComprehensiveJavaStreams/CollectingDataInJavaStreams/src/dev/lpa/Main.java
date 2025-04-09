@@ -1,8 +1,12 @@
 package dev.lpa;
 
 import java.util.Arrays;
+import java.util.Collection;
+import java.util.Collections;
 import java.util.List;
 import java.util.function.Predicate;
+import java.util.stream.Collector;
+import java.util.stream.Collectors;
 
 public class Main {
 
@@ -125,6 +129,15 @@ Next, select 5 of the students above and print their information out.
                 .limit(5)
                 .toArray(size -> new Student[size]);// array instantiation
 //                .forEach (s -> System.out.println(s));
+
+
+        var learners = Arrays.stream(students)
+                .filter(s -> (s.getAge() - s.getAgeEnrolled() >=7) && (s.getMonthsSinceActive() < 12))
+                .filter(s -> !s.hasProgrammingExperience())
+                .limit(5)
+                .collect(Collectors.toList()); //give a modifiable list
+
+        Collections.shuffle(learners);
 
 
 
