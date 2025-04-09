@@ -119,11 +119,12 @@ Next, select 5 of the students above and print their information out.
         System.out.println("longTerm students? " + longTermCount);
 
 //        getting 5 students with no programming experience
-        Arrays.stream(students)
+       List<Student> longTimeLearners = Arrays.stream(students)
                 .filter(s -> (s.getAge() - s.getAgeEnrolled() >=7) && (s.getMonthsSinceActive() < 12))
                 .filter(s -> !s.hasProgrammingExperience())
                 .limit(5)
-                .forEach (s -> System.out.println(s));
+                .toList();
+//                .forEach (s -> System.out.println(s));
 
 
 
