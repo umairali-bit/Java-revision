@@ -3,7 +3,6 @@ package dev.lpa;
 import java.util.Arrays;
 import java.util.List;
 import java.util.function.Predicate;
-import java.util.stream.Stream;
 
 public class Main {
 
@@ -33,6 +32,16 @@ Use a large enough number to get a variety of Student data.
 Use a combination of the intermediate and terminal operations we've covered so far, to answer the following questions.
 How many male and female students are in the group.
 How many students fall into the three age ranges, less than age 30, between 30 and 60, over 60 years old.
+Use summaryStatistics on the student's age, to get a better idea of how old the student population is.
+What countries are the students from?  Print a distinct list of the country codes.
+Are there students that are still active and have been enrolled for more than 7 years?  Use one of the match terminal operations to answer this question.
+Next, select 5 of the students above and print their information out.
+Use summaryStatistics on the student's age, to get a better idea of how old the student population is.
+What countries are the students from?  Print a distinct list of the country codes.
+Are there students that are still active and have been enrolled for more than 7 years?  Use one of the match terminal operations to answer this question.
+Next, select 5 of the students above and print their information out.
+
+
 
          */
 
@@ -79,6 +88,43 @@ How many students fall into the three age ranges, less than age 30, between 30 a
                     i == 0 ? " < 30" : ">= 30 & < 60", cnt);
         }
         System.out.println("# of students >= 60 = " + (students.length - total));
+
+//       getting summaryStatistics
+        var ageStream = Arrays.stream(students)
+                .mapToInt(i -> i.getAgeEnrolled());
+        System.out.println("Stats for Enrollment Age = " + ageStream.summaryStatistics());
+
+        var currentAgeStream = Arrays.stream(students)
+                .mapToInt(i -> i.getAge());
+        System.out.println("Stats for Current age = " + currentAgeStream.summaryStatistics());
+
+//        getting country codes
+        Arrays.stream(students)
+                .map(i -> i.getCountryCode())
+                .distinct()
+                .sorted()
+                .forEach(i -> System.out.print(i + " "));
+
+//        getting enrollment age greater than 7 years
+        System.out.println();
+        boolean longTerm = Arrays.stream(students)
+                .anyMatch(s -> (s.getAge() - s.getAgeEnrolled() >= 7) &&
+                        (s.getMonthsSinceActive() < 12));
+        System.out.println("longTerm Students? " + longTerm);
+
+//        getting longTerm Count
+        long longTermCount = Arrays.stream(students)
+                .filter(s -> (s.getAge() - s.getAgeEnrolled() >=7) && (s.getMonthsSinceActive() < 12))
+                .count();
+        System.out.println("longTerm students? " + longTermCount);
+
+//        getting 5 students with no programming experience
+        Arrays.stream(students)
+                .filter(s -> (s.getAge() - s.getAgeEnrolled() >=7) && (s.getMonthsSinceActive() < 12))
+                .filter(s -> !s.hasProgrammingExperience())
+                .limit(5)
+                .forEach (s -> System.out.println(s));
+
 
 
     }
