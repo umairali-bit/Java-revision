@@ -15,7 +15,8 @@ public class MainCollect {
 //        List of Students randomly generated courses by using Stream.generate and Supplier
 //        limit student to 1000
 //        toList() to give a list of students in the order that they were created
-//        get a set of American students
+//        get a set of American students, returns a hashSet
+//        another set of students who were enrolled under the age of 30
 
         List<Student> students = Stream.generate(() -> Student.getRandomStudent(pymc,jmc))
                 .limit(1000)
@@ -25,6 +26,11 @@ public class MainCollect {
                 .filter((s) -> s.getCountryCode().equals("US"))
                 .collect(Collectors.toSet());
         System.out.println("# of American Students = " + americanStudents.size());
+
+        Set<Student> underThirty = students.stream()
+                .filter((s) -> s.getAgeEnrolled() < 30)
+                .collect(Collectors.toSet());
+        System.out.println("# of American Students = " + underThirty.size());
 
 
 
