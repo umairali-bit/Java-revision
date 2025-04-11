@@ -20,6 +20,7 @@ public class MainCollect {
 //        get a set of American students, returns a hashSet
 //        another set of students who were enrolled under the age of 30
 //        using large set of data in youngAmericans1
+//        getting the same thing with youngAmericans2 using streams and incorporating comparator in it
 
         List<Student> students = Stream.generate(() -> Student.getRandomStudent(pymc,jmc))
                 .limit(1000)
@@ -42,6 +43,18 @@ public class MainCollect {
         youngAmericans1.retainAll(underThirty);
         youngAmericans1.forEach((s) -> System.out.print(s.getStudentId() + " "));
         System.out.println();
+
+
+        Set<Student> youngAmericans2 = students.stream()
+                .filter(s -> s.getAgeEnrolled() < 30)
+                .filter(s -> s.getCountryCode().equals("US"))
+//                .collect(TreeSet::new, TreeSet::add, TreeSet::addAll);
+                .collect(() -> new TreeSet<>(Comparator.comparing(i -> i.getStudentId())),
+                        TreeSet::add, TreeSet::addAll);
+        youngAmericans2.forEach(s -> System.out.print(s.getStudentId() + " "));
+        System.out.println();
+
+
 
 
 
