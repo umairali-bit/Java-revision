@@ -1,7 +1,9 @@
 package dev.lpa;
 
+import java.util.Comparator;
 import java.util.List;
 import java.util.Set;
+import java.util.TreeSet;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
@@ -17,6 +19,7 @@ public class MainCollect {
 //        toList() to give a list of students in the order that they were created
 //        get a set of American students, returns a hashSet
 //        another set of students who were enrolled under the age of 30
+//        using large set of data in youngAmericans1
 
         List<Student> students = Stream.generate(() -> Student.getRandomStudent(pymc,jmc))
                 .limit(1000)
@@ -31,6 +34,16 @@ public class MainCollect {
                 .filter((s) -> s.getAgeEnrolled() < 30)
                 .collect(Collectors.toSet());
         System.out.println("# of American Students = " + underThirty.size());
+
+
+        Set<Student> youngAmericans1 = new TreeSet<>(Comparator.comparing(
+                i -> i.getStudentId()));
+        youngAmericans1.addAll(americanStudents);
+        youngAmericans1.retainAll(underThirty);
+        youngAmericans1.forEach((s) -> System.out.print(s.getStudentId() + " "));
+        System.out.println();
+
+
 
 
 
