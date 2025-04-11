@@ -25,6 +25,7 @@ public class MainCollect {
         List<Student> students = Stream.generate(() -> Student.getRandomStudent(pymc,jmc))
                 .limit(1000)
                 .toList();
+        System.out.println("# of Students = " + students.size());
 
         Set<Student> americanStudents = students.stream()
                 .filter((s) -> s.getCountryCode().equals("US"))
@@ -34,7 +35,7 @@ public class MainCollect {
         Set<Student> underThirty = students.stream()
                 .filter((s) -> s.getAgeEnrolled() < 30)
                 .collect(Collectors.toSet());
-        System.out.println("# of American Students = " + underThirty.size());
+        System.out.println("# of American Students under 30 = " + underThirty.size());
 
 
         Set<Student> youngAmericans1 = new TreeSet<>(Comparator.comparing(
@@ -53,6 +54,16 @@ public class MainCollect {
                         TreeSet::add, TreeSet::addAll);
         youngAmericans2.forEach(s -> System.out.print(s.getStudentId() + " "));
         System.out.println();
+
+
+
+        String countryList = students.stream()
+                .map(i -> i.getCountryCode())
+                .distinct()
+                .sorted()
+                .reduce("", (r,v) -> r + " " + v);
+        System.out.println("countryList = " + countryList);
+
 
 
 
