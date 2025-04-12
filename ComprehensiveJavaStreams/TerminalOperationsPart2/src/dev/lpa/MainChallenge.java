@@ -1,5 +1,8 @@
 package dev.lpa;
 
+import java.util.List;
+import java.util.stream.Stream;
+
 public class MainChallenge {
 
     /*
@@ -13,6 +16,12 @@ public class MainChallenge {
         Course pymc = new Course("PYMC", "Python MasterClass", 50);
         Course jmc = new Course("JMC", "Java MasterClass", 100);
         Course gamesJava = new Course ("GAJA", "Creating Games in Java");
+
+
+        List<Student> students = Stream.generate(() -> Student.getRandomStudent(pymc,jmc,gamesJava))
+                .limit(5000)
+                .toList();
+
 
 
 
