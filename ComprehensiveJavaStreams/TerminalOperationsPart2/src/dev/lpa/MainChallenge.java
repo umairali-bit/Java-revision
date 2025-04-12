@@ -31,7 +31,9 @@ public class MainChallenge {
                 );
         double average = result[1] == 0 ? 0 :result[0] /result[1];
 
-        System.out.println("Average Percentage = " + average);
+        double threshold = 0.75 * average * 1.25;
+
+
 
 
 
