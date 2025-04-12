@@ -22,6 +22,17 @@ public class MainChallenge {
                 .limit(5000)
                 .toList();
 
+        var result = students.stream()
+                .map(i -> i.getPercentComplete("JMC"))
+                .reduce(
+                        new double[] {0.0, 0.0}, //[sum, count]
+                        (acc, percent) -> new double[]{acc[0] + percent, acc[1] + 1}, //accumulator
+                        (a,b) -> new double[]{a[0] + b[0], a[1],b[1]}
+                );
+        double average = result[1] == 0 ? 0 :result[0] /result[1];
+
+        System.out.println("Average Percentage = " + average);
+
 
 
 
