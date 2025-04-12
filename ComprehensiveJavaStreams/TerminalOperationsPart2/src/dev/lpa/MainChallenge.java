@@ -5,6 +5,7 @@ import java.util.Comparator;
 import java.util.List;
 import java.util.Set;
 import java.util.stream.Collectors;
+import java.util.stream.IntStream;
 import java.util.stream.Stream;
 
 public class MainChallenge {
@@ -69,8 +70,13 @@ public class MainChallenge {
 
 
 
-        List<Student> students = Stream.iterate(1, s -> s <= 500, s-> s + 1)
-                .map(s -> Student.getRandomStudent(jmc,pymc))
+//        List<Student> students = Stream.iterate(1, s -> s <= 500, s-> s + 1)
+//                .map(s -> Student.getRandomStudent(jmc,pymc))
+//                .toList();
+
+        List<Student> students = IntStream
+                .rangeClosed(1, 5000)
+                .mapToObj(s -> Student.getRandomStudent(jmc,pymc))
                 .toList();
 
 
