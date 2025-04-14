@@ -4,6 +4,7 @@ import java.sql.SQLOutput;
 import java.util.Comparator;
 import java.util.List;
 import java.util.Set;
+import java.util.TreeSet;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 import java.util.stream.Stream;
@@ -107,17 +108,41 @@ public class MainChallenge {
 
 
         Comparator<Student> longTermStudent = Comparator.comparing(i -> i.getYearEnrolled());
+
         List<Student> hardWorkers = students.stream()
                 .filter(s -> s.getMonthsSinceActive("JMC") == 0)
                 .filter(s -> s.getPercentComplete("JMC") >= topPercent)
                 .sorted(longTermStudent)
                 .limit(10)
                 .toList();
+        System.out.println("hardworkers = " + hardWorkers.size());
 
         hardWorkers.forEach(s -> {
             s.addCourse(jgames);
-            System.out.println(s);
+            System.out.print(s.getStudentId() + " ");
         });
+
+        System.out.println();
+
+
+        Comparator<Student> uniqueSorted = longTermStudent.thenComparing(
+                Student::getStudentId);
+        students.stream()
+                .filter(s -> s.getMonthsSinceActive("JMC") == 0)
+                .filter(s -> s.getPercentComplete("JMC") >= topPercent)
+                .sorted(longTermStudent)
+                .limit(10)
+//                .toList()
+//                .collect(Collectors.toList())
+//                .collect(Collectors.toSet())
+                .collect(() -> new TreeSet<>(uniqueSorted), TreeSet::add, TreeSet::addAll)
+                .forEach(s -> {
+                s.addCourse(jgames);
+               System.out.print(s.getStudentId() + " ");
+
+        });
+
+        System.out.println();
 
 //        System.out.println("hardworkers = " + hardWorkers.size());
 
