@@ -93,13 +93,25 @@ public class MainChallenge {
         System.out.printf("Average Percentage Complete = %.2f%% %n", avePercent);
 
 
+/*
+        Use this result, multiplying it by 1.25, to collect a group of students (either as a list, or a set).
+        These would be the students who've completed more than three quarters of that average percentage.
+        Sort by the longest enrolled students who are still active, because you're going to offer your new course to 10 of
+        these students, for a trial run.
+
+*/
+
+
         int topPercent = (int) (1.25 * avePercent);
         System.out.printf("Best Percentage Complete = %d%% %n", topPercent);
 
 
+        Comparator<Student> longTermStudent = Comparator.comparing(i -> i.getYearEnrolled());
         List<Student> hardWorkers = students.stream()
                 .filter(s -> s.getMonthsSinceActive("JMC") == 0)
                 .filter(s -> s.getPercentComplete("JMC") >= topPercent)
+                .sorted(longTermStudent)
+                .limit(10)
                 .toList();
         System.out.println("hardworkers = " + hardWorkers.size());
 
