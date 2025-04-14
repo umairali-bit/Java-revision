@@ -113,7 +113,13 @@ public class MainChallenge {
                 .sorted(longTermStudent)
                 .limit(10)
                 .toList();
-        System.out.println("hardworkers = " + hardWorkers.size());
+
+        hardWorkers.forEach(s -> {
+            s.addCourse(jgames);
+            System.out.println(s);
+        });
+
+//        System.out.println("hardworkers = " + hardWorkers.size());
 
 
 
