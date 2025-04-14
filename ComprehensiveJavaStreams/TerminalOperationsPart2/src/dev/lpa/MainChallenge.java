@@ -79,8 +79,17 @@ public class MainChallenge {
                 .mapToObj(s -> Student.getRandomStudent(jmc,pymc))
                 .toList();
 
+/*
+        Use the getPercentComplete method, to calculate the average percentage completed for all students for just the
+        Java Masterclass, using reduce terminal operation.
 
+*/
+        double totalPercent = students.stream()
+                .mapToDouble(s -> s.getPercentComplete("JMC"))
+                .reduce(0, (a,b) -> a +b);
 
+        double avePercent = totalPercent / students.size();
+        System.out.printf("Average Percentage Complete = %.2f%% %n", avePercent);
 
 
 
