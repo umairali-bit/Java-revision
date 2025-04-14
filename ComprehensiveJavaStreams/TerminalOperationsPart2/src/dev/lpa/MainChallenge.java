@@ -17,7 +17,7 @@ public class MainChallenge {
     Add a third course, titled "Creating Games in Java".   You don't have to pass a lecture count for this one.
     Use Stream.generate or Stream.iterate to generate 5000 random students and create a list of these.
     Use the getPercentComplete method, to calculate the average percentage completed for all students for just the
-    Java Masterclass, using the reduce terminal operation.
+    Java Masterclass, using reduce terminal operation.
     Use this result, multiplying it by 1.25, to collect a group of students (either as a list, or a set).
     These would be the students who've completed more than three quarters of that average percentage.
     Sort by the longest enrolled students who are still active, because you're going to offer your new course to 10 of
@@ -86,10 +86,24 @@ public class MainChallenge {
 */
         double totalPercent = students.stream()
                 .mapToDouble(s -> s.getPercentComplete("JMC"))
+//              .sum()
                 .reduce(0, (a,b) -> a +b);
 
         double avePercent = totalPercent / students.size();
         System.out.printf("Average Percentage Complete = %.2f%% %n", avePercent);
+
+
+        int topPercent = (int) (1.25 * avePercent);
+        System.out.printf("Best Percentage Complete = %d%% %n", topPercent);
+
+
+        List<Student> hardWorkers = students.stream()
+                .filter(s -> s.getMonthsSinceActive("JMC") == 0)
+                .filter(s -> s.getPercentComplete("JMC") >= topPercent)
+                .toList();
+        System.out.println("hardworkers = " + hardWorkers.size());
+
+
 
 
 
