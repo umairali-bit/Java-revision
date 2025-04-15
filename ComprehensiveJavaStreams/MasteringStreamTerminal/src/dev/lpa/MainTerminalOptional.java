@@ -66,5 +66,17 @@ public class MainTerminalOptional {
                 .ifPresentOrElse(a -> System.out.printf("Avg age under 21 : %.2f%n",a)
                 ,() -> System.out.println("Did not find anyone under " + minAge));
 
+
+
+
+//        map(), reduce(), distinct()
+        students.stream()
+                .filter(i -> i.getAge() <= minAge)
+                .map(i -> i.getCountryCode())
+                .distinct()
+                .reduce((a,b) -> String.join(",", a,b))
+                .ifPresentOrElse(s -> System.out.println(s), () -> System.out.println("None found"));
+
+
     }
 }
