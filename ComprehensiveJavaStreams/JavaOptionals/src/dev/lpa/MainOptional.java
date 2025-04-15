@@ -39,11 +39,15 @@ public class MainOptional {
         o3.ifPresent(System.out::println);
 
 
-//      retrieving the firstStudent id by ternary operator
-        Student firstStudent = (o3.isPresent() ? o3.get() : null);
-        long id = (firstStudent == null) ? -1 : firstStudent.getStudentId();
-        System.out.println("firstStudent's id is " + id);
+////      retrieving the firstStudent id by ternary operator
+//        Student firstStudent = (o3.orElse(null)); //(o3.isPresent() ? o3.get() : null);
+//        long id = (firstStudent == null) ? -1 : firstStudent.getStudentId();
+//        System.out.println("firstStudent's id is " + id);
 
+//        Student firstStudent = (o3.orElse(getDummyStudent(jmc))); //Getting dummy student code is made
+        Student firstStudent = o3.orElseGet(() -> getDummyStudent(jmc));
+        long id = firstStudent.getStudentId();
+        System.out.println("firstStudent's id is " + id);
 
     }
 
@@ -62,6 +66,12 @@ public class MainOptional {
 
         return Optional.ofNullable(list.get(new Random().nextInt(list.size())));
 
+    }
+
+    private static Student getDummyStudent (Course... courses) {
+        System.out.println("Getting the dummy student");
+
+        return new Student("No", 1,1,"U",false, courses);
     }
 
 
