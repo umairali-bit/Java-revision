@@ -49,6 +49,20 @@ public class MainOptional {
         long id = firstStudent.getStudentId();
         System.out.println("firstStudent's id is " + id);
 
+
+
+
+//        getting list of countries with streams
+        List<String> countries = students.stream()
+                .map(i -> i.getCountryCode())
+                .distinct()
+                .toList();
+
+        Optional.of(countries)
+                .map(l -> String.join(",",l))
+                .filter(l -> l.contains("FR"))
+                .ifPresentOrElse(System.out::println, () -> System.out.println("Missing FR"));
+
     }
 
 // private static method that returns Optional with a type argument of Student. It will take a List of Students,
