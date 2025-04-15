@@ -49,14 +49,22 @@ public class MainTerminalOptional {
 
 
 //       max()
-
-        //      using Comparator
         students.stream()
                 .filter(i -> i.getAge() <= minAge)
                 .max(Comparator.comparing(i -> i.getAge()))
-//                .findFirst()
+//              .findFirst()
                 .ifPresentOrElse(s -> System.out.printf("Student %d from %s is %d%n",
                                 s.getStudentId(),s.getCountryCode(),s.getAge()),
                         () -> System.out.println("Did not find anyone under " + minAge));
+
+
+//   mapToInt(), average()
+        students.stream()
+                .filter(i -> i.getAge() <= minAge)
+                .mapToInt(i -> i.getAge())
+                .average()
+                .ifPresentOrElse(a -> System.out.printf("Avg age under 21 : %.2f%n",a)
+                ,() -> System.out.println("Did not find anyone under " + minAge));
+
     }
 }
