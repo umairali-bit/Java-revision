@@ -1,5 +1,6 @@
 package dev.lpa;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 import java.util.Random;
@@ -23,6 +24,10 @@ public class MainOptional {
         Optional<Student> o1 = getStudent(null, "first");
         System.out.println("Empty = " + o1.isEmpty() + ", Present = " + o1.isPresent());
         System.out.println(o1);
+
+        Optional<Student> o2 = getStudent(new ArrayList<>(), "first");
+        System.out.println("Empty = " + o2.isEmpty() + ", Present = " + o2.isPresent());
+        System.out.println(o2);
 
     }
 
