@@ -17,5 +17,13 @@ public class MainTerminalOptional {
                         .toList();
 
 
+        int minAge = 21;
+
+        students.stream()
+                .filter(i -> i.getAge() <= minAge)
+                .findAny()
+                .ifPresentOrElse(s -> System.out.printf("Student %d from %s is %d%n",
+                       s.getStudentId(),s.getCountryCode(),s.getAge()),
+                        () -> System.out.println("Did not find anyone under " + minAge));
     }
 }
