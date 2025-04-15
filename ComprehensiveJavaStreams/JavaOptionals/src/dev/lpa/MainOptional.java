@@ -29,7 +29,7 @@ public class MainOptional {
         System.out.println("Empty = " + o2.isEmpty() + ", Present = " + o2.isPresent());
         System.out.println(o2);
 
-//        students.add(0, null);
+        students.add(0, null);
         Optional<Student> o3 = getStudent(students, "first");
         System.out.println("Empty = " + o3.isEmpty() + ", Present = " + o2.isPresent());
         System.out.println(o3);
@@ -44,12 +44,12 @@ public class MainOptional {
  //           return null;
             return Optional.empty();
         } else if (type.equals("first")) {
-            return Optional.of(list.get(0));
+            return Optional.ofNullable(list.get(0));
         } else if (type.equals("last")) {
-            return Optional.of(list.get(list.size() - 1));
+            return Optional.ofNullable(list.get(list.size() - 1));
         }
 
-        return Optional.of(list.get(new Random().nextInt(list.size())));
+        return Optional.ofNullable(list.get(new Random().nextInt(list.size())));
 
     }
 
