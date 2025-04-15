@@ -1,5 +1,6 @@
 package dev.lpa;
 
+import java.util.Comparator;
 import java.util.List;
 import java.util.stream.Stream;
 
@@ -32,6 +33,28 @@ public class MainTerminalOptional {
         students.stream()
                 .filter(i -> i.getAge() <= minAge)
                 .findFirst()
+                .ifPresentOrElse(s -> System.out.printf("Student %d from %s is %d%n",
+                                s.getStudentId(),s.getCountryCode(),s.getAge()),
+                        () -> System.out.println("Did not find anyone under " + minAge));
+
+//      using Comparator, min()
+        students.stream()
+                .filter(i -> i.getAge() <= minAge)
+                .min(Comparator.comparing(i -> i.getAge()))
+//                .findFirst()
+                .ifPresentOrElse(s -> System.out.printf("Student %d from %s is %d%n",
+                                s.getStudentId(),s.getCountryCode(),s.getAge()),
+                        () -> System.out.println("Did not find anyone under " + minAge));
+
+
+
+//       max()
+
+        //      using Comparator
+        students.stream()
+                .filter(i -> i.getAge() <= minAge)
+                .max(Comparator.comparing(i -> i.getAge()))
+//                .findFirst()
                 .ifPresentOrElse(s -> System.out.printf("Student %d from %s is %d%n",
                                 s.getStudentId(),s.getCountryCode(),s.getAge()),
                         () -> System.out.println("Did not find anyone under " + minAge));
