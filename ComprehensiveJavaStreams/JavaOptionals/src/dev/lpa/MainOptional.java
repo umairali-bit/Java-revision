@@ -28,13 +28,14 @@ public class MainOptional {
         Optional<Student> o2 = getStudent(new ArrayList<>(), "first");
         System.out.println("Empty = " + o2.isEmpty() + ", Present = " + o2.isPresent());
         System.out.println(o2);
-        System.out.println(o2.get());
+//        System.out.println(o2.get());
 
 //        students.add(0, null);
         Optional<Student> o3 = getStudent(students, "first");
         System.out.println("Empty = " + o3.isEmpty() + ", Present = " + o2.isPresent());
         System.out.println(o3);
-        System.out.println(o3.get());
+        o3.ifPresent(System.out::println);
+
 
     }
 
