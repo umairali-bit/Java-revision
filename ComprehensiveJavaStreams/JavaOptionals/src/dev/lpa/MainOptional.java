@@ -29,6 +29,8 @@ public class MainOptional {
         System.out.println("Empty = " + o2.isEmpty() + ", Present = " + o2.isPresent());
         System.out.println(o2);
 //        System.out.println(o2.get());
+        o2.ifPresent(System.out::println); //no output because Optional is empty
+        o2.ifPresentOrElse(i -> System.out.println(i), () -> System.out.println("-----> Empty"));
 
 //        students.add(0, null);
         Optional<Student> o3 = getStudent(students, "first");
