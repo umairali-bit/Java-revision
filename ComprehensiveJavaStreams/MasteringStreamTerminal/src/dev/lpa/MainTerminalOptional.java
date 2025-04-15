@@ -19,11 +19,21 @@ public class MainTerminalOptional {
 
         int minAge = 21;
 
+
+        //     use of findAny
         students.stream()
                 .filter(i -> i.getAge() <= minAge)
                 .findAny()
                 .ifPresentOrElse(s -> System.out.printf("Student %d from %s is %d%n",
                        s.getStudentId(),s.getCountryCode(),s.getAge()),
+                        () -> System.out.println("Did not find anyone under " + minAge));
+
+//      findFirst()
+        students.stream()
+                .filter(i -> i.getAge() <= minAge)
+                .findFirst()
+                .ifPresentOrElse(s -> System.out.printf("Student %d from %s is %d%n",
+                                s.getStudentId(),s.getCountryCode(),s.getAge()),
                         () -> System.out.println("Did not find anyone under " + minAge));
     }
 }
