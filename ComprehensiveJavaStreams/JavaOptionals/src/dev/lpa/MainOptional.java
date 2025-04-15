@@ -30,13 +30,19 @@ public class MainOptional {
         System.out.println(o2);
 //        System.out.println(o2.get());
         o2.ifPresent(System.out::println); //no output because Optional is empty
-        o2.ifPresentOrElse(i -> System.out.println(i), () -> System.out.println("-----> Empty"));
+        o2.ifPresentOrElse(i -> System.out.println(i), () -> System.out.println("-----> Empty"));//runnable interface
 
 //        students.add(0, null);
         Optional<Student> o3 = getStudent(students, "first");
         System.out.println("Empty = " + o3.isEmpty() + ", Present = " + o2.isPresent());
         System.out.println(o3);
         o3.ifPresent(System.out::println);
+
+
+//      retrieving the firstStudent id by ternary operator
+        Student firstStudent = (o3.isPresent() ? o3.get() : null);
+        long id = (firstStudent == null) ? -1 : firstStudent.getStudentId();
+        System.out.println("firstStudent's id is " + id);
 
 
     }
