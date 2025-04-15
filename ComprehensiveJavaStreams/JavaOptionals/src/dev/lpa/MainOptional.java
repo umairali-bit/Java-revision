@@ -1,6 +1,7 @@
 package dev.lpa;
 
 import java.util.List;
+import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 public class MainOptional {
@@ -13,7 +14,8 @@ public class MainOptional {
 
         List<Student> students = Stream.generate(() -> Student.getRandomStudent(pymc,jmc))
                 .limit(1000)
-                .toList();
+//              .toList();
+                .collect(Collectors.toList()); //because we want to modify the list
 
     }
 }
