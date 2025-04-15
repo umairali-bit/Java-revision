@@ -19,6 +19,11 @@ public class MainOptional {
 //              .toList();
                 .collect(Collectors.toList()); //because we want to modify the list
 
+
+        Optional<Student> o1 = getStudent(null, "first");
+        System.out.println("Empty = " + o1.isEmpty() + ", Present = " + o1.isPresent());
+        System.out.println(o1);
+
     }
 
 // private static method that returns Optional with a type argument of Student. It will take a List of Students,
