@@ -45,6 +45,13 @@ public class MainMapping {
         System.out.println("Experienced Students = " + experienced.get(true).size());
 
 
+//        use of counting() on the Collectors class
+        var expCount = students.stream()
+                .collect(partitioningBy(i -> i.hasProgrammingExperience(), counting()));
+        System.out.println("Experienced Students = " + expCount.get(true));
+
+
+
 
 
 
