@@ -60,6 +60,17 @@ public class MainMapping {
         System.out.println("Experienced and Active Students = " + experiencedAndActive.get(true));
 
 
+//        getting a multi-level map
+
+        var multiLevel = students.stream()
+                .collect(groupingBy(i -> i.getCountryCode(),
+                        groupingBy(i -> i.getGender())));
+
+        multiLevel.forEach((key, value) -> {
+            System.out.println(key);
+            value.forEach((key1, value1) ->
+            System.out.println("\t" + key1 + " " + value1.size()));
+        });
 
 
 
