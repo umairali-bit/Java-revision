@@ -3,6 +3,7 @@ package dev.lpa;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
+import static java.util.stream.Collectors.*;
 import java.util.stream.IntStream;
 
 public class MainMapping {
@@ -24,6 +25,18 @@ public class MainMapping {
                 .collect(Collectors.groupingBy(i -> i.getCountryCode()));
 
         mappedStudents.forEach((k,v) -> System.out.println(k + " " + v.size()));
+
+        System.out.println("-".repeat(30));
+
+//        same map for only students aged 25 or under
+        int minAge = 25;
+        var youngerSet = students.stream()
+                .collect(groupingBy(i -> i.getCountryCode(),
+                        filtering(s -> s.getAge() <= minAge, toList())));
+
+
+
+
 
     }
 }
