@@ -34,6 +34,8 @@ public class MainMapping {
                 .collect(groupingBy(i -> i.getCountryCode(),
                         filtering(s -> s.getAge() <= minAge, toList())));
 
+        youngerSet.forEach((k,v) -> System.out.println(k + " " + v.size()));
+
 
 
 
