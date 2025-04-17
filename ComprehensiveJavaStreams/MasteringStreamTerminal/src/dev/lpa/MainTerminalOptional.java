@@ -2,6 +2,7 @@ package dev.lpa;
 
 import java.util.Comparator;
 import java.util.List;
+import java.util.Optional;
 import java.util.stream.Stream;
 
 public class MainTerminalOptional {
@@ -18,7 +19,7 @@ public class MainTerminalOptional {
                         .toList();
 
 
-        int minAge = 21;
+        int minAge = 18;
 
 
         //     use of findAny
@@ -76,6 +77,28 @@ public class MainTerminalOptional {
                 .distinct()
                 .reduce((a,b) -> String.join(",", a,b))
                 .ifPresentOrElse(s -> System.out.println(s), () -> System.out.println("None found"));
+
+
+//        //        getting list of countries with streams
+//        List<String> countries = students.stream()
+//                .map(i -> i.getCountryCode())
+//                .distinct()
+//                .toList();
+//
+//        Optional.of(countries)
+//                .map(l -> String.join(",",l))
+//                .filter(l -> l.contains("FR"))
+//                .ifPresentOrElse(System.out::println, () -> System.out.println("Missing FR"));
+
+
+//        changing the above code into a single statement
+                students.stream()
+                .map(i -> i.getCountryCode())
+                .distinct()
+                .map(l -> String.join(",",l))
+                .filter(l -> l.contains("FR"))
+                        .findAny() //terminal operation needs to added before ifPresentOrElse
+                .ifPresentOrElse(System.out::println, () -> System.out.println("Missing FR"));
 
 
     }
