@@ -23,5 +23,7 @@ public class MainMapping {
         var mappedStudents = students.stream()
                 .collect(Collectors.groupingBy(i -> i.getCountryCode()));
 
+        mappedStudents.forEach((k,v) -> System.out.println(k + " " + v.size()));
+
     }
 }
