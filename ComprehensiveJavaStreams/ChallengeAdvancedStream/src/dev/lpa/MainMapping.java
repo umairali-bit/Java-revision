@@ -1,6 +1,8 @@
 package dev.lpa;
 
 import java.util.List;
+import java.util.Map;
+import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
 public class MainMapping {
@@ -16,5 +18,10 @@ public class MainMapping {
                 .rangeClosed(1, 5000)
                 .mapToObj(s -> Student.getRandomStudent(jmc,pymc))
                 .toList();
+
+//        using list of students to create a Map
+        var mappedStudents = students.stream()
+                .collect(Collectors.groupingBy(i -> i.getCountryCode()));
+
     }
 }
