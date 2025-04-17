@@ -36,6 +36,15 @@ public class MainMapping {
 
         youngerSet.forEach((k,v) -> System.out.println(k + " " + v.size()));
 
+        System.out.println("-".repeat(30));
+
+
+//        map that returns boolean values
+        var experienced = students.stream()
+                .collect(partitioningBy(i -> i.hasProgrammingExperience()));
+        System.out.println("Experienced Students = " + experienced.get(true).size());
+
+
 
 
 
