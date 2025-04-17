@@ -51,6 +51,15 @@ public class MainMapping {
         System.out.println("Experienced Students = " + expCount.get(true));
 
 
+//        getting experienced and active students
+        var experiencedAndActive = students.stream()
+                .collect(partitioningBy(
+                        i -> i.hasProgrammingExperience()
+                        && i.getMonthsSinceActive() == 0,
+                        counting()));
+        System.out.println("Experienced and Active Students = " + experiencedAndActive.get(true));
+
+
 
 
 
