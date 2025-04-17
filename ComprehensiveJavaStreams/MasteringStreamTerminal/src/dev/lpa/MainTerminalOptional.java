@@ -96,9 +96,9 @@ public class MainTerminalOptional {
                 .map(i -> i.getCountryCode())
                 .distinct()
                 .map(l -> String.join(",",l))
-                .filter(l -> l.contains("FR"))
+                .filter(l -> l.contains("AU"))
                         .findAny() //terminal operation needs to added before ifPresentOrElse
-                .ifPresentOrElse(System.out::println, () -> System.out.println("Missing FR"));
+                .ifPresentOrElse(System.out::println, () -> System.out.println("Missing AU"));
 
 
     }
