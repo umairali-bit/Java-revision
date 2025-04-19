@@ -73,12 +73,20 @@ public class MainMapping {
         });
 
 //        getting the student body count
-
         long studentBodyCount = 0;
         for (var list : experienced.values()) {
             studentBodyCount += list.size();
         }
         System.out.println("studentBodyCount = " + studentBodyCount);
+
+//        counting students in map using streams without filtering
+        studentBodyCount = experienced.values().stream()
+                .mapToInt(l -> l.size())
+                .sum();
+        System.out.println("studentBodyCount = " + studentBodyCount);
+
+
+
 
 
 
