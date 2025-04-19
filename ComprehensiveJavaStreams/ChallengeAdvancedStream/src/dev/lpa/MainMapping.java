@@ -72,7 +72,7 @@ public class MainMapping {
             System.out.println("\t" + key1 + " " + value1.size()));
         });
 
-//        getting the student body count
+//      counting students in map without using streams
         long studentBodyCount = 0;
         for (var list : experienced.values()) {
             studentBodyCount += list.size();
@@ -84,6 +84,22 @@ public class MainMapping {
                 .mapToInt(l -> l.size())
                 .sum();
         System.out.println("studentBodyCount = " + studentBodyCount);
+
+
+//        map to stream, filtering getMonthsSinceActive()
+        studentBodyCount = experienced.values().stream()
+                .map(l -> l.stream()
+                        .filter(i -> i.getMonthsSinceActive() <= 3)
+                        .count())
+                .mapToLong(l -> l)
+                .sum();
+        System.out.println("studentBodyCount = " + studentBodyCount);
+
+
+
+
+
+
 
 
 
