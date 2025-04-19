@@ -72,6 +72,16 @@ public class MainMapping {
             System.out.println("\t" + key1 + " " + value1.size()));
         });
 
+//        getting the student body count
+
+        long studentBodyCount = 0;
+        for (var list : experienced.values()) {
+            studentBodyCount += list.size();
+        }
+        System.out.println("studentBodyCount = " + studentBodyCount);
+
+
+
 
 
 
