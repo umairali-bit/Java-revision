@@ -99,6 +99,28 @@ public class MainMapping {
 
 
 
+//        studentBodyCount = experienced.values().stream()
+//                .map(l -> l.stream()
+//                        .filter(i -> i.getMonthsSinceActive() <= 3)
+//                        .count())
+//                .mapToLong(l -> l)
+//                .sum();
+//        System.out.println("studentBodyCount = " + studentBodyCount);
+
+//        getting the same result from the above code using flatMap
+        long count = experienced.values().stream()
+                .flatMap(l -> l.stream())
+                .filter(s -> s.getMonthsSinceActive() <= 3)
+                .count();
+        System.out.println("Active Students = " + count);
+
+
+
+
+
+
+
+
 
 
 
