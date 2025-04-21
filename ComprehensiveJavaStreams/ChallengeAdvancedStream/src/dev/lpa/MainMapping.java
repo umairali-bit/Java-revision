@@ -115,6 +115,16 @@ public class MainMapping {
         System.out.println("Active Students = " + count);
 
 
+//      flattening the list
+        count = multiLevel.values().stream()
+                .flatMap(m -> m.values().stream()
+                        .flatMap(l -> l.stream()))
+                .filter(s -> s.getMonthsSinceActive() <= 3)
+                .count();
+        System.out.println("Active students in multilevel = " + count);
+
+
+
 
 
 
