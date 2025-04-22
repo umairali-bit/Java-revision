@@ -1,9 +1,7 @@
 package dev.lpa;
 
 import java.time.LocalDate;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Random;
+import java.util.*;
 
 public class Student {
 
@@ -41,6 +39,7 @@ public class Student {
         }
 
     }
+
 
     //overloaded addCourse()
     public void addCourse(Course newCourse) {
@@ -119,6 +118,27 @@ public class Student {
     //helper method to pick random element from the String array
     private static String getRandomVal(String...data) {
         return data[random.nextInt(data.length)];
+    }
+
+    private static Course[] getRandomSelection(Course...courses){
+
+        int courseCount = random.nextInt(1, courses.length + 1) ;
+
+        List<Course> courseList = new ArrayList<>(Arrays.asList(courses));
+        Collections.shuffle(courseList);
+//        to get at least 1 course, up to the maximum number of courses available
+        List<Course> selectedCourses = new ArrayList<>(courseList.subList(0, courseCount));
+
+        return selectedCourses.toArray(new Course[0]);
+
+
+
+
+
+
+
+
+
     }
 
     //get random student method that will populate data
