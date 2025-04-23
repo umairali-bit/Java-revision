@@ -76,13 +76,27 @@ public class StreamSectionChallenge {
 
 
 //        map of statistics
-
         var percentagesStatistic = students.stream()
                 .flatMap(s -> s.getEngagementMap().values().stream())
                 .collect(Collectors.groupingBy(i -> i.getCourseCode(),
                         Collectors.summarizingDouble(s -> s.getPercentageComplete())));
 
         percentagesStatistic.forEach((k,v) -> System.out.println(k + " " + v));
+
+/*
+        nested map using the courseCode as the key to the top-level map, with last activity year as the key for the
+                nested map
+                        */
+
+        var yearMap = students.stream()
+                .flatMap(s -> s.getEngagementMap().values().stream())
+                .collect(Collectors.groupingBy(i -> i.getCourseCode(),
+                        Collectors.groupingBy(i -> i.getLastActivityYear(),
+                                Collectors.counting())));
+        yearMap.forEach((k,v) -> System.out.println(k + " " + v));
+
+
+
 
 
 
