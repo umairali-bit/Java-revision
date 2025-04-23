@@ -66,6 +66,16 @@ public class StreamSectionChallenge {
 
 
 
+//        Average percent complete of each course
+        var percentages = students.stream()
+                .flatMap(s -> s.getEngagementMap().values().stream())
+                .collect(Collectors.groupingBy(i -> i.getCourseCode(),
+                        Collectors.averagingDouble(s -> s.getPercentageComplete())));
+
+        percentages.forEach((k,v) -> System.out.println(k + " " + v));
+
+
+
     }
 }
 
