@@ -130,21 +130,13 @@ public class Student {
         List<Course> selectedCourses = new ArrayList<>(courseList.subList(0, courseCount));
 
         return selectedCourses.toArray(new Course[0]);
-
-
-
-
-
-
-
-
-
     }
 
     //get random student method that will populate data
     public static Student getRandomStudent (Course... courses) {
 
         int maxYear = LocalDate.now().getYear() + 1;
+        Course[] randomCourses = getRandomSelection(courses);
 
         Student student = new Student(
                 getRandomVal("AU", "CA", "CN", "GB","IN", "UA", "US"),
