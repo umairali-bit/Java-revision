@@ -99,7 +99,8 @@ public class StreamSectionChallenge {
         students.stream()
                 .flatMap(s -> s.getEngagementMap().values().stream())
                 .collect(Collectors.groupingBy(i -> i.getEnrollmentYear(),
-                        Collectors.counting()))
+                        Collectors.groupingBy(i -> i.getCourseCode(),
+                        Collectors.counting())))
                 .forEach((k,v) -> System.out.println(k + ": " + v) );
 
 
