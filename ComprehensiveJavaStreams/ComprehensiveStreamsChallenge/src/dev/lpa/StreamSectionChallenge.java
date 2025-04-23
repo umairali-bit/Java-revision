@@ -75,6 +75,21 @@ public class StreamSectionChallenge {
         percentages.forEach((k,v) -> System.out.println(k + " " + v));
 
 
+//        map of statistics
+
+        var percentagesStatistic = students.stream()
+                .flatMap(s -> s.getEngagementMap().values().stream())
+                .collect(Collectors.groupingBy(i -> i.getCourseCode(),
+                        Collectors.summarizingDouble(s -> s.getPercentageComplete())));
+
+        percentagesStatistic.forEach((k,v) -> System.out.println(k + " " + v));
+
+
+
+
+
+
+
 
     }
 }
