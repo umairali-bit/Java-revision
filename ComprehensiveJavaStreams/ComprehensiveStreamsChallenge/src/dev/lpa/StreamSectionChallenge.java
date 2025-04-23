@@ -19,11 +19,11 @@ public class StreamSectionChallenge {
 
         Course pymc = new Course("PYMC", "Python MasterClass", 50);
         Course jmc = new Course("JMC", "Java MasterClass", 100);
-        Course jgames = new Course ("JGame", "Creating Games in Java");
+        Course jgames = new Course("JGame", "Creating Games in Java");
 
         int currentYear = LocalDate.now().getYear();
         List<Student> students = Stream
-                .generate(() -> Student.getRandomStudent(jmc, pymc,jgames))
+                .generate(() -> Student.getRandomStudent(jmc, pymc, jgames))
                 .filter(s -> s.getYearEnrolled() >= (currentYear - 4))
                 .limit(10000)
                 .toList();
@@ -36,6 +36,16 @@ public class StreamSectionChallenge {
                 .mapToInt(Student::getYearEnrolled)
                 .summaryStatistics());
 
-        students.subList(0,10).forEach(System.out::println);
+        students.subList(0, 10).forEach(System.out::println);
+
+
+//        how many courses each student is taking
+        System.out.println(students
+                .stream()
+                .mapToInt(s -> s.getEngagementMap().size())
+                .summaryStatistics());
+
+
     }
 }
+
