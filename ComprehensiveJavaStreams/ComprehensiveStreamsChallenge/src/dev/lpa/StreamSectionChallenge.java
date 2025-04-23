@@ -24,9 +24,18 @@ public class StreamSectionChallenge {
         int currentYear = LocalDate.now().getYear();
         List<Student> students = Stream
                 .generate(() -> Student.getRandomStudent(jmc, pymc,jgames))
-                .filter(s -> s.getYearsSinceEnrolled() >= (currentYear - 4))
+                .filter(s -> s.getYearEnrolled() >= (currentYear - 4))
                 .limit(10000)
                 .toList();
 
+//        System.out.println();
+
+//            passing student stream to sout
+        System.out.println(students
+                .stream()
+                .mapToInt(Student::getYearEnrolled)
+                .summaryStatistics());
+
+        students.subList(0,10).forEach(System.out::println);
     }
 }

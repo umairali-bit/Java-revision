@@ -127,7 +127,7 @@ public class Student {
         List<Course> courseList = new ArrayList<>(Arrays.asList(courses));
         Collections.shuffle(courseList);
 //        to get at least 1 course, up to the maximum number of courses available
-        List<Course> selectedCourses = new ArrayList<>(courseList.subList(0, courseCount));
+        List<Course> selectedCourses = courseList.subList(0, courseCount);
 
         return selectedCourses.toArray(new Course[0]);
     }
@@ -144,10 +144,10 @@ public class Student {
                 random.nextInt(18,90),
                 getRandomVal("M","F","U"),
                 random.nextBoolean(),
-                courses);
+                randomCourses);
 
         //random course activity
-        for (Course c : courses) {
+        for (Course c : randomCourses) {
             int lecture = random.nextInt(30, c.lectureCount());
             int year = random.nextInt(student.getYearEnrolled(), maxYear);
             int month = random.nextInt(1, 13);
