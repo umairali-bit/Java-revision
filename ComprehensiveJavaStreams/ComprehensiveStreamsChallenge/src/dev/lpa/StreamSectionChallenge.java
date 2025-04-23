@@ -2,6 +2,7 @@ package dev.lpa;
 
 import java.time.LocalDate;
 import java.util.List;
+import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 
@@ -44,6 +45,16 @@ public class StreamSectionChallenge {
                 .stream()
                 .mapToInt(s -> s.getEngagementMap().size())
                 .summaryStatistics());
+
+
+//        how many students are in each course
+        var mappedActivity = students.stream()
+                .flatMap(s -> s.getEngagementMap().values().stream())
+                .collect(Collectors.groupingBy(i -> i.getCourseCode(),
+                        Collectors.counting()));
+
+        mappedActivity.forEach((k,v) -> System.out.println(k + " " + v));
+
 
 
     }
