@@ -56,6 +56,15 @@ public class StreamSectionChallenge {
         mappedActivity.forEach((k,v) -> System.out.println(k + " " + v));
 
 
+//        Count of students taking 1, 2 or 3 courses
+        var classCounts = students.stream()
+                .collect(Collectors.groupingBy(i -> i.getEngagementMap().size(),
+                        Collectors.counting()));
+
+
+        classCounts.forEach((k,v) -> System.out.println(k + " " + v));
+
+
 
     }
 }
