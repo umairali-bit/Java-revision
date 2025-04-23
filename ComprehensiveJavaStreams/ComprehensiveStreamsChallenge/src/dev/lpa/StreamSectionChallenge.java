@@ -95,6 +95,12 @@ public class StreamSectionChallenge {
                                 Collectors.counting())));
         yearMap.forEach((k,v) -> System.out.println(k + " " + v));
 
+//        counts by enrollment year
+        students.stream()
+                .flatMap(s -> s.getEngagementMap().values().stream())
+                .collect(Collectors.groupingBy(i -> i.getEnrollmentYear(),
+                        Collectors.counting()))
+                .forEach((k,v) -> System.out.println(k + ": " + v) );
 
 
 
