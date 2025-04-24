@@ -17,6 +17,12 @@ public class Main {
         intArray[6] = -22;
 
 
+        for (int i = 0; i < intArray.length; i ++) {
+            System.out.print( intArray[i] + " ");
+
+        }
+
+
 
 
 
