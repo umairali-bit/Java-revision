@@ -17,10 +17,21 @@ public class Main {
         intArray[6] = -22;
 
 
+        int index = -1;
         for (int i = 0; i < intArray.length; i ++) {
-            System.out.print( intArray[i] + " ");
+//            System.out.print( intArray[i] + " ");
+
+            if (intArray[i] == 7) {
+//                System.out.println("index = " + i);
+                index = i;
+                break;
+            }
 
         }
+
+        System.out.println("index = " + index);
+
+
 
 
 
