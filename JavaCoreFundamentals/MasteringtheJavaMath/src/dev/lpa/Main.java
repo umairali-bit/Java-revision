@@ -5,7 +5,7 @@ public class Main {
 
         int maxValue = Integer.MAX_VALUE - 5;
 
-        for (int j = 0, id = maxValue; j < 10; j++, id++) {
+        for (int j = 0, id = maxValue; j < 10; j++, id = Math.incrementExact(id)) {
             System.out.printf("Assigning id %,d%n", id);
         }
 
