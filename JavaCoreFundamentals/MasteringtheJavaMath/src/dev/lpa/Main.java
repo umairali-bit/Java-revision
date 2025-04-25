@@ -15,6 +15,28 @@ public class Main {
 //      abs, returns the magnitude of a number ignoring its sign.
         System.out.println(Math.abs(-50));
 
+//        getting the Integer MinValue
+        System.out.println(Math.abs(Integer.MIN_VALUE)); // -2147483648
+        System.out.println(Math.abs((long) Integer.MIN_VALUE)); //2147483648
+
+
+        System.out.println("Max = " + Math.max(10, -10));
+        System.out.println("Min = " + Math.min(10.0000002, 10.001));
+        System.out.println("Min = " + Math.min(10.0000002f, 10.001f));
+
+
+        System.out.println("Round Down = " + Math.round(10.2));
+        System.out.println("Round Up = " + Math.round(10.8));
+        System.out.println("Round ? = " + Math.round(10.5));
+
+//      Floor will always round up, Ceil will always round down
+        System.out.println("Floor = " + Math.floor(10.8));
+        System.out.println("Ceil = " + Math.ceil(10.2));
+
+
+
+
+
 
 
     }
