@@ -31,7 +31,7 @@ public class Main {
 
         System.out.println("index = " + index);
 
-
+//    time complexity is O(n) here when we are retrieving an index
 
 
 
