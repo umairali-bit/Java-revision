@@ -33,7 +33,10 @@ public class Main {
         System.out.println("Floor = " + Math.floor(10.8));
         System.out.println("Ceil = " + Math.ceil(10.2));
 
-
+//      sqrt, and pow methods
+        System.out.println("Square root of 100 = " + Math.sqrt(100));
+        System.out.println("2 to the third power (2x2x2) = " + Math.pow(2,3));
+        System.out.println("10 to the fifth power (10x10x10x10x10) = " + Math.pow(10,5));
 
 
 
