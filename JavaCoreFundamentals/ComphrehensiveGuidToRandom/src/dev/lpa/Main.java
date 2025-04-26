@@ -57,17 +57,23 @@ public class Main {
         0.8465325352321285
          */
 
-
+//        generating numbers 1 - 9
         for (int i = 0; i < 10; i++) {
             System.out.print((int) (Math.random() * 10) + " "); //0 2 3 5 9 4 5 8 3 0
         }
 
         System.out.println();
 
-
+//        generating numbers 1 - 10
         for (int i = 0; i < 10; i++) {
             System.out.print((int) (Math.random() * 10) + 1+ " "); //4 9 1 6 5 5 7 8 4 10
         }
+
+//        generating numbers and the characters they represents
+        for (int i = 0; i < 10; i++) {
+            System.out.printf("%1$d = %1$c%n", (int) (Math.random() * 26) + 65);
+        }
+
 
 
 
