@@ -1,6 +1,8 @@
 package dev.lpa;
 
 
+import java.util.Random;
+
 public class Main {
     public static void main(String[] args) {
 
@@ -69,10 +71,21 @@ public class Main {
             System.out.print((int) (Math.random() * 10) + 1+ " "); //4 9 1 6 5 5 7 8 4 10
         }
 
-//        generating numbers and the characters they represents
+//        generating numbers and characters they represents
         for (int i = 0; i < 10; i++) {
             System.out.printf("%1$d = %1$c%n", (int) (Math.random() * 26) + 65);
         }
+
+        System.out.println();
+
+//        generating numbers and characters they represent using a method on Random class
+        Random r = new Random();
+        for (int i = 0; i < 10; i++) {
+            System.out.printf("%1$d = %1$c%n", r.nextInt(65, 91));
+        }
+
+
+
 
 
 
