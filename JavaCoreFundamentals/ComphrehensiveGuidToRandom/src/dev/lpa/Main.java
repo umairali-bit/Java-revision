@@ -98,6 +98,13 @@ public class Main {
             System.out.printf("%1$d%n", r.nextInt(-10, 11));
         }
 
+        System.out.println();
+
+//        generating numbers in stream
+        r.ints()
+                .limit(10)
+                .forEach(System.out::println);
+
 
 
 
