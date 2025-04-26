@@ -106,6 +106,14 @@ public class Main {
                 .forEach(System.out::println);
 
 
+        System.out.println();
+
+//        generating numbers in stream between 0 and 9
+        r.ints(0, 10)
+                .limit(10)
+                .forEach(System.out::println);
+
+
 
 
 
