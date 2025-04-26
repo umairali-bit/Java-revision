@@ -87,10 +87,17 @@ public class Main {
         System.out.println();
 
 //        generating letters between Capital A and Capital Z
-
         for (int i =0; i < 10; i++) {
             System.out.printf("%1$d = %1$c%n", r.nextInt((int) 'A', (int) 'Z'));
         }
+
+        System.out.println();
+
+//        generating numbers between -10 and 11
+        for (int i = 0; i < 10; i++) {
+            System.out.printf("%1$d%n", r.nextInt(-10, 11));
+        }
+
 
 
 
