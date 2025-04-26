@@ -116,6 +116,15 @@ public class Main {
 
 
 
+        System.out.println();
+
+//        generating numbers in stream between 0 and 9 and specifying stream size
+        r.ints(10,0, 10)
+                .forEach(System.out::println);
+
+
+
+
 
 
 
