@@ -81,7 +81,15 @@ public class Main {
 //        generating numbers and characters they represent using a method on Random class
         Random r = new Random();
         for (int i = 0; i < 10; i++) {
-            System.out.printf("%1$d = %1$c%n", r.nextInt(65, 91));
+            System.out.printf("%1$d = %1$c%n", r.nextInt(65, 91)); //included in JDK17
+        }
+
+        System.out.println();
+
+//        generating letters between Capital A and Capital Z
+
+        for (int i =0; i < 10; i++) {
+            System.out.printf("%1$d = %1$c%n", r.nextInt((int) 'A', (int) 'Z'));
         }
 
 
