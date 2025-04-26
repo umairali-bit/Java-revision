@@ -124,6 +124,14 @@ public class Main {
 
 
 
+        System.out.println();
+
+//        generating 10 random numbers in stream
+        r.ints(10)
+                .forEach(System.out::println);
+
+
+
 
 
 
