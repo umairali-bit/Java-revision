@@ -1,6 +1,8 @@
 package dev.lpa;
 
 
+import org.w3c.dom.ls.LSOutput;
+
 import java.util.Random;
 
 public class Main {
@@ -129,6 +131,24 @@ public class Main {
 //        generating 10 random numbers in stream
         r.ints(10)
                 .forEach(System.out::println);
+
+
+//        using nanoTime as seed
+        long nanoTime = System.nanoTime();
+        Random pseudoRandom = new Random(nanoTime);
+        System.out.println("-".repeat(30));
+        r.ints(10,0, 10)
+                .forEach(i -> System.out.print(i + " "));
+
+
+        Random notReallyRandom = new Random(nanoTime);
+        System.out.println("\n------------------------------");
+        notReallyRandom.ints(10,0, 10)
+                .forEach(i -> System.out.print(i + " "));
+
+
+
+
 
 
 
