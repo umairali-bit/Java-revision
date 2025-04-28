@@ -24,6 +24,9 @@ public class Main {
 
 
 
+
+
+
     }
 
 
@@ -43,6 +46,19 @@ public class Main {
 
 
 
+
+    }
+
+
+    private static boolean pickLosers(List <Integer> currentDice) {
+
+        String prompt = """
+                Press Enter to Score
+                Type "ALL" to re-roll all the dice
+                List numbers (separated by spaces) to re-roll selected dice.
+                """;
+
+        System.out.println(prompt + "-----> ");
 
     }
 }
