@@ -59,6 +59,19 @@ public class Main {
                 """;
 
         System.out.println(prompt + "-----> ");
+        String userInput = scanner.nextLine();
+        if(userInput.isBlank()) {
+            return true;
+        }
+        try {
+            removeDice(currentDice,userInput.split(" "));
+
+        } catch (Exception e) {
+            e.printStackTrace(System.out);
+            System.out.println("Bad input, Try again");
+        }
+
+        return false;
 
     }
 }
