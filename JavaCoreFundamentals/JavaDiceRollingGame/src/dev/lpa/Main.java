@@ -16,11 +16,12 @@ public class Main {
 //   for dice using a list
         List<Integer> currentDice = new ArrayList<>();
 
-        int rolls = 0;
+//        int rolls = 0;
         do {
             rollDice(currentDice);
-            currentDice.clear();
-        } while (++rolls < 5);
+//            currentDice.clear();
+        } while (!pickLosers(currentDice));
+        System.out.println("Game over. Real game would score and continue.");
 
 
 
