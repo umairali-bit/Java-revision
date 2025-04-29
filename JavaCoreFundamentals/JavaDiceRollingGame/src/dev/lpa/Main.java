@@ -44,9 +44,6 @@ public class Main {
 
         System.out.println("Random dice number: " + currentDice);
 
-
-
-
     }
 
 
@@ -73,5 +70,18 @@ public class Main {
 
         return false;
 
+    }
+
+    private static void removeDice(List<Integer> currentDice, String[] selected) {
+
+        if (selected.length == 1 && selected [0].contains("ALL")) {
+            currentDice.clear();
+        } else {
+            for (String removed: selected) {
+                currentDice.remove(Integer.valueOf(removed));
+            }
+
+            System.out.println("Keeping the Dice " + currentDice);
+        }
     }
 }
