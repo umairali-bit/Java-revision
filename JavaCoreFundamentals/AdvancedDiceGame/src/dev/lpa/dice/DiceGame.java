@@ -3,6 +3,7 @@ package dev.lpa.dice;
 import dev.lpa.game.Game;
 import dev.lpa.game.GameAction;
 
+import java.util.LinkedHashMap;
 import java.util.Map;
 
 public class DiceGame extends Game<DicePlayer> {
@@ -13,11 +14,15 @@ public class DiceGame extends Game<DicePlayer> {
 
     @Override
     public DicePlayer createNewPlayer(String name) {
-        return new DicePlayer();
+        return new DicePlayer(name);
     }
 
     @Override
     public Map<Character, GameAction> getGameActions(int playerIndex) {
-        return null;
+
+        Map<Character, GameAction> map = new LinkedHashMap<>();
+        map.putAll(getStandardActions());
+        return map;
+
     }
 }
