@@ -25,4 +25,20 @@ public class DicePlayer implements Player {
     }
 
 
+    @Override
+    public String name() {
+        return name;
+    }
+
+    @Override
+    public String toString() {
+        return "DicePlayer{" +
+                "name='" + name + '\'' +
+                ", currentDice=" + currentDice +
+                ", scoreCard=" + scoreCard +
+                '}';
+    }
+
+
+
 }
