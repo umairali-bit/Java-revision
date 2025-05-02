@@ -2,10 +2,7 @@ package dev.lpa.dice;
 
 import dev.lpa.game.Player;
 
-import java.util.ArrayList;
-import java.util.EnumMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 public class DicePlayer implements Player {
 
@@ -37,6 +34,19 @@ public class DicePlayer implements Player {
                 ", currentDice=" + currentDice +
                 ", scoreCard=" + scoreCard +
                 '}';
+    }
+
+
+    public void rollDice() {
+
+        int randomCount = 5 - currentDice.size();// you need to roll 5 dice
+        var newDice = new Random()
+                .ints(randomCount, 1, 7)
+                .boxed()
+                .toList();
+        currentDice.addAll(newDice);
+        System.out.println("Random dice number: " + currentDice);
+
     }
 
 
