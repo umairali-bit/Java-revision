@@ -20,9 +20,18 @@ public class DiceGame extends Game<DicePlayer> {
     @Override
     public Map<Character, GameAction> getGameActions(int playerIndex) {
 
-        Map<Character, GameAction> map = new LinkedHashMap<>();
+        Map<Character, GameAction> map = new LinkedHashMap<>(Map.of(
+                'R',
+                new GameAction('R', "Roll Dice", this::rollDice)
+        ));
         map.putAll(getStandardActions());
         return map;
 
+    }
+
+    private boolean rollDice(int playerIndex) {
+
+        getPlayer(playerIndex).rollDice();
+        return false;
     }
 }
