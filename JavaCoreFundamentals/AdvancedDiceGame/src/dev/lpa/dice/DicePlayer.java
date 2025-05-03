@@ -95,7 +95,13 @@ public class DicePlayer implements Player {
             rollDice();
 
         } while (!pickLosers());
-        return  false;
+
+        do {
+            System.out.println("You must select a score category:");
+        } while (!scoreDice());
+
+        currentDice.clear();
+        return  (getItemList().size()== 0);
     }
 
     public List<String> getItemList() {
@@ -106,6 +112,28 @@ public class DicePlayer implements Player {
                 .filter(e -> e.getValue() == null)
                 .map(e -> e.getKey().name())
                 .toList();
+    }
+
+    private boolean scoreDice() {
+
+        List<String> remainingItems = getItemList();
+        String prompt = String.join("\n", remainingItems.toArray(new String[0]));
+        String userInput =
+                GameConsole.getUserInput(prompt + "\n----> ").toUpperCase();
+
+        if (userInput.isBlank()) {
+            return false;
+        }
+
+        if (!remainingItems.contains(userInput)) {
+            System.out.println("Invalid selection");
+            return false;
+
+        }
+
+        ScoredItem item = ScoredItem.valueOf(userInput);
+        scoreCard.put(item, item.score(currentDice));
+        return true;
     }
 
 
