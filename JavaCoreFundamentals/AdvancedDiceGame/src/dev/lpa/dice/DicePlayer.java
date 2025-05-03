@@ -1,5 +1,6 @@
 package dev.lpa.dice;
 
+import dev.lpa.game.GameConsole;
 import dev.lpa.game.Player;
 
 import java.util.*;
@@ -47,6 +48,44 @@ public class DicePlayer implements Player {
         currentDice.addAll(newDice);
         System.out.println("Random dice number: " + currentDice);
 
+    }
+
+    private boolean pickLosers() {
+
+        String prompt = """
+                Press Enter to Score
+                Type "ALL" to re-roll all the dice
+                List numbers (separated by spaces) to re-roll selected dice.
+                """;
+
+
+        String userInput = GameConsole.getUserInput(prompt + "--->");
+        if(userInput.isBlank()) {
+            return true;
+        }
+        try {
+            removeDice(currentDice,userInput.split(" "));
+
+        } catch (Exception e) {
+            e.printStackTrace(System.out);
+            System.out.println("Bad input, Try again");
+        }
+
+        return false;
+
+    }
+
+    private static void removeDice(List<Integer> currentDice, String[] selected) {
+
+        if (selected.length == 1 && selected [0].contains("ALL")) {
+            currentDice.clear();
+        } else {
+            for (String removed: selected) {
+                currentDice.remove(Integer.valueOf(removed));
+            }
+
+            System.out.println("Keeping the Dice " + currentDice);
+        }
     }
 
 
