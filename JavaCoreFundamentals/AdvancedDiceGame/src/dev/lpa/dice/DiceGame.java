@@ -31,7 +31,7 @@ public class DiceGame extends Game<DicePlayer> {
 
     private boolean rollDice(int playerIndex) {
 
-        getPlayer(playerIndex).rollDice();
-        return false;
+        return getPlayer(playerIndex).rollDiceAndSelect();
+
     }
 }
