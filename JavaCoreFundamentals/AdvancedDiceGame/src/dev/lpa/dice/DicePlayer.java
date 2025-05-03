@@ -64,7 +64,7 @@ public class DicePlayer implements Player {
             return true;
         }
         try {
-            removeDice(currentDice,userInput.split(" "));
+            removeDice(userInput.split(" "));
 
         } catch (Exception e) {
             e.printStackTrace(System.out);
@@ -75,7 +75,7 @@ public class DicePlayer implements Player {
 
     }
 
-    private static void removeDice(List<Integer> currentDice, String[] selected) {
+    private void removeDice(String[] selected) {
 
         if (selected.length == 1 && selected [0].contains("ALL")) {
             currentDice.clear();
@@ -86,6 +86,16 @@ public class DicePlayer implements Player {
 
             System.out.println("Keeping the Dice " + currentDice);
         }
+    }
+
+
+    public boolean rollDiceAndSelect() {
+
+        do {
+            rollDice();
+
+        } while (!pickLosers());
+        return  false;
     }
 
 
