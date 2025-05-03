@@ -98,6 +98,16 @@ public class DicePlayer implements Player {
         return  false;
     }
 
+    public List<String> getItemList() {
+
+        return scoreCard
+                .entrySet()
+                .stream()
+                .filter(e -> e.getValue() == null)
+                .map(e -> e.getKey().name())
+                .toList();
+    }
+
 
 
 }
