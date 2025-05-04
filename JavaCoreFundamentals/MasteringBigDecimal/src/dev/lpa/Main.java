@@ -44,6 +44,20 @@ public class Main {
         }
 
 
+//        use of bigDecimal in doubles
+        System.out.println("-".repeat(30));
+
+        double[] doubles = {15.456, 8, 100000.000001, .123};
+        Arrays.setAll(bds, i -> BigDecimal.valueOf(doubles[i]));
+        System.out.printf("%-14s %-15s %-8s %s%n", "Value", "Unscaled Value", "Scale", "Precision");
+
+        for (var bd : bds) {
+            System.out.printf("%-15s %-15d %-8d %d %n",
+                    bd, bd.unscaledValue(),bd.scale(),bd.precision());
+        }
+
+
+
 
 
 
