@@ -38,6 +38,11 @@ public class Main {
 
         System.out.printf("%-14s %-15s %-8s %s%n", "Value", "Unscaled Value", "Scale", "Precision");
 
+        for (var bd : bds) {
+            System.out.printf("%-15s %-15d %-8d %d %n",
+                    bd, bd.unscaledValue(),bd.scale(),bd.precision());
+        }
+
 
 
 
