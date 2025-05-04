@@ -1,5 +1,8 @@
 package dev.lpa;
 
+import java.math.BigDecimal;
+import java.util.Arrays;
+
 public class Main {
 
     public static void main(String[] args) {
@@ -24,6 +27,19 @@ public class Main {
 
         double total = policyAmount - ((policyAmount * percentage) * beneficiaries);
         System.out.printf("total: %,.2f%n", total);
+
+
+//        setting up code that will create BigDecimals
+
+        String[] tests = {"15.456", "8", "100000.000001", ".123"};
+        BigDecimal[] bds = new BigDecimal[tests.length];
+        Arrays.setAll(bds, i -> new BigDecimal(tests[i]));
+
+
+
+
+
+
 
 
     }
