@@ -19,6 +19,12 @@ public class Main {
         System.out.printf("Payout = %,.2f%n", policyAmount * percentageFloat);
         System.out.printf("Payout = %,.2f%n", policyAmount * percentage);
 
+        double totalUsingFloat = policyAmount - ((policyAmount * percentageFloat) * beneficiaries);
+        System.out.printf("totalUsingFloat: %,.2f%n", totalUsingFloat);
+
+        double total = policyAmount - ((policyAmount * percentage) * beneficiaries);
+        System.out.printf("total: %,.2f%n", total);
+
 
     }
 }
