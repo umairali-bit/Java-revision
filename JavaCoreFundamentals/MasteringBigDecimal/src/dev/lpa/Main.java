@@ -36,6 +36,11 @@ public class Main {
         Arrays.setAll(bds, i -> new BigDecimal(tests[i]));
 
 
+        System.out.printf("%-14s %-15s %-8s %s%n", "Value", "Unscaled Value", "Scale", "Precision");
+
+
+
+
 
 
 
