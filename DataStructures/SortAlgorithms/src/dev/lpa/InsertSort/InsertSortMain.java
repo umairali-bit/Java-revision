@@ -12,7 +12,10 @@ public class InsertSortMain {
 
             int i;
 
-            for (i = firstUnsortedIndex; i > 0 && intArray[i - 1] > newElement;) {
+            for (i = firstUnsortedIndex; i > 0 && intArray[i - 1] > newElement; i--) {
+                intArray[i] = intArray[i - 1];
+
+
 
 
             }
