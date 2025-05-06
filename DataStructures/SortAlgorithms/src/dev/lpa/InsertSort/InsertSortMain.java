@@ -6,7 +6,11 @@ public class InsertSortMain {
 
         int[] intArray = { 20, 25, -15, 7,55, 1, -22};
 
-        for (int firstUnsortedIndex = 1; firstUnsortedIndex < intArray.length; i++) {
+        for (int firstUnsortedIndex = 1; firstUnsortedIndex < intArray.length; firstUnsortedIndex++) {
+
+            int newElement = intArray[firstUnsortedIndex];
+
+            int i;
 
         }
 
