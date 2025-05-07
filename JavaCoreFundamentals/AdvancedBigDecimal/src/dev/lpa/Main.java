@@ -85,6 +85,17 @@ public class Main {
                 checkAmount, checkAmount.unscaledValue(),checkAmount.scale(),checkAmount.precision());
 
 
+//        getting the full check for beneficiaries
+        BigDecimal totalChecksAmount = checkAmount.multiply(
+                BigDecimal.valueOf(beneficiaries));
+        System.out.printf("Combined: %.2f%n", totalChecksAmount);
+        System.out.println("Remaining = " + policyPayout.subtract(totalChecksAmount));
+
+        System.out.printf("%-15s %-15d %-8d %d %n",
+                totalChecksAmount, totalChecksAmount.unscaledValue(),totalChecksAmount.scale(),
+                totalChecksAmount.precision());
+
+
 
 
 
