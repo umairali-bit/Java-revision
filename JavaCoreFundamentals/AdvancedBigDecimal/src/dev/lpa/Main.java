@@ -1,6 +1,7 @@
 package dev.lpa;
 
 import java.math.BigDecimal;
+import java.math.MathContext;
 import java.math.RoundingMode;
 import java.util.Arrays;
 
@@ -48,7 +49,7 @@ public class Main {
 //        use of bigDecimal in doubles
         System.out.println("-".repeat(30));
 
-        double[] doubles = {15.456, 8, 100000.000001, .123};
+        double[] doubles = {15.456, 8, 100000.000001, .125};
         Arrays.setAll(bds, i -> BigDecimal.valueOf(doubles[i]));
         System.out.printf("%-14s %-15s %-8s %s%n", "Value", "Unscaled Value", "Scale", "Precision");
 
@@ -61,23 +62,31 @@ public class Main {
             System.out.printf("%-15s %-15d %-8d %d %n",
                     bd, bd.unscaledValue(),bd.scale(),bd.precision());
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
         }
+
+
+//        MathContext
+
+        BigDecimal policyPayout = new BigDecimal("10000000.00");
+        System.out.printf("%-15s %-15d %-8d %d %n",
+                policyPayout, policyPayout.unscaledValue(),policyPayout.scale(),policyPayout.precision());
+
+
+        BigDecimal percent = BigDecimal.ONE.divide(BigDecimal.valueOf(beneficiaries),
+                new MathContext(60, RoundingMode.UP));
+
+        System.out.println(percent);
+
+//        getting the check amount
+        BigDecimal checkAmount = policyPayout.multiply(percent);
+        System.out.printf("%.2f%n", checkAmount);
+        checkAmount = checkAmount.setScale(2, RoundingMode.HALF_UP);
+        System.out.printf("%-15s %-15d %-8d %d %n",
+                checkAmount, checkAmount.unscaledValue(),checkAmount.scale(),checkAmount.precision());
+
+
+
+
 
 
 
