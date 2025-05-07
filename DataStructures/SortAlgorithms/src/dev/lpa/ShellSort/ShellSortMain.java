@@ -13,12 +13,11 @@ public class ShellSortMain {
 
 
             for (int i = gap; i < intArray.length; i++) {// i = 3
-
                 int newElement = intArray[i]; //newElement = 7
 
                 int j = i; // j = 3
 
-                while (j >= i && intArray[j - gap] > newElement) { // j - gap = 0 which is 20 > newElement = 7
+                while (j >= gap && intArray[j - gap] > newElement) { // j - gap = 0 which is 20 > newElement = 7
                     intArray[j] = intArray[j - gap]; // i = 3 which is 7 will be moved to intArray[0]
                     j -= gap; // move 7 into index 0
 
@@ -26,6 +25,8 @@ public class ShellSortMain {
 
 
                 }
+
+                intArray[j] = newElement; // i = 4 → newElement = 55
 
 
             }
@@ -36,7 +37,7 @@ public class ShellSortMain {
 
 
         for (int i = 0; i < intArray.length; i++) {
-            System.out.println(intArray[i] + " ");
+            System.out.print(intArray[i] + " ");
         }
     }
 }
