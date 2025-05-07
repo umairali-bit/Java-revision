@@ -1,6 +1,7 @@
 package dev.lpa;
 
 import java.math.BigDecimal;
+import java.math.RoundingMode;
 import java.util.Arrays;
 
 public class Main {
@@ -54,21 +55,30 @@ public class Main {
         for (var bd : bds) {
             System.out.printf("%-15s %-15d %-8d %d %n",
                     bd, bd.unscaledValue(),bd.scale(),bd.precision());
+
+//            if you want 2 decimal places
+            bd = bd.setScale(2, RoundingMode.HALF_UP);
+            System.out.printf("%-15s %-15d %-8d %d %n",
+                    bd, bd.unscaledValue(),bd.scale(),bd.precision());
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         }
 
-
-//
-//        BigDecimal test1 = new BigDecimal("1.111111122222233333344444555555");
-//        BigDecimal test2 = BigDecimal.valueOf(1.111111122222223333334444455555);
-//
-//        System.out.println("-".repeat(30));
-//        System.out.printf("%-30s %-30s %-8s %s%n", "Value", "Unscaled Value", "Scale", "Precision");
-//
-//        System.out.printf("%-30s %-30d %-8d %d %n",
-//                    test1, test1.unscaledValue(),test1.scale(),test1.precision());
-//
-//        System.out.printf("%-30s %-30d %-8d %d %n",
-//                test2, test2.unscaledValue(),test2.scale(),test2.precision());
 
 
 
