@@ -1,5 +1,6 @@
 package dev.lpa;
 
+import java.sql.SQLOutput;
 import java.time.LocalDate;
 import java.time.Month;
 
@@ -23,6 +24,13 @@ public class Main {
 //        getting the date by passing year and day of the year
         LocalDate Day125 = LocalDate.ofYearDay(2025, 125);
         System.out.println(Day125);
+
+//        getting month and year
+        LocalDate May5 = LocalDate.parse("2022-05-05");
+        System.out.println(May5);
+
+        System.out.println(May5.getYear());
+        System.out.println(May5.getMonth());
 
 
 
