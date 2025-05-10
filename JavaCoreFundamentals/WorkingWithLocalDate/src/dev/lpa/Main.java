@@ -31,6 +31,8 @@ public class Main {
 
         System.out.println(May5.getYear());
         System.out.println(May5.getMonth());
+//        getting the month value
+        System.out.println(May5.getMonthValue());
 
 
 
