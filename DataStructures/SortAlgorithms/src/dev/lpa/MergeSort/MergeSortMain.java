@@ -4,6 +4,12 @@ public class MergeSortMain {
 
     public static void main(String[] args) {
 
+        System.out.println(recursiveFactorial(3));
+
+        System.out.println(iterativeFactorial(3));
+
+
+
 
 
 
@@ -20,7 +26,6 @@ public class MergeSortMain {
         }
 
         return num * recursiveFactorial(num - 1);
-
     }
 
 
