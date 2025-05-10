@@ -31,8 +31,16 @@ public class Main {
 
         System.out.println(May5.getYear());
         System.out.println(May5.getMonth());
+
 //        getting the month value
         System.out.println(May5.getMonthValue());
+
+//        use of getDayOf methods
+        System.out.println(May5.getDayOfMonth());
+        System.out.println(May5.getDayOfWeek());
+        System.out.println(May5.getDayOfYear());
+
+
 
 
 
