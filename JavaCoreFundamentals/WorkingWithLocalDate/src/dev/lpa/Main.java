@@ -28,7 +28,7 @@ public class Main {
         System.out.println(Day125);
 
 //        getting month and year
-        LocalDate May5 = LocalDate.parse("2025-05-05");
+        LocalDate May5 = LocalDate.parse("2022-05-05");
         System.out.println(May5);
 
         System.out.println(May5.getYear());
@@ -76,7 +76,9 @@ public class Main {
         System.out.println("today = now ? " + today.compareTo(LocalDate.now()));//today = now ? 0
         System.out.println("today = now ? " + today.equals(LocalDate.now()));
 
-
+//      isLeapYear()
+        System.out.println(today.isLeapYear());//false
+        System.out.println(May5.minusYears(2).isLeapYear());//true
 
 
 
