@@ -51,11 +51,14 @@ public class Main {
         System.out.println(May5.get(ChronoField.DAY_OF_MONTH));
         System.out.println(May5.get(ChronoField.DAY_OF_YEAR));
 
-//      with()n- LocalDate Day125 = LocalDate.ofYearDay(2025, 125); not going to change
+//      with() - LocalDate Day125 = LocalDate.ofYearDay(2025, 125); not going to change
         System.out.println(May5.withYear(2000));
         System.out.println(May5.withMonth(3));
         System.out.println(May5.withDayOfMonth(4));
         System.out.println(May5.withDayOfYear(126));
+
+//      we can also call chronofield in the with() constructor
+        System.out.println(May5.with(ChronoField.DAY_OF_YEAR, 126));
 
 
 
