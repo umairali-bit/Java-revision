@@ -68,7 +68,13 @@ public class Main {
         System.out.println(May5.plusWeeks(52));
         System.out.println(May5.plus(365, ChronoUnit.DAYS));
 
-
+//      minus methods - isAfter(), isBefore(), compareTo(),equals()
+        System.out.println("May5 > today? " + May5.isAfter(today)); //May5 > today? false
+        System.out.println("today > May5? " + May5.isBefore(today));//today > May5? true
+        System.out.println("May5 > today? " + May5.compareTo(today));//May5 > today? -7
+        System.out.println("today > May5? " + today.compareTo(May5));//today > May5? 7
+        System.out.println("today = now ? " + today.compareTo(LocalDate.now()));//today = now ? 0
+        System.out.println("today = now ? " + today.equals(LocalDate.now()));
 
 
 
