@@ -4,6 +4,7 @@ import java.sql.SQLOutput;
 import java.time.LocalDate;
 import java.time.Month;
 import java.time.temporal.ChronoField;
+import java.time.temporal.ChronoUnit;
 
 public class Main {
 
@@ -59,6 +60,14 @@ public class Main {
 
 //      we can also call chronofield in the with() constructor
         System.out.println(May5.with(ChronoField.DAY_OF_YEAR, 126));
+
+//      plus methods
+        System.out.println(May5.plusYears(1));
+        System.out.println(May5.plusMonths(12));
+        System.out.println(May5.plusDays(365));
+        System.out.println(May5.plusWeeks(52));
+        System.out.println(May5.plus(365, ChronoUnit.DAYS));
+
 
 
 
