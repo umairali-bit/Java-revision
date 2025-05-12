@@ -3,6 +3,7 @@ package dev.lpa;
 import java.sql.SQLOutput;
 import java.time.LocalDate;
 import java.time.Month;
+import java.time.temporal.ChronoField;
 
 public class Main {
 
@@ -39,6 +40,20 @@ public class Main {
         System.out.println(May5.getDayOfMonth());
         System.out.println(May5.getDayOfWeek());
         System.out.println(May5.getDayOfYear());
+
+/*
+        ChronoField implements temporalField - TemporalField is an interface
+        for a class, that implements a date time field.
+
+ */
+        System.out.println(May5.get(ChronoField.YEAR));
+        System.out.println(May5.get(ChronoField.MONTH_OF_YEAR));
+        System.out.println(May5.get(ChronoField.DAY_OF_MONTH));
+        System.out.println(May5.get(ChronoField.DAY_OF_YEAR));
+
+
+
+
 
 
 
