@@ -27,7 +27,7 @@ public class Main {
         System.out.println(Day125);
 
 //        getting month and year
-        LocalDate May5 = LocalDate.parse("2022-05-05");
+        LocalDate May5 = LocalDate.parse("2025-05-05");
         System.out.println(May5);
 
         System.out.println(May5.getYear());
@@ -50,6 +50,15 @@ public class Main {
         System.out.println(May5.get(ChronoField.MONTH_OF_YEAR));
         System.out.println(May5.get(ChronoField.DAY_OF_MONTH));
         System.out.println(May5.get(ChronoField.DAY_OF_YEAR));
+
+//      with()n- LocalDate Day125 = LocalDate.ofYearDay(2025, 125); not going to change
+        System.out.println(May5.withYear(2000));
+        System.out.println(May5.withMonth(3));
+        System.out.println(May5.withDayOfMonth(4));
+        System.out.println(May5.withDayOfYear(126));
+
+
+
 
 
 
