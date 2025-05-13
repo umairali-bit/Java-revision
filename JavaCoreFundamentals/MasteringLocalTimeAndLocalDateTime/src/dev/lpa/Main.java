@@ -98,9 +98,19 @@ public class Main {
 //      hours and minutes
         LocalTime threePM = LocalTime.of(3, 0);
         System.out.println(threePM);
+
 //      hours and minutes and seconds
         LocalTime threeTwenty = LocalTime.of(3,25,20);
         System.out.println(threeTwenty);
+
+
+//      nanoSeconds - 0 in the output means that its AM and 1 means PM
+        LocalTime threeAM = LocalTime.parse("03:00");
+        LocalTime threeThirtyAM = LocalTime.parse("03:30:15.1000");
+        System.out.println(threeAM.get(ChronoField.AMPM_OF_DAY));
+        System.out.println(threeThirtyAM.get(ChronoField.AMPM_OF_DAY));
+
+
 
 
 
