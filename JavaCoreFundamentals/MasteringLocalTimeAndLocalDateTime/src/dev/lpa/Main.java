@@ -115,6 +115,9 @@ public class Main {
 
         System.out.println(threeThirtyAM.plus(24, ChronoUnit.HOURS));
 
+//      valid range of hours
+        System.out.println(threeAM.range(ChronoField.HOUR_OF_DAY));
+
 
 
 
