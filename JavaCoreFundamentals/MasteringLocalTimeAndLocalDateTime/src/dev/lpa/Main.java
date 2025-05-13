@@ -110,6 +110,11 @@ public class Main {
         System.out.println(threeAM.get(ChronoField.AMPM_OF_DAY));
         System.out.println(threeThirtyAM.get(ChronoField.AMPM_OF_DAY));
 
+        System.out.println(threeAM.getHour());
+        System.out.println(threeAM.get(ChronoField.HOUR_OF_DAY));
+
+
+
 
 
 
