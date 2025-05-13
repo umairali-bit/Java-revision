@@ -1,6 +1,7 @@
 package dev.lpa;
 
 import java.time.LocalDate;
+import java.time.LocalTime;
 import java.time.Month;
 import java.time.Period;
 import java.time.temporal.ChronoField;
@@ -89,6 +90,11 @@ public class Main {
         System.out.println("-".repeat(30));
         May5.datesUntil(May5.plusYears(1), Period.ofDays(7))
                 .forEach(System.out::println);
+
+//      local time
+        LocalTime time = LocalTime.now();
+        System.out.println(time);//15:23:33.835022
+
 
 
 
