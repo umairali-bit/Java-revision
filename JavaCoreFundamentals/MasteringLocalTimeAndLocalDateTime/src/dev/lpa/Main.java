@@ -2,6 +2,7 @@ package dev.lpa;
 
 import java.time.LocalDate;
 import java.time.Month;
+import java.time.Period;
 import java.time.temporal.ChronoField;
 import java.time.temporal.ChronoUnit;
 
@@ -83,6 +84,13 @@ public class Main {
         System.out.println("-".repeat(30));
         May5.datesUntil(May5.plusDays(7))
                 .forEach(System.out::println);
+
+//      overloaded() of datesUntil
+        System.out.println("-".repeat(30));
+        May5.datesUntil(May5.plusYears(1), Period.ofDays(7))
+                .forEach(System.out::println);
+
+
 
 
 
