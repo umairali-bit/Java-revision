@@ -95,6 +95,13 @@ public class Main {
         LocalTime time = LocalTime.now();
         System.out.println(time);//15:23:33.835022
 
+//      hours and minutes
+        LocalTime threePM = LocalTime.of(3, 0);
+        System.out.println(threePM);
+//      hours and minutes and seconds
+        LocalTime threeTwenty = LocalTime.of(3,25,20);
+        System.out.println(threeTwenty);
+
 
 
 
