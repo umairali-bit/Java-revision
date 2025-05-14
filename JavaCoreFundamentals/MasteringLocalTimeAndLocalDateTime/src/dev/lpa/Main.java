@@ -6,6 +6,8 @@ import java.time.format.FormatStyle;
 import java.time.temporal.ChronoField;
 import java.time.temporal.ChronoUnit;
 
+import static java.time.LocalTime.now;
+
 public class Main {
 
     public static void main(String[] args) {
@@ -91,7 +93,7 @@ public class Main {
                 .forEach(System.out::println);
 
 //      local time
-        LocalTime time = LocalTime.now();
+        LocalTime time = now();
         System.out.println(time);//15:23:33.835022
 
 //      hours and minutes
@@ -136,6 +138,8 @@ public class Main {
 
         DateTimeFormatter dtf = DateTimeFormatter.ofLocalizedDate(FormatStyle.FULL);
         System.out.println(May5Noon.format(dtf));//Thursday, May 5, 2022
+
+        System.out.println(May5Noon.format(DateTimeFormatter.ofLocalizedDateTime(FormatStyle.MEDIUM)));//May 5, 2022, 12:00:00 PM
 
 
 
