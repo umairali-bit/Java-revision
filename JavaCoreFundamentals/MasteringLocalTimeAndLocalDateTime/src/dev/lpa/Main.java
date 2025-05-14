@@ -1,9 +1,6 @@
 package dev.lpa;
 
-import java.time.LocalDate;
-import java.time.LocalTime;
-import java.time.Month;
-import java.time.Period;
+import java.time.*;
 import java.time.temporal.ChronoField;
 import java.time.temporal.ChronoUnit;
 
@@ -121,6 +118,11 @@ public class Main {
         System.out.println(threeAM.range(ChronoField.MINUTE_OF_DAY));
         System.out.println(threeAM.range(ChronoField.SECOND_OF_MINUTE));
         System.out.println(threeAM.range(ChronoField.SECOND_OF_DAY));
+
+
+//        Local Date and Local time
+        LocalDateTime todayAndNow = LocalDateTime.now();
+        System.out.println(todayAndNow);
 
 
 
