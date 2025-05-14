@@ -120,9 +120,17 @@ public class Main {
         System.out.println(threeAM.range(ChronoField.SECOND_OF_DAY));
 
 
-//        Local Date and Local time
+//      Local Date and Local time
         LocalDateTime todayAndNow = LocalDateTime.now();
         System.out.println(todayAndNow);
+
+//      Local date and time with year, month, dayOfMonth, hour, and minutes with in 2 formats
+        LocalDateTime May5Noon = LocalDateTime.of(2022, 5, 5,12,0);
+        System.out.printf("%tD %tr %n", May5Noon, May5Noon); // 05/05/22 12:00:00 PM
+        System.out.printf("%1$tF %1$tT %n", May5Noon);// 2022-05-05 12:00:00
+
+
+
 
 
 
