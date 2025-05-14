@@ -1,6 +1,8 @@
 package dev.lpa;
 
 import java.time.*;
+import java.time.format.DateTimeFormatter;
+import java.time.format.FormatStyle;
 import java.time.temporal.ChronoField;
 import java.time.temporal.ChronoUnit;
 
@@ -128,6 +130,12 @@ public class Main {
         LocalDateTime May5Noon = LocalDateTime.of(2022, 5, 5,12,0);
         System.out.printf("%tD %tr %n", May5Noon, May5Noon); // 05/05/22 12:00:00 PM
         System.out.printf("%1$tF %1$tT %n", May5Noon);// 2022-05-05 12:00:00
+
+//       Built in date and time formats
+        System.out.println(todayAndNow.format(DateTimeFormatter.ISO_WEEK_DATE));//2025-W20-3
+
+        DateTimeFormatter dtf = DateTimeFormatter.ofLocalizedDate(FormatStyle.FULL);
+        System.out.println(May5Noon.format(dtf));//Thursday, May 5, 2022
 
 
 
