@@ -1,6 +1,6 @@
-package dev.lpa.MergeSort;
+package dev.lpa.Recursion;
 
-public class MergeSortMain {
+public class RecursionMain {
 
     public static void main(String[] args) {
 
@@ -8,16 +8,9 @@ public class MergeSortMain {
 
         System.out.println(iterativeFactorial(3));
 
-
-
-
-
-
-
     }
 
-
-//    n! = n * (n - 1)! - recursive method to calculate the factorial ()
+//        n! = n * (n - 1)! - recursive method to calculate the factorial()
 
     public static int recursiveFactorial (int num) {
 
