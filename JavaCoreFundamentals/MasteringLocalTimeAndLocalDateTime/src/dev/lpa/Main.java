@@ -142,6 +142,12 @@ public class Main {
         System.out.println(May5Noon.format(DateTimeFormatter.ofLocalizedDateTime(FormatStyle.MEDIUM)));//May 5, 2022, 12:00:00 PM
 
 
+//      LocalDateTime with plusHour()
+        LocalDateTime may6Noon = May5Noon.plusHours(24);
+        System.out.println(may6Noon.format(DateTimeFormatter.ofLocalizedDateTime(FormatStyle.MEDIUM)));//May 6, 2022, 12:00:00 PM
+
+
+
 
 
 
