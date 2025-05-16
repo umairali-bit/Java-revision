@@ -69,8 +69,10 @@ public class MergeSortMain {
                 i++;
             }
             else {
-
+                intArray[k] = rightHalf[j];
+                j++;
             }
+            k++;
         }
 
 
