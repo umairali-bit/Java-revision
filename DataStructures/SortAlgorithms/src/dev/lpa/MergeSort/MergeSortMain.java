@@ -9,30 +9,42 @@ public class MergeSortMain {
 
 
 
-//  printing the result
 
-        for (int i = 0; i < intArray.length; i++) {
-            System.out.print(intArray[i] + " ");
-        }
 
 
     }
 
 //  mergeSort method calls itself recursively
-    public static void mergeSort(int[] input, int start, int end) {
+    public static void mergeSort(int[] inputArray) {
 
-        //breaking out of recursion
-        if (end - start < 2) {
+        int inputLength = inputArray.length;
+
+//  {22}{35}{-15}{7}{55}{1}{-22} - if we dont have a single array break out of recursion
+        if (inputLength < 2) {
             return;
         }
-//  Start = 0, end = 7 (array.length) (0 + 7) /2 = 3
-        int mid = (start + end) / 2;
-//  20, 35, -15 - left side of the array
-        mergeSort(input, start, mid);
-//  right side of the array - indices 3 - 6
-        mergeSort(input, mid , end);
+//  int midIndex = inputLength/2
+        int midIndex = inputLength / 2;
+
+//  declaring left and right arrays and their sized
+
+        int[] leftHalf = new int[midIndex];
+        int[] rightHalf = new int [inputLength - midIndex];
+
+//  Populating left and right arrays
+
+        for (int i = 0; i < midIndex; i++) {
+            leftHalf[i] = inputArray[i];
+        }
+
+        for (int i = midIndex; i < inputArray.length; i++) {
+            rightHalf[i - midIndex] = inputArray[i];
+        }
 
 
+//  recursively calling mergeSort() on Left and Right Halves
+        mergeSort(leftHalf);
+        mergeSort(rightHalf);
 
 
 
@@ -41,4 +53,15 @@ public class MergeSortMain {
 
 
 //    merge method to do merging steps
+
+    public static void merge(int[] input, int start, int mid, int end) {
+
+        if (input [mid - 1] <= input [mid]) {
+            return;
+        }
+
+
+    }
+
+
 }
