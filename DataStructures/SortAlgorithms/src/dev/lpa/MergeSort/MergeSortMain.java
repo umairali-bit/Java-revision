@@ -15,9 +15,9 @@ public class MergeSortMain {
     }
 
 //  mergeSort method calls itself recursively
-    public static void mergeSort(int[] inputArray) {
+    public static void mergeSort(int[] intArray) {
 
-        int inputLength = inputArray.length;
+        int inputLength = intArray.length;
 
 //  {22}{35}{-15}{7}{55}{1}{-22} - if we dont have a single array break out of recursion
         if (inputLength < 2) {
@@ -34,11 +34,11 @@ public class MergeSortMain {
 //  Populating left and right arrays
 
         for (int i = 0; i < midIndex; i++) {
-            leftHalf[i] = inputArray[i];
+            leftHalf[i] = intArray[i];
         }
 
-        for (int i = midIndex; i < inputArray.length; i++) {
-            rightHalf[i - midIndex] = inputArray[i];
+        for (int i = midIndex; i < intArray.length; i++) {
+            rightHalf[i - midIndex] = intArray[i];
         }
 
 
@@ -52,13 +52,35 @@ public class MergeSortMain {
     }
 
 
-//    merge method to do merging steps
+//  merge method to do merging steps
+    private static void merge(int[] intArray, int[] leftHalf, int[] rightHalf) {
 
-    public static void merge(int[] input, int start, int mid, int end) {
+        int leftSize = leftHalf.length;
+        int rightSize = rightHalf.length;
 
-        if (input [mid - 1] <= input [mid]) {
-            return;
+//  i is the iterator for the left half, j is the iterator for the right half, and k is the iterator for the merged arr
+        int i = 0, j = 0, k = 0;
+
+
+        while (i < leftSize && j < rightSize) {
+
+            if (leftHalf[i] <= rightHalf[j]) {
+                intArray[k] = leftHalf[i];
+                i++;
+            }
+            else {
+
+            }
         }
+
+
+
+
+
+
+
+
+
 
 
     }
