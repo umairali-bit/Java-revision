@@ -7,5 +7,14 @@ public class MergeSortMain {
         int[] intArray = {20, 35, -15, 7, 55, 1, -22};
 
 
+
+
+//        printing the result
+
+        for (int i = 0; i < intArray.length; i++) {
+            System.out.print(intArray[i] + " ");
+        }
+
+
     }
 }
