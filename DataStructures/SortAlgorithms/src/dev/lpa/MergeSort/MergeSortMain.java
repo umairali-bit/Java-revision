@@ -6,11 +6,8 @@ public class MergeSortMain {
 
         int[] intArray = {20, 35, -15, 7, 55, 1, -22};
 
-
-
-
-
-
+        mergeSort(intArray);
+        printArray(intArray);
 
     }
 
@@ -45,6 +42,9 @@ public class MergeSortMain {
 //  recursively calling mergeSort() on Left and Right Halves
         mergeSort(leftHalf);
         mergeSort(rightHalf);
+
+
+        merge(intArray, leftHalf, rightHalf);
 
 
 
@@ -82,8 +82,8 @@ public class MergeSortMain {
             k++;
         }
 
-        while (i < rightSize) {
-            intArray[k] = rightHalf[i];
+        while (j < rightSize) {
+            intArray[k] = rightHalf[j];
             j++;
             k++;
         }
