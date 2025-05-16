@@ -25,6 +25,12 @@ public class MergeSortMain {
         if (end - start < 2) {
             return;
         }
+//  Start = 0, end = 7 (array.length) (0 + 7) /2 = 3
+        int mid = (start + end) / 2;
+//  20, 35, -15,
+        mergeSort(input, start, mid);
+
+
 
 
 
