@@ -27,8 +27,11 @@ public class MergeSortMain {
         }
 //  Start = 0, end = 7 (array.length) (0 + 7) /2 = 3
         int mid = (start + end) / 2;
-//  20, 35, -15,
+//  20, 35, -15 - left side of the array
         mergeSort(input, start, mid);
+//  right side of the array - indices 3 - 6
+        mergeSort(input, mid , end);
+
 
 
 
