@@ -9,7 +9,7 @@ public class MergeSortMain {
 
 
 
-//        printing the result
+//  printing the result
 
         for (int i = 0; i < intArray.length; i++) {
             System.out.print(intArray[i] + " ");
@@ -17,4 +17,19 @@ public class MergeSortMain {
 
 
     }
+
+//  mergeSort method calls itself recursively
+    public static void mergeSort(int[] input, int start, int end) {
+
+        //breaking out of recursion
+        if (end - start < 2) {
+            return;
+        }
+
+
+
+    }
+
+
+//    merge method to do merging steps
 }
