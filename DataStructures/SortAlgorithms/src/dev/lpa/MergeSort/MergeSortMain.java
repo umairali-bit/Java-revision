@@ -75,16 +75,18 @@ public class MergeSortMain {
             k++;
         }
 
+//  accounting the elements that dont have a sibling array
+        while (i < leftSize) {
+            intArray[k] = leftHalf[i];
+            i++;
+            k++;
+        }
 
-
-
-
-
-
-
-
-
-
+        while (i < rightSize) {
+            intArray[k] = rightHalf[i];
+            j++;
+            k++;
+        }
     }
 
 //  printing results
