@@ -9,6 +9,9 @@ public class Main {
 
     public static void main(String[] args) {
 
+//  changing the time zone in JVM to America/Los_Angeles at runtime
+        System.setProperty("user.timezone", "America/Los_Angeles");
+
 //  Zone ID class gives the time zone you are in
         System.out.println(ZoneId.systemDefault());//America/New_York
 
@@ -17,7 +20,7 @@ public class Main {
 
 //  printing out the available zones through streams
 
-        //converting the stream to list to get indexing
+        //converting the stream into a list to get indexing
         List<ZoneId> usZoneId = ZoneId.getAvailableZoneIds().stream()
                 //filtering available in US
                 .filter(s -> s.startsWith("US"))
@@ -28,7 +31,7 @@ public class Main {
 
 //  applying indexing by using IntStream.range(1, usZoneID.size())
          IntStream.range(1, usZoneId.size())
-//        printing out the rules for the zones
+//  printing out the rules for the zones
         .forEach(i -> {
             ZoneId zone = usZoneId.get(i);
             System.out.println(i + ": " + zone.getId() + ": " + zone.getRules());
