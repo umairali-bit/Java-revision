@@ -12,5 +12,10 @@ public class Main {
 //  How many time zones are available
         System.out.println("Number of TZs = " + ZoneId.getAvailableZoneIds().size());//Number of TZs = 602
 
+//  printing out the available zones through streams
+        ZoneId.getAvailableZoneIds().stream()
+                .sorted()
+                .forEach(i -> System.out.println(i));
+
     }
 }
