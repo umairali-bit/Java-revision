@@ -1,6 +1,9 @@
 package dev.lpa;
 
 import java.time.ZoneId;
+import java.util.List;
+import java.util.stream.Collectors;
+import java.util.stream.IntStream;
 
 public class Main {
 
@@ -13,9 +16,24 @@ public class Main {
         System.out.println("Number of TZs = " + ZoneId.getAvailableZoneIds().size());//Number of TZs = 602
 
 //  printing out the available zones through streams
-        ZoneId.getAvailableZoneIds().stream()
+
+        //converting the stream to list to get indexing
+        List<ZoneId> usZoneId = ZoneId.getAvailableZoneIds().stream()
+                //filtering available in US
+                .filter(s -> s.startsWith("US"))
                 .sorted()
-                .forEach(i -> System.out.println(i));
+                //creating a new instance of zone ID passing it the current String
+                .map(s -> ZoneId.of(s))
+                .collect(Collectors.toList());
+
+//  applying indexing by using IntStream.range(1, usZoneID.size())
+         IntStream.range(1, usZoneId.size())
+//        printing out the rules for the zones
+        .forEach(i -> {
+            ZoneId zone = usZoneId.get(i);
+            System.out.println(i + ": " + zone.getId() + ": " + zone.getRules());
+        });
+
 
     }
 }
