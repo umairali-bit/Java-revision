@@ -1,5 +1,6 @@
 package dev.lpa;
 
+import java.time.Instant;
 import java.time.LocalDateTime;
 import java.time.ZoneId;
 import java.util.List;
@@ -41,6 +42,12 @@ public class Main {
 //  printing locate date time according to Los_Angeles
         LocalDateTime today = LocalDateTime.now();
         System.out.println(today);
+
+//  Instant class
+        Instant instantNow = Instant.now();
+        System.out.println(instantNow);
+
+
 
 
     }
