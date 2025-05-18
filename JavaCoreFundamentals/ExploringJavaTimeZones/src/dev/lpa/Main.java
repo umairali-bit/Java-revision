@@ -1,5 +1,6 @@
 package dev.lpa;
 
+import java.time.LocalDateTime;
 import java.time.ZoneId;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -36,6 +37,10 @@ public class Main {
             ZoneId zone = usZoneId.get(i);
             System.out.println(i + ": " + zone.getId() + ": " + zone.getRules());
         });
+
+//  printing locate date time according to Los_Angeles
+        LocalDateTime today = LocalDateTime.now();
+        System.out.println(today);
 
 
     }
