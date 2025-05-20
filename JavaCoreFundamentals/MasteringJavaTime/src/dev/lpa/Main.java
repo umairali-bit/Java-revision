@@ -1,5 +1,6 @@
 package dev.lpa;
 
+import java.sql.SQLOutput;
 import java.time.Instant;
 import java.time.LocalDateTime;
 import java.time.ZoneId;
@@ -74,6 +75,11 @@ public class Main {
         ZonedDateTime dobSydney = ZonedDateTime.ofInstant(dobInstant,
                 ZoneId.of("Australia/Sydney"));
         System.out.println("Your kid's birthdate, Sydney Time = " + dobSydney.format(
+                DateTimeFormatter.ofLocalizedDateTime(FormatStyle.MEDIUM)
+        ));
+
+        ZonedDateTime dobHere = dobSydney.withZoneSameInstant(ZoneId.systemDefault());
+        System.out.println("Your kid's birthdate, Here Time = " + dobHere.format(
                 DateTimeFormatter.ofLocalizedDateTime(FormatStyle.MEDIUM)
         ));
 
