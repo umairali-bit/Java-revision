@@ -1,10 +1,7 @@
 package dev.lpa;
 
 import java.sql.SQLOutput;
-import java.time.Instant;
-import java.time.LocalDateTime;
-import java.time.ZoneId;
-import java.time.ZonedDateTime;
+import java.time.*;
 import java.time.format.DateTimeFormatter;
 import java.time.format.FormatStyle;
 import java.time.temporal.TemporalAdjuster;
@@ -89,5 +86,19 @@ public class Main {
         ZonedDateTime firstOfMonth = ZonedDateTime.now()
                 .with(TemporalAdjusters.firstDayOfNextMonth());
         System.out.printf("First of next Month = %tD %n", firstOfMonth);//First of next Month = 06/01/25
+
+
+//  Difference between EPOCH date and LocalDate
+        Period timePast = Period.between(LocalDate.EPOCH, dob.toLocalDate());
+        System.out.println(timePast);//P50Y
+
+
+//  Difference between EPOCH time and local time
+        Duration timeSince =
+                Duration.between(Instant.EPOCH, dob.toInstant(ZoneOffset.UTC));
+        System.out.println(timeSince);//PT438288H1M
+
+
+
     }
 }
