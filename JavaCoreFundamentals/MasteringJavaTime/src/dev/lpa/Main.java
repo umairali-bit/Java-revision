@@ -7,6 +7,8 @@ import java.time.ZoneId;
 import java.time.ZonedDateTime;
 import java.time.format.DateTimeFormatter;
 import java.time.format.FormatStyle;
+import java.time.temporal.TemporalAdjuster;
+import java.time.temporal.TemporalAdjusters;
 import java.util.Date;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -83,5 +85,9 @@ public class Main {
                 DateTimeFormatter.ofLocalizedDateTime(FormatStyle.MEDIUM)
         ));
 
+//  TemporalAdjuster, for example we want to know when the first day of the month is, starting today
+        ZonedDateTime firstOfMonth = ZonedDateTime.now()
+                .with(TemporalAdjusters.firstDayOfNextMonth());
+        System.out.printf("First of next Month = %tD %n", firstOfMonth);//First of next Month = 06/01/25
     }
 }
