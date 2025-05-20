@@ -4,6 +4,7 @@ import java.time.Instant;
 import java.time.LocalDateTime;
 import java.time.ZoneId;
 import java.time.format.DateTimeFormatter;
+import java.time.format.FormatStyle;
 import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
@@ -60,8 +61,13 @@ public class Main {
             System.out.println("\t" + z.getRules().isDaylightSavings(instantNow));
         }
 
+        Instant dobInstant = Instant.parse("2020-01-01T08:01:00Z");
+        LocalDateTime dob =
+                LocalDateTime.ofInstant(dobInstant, ZoneId.systemDefault());
 
-
+        System.out.println("Your kid's birthday, LA time = " + dob.format(
+                DateTimeFormatter.ofLocalizedDateTime(FormatStyle.MEDIUM)//Your kid's birthday, LA time = Jan 1, 2020, 12:01:00 AM
+        ));
 
     }
 }
