@@ -112,7 +112,7 @@ public class Main {
         Period timePast2 = Period.between(LocalDate.EPOCH, dob2.toLocalDate());
         System.out.println(timePast2);//P52Y4M4D
 
-
+//  LocateDate has days, weeks, months and so on
         Duration timeSince2 =
                 Duration.between(Instant.EPOCH, dob2.toInstant(ZoneOffset.UTC));
         System.out.println(timeSince2);//PT458815H15M37S
@@ -122,6 +122,20 @@ public class Main {
             if (u.isSupportedBy(LocalDate.EPOCH)) {
                 long val = u.between(LocalDate.EPOCH,
                         dob2.toLocalDate());
+                System.out.println(u + " past = " + val);
+            } else {
+                System.out.println("-----Not supported: " + u);
+            }
+        }
+//  LocalDateTime shows time, days, weeks and so on
+        LocalDateTime ldt = LocalDateTime.ofInstant(Instant.EPOCH,
+                ZoneOffset.UTC);
+
+
+        for (ChronoUnit u : ChronoUnit.values()) {
+            if (u.isSupportedBy(ldt)) {
+                long val = u.between(ldt,
+                        dob2);
                 System.out.println(u + " past = " + val);
             } else {
                 System.out.println("-----Not supported: " + u);
