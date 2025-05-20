@@ -4,6 +4,7 @@ import java.sql.SQLOutput;
 import java.time.*;
 import java.time.format.DateTimeFormatter;
 import java.time.format.FormatStyle;
+import java.time.temporal.ChronoUnit;
 import java.time.temporal.TemporalAdjuster;
 import java.time.temporal.TemporalAdjusters;
 import java.util.Date;
@@ -97,6 +98,35 @@ public class Main {
         Duration timeSince =
                 Duration.between(Instant.EPOCH, dob.toInstant(ZoneOffset.UTC));
         System.out.println(timeSince);//PT438288H1M
+
+//  Chaining plus methods
+        LocalDateTime dob2 = dob.plusYears(2).plusMonths(4)
+                .plusDays(4).plusHours(7).plusMinutes(14)
+                .plusSeconds(37);
+
+
+        System.out.println("Your 2nd kid's birthdate, Here Time = " + dob2.format(
+                DateTimeFormatter.ofLocalizedDateTime(FormatStyle.MEDIUM)
+        ));
+
+        Period timePast2 = Period.between(LocalDate.EPOCH, dob2.toLocalDate());
+        System.out.println(timePast2);//P52Y4M4D
+
+
+        Duration timeSince2 =
+                Duration.between(Instant.EPOCH, dob2.toInstant(ZoneOffset.UTC));
+        System.out.println(timeSince2);//PT458815H15M37S
+
+
+        for (ChronoUnit u : ChronoUnit.values()) {
+            if (u.isSupportedBy(LocalDate.EPOCH)) {
+                long val = u.between(LocalDate.EPOCH,
+                        dob2.toLocalDate());
+                System.out.println(u + " past = " + val);
+            } else {
+                System.out.println("-----Not supported: " + u);
+            }
+        }
 
 
 
