@@ -3,8 +3,10 @@ package dev.lpa;
 import java.time.Instant;
 import java.time.LocalDateTime;
 import java.time.ZoneId;
+import java.time.ZonedDateTime;
 import java.time.format.DateTimeFormatter;
 import java.time.format.FormatStyle;
+import java.util.Date;
 import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
@@ -67,6 +69,12 @@ public class Main {
 
         System.out.println("Your kid's birthday, LA time = " + dob.format(
                 DateTimeFormatter.ofLocalizedDateTime(FormatStyle.MEDIUM)//Your kid's birthday, LA time = Jan 1, 2020, 12:01:00 AM
+        ));
+
+        ZonedDateTime dobSydney = ZonedDateTime.ofInstant(dobInstant,
+                ZoneId.of("Australia/Sydney"));
+        System.out.println("Your kid's birthdate, Sydney Time = " + dobSydney.format(
+                DateTimeFormatter.ofLocalizedDateTime(FormatStyle.MEDIUM)
         ));
 
     }
