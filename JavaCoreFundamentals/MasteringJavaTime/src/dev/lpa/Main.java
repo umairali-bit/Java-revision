@@ -3,6 +3,7 @@ package dev.lpa;
 import java.time.Instant;
 import java.time.LocalDateTime;
 import java.time.ZoneId;
+import java.time.format.DateTimeFormatter;
 import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
@@ -46,6 +47,18 @@ public class Main {
 //  Instant class
         Instant instantNow = Instant.now();
         System.out.println(instantNow);
+
+
+        for (ZoneId z : List.of(
+                ZoneId.of("Australia/Sydney"),
+                ZoneId.of("Europe/Paris"),
+                ZoneId.of("America/New_York"))) {
+            DateTimeFormatter zoneFormat = DateTimeFormatter.ofPattern("z:zzzz");
+            System.out.println(z);
+            System.out.println("\t" + instantNow.atZone(z).format(zoneFormat));
+            System.out.println("\t" + z.getRules().getDaylightSavings(instantNow));
+            System.out.println("\t" + z.getRules().isDaylightSavings(instantNow));
+        }
 
 
 
