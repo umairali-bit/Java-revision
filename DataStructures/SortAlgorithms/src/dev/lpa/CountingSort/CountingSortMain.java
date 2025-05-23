@@ -24,9 +24,9 @@ public class CountingSortMain {
 //  count array with the size of the actual array
         int[] countArray = new int[(max - min) + 1];
 
-        for (int i = 0; i < input.length; i++) {
+        for (int i : input) {
 //  to count each value
-           countArray[input[i] - min]++;
+            countArray[i - min]++;
         }
 
 //  writing values back to the array
