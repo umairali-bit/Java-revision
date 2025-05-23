@@ -1,7 +1,9 @@
 package dev.lpa;
 
+import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.time.format.FormatStyle;
+import java.util.List;
 import java.util.Locale;
 
 public class Main {
@@ -22,8 +24,15 @@ public class Main {
         Locale enNZ = new Locale.Builder().setLanguage("en").setRegion("NZ").build();
 
 
+        var dtf =
+                DateTimeFormatter.ofLocalizedDateTime(FormatStyle.MEDIUM);
 
-
+        for (var locale : List.of(
+                Locale.getDefault(), Locale.UK, en, enAU, enCA, Locale.UK, enNZ, enIN
+        )) {
+            System.out.println(locale.getDisplayName() + "= "
+            + LocalDateTime.now().format((dtf.withLocale(locale))));
+        }
 
 
 
