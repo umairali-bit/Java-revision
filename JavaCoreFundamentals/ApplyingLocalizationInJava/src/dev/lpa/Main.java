@@ -77,8 +77,10 @@ public class Main {
 //  using scanner class for the input in BigDecimal class
         Scanner scanner = new Scanner(System.in);
         System.out.println("Enter the loan amount: ");
+        scanner.useLocale(Locale.ITALY);
         BigDecimal myLoan = scanner.nextBigDecimal();
-        System.out.println("My Loan " + myLoan);
+        NumberFormat decimalInfo = NumberFormat.getNumberInstance(Locale.ITALY);
+        System.out.println("My Loan " + decimalInfo.format(myLoan));
 
 
 
