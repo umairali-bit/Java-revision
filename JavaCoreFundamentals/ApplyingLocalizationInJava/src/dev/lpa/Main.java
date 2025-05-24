@@ -43,6 +43,14 @@ public class Main {
         LocalDate May5 = LocalDate.of(2020, 5, 5);
 
         System.out.println("-".repeat(30));
+        for (var locale : List.of(Locale.CANADA, Locale.CANADA_FRENCH,
+                Locale.FRENCH, Locale.GERMANY, Locale.TAIWAN, Locale.JAPAN,
+                Locale.ITALY)) {
+            System.out.println(
+                    locale.getDisplayName() + " : " +
+                            locale.getDisplayName(locale) + "=\n\t" +
+                            May5.format(wdayMonth.withLocale(locale)));
+        }
 
 
 
