@@ -1,5 +1,6 @@
 package dev.lpa;
 
+import java.text.NumberFormat;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
@@ -50,9 +51,17 @@ public class Main {
                     locale.getDisplayName() + " : " +
                             locale.getDisplayName(locale) + "=\n\t" +
                             May5.format(wdayMonth.withLocale(locale)));
-           // System.out.println("-".repeat(30));
+
             System.out.printf(String.format(locale, "\t%1$tA, %1$tB %1$te, %1$tY %n", May5));
+
+//  Decimal number formatting
+            NumberFormat decimalInfo = NumberFormat.getNumberInstance(locale);
+            System.out.println(decimalInfo.format(123456789.123456));
+
         }
+
+
+
 
 
 
