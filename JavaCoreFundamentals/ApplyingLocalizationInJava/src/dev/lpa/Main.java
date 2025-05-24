@@ -1,5 +1,6 @@
 package dev.lpa;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.time.format.FormatStyle;
@@ -33,6 +34,35 @@ public class Main {
             System.out.println(locale.getDisplayName() + "= "
             + LocalDateTime.now().format((dtf.withLocale(locale))));
         }
+
+
+//  using non-english locales
+        DateTimeFormatter wdayMonth = DateTimeFormatter.ofPattern(
+                "EEEE, MMMM d, YYYY");
+
+        LocalDate May5 = LocalDate.of(2020, 5, 5);
+
+        System.out.println("-".repeat(30));
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
