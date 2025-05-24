@@ -50,6 +50,8 @@ public class Main {
                     locale.getDisplayName() + " : " +
                             locale.getDisplayName(locale) + "=\n\t" +
                             May5.format(wdayMonth.withLocale(locale)));
+           // System.out.println("-".repeat(30));
+            System.out.printf(String.format(locale, "\t%1$tA, %1$tB %1$te, %1$tY %n", May5));
         }
 
 
