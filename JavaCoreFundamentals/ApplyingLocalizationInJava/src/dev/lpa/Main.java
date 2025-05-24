@@ -60,6 +60,11 @@ public class Main {
             decimalInfo.setMaximumFractionDigits(6);
             System.out.println(decimalInfo.format(123456789.123456));
 
+//  displaying each country method of displaying currency
+            NumberFormat currency = NumberFormat.getCurrencyInstance(locale);
+            System.out.println(currency.format(555.555));
+
+
         }
 
 
