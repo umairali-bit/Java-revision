@@ -5,6 +5,7 @@ import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.time.format.FormatStyle;
+import java.util.Currency;
 import java.util.List;
 import java.util.Locale;
 
@@ -62,7 +63,11 @@ public class Main {
 
 //  displaying each country method of displaying currency
             NumberFormat currency = NumberFormat.getCurrencyInstance(locale);
-            System.out.println(currency.format(555.555));
+            Currency localCurrency = Currency.getInstance(locale);
+            System.out.println(currency.format(555.555) + " [" +
+                    localCurrency.getCurrencyCode() + "] " +
+                    localCurrency.getDisplayName(locale) + "/" +
+                    localCurrency.getDisplayName());
 
 
         }
