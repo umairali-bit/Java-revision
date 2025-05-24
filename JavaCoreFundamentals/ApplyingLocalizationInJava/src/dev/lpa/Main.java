@@ -1,5 +1,6 @@
 package dev.lpa;
 
+import java.math.BigDecimal;
 import java.text.NumberFormat;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
@@ -8,6 +9,7 @@ import java.time.format.FormatStyle;
 import java.util.Currency;
 import java.util.List;
 import java.util.Locale;
+import java.util.Scanner;
 
 public class Main {
 
@@ -46,7 +48,7 @@ public class Main {
 
         System.out.println("-".repeat(30));
         for (var locale : List.of(Locale.CANADA, Locale.CANADA_FRENCH,
-                Locale.FRENCH, Locale.GERMANY, Locale.TAIWAN, Locale.JAPAN,
+                Locale.FRANCE, Locale.GERMANY, Locale.TAIWAN, Locale.JAPAN,
                 Locale.ITALY)) {
             System.out.println(
                     locale.getDisplayName() + " : " +
@@ -71,6 +73,14 @@ public class Main {
 
 
         }
+
+//  using scanner class for the input in BigDecimal class
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Enter the loan amount: ");
+        BigDecimal myLoan = scanner.nextBigDecimal();
+        System.out.println("My Loan " + myLoan);
+
+
 
 
 
