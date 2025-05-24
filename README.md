@@ -101,6 +101,18 @@
 * Demystifying Record Constructors
 * Final Classes & COnstructor Access Modifiers
 * Sealed Classes and Interfaces
+
+## Comprehensive Java Streams: Operations, Pipelines, and Sources
+* Understanding Java Streams: Core Concepts and Key Differences from Collections
+* Java Stream Pipelines: Sources, intermediate, and Terminal Ops
+* Java Stream Sources: Collections, Arrays, and Infinite Data Streams
+* Filtering and Transforming Data: distinct, filter limit, skip, takeWhile, dropW
+* Map, Peek, and Sorted Operations
+* Terminal Ops
+* The Collect and Reduce Operations
+* Java Optionals
+* Stream Terminal Operations Find, Min, Max, Average, and Reduce in Java
+* Using flatMap to Stream Map elements in Java
   
 
 
