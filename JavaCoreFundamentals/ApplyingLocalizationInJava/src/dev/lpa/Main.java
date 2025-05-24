@@ -56,6 +56,8 @@ public class Main {
 
 //  Decimal number formatting
             NumberFormat decimalInfo = NumberFormat.getNumberInstance(locale);
+//  changing decimal places
+            decimalInfo.setMaximumFractionDigits(6);
             System.out.println(decimalInfo.format(123456789.123456));
 
         }
