@@ -25,6 +25,10 @@ public class Main {
     public static void main(String[] args) {
 
 
+        Employee jane = new Employee("Jane", Locale.US, "America/New_York");
+        Employee joe = new Employee("Joe", "en-AU", "Australia/Sydney");
+
+
 
     }
 }
