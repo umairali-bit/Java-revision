@@ -1,5 +1,6 @@
 package dev.lpa;
 
+import java.time.Duration;
 import java.time.ZoneId;
 import java.time.ZonedDateTime;
 import java.time.format.DateTimeFormatter;
@@ -33,6 +34,14 @@ public class Main {
         ZoneRules janesRules = jane.zone.getRules();
         System.out.println(jane + " " + janesRules);
         System.out.println(joe + " " + joesRules);
+
+        ZonedDateTime janeNow = ZonedDateTime.now(jane.zone);
+        ZonedDateTime joeNow = ZonedDateTime.of(janeNow.toLocalDateTime(),joe.zone);
+        long hoursBetween = Duration.between(joeNow, janeNow).toHours();
+        long minutesBetween = Duration.between(joeNow, janeNow).toMinutesPart();
+        System.out.println("Joe is " + Math.abs(hoursBetween) + " hours " +
+                Math.abs(minutesBetween) + " minutes " + ((hoursBetween < 0)? "behind" : "ahead"));
+
 
 
 
