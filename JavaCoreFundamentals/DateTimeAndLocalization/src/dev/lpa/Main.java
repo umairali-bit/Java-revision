@@ -7,6 +7,8 @@ import java.time.format.DateTimeFormatter;
 import java.time.zone.ZoneRules;
 import java.util.Locale;
 
+import static java.time.format.DateTimeFormatter.*;
+
 public class Main {
 
     private record Employee(String name, Locale locale, ZoneId zone) {
@@ -41,6 +43,18 @@ public class Main {
         long minutesBetween = Duration.between(joeNow, janeNow).toMinutesPart();
         System.out.println("Joe is " + Math.abs(hoursBetween) + " hours " +
                 Math.abs(minutesBetween) + " minutes " + ((hoursBetween < 0)? "behind" : "ahead"));
+
+
+        System.out.println("Joe in daylight savings? " +
+                joesRules.isDaylightSavings(joeNow.toInstant()) + " " +
+                joesRules.getDaylightSavings(joeNow.toInstant()) + ": " +
+                joeNow.format(ofPattern("zzzz z")));
+
+        System.out.println("Jane in daylight savings? " +
+                janesRules.isDaylightSavings(janeNow.toInstant()) + " " +
+                janesRules.getDaylightSavings(janeNow.toInstant()) + ": " +
+                janeNow.format(ofPattern("zzzz z")));
+
 
 
 
