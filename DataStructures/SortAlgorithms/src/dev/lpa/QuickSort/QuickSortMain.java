@@ -26,6 +26,7 @@ public class QuickSortMain {
             return;
         }
 
+//      to choose any number as a pivot from the array
         int pivotIndex = new Random().nextInt(highIndex - lowIndex) + lowIndex;
         int pivot = array[pivotIndex];
         swap(array, pivotIndex, highIndex);

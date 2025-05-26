@@ -19,7 +19,7 @@ public class ShellSortMain {
 
                 while (j >= gap && intArray[j - gap] > newElement) { // j - gap = 0 which is 20 > newElement = 7
                     intArray[j] = intArray[j - gap]; // i = 3 which is 7 will be moved to intArray[0]
-                    j -= gap; // move 7 into index 0
+                    j -= gap; // j = j - gap which is 0, as index move 7 into index 0
 
                     //{ 7, 35, -15, 20, 55, 1, -22}
 
