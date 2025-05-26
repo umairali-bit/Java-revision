@@ -15,13 +15,20 @@ public class RadixSortMain {
     }
 
 
+    private static void radixSort(int[] array, int radix, int width) {
+        for (int i = 0; i <width; i++) {
+            radixSingleSort(array, i, radix);
+        }
+    }
+
+
     public static int[] generateArray() {
 
         Random random = new Random(10);
         int[] array = new int [10];
 
         for (int i = 0; i <array.length; i++) {
-            array[i] = random.nextInt(100);
+            array[i] = random.nextInt(1000, 1900);
         }
 
         return array;
