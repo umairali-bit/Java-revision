@@ -1,11 +1,12 @@
 package dev.lpa;
 
-import java.time.Duration;
-import java.time.ZoneId;
-import java.time.ZonedDateTime;
+import java.time.*;
 import java.time.format.DateTimeFormatter;
 import java.time.zone.ZoneRules;
+import java.util.List;
 import java.util.Locale;
+import java.util.Map;
+import java.util.function.Predicate;
 
 import static java.time.format.DateTimeFormatter.*;
 
@@ -57,7 +58,35 @@ public class Main {
 
 
 
+    }
+
+    private static Map<LocalDate, List<ZonedDateTime>> schedule(Employee first, Employee second, int days) {
+
+        Predicate<ZonedDateTime> rules = zdt ->
+         zdt.getDayOfWeek() != DayOfWeek.SUNDAY
+                && zdt.getDayOfWeek() != DayOfWeek.SUNDAY
+                && zdt.getHour() >= 7 && zdt.getHour() < 21;
 
 
     }
+
+
+
+
+
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
