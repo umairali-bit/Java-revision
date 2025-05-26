@@ -12,13 +12,32 @@ public class RadixSortMain {
         System.out.println("Before");
         printArray(newArray);
 
+//        System.out.println("\nAfter");
+
+
     }
 
-
+//  this method will loop over each value in the index
     private static void radixSort(int[] array, int radix, int width) {
         for (int i = 0; i <width; i++) {
             radixSingleSort(array, i, radix);
         }
+    }
+
+    public static void radixSingleSort(int[] array, int position, int radix) {
+
+        int numItems = array.length;
+
+        int[] countArray = new int[radix];
+
+        for (int value : array) {
+            countArray[getDigit(position, value, radix)]++;
+        }
+
+    }
+
+    public static int getDigit(int position, int value, int radix){
+        return value / (int) Math.pow(10, position) % radix;
     }
 
 
