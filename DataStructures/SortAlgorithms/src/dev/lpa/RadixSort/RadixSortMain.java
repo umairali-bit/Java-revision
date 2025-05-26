@@ -14,9 +14,8 @@ public class RadixSortMain {
 
         System.out.println("\nAfter");
 
-
-
-
+        radixSort(newArray, 10, 4);
+        printArray(newArray);
 
     }
 
@@ -48,13 +47,14 @@ public class RadixSortMain {
                     array[tempIndex];
         }
 
-
-
+        for (int tempIndex = 0; tempIndex < numItems; tempIndex++) {
+            array[tempIndex] = temp[tempIndex];
+        }
 
     }
 
     public static int getDigit(int position, int value, int radix){
-        return value / (int) Math.pow(10, position) % radix;
+        return value / (int) Math.pow(radix, position) % radix;
     }
 
 
