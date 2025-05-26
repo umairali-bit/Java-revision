@@ -12,7 +12,10 @@ public class RadixSortMain {
         System.out.println("Before");
         printArray(newArray);
 
-//        System.out.println("\nAfter");
+        System.out.println("\nAfter");
+
+
+
 
 
     }
@@ -33,6 +36,20 @@ public class RadixSortMain {
         for (int value : array) {
             countArray[getDigit(position, value, radix)]++;
         }
+//      Adjust the count array
+        for (int j = 1; j < radix; j++) {
+            countArray[j] += countArray[j - 1];
+        }
+
+
+        int[] temp = new int[numItems];
+        for (int tempIndex = numItems - 1; tempIndex >= 0; tempIndex--) {
+            temp[--countArray[getDigit(position, array[tempIndex], radix)]] =
+                    array[tempIndex];
+        }
+
+
+
 
     }
 
