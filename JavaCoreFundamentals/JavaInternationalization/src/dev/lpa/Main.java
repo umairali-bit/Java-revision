@@ -8,6 +8,9 @@ public class Main {
 
 // creating a ResourceBundle variable
         ResourceBundle rb = ResourceBundle.getBundle("BasicText");
+        System.out.println(rb.getClass().getName());
+        System.out.println(rb.getBaseBundleName());
+        System.out.println(rb.keySet());
 
 
     }
