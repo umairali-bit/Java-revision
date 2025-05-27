@@ -85,7 +85,7 @@ public class Main {
                 checkAmount, checkAmount.unscaledValue(),checkAmount.scale(),checkAmount.precision());
 
 
-//        getting the full check for beneficiaries
+//        getting the full checks for beneficiaries
         BigDecimal totalChecksAmount = checkAmount.multiply(
                 BigDecimal.valueOf(beneficiaries));
         System.out.printf("Combined: %.2f%n", totalChecksAmount);
