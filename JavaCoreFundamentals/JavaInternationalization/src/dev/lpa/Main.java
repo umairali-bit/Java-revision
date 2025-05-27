@@ -13,5 +13,8 @@ public class Main {
         System.out.println(rb.keySet());
 
 
+        System.out.printf("%s %s!%n", rb.getString("hello"), rb.getString("world"));
+
+
     }
 }
