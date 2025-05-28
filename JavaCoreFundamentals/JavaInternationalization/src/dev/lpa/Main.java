@@ -35,7 +35,7 @@ public class Main {
                     JOptionPane.DEFAULT_OPTION,
                     JOptionPane.INFORMATION_MESSAGE,
                     null,
-                    null,
+                    new Object[] {rb.getString("no"), rb.getString("yes")},
                     null);
 
 
