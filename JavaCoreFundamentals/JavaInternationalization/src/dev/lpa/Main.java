@@ -23,7 +23,11 @@ public class Main {
             System.out.println(rb.getBaseBundleName());
             System.out.println(rb.keySet());
 
-            System.out.printf("%s %s!%n", rb.getString("hello"), rb.getString("world"));
+            String message = "%s %s!%n".formatted(rb.getString("hello"), rb.getString("world"));
+
+            ResourceBundle uui = ResourceBundle.getBundle("UIComponents", l);
+
+
 
         }
 
