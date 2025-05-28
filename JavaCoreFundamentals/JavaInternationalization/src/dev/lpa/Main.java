@@ -1,5 +1,6 @@
 package dev.lpa;
 
+import javax.swing.*;
 import java.util.List;
 import java.util.Locale;
 import java.util.ResourceBundle;
@@ -26,6 +27,17 @@ public class Main {
             String message = "%s %s!%n".formatted(rb.getString("hello"), rb.getString("world"));
 
             ResourceBundle uui = ResourceBundle.getBundle("UIComponents", l);
+
+            //  adding UI dialogueBox
+            JOptionPane.showOptionDialog(null,
+                    message,
+                    uui.getString("first.title"),
+                    JOptionPane.DEFAULT_OPTION,
+                    JOptionPane.INFORMATION_MESSAGE,
+                    null,
+                    null,
+                    null);
+
 
 
 
