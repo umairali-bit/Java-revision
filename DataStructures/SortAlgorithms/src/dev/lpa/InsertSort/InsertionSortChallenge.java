@@ -11,23 +11,42 @@ public class InsertionSortChallenge {
 
         int[] numbers = generateArray();
 
+
+        System.out.println("Before");
         printArray(numbers);
 
+        System.out.println("\nAfter");
+        insertionSort(numbers, numbers.length);
+        printArray(numbers);
     }
 
+
+    public static void insertionSort(int[] numbersArr,int numItems){
+        if (numItems < 2) {
+            return;
+        }
+
+        insertionSort(numbersArr, numItems - 1);
+            int newElement = numbersArr[numItems - 1];
+
+            int i;
+
+            for (i = numItems - 1; i > 0 && numbersArr[i - 1] > newElement; i--) {
+                numbersArr[i] = numbersArr[i - 1];
+            }
+
+            numbersArr[i] = newElement;
+    }
 
     public static int[] generateArray(){
 
-        int[] numbers = { 20, 25, -15, 7,55, 1, -22};
-
-        return numbers;
+        return new int[]{ 20, 25, -15, 7,55, 1, -22};
     }
 
+    public static void printArray(int[] numbersArray) {
 
-    public static void printArray(int[] numbers) {
-
-        for (int i = 0; i< numbers.length; i ++) {
-            System.out.print(numbers[i] + " ");
+        for (int i = 0; i< numbersArray.length; i ++) {
+            System.out.print(numbersArray[i] + " ");
         }
     }
 }
