@@ -16,7 +16,11 @@ public class Main {
     private static String format(String regexp, String... args) {
 
         int index = 0;
-        while(regexp.contains("%s")) {
+//        while(regexp.contains("%s")) {
+//            regexp = regexp.replaceFirst("%s", args[index++]);
+//        }
+
+        while(regexp.matches(".*%s.*")) {
             regexp = regexp.replaceFirst("%s", args[index++]);
         }
 
