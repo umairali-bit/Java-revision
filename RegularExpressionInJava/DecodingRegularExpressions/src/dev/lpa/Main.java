@@ -19,9 +19,9 @@ public class Main {
     String replacement = "(-)";
 
     String[] patterns = {
-            "abc",
-            "123",
-            "A"
+            "[a-z]",
+            "[0-9]",
+            "[A-Z]"
     };
 
     for (String pattern : patterns) {
