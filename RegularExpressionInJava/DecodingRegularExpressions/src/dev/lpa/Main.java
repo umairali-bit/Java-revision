@@ -20,7 +20,7 @@ public class Main {
 
     String[] patterns = {
             "[a-zA-z]*",
-            "[0-9]+",
+            "[0-9]{2}",
             "[A-Z]*"
     };
 
