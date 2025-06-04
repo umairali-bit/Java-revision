@@ -1,5 +1,6 @@
 package dev.lpa;
 
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class Main {
@@ -63,6 +64,7 @@ public class Main {
 //        }
 
         scanner.tokens()
+                .map(s-> Arrays.stream(s.split("\\s")).count())
                         .forEach(i -> System.out.println(i));
         scanner.close();;
 
