@@ -57,10 +57,13 @@ public class Main {
         System.out.println(scanner.delimiter());
         scanner.useDelimiter("\\R");
 
-        while (scanner.hasNext()) {
-            String element = scanner.next();
-            System.out.println(element);
-        }
+//        while (scanner.hasNext()) {
+//            String element = scanner.next();
+//            System.out.println(element);
+//        }
+
+        scanner.tokens()
+                        .forEach(i -> System.out.println(i));
         scanner.close();;
 
 
