@@ -28,6 +28,21 @@ public class Main {
 
     }
 
+    String paragraph = """
+            Double, double toil and trouble;
+            Fire burn and caldron buubble.
+            Fillet of a fenny snake,
+            In the caldron boil and bake
+            Eye of newt and toe of frog,
+            Wool of bat and tongue of dog,
+            Adder's fork and blind-worm's sting,
+            Lizard's leg and howlet's wing,
+            For a charm of powerful trouble,
+            Like a hell-broth boil and bubble
+            """;
+
+
+
 
 
 
