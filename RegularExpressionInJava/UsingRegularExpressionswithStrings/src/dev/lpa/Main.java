@@ -63,12 +63,15 @@ public class Main {
 //            System.out.println(element);
 //        }
 
-        scanner.tokens()
-//                .map(s-> Arrays.stream(s.split("\\s")).count())
-                .map(s -> s.replaceAll("\\p{Punct}", ""))
-                .flatMap(s-> Arrays.stream(s.split("\\s+")))
-                .filter(s -> s.matches("[a-zA-Z]+ble"))
-                        .forEach(i -> System.out.println(i));
+//        scanner.tokens()
+////                .map(s-> Arrays.stream(s.split("\\s")).count())
+//                .map(s -> s.replaceAll("\\p{Punct}", ""))
+//                .flatMap(s-> Arrays.stream(s.split("\\s+")))
+//                .filter(s -> s.matches("[a-zA-Z]+ble"))
+//                        .forEach(i -> System.out.println(i));
+
+        System.out.println(scanner.findInLine("[a-zA-Z]+ble"));
+        System.out.println(scanner.findInLine("[a-zA-Z]+ble"));
         scanner.close();;
 
 
