@@ -46,6 +46,8 @@ public class Main {
 //  Counting words
         String[] words = paragraph.split("\\s");//identify white spaces
         System.out.println("This paragraph has " + words.length + " words");
+//  Replacing words
+        System.out.println(paragraph.replaceAll("[a-zA-Z]+ble","[GRUB]"));
 
 
 
