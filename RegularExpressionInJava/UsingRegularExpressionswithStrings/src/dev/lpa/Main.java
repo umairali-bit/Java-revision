@@ -41,8 +41,11 @@ public class Main {
             Like a hell-broth boil and bubble
             """;
 //  Counting lines
-        String[] lines = paragraph.split("\\R");
+        String[] lines = paragraph.split("\\R");//identify line breaker
         System.out.println("This paragraph has " + lines.length + " lines");
+//  Counting words
+        String[] words = paragraph.split("\\s");//identify white spaces
+        System.out.println("This paragraph has " + words.length + " words");
 
 
 
