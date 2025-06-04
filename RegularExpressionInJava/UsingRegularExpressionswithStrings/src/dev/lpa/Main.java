@@ -64,7 +64,10 @@ public class Main {
 //        }
 
         scanner.tokens()
-                .map(s-> Arrays.stream(s.split("\\s")).count())
+//                .map(s-> Arrays.stream(s.split("\\s")).count())
+                .map(s -> s.replaceAll("\\p{Punct}", ""))
+                .flatMap(s-> Arrays.stream(s.split("\\s+")))
+                .filter(s -> s.matches("[a-zA-Z]+ble"))
                         .forEach(i -> System.out.println(i));
         scanner.close();;
 
