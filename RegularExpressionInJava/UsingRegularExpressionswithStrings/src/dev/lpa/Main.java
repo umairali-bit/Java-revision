@@ -1,5 +1,7 @@
 package dev.lpa;
 
+import java.util.Scanner;
+
 public class Main {
 
     public static void main(String[] args) {
@@ -49,7 +51,11 @@ public class Main {
 //  Replacing words
         System.out.println(paragraph.replaceAll("[a-zA-Z]+ble","[GRUB]"));
 
+//  methods on scanner class
+        Scanner scanner = new Scanner(System.in);//System.in is the standard input stream in Java - usually the keyboard
+        System.out.println(scanner.delimiter());
 
+        scanner.close();;
 
 
 
