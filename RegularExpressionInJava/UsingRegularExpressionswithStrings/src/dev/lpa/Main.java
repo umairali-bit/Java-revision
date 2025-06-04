@@ -41,7 +41,7 @@ public class Main {
             Like a hell-broth boil and bubble
             """;
 //  Counting lines
-        String[] lines = paragraph.split("\n");
+        String[] lines = paragraph.split("\\R");
         System.out.println("This paragraph has " + lines.length + " lines");
 
 
