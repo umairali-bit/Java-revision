@@ -40,7 +40,9 @@ public class Main {
             For a charm of powerful trouble,
             Like a hell-broth boil and bubble
             """;
-
+//  Counting lines
+        String[] lines = paragraph.split("\n");
+        System.out.println("This paragraph has " + lines.length + " lines");
 
 
 
