@@ -52,9 +52,14 @@ public class Main {
         System.out.println(paragraph.replaceAll("[a-zA-Z]+ble","[GRUB]"));
 
 //  methods on scanner class
-        Scanner scanner = new Scanner(System.in);//System.in is the standard input stream in Java - usually the keyboard
+//        Scanner scanner = new Scanner(System.in);//System.in is the standard input stream in Java - usually the keyboard
+        Scanner scanner = new Scanner(paragraph);
         System.out.println(scanner.delimiter());
 
+        while (scanner.hasNext()) {
+            String element = scanner.next();
+            System.out.println(element);
+        }
         scanner.close();;
 
 
