@@ -25,6 +25,22 @@ public class Main {
 
         }
 
+        String[] sentences2 = {
+                "The bike is red, and has flat tires.",
+                "I love being a new L.P.A student!",
+                "Hello, friends and family: Welcome!",
+
+        };
+
+        String regex2 = "^[A-Z][\\w\\s,:.']*[.!?]$";
+
+        for (String s2 : sentences2) {
+            boolean matches2 = s2.matches(regex2);
+            System.out.println("\"" + s2 + "\" matches: " + matches2);
+        }
+
+
+
 
 
     }
