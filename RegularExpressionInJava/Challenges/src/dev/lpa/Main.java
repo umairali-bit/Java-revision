@@ -32,7 +32,7 @@ public class Main {
 
         };
 
-        String regex2 = "^[A-Z][\\w\\s,:.']*[.!?]$";
+        String regex2 = "^[A-Z].+[.!?]$";
 
         for (String s2 : sentences2) {
             boolean matches2 = s2.matches(regex2);
