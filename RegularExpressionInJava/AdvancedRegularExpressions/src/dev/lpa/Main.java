@@ -14,6 +14,9 @@ public class Main {
         Pattern firstPattern = Pattern.compile("[A-Z].*[.]");
         var matcher = firstPattern.matcher(sentence);
         System.out.println(matcher.matches() + ": " + sentence);
+        System.out.println("sentence.length: " + sentence.length());
+        System.out.println("Matched Ending Index: " + matcher.end());
+
 
 
     }
