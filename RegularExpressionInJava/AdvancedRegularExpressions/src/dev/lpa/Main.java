@@ -17,6 +17,9 @@ public class Main {
         System.out.println("sentence.length: " + sentence.length());
         System.out.println("Matched Ending Index: " + matcher.end());
 
+        System.out.println(matcher.lookingAt() + ": " + sentence);
+        System.out.println("Matched Ending Index: " + matcher.end());
+
 
 
     }
