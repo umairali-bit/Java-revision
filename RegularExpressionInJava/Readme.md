@@ -118,6 +118,138 @@ From the `java.util.regex` package:
 - Java `Pattern` Class API:  
   [🔗 https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/regex/Pattern.html](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/regex/Pattern.html)
 
+
+# Matcher and Pattern Classes in Java
+
+Java’s `Pattern` and `Matcher` classes from the `java.util.regex` package allow for powerful regular expression processing.
+
+---
+
+## 🧩 Matcher Class Overview
+
+The `Matcher` class provides more than just full-string matches. It supports **partial matching** and **capturing groups**.
+
+---
+
+## ✅ Key Features
+
+### 🔍 Partial Matching
+
+```java
+import java.util.regex.*;
+
+public class PartialMatchExample {
+    public static void main(String[] args) {
+        Pattern pattern = Pattern.compile("Hello");
+        Matcher matcher = pattern.matcher("Hello World");
+
+        System.out.println(matcher.lookingAt()); // true
+        System.out.println(matcher.find());      // true
+    }
+}
+🎯 Capturing Groups
+```java
+
+import java.util.regex.*;
+
+public class CapturingGroupsExample {
+    public static void main(String[] args) {
+        Pattern pattern = Pattern.compile("(\\d{3})-(\\d{2})-(\\d{4})");
+        Matcher matcher = pattern.matcher("My SSN is 123-45-6789");
+
+        if (matcher.find()) {
+            System.out.println("Area: " + matcher.group(1));
+            System.out.println("Group: " + matcher.group(2));
+            System.out.println("Serial: " + matcher.group(3));
+        }
+    }
+}
+```
+♻️ Reusability
+```java
+
+Pattern pattern = Pattern.compile("\\d+");
+Matcher matcher = pattern.matcher("123");
+
+System.out.println(matcher.matches()); // true
+
+matcher.reset("456");
+System.out.println(matcher.matches()); // true
+```
+⚠️ Disadvantages of Matcher Class
+🧠Stateful and Not Thread-Safe:
+
+```java
+
+Matcher matcher = Pattern.compile("\\d+").matcher("123");
+
+// State changes after calling find()
+matcher.find(); 
+System.out.println(matcher.group()); // prints: 123
+
+// Using same matcher from another thread can cause issues
+
+```
+
+
+🔁Need to Reset:
+```java
+matcher.reset("456");
+System.out.println(matcher.find()); // true
+```
+
+🎯 Greedy vs. Reluctant Regular Expressions
+🔁 Greedy Matching
+```java
+import java.util.regex.*;
+
+public class GreedyExample {
+    public static void main(String[] args) {
+        Pattern pattern = Pattern.compile("<.*>");
+        Matcher matcher = pattern.matcher("<tag1><tag2>");
+
+        if (matcher.find()) {
+            System.out.println(matcher.group()); // Outputs: <tag1><tag2>
+        }
+    }
+}
+```
+🐢 Reluctant Matching
+
+```java
+import java.util.regex.*;
+
+public class ReluctantExample {
+    public static void main(String[] args) {
+        Pattern pattern = Pattern.compile("<.*?>");
+        Matcher matcher = pattern.matcher("<tag1><tag2>");
+
+        while (matcher.find()) {
+            System.out.println(matcher.group()); 
+            // Outputs:
+            // <tag1>
+            // <tag2>
+        }
+    }
+}
+```
+✏️ Modifier Syntax Summary
+Greedy	Reluctant
+.*	.*?
+.+	.+?
+.?	.??
+
+| Feature                 | `Matcher`               | Behavior                    |
+| ----------------------- | ----------------------- | --------------------------- |
+| Partial Match Methods   | `find()`, `lookingAt()` | For substring matching      |
+| Capturing Groups        | `group(int)`            | Extract sub-patterns        |
+| Thread Safety           | ❌ Not thread-safe       | Use separately per thread   |
+| Greedy Default Behavior | `.*`, `.+`, etc.        | Matches as much as possible |
+| Reluctant Modifier      | `*?`, `+?`, `??`        | Matches as little as needed |
+
+
+
+
 ---
 
 > Regular expressions are an essential skill for any Java developer. Mastering them will make your code more concise, powerful, and efficient.
