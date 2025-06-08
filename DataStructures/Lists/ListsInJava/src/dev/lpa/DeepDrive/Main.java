@@ -15,7 +15,7 @@ public class Main {
 
 
         employeeList.forEach(i -> System.out.println(i));
-//        System.out.println(employeeList);
+        System.out.println(employeeList.get(0));
 
 
     }
