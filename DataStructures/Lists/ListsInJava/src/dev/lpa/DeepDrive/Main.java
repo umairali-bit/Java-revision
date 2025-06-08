@@ -18,6 +18,10 @@ public class Main {
         System.out.println(employeeList.get(0));
         System.out.println(employeeList.isEmpty());
 
+        employeeList.set(3, new Employee("Sirius", "Black", 423));
+        employeeList.forEach(i -> System.out.println(i));
+
+
 
     }
 }
