@@ -16,6 +16,7 @@ public class Main {
 
         employeeList.forEach(i -> System.out.println(i));
         System.out.println(employeeList.get(0));
+        System.out.println(employeeList.isEmpty());
 
 
     }
