@@ -21,6 +21,8 @@ public class Main {
         employeeList.set(3, new Employee("Sirius", "Black", 423));
         employeeList.forEach(i -> System.out.println(i));
 
+        System.out.println(employeeList.size());
+
 
 
     }
