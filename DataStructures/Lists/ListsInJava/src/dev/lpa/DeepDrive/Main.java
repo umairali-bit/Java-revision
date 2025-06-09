@@ -38,6 +38,9 @@ public class Main {
         System.out.println(employeeList.contains(new Employee("Lord","Voldemort", 323)));
         System.out.println(employeeList.indexOf(new Employee("Harry", "Potter", 123)));
 
+        employeeList.remove(2);
+        employeeList.forEach(i -> System.out.println(i));
+
 
 
 
