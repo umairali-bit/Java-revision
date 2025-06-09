@@ -1,5 +1,6 @@
 package dev.lpa;
 
+import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class Main {
@@ -28,7 +29,20 @@ public class Main {
 
         System.out.println("Matched on : " + matcher.group());
 
+        String htmlSnippet = """
+                <H1>My Heading </H1>
+                <h2>Sub-heading</h2>
+                <p>This is a paragraph about something.</p>
+                <p>This is another paragraph about something else.</p>
+                <h3>Summary</h3>
+                
+                """;
+        Pattern htmlPattern = Pattern.compile("<[hH]\\d>.*</[hH]\\d>");
+        Matcher htmlMatcher = htmlPattern.matcher(htmlSnippet);
 
+        while (htmlMatcher.find()) {
+            System.out.println("group: " + htmlMatcher.group());
+        }
 
 
     }
