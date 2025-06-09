@@ -23,6 +23,19 @@ public class Main {
 
         System.out.println(employeeList.size());
 
+        employeeList.add(3, new Employee("Hermione","Granger", 423));
+        employeeList.forEach(i -> System.out.println(i));
+        System.out.println("-".repeat(30));
+
+        //  backing array
+        Employee[] employeeArray = employeeList.toArray(employeeList.toArray(new Employee[employeeList.size()]));
+
+        for (Employee employee : employeeArray) {
+            System.out.println(employee);
+
+        }
+
+
 
 
     }
