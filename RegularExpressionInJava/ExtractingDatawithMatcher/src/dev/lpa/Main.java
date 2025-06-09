@@ -37,13 +37,15 @@ public class Main {
                 <h3>Summary</h3>
                 
                 """;
-        Pattern htmlPattern = Pattern.compile("<[hH]\\d>(.*)</[hH]\\d>");
+        Pattern htmlPattern = Pattern.compile("<[hH](?<level>\\d)>(.*)</[hH]\\d>");
         Matcher htmlMatcher = htmlPattern.matcher(htmlSnippet);
 
         while (htmlMatcher.find()) {
 //            System.out.println("group: " + htmlMatcher.group());
 //            System.out.println("group0: " + htmlMatcher.group(0));
-            System.out.println(htmlMatcher.group(1));
+            System.out.println(htmlMatcher.group("level") + " " +
+                    htmlMatcher.group(2));
+            System.out.println("index = " + htmlMatcher.start("level"));
         }
 
 
