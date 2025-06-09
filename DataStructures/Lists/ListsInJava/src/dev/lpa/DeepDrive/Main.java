@@ -35,7 +35,10 @@ public class Main {
 
         }
 
-        System.out.println(employeeList.contains(new Employee("Mary","Smith", 22)));
+        System.out.println(employeeList.contains(new Employee("Lord","Voldemort", 323)));
+        System.out.println(employeeList.indexOf(new Employee("Harry", "Potter", 123)));
+
+
 
 
 
