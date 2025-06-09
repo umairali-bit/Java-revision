@@ -35,6 +35,8 @@ public class Main {
 
         }
 
+        System.out.println(employeeList.contains(new Employee("Mary","Smith", 22)));
+
 
 
 
