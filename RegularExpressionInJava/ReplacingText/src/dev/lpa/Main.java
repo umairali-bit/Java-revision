@@ -64,7 +64,8 @@ public class Main {
                 .forEach(System.out::println);
 
         htmlMatcher.reset();
-        String updatesSnippet = htmlMatcher.replaceFirst("First Header");
+        String updatesSnippet = htmlMatcher.replaceFirst((mr) ->
+                "<em>" + htmlMatcher.group(2) + "</em");
         System.out.println("-".repeat(50));
         System.out.println(updatesSnippet);
         System.out.println(htmlMatcher.start() + " : " + htmlMatcher.end());
