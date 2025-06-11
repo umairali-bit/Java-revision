@@ -79,5 +79,11 @@ public class Main {
         System.out.println("Using Back Reference: \n" +
                 htmlMatcher.replaceFirst("<em>$2</em>"));
 
+        String replacedHTML = htmlMatcher.replaceAll((mr) ->
+                "<em>" + htmlMatcher.group(2) + "</em>");
+
+        System.out.println("-".repeat(30));
+        System.out.println(replacedHTML);
+
     }
 }
