@@ -49,5 +49,7 @@ public class Main {
         }
 
         htmlMatcher.reset();
+        htmlMatcher.results().forEach(mr -> System.out.println(mr.group(1) + " " + mr.group(2)));
+
     }
 }
