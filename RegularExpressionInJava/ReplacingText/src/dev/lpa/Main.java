@@ -85,5 +85,13 @@ public class Main {
         System.out.println("-".repeat(30));
         System.out.println(replacedHTML);
 
+        htmlMatcher.reset();
+        StringBuilder sb = new StringBuilder();
+        while (htmlMatcher.find()) {
+            htmlMatcher.appendReplacement(sb, "dog");
+        }
+        htmlMatcher.appendTail(sb);
+        System.out.println(sb);
+
     }
 }
