@@ -51,5 +51,17 @@ public class Main {
         htmlMatcher.reset();
         htmlMatcher.results().forEach(mr -> System.out.println(mr.group(1) + " " + mr.group(2)));
 
+
+        String tabbedText = """
+                
+                group1 group2 group3
+                1   2   3
+                a   b   d
+                """;
+
+        tabbedText.lines()
+                .flatMap(s -> Pattern.compile("\\t").splitAsStream(s))
+                .forEach(System.out::println);
+
     }
 }
