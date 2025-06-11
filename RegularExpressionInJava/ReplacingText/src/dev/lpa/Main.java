@@ -71,6 +71,8 @@ public class Main {
         System.out.println(htmlMatcher.start() + " : " + htmlMatcher.end());
         System.out.println(htmlMatcher.group(2));
 
+        htmlMatcher.usePattern(
+                Pattern.compile("<([hH]\\d)>(.*)</\\1>"));
 
         htmlMatcher.reset();
         System.out.println("-".repeat(30));
