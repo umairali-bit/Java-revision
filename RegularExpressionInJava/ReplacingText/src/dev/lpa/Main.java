@@ -65,7 +65,7 @@ public class Main {
 
         htmlMatcher.reset();
         String updatesSnippet = htmlMatcher.replaceFirst((mr) ->
-                "<em>" + htmlMatcher.group(2) + "</em");
+                "<em>" + htmlMatcher.group(2) + "</em>");
         System.out.println("-".repeat(50));
         System.out.println(updatesSnippet);
         System.out.println(htmlMatcher.start() + " : " + htmlMatcher.end());
@@ -74,6 +74,8 @@ public class Main {
 
         htmlMatcher.reset();
         System.out.println("-".repeat(30));
+        System.out.println("Using Back Reference: \n" +
+                htmlMatcher.replaceFirst("<em>$2</em>"));
 
     }
 }
