@@ -63,5 +63,12 @@ public class Main {
                 .flatMap(s -> Pattern.compile("\\t").splitAsStream(s))
                 .forEach(System.out::println);
 
+        htmlMatcher.reset();
+        String updatesSnippet = htmlMatcher.replaceFirst("First Header");
+        System.out.println("-".repeat(50));
+        System.out.println(updatesSnippet);
+        System.out.println(htmlMatcher.start() + " : " + htmlMatcher.end());
+        System.out.println(htmlMatcher.group(2));
+
     }
 }
