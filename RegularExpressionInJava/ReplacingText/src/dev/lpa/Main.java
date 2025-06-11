@@ -71,5 +71,9 @@ public class Main {
         System.out.println(htmlMatcher.start() + " : " + htmlMatcher.end());
         System.out.println(htmlMatcher.group(2));
 
+
+        htmlMatcher.reset();
+        System.out.println("-".repeat(30));
+
     }
 }
