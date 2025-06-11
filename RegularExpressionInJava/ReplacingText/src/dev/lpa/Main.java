@@ -87,8 +87,14 @@ public class Main {
 
         htmlMatcher.reset();
         StringBuilder sb = new StringBuilder();
+        int index = 1;
         while (htmlMatcher.find()) {
-            htmlMatcher.appendReplacement(sb, "dog");
+            htmlMatcher.appendReplacement(sb,
+                    switch (htmlMatcher.group(1).toLowerCase()) {
+                case "h1" -> "<head>$2</head>";
+                case "h2" -> "<em>$2</em>";
+                default -> "<$1>" + index++ + ".$2</$1>";
+                    });
         }
         htmlMatcher.appendTail(sb);
         System.out.println(sb);
