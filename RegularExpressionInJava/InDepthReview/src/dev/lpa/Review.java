@@ -1,8 +1,27 @@
 package dev.lpa;
 
+import java.util.regex.Pattern;
+
 public class Review {
 
     public static void main(String[] args) {
+
+
+        String phoneList = """
+                (800) 123-4567
+                (800)123-4567
+                (800) 123 4567
+                800-123-4567
+                800 123-4567
+                8001234567
+                
+                """;
+
+        Pattern phonePattern =
+                Pattern.compile("\\([0-9]{3}\\) [0-9]{3}-[0-9]{4}");
+
+
+
 
     }
 }
