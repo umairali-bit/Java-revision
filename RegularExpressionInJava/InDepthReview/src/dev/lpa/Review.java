@@ -19,7 +19,7 @@ public class Review {
                 """;
 
         Pattern phonePattern =
-                Pattern.compile("\\([0-9]{3}\\) [0-9]{3}-[0-9]{4}");
+                Pattern.compile("\\(*[0-9]{3}[)\\s-]*[0-9]{3}[)\\s-]*[0-9]{4}");
 
 
         Matcher phoneMatcher = phonePattern.matcher(phoneList);
