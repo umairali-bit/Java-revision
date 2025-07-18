@@ -20,6 +20,18 @@ public class Equilibrium {
 
     public int solution(int[] A) {
 
+        int aLength = A.length;
+
+        if (aLength < 2) {
+            return 0;
+        }
+
+        //first find the total
+        int totalSum = 0;
+        for (int x : A) {
+            totalSum += x;
+        }
+
     }
 
 
