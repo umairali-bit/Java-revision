@@ -11,13 +11,22 @@ public class FrogJump {
         int D = 30;
 
         int result = solver.solution (X, Y, D);
-        System.out.println("Minimal number of jumps " + result);
+        System.out.println("Minimal number of jumps = " + result);
 
 
     }
 
     public int solution(int X, int Y, int D) {
 
-        //finding the distance
+        //finding the distance that frog needs to cover
+        int distance = Y - X;
+
+        if (distance <= 0) {
+            return 0;
+        }
+
+        //making sure that the distance is covered
+        return (distance + D - 1) / D;
+
     }
 }
