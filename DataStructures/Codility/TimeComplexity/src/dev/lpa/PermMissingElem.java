@@ -23,18 +23,16 @@ public class PermMissingElem {
 
     public int solution(int[] A) {
 
-        Arrays.sort(A);
-
-        for (int x = 0; x < A.length; x++ ) {
-           if(A[x] != x + 1){
-                return x + 1;
-
-            }
-
-            }
-        return A.length + 1;
-
+        long actualSum = 0;
+        for (int number : A) {
+            actualSum += number;//11
         }
+
+        long maxNumber = A.length + 1;//5
+        long expectedSum = (maxNumber * (maxNumber + 1)) / 2;//15
+        return (int) (expectedSum - actualSum);//4
+
+    }
 
 
         public static void printArray (int[] array) {
