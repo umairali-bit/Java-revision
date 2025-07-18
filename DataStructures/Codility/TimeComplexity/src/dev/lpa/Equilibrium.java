@@ -11,7 +11,7 @@ public class Equilibrium {
         System.out.println("Array");
         printArray(A);
 
-        System.out.println("Equilibrium");
+        System.out.println("\nMinimal difference:");
         int a = solver.solution(A);
         System.out.println(a);
 
@@ -36,12 +36,20 @@ public class Equilibrium {
         int leftSum = 0;
 
         //getting the leftSum
-        for (int i = 0; i < aLength; i++) {
+        for (int i = 0; i < aLength-1; i++) {
             leftSum += A[i];
 
             //getting the right sum
             int rightSum = totalSum - leftSum;
+
+            //getting the current difference at any particular point
+            int diff = Math.abs(leftSum - rightSum);
+
+            //getting the smallest diff
+            minDiff = Math.min(minDiff, diff);
         }
+
+        return minDiff;
 
     }
 
