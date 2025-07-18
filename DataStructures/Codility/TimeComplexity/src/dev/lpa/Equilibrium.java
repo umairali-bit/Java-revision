@@ -32,6 +32,14 @@ public class Equilibrium {
             totalSum += x;
         }
 
+        int minDiff = Integer.MAX_VALUE;
+        int leftSum = 0;
+
+        //getting the leftSum
+        for (int i = 0; i < aLength; i++) {
+            leftSum += A[i];
+        }
+
     }
 
 
