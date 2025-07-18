@@ -38,6 +38,9 @@ public class Equilibrium {
         //getting the leftSum
         for (int i = 0; i < aLength; i++) {
             leftSum += A[i];
+
+            //getting the right sum
+            int rightSum = totalSum - leftSum;
         }
 
     }
