@@ -16,4 +16,12 @@ public class FrogRiverOne {
 
 
     }
+
+    public static void printArray(int[] A) {
+        int a = A.length;
+
+        for (int i = 0; i < a; i++) {
+            System.out.println(A[i] + " ");
+        }
+    }
 }
