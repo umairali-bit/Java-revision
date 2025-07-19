@@ -16,4 +16,36 @@ public class PermCheck {
 
 
     }
+
+    public int solution(int[] A) {
+        int N = A.length;
+
+        boolean[] seen = new boolean[N + 1];
+
+        for (int num : A) {
+            if (num < 1 || num > N) {
+                return 0; // out of range
+            }
+
+            if (seen[num]) {
+                return 0; // duplicate found
+            }
+            seen[num] = true;
+        }
+
+        return 1; //All numbers from 1 to N are present
+
+
+
+    }
+
+
+    public static void printArray (int[] A) {
+
+        int a = A.length;
+
+        for (int i = 0; i < a; i++) {
+            System.out.print(A[i] + " ");
+        }
+    }
 }
