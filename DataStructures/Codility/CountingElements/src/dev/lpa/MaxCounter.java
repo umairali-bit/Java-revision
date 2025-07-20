@@ -23,7 +23,7 @@ public class MaxCounter {
 
     public int[] solution (int N, int[] A) {
 
-        int[] counters = new int[5];
+        int[] counters = new int[N];
         Arrays.fill(counters, 0);
         int start = 0;
         int current_max = 0;
@@ -38,10 +38,11 @@ public class MaxCounter {
             } if (i <= N && counters[x] > current_max) {
                 current_max = counters[x];
             }
-            for (int j = 0; j < counters.length; j++) {
-                if (counters[j] < start) {
-                    counters[j] = start;
-                }
+
+            }
+        for (int i = 0; i < counters.length; i++) {
+            if (counters[i] < start) {
+                counters[i] = start;
             }
         }
         return counters;
