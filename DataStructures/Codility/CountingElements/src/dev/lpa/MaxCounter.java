@@ -27,9 +27,7 @@ public class MaxCounter {
         Arrays.fill(counters, 0);
         int start = 0;
         int current_max = 0;
-
         for (int i : A) {
-
             int x = i - 1;
             if (i > N){
                 start = current_max;
@@ -40,17 +38,13 @@ public class MaxCounter {
             } if (i <= N && counters[x] > current_max) {
                 current_max = counters[x];
             }
-
             for (int j = 0; j < counters.length; j++) {
                 if (counters[j] < start) {
                     counters[j] = start;
                 }
             }
-
-
         }
         return counters;
-
     }
 
     public static void printArray (int[] A) {
