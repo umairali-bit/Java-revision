@@ -11,10 +11,19 @@ public class MaxCounter {
         System.out.println("Initial Array");
         printArray(A);
 
-        int[] a = solver.solution(N, A);
-        System.out.println("Max Counter[] = " + a);
+//        int[] a = solver.solution(N, A);
+//        System.out.println("Max Counter[] = " + a);
 
     }
+
+    public static void printArray (int[] A) {
+        int a = A.length;
+
+        for (int i = 0; i < a; i++) {
+            System.out.print(A[i] + " ");
+        }
+    }
+
 
 
 }
