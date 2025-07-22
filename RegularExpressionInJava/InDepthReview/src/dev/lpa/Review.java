@@ -42,6 +42,7 @@ public class Review {
 
         Matcher m = htmlPattern.matcher(htmlSnippets);
         m.results()
+                .filter (mr -> mr.group(1).toLowerCase().startsWith("h"))
                 .forEach(mr -> System.out.println("Full Tag: " + mr.group(0)
                 + "\n\tType: " + mr.group(1)
                 + "\n\tText: " + mr.group(2)));
