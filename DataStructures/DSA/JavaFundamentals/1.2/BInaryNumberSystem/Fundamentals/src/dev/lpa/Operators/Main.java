@@ -70,9 +70,16 @@ public class Main {
 
 
         Scanner sc = new Scanner(System.in);
-        System.out.println("Enter your age:");
-        int age = sc.nextInt();
-        System.out.println("Your age is " + age);
+//        System.out.println("Enter your age:");
+//        int age = sc.nextInt();
+//        System.out.println("Your age is " + age);
+
+        int numberA = sc.nextInt();
+        int numberB = sc.nextInt();
+
+        int resultNumber = numberA + numberB;
+        System.out.println(resultNumber);
+        sc.close();
 
 
 
