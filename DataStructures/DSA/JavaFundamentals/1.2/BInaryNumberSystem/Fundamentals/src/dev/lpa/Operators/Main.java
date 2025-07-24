@@ -1,5 +1,7 @@
 package dev.lpa.Operators;
 
+import java.util.Scanner;
+
 public class Main {
 
     public static void main(String[] args) {
@@ -46,6 +48,33 @@ public class Main {
         int n = 7;
         int results = m -= n;
         System.out.println(results);
+
+
+        //relational operators
+        int firstNumber = 12;
+        int secondNumber = 16;
+
+        System.out.println(firstNumber == secondNumber);// false
+        System.out.println(firstNumber > secondNumber);// false
+        System.out.println(firstNumber >= secondNumber);// false
+        System.out.println(firstNumber <= secondNumber);// true
+
+
+        //logical operators
+        boolean firstExpression = true;
+        boolean secondExpression = false;
+
+        System.out.println(firstExpression && secondExpression);//false
+        System.out.println(firstExpression || secondExpression);//true
+        System.out.println(!firstExpression);//false
+
+
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter your age:");
+        int age = sc.nextInt();
+        System.out.println("Your age is " + age);
+
+
 
 
 
