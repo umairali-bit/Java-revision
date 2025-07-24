@@ -35,6 +35,19 @@ public class Main {
         System.out.println((double) i % j);
 
 
+        //addition operator
+        int k = 12;
+        int l = 7;
+        int result = k += l;
+        System.out.println(result);
+
+        //subtraction operator
+        int m = 12;
+        int n = 7;
+        int results = m -= n;
+        System.out.println(results);
+
+
 
     }
 }
