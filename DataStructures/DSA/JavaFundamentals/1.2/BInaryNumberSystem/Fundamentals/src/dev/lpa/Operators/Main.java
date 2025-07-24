@@ -28,6 +28,12 @@ public class Main {
         //    int result = g / h;
         System.out.println((double) g / h);
 
+        //modulus operator
+        int i = 12;
+        int j = 7;
+        //    int result = i % j;
+        System.out.println((double) i % j);
+
 
 
     }
