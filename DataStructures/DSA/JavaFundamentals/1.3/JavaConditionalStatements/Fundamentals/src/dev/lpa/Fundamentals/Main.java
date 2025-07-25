@@ -1,5 +1,7 @@
 package dev.lpa.Fundamentals;
 
+import java.util.Scanner;
+
 public class Main {
 
     public static void main(String[] args) {
@@ -29,6 +31,44 @@ public class Main {
             System.out.println("Office!");
         }
         System.out.println("Hello World");
+
+
+        //nested ifElse
+
+        Scanner sc = new Scanner(System.in);
+
+        System.out.println("Please enter a number");
+
+        int a = sc.nextInt();
+
+        System.out.println("Please enter a second number");
+
+        int b = sc.nextInt();
+
+        System.out.println("Please enter a third number");
+
+        int c = sc.nextInt();
+
+        if (a>b) {
+            System.out.println("a is bigger than b");
+
+            if (a > c) {
+                System.out.println("a is bigger than c");
+                System.out.println("a is the largest number");
+            } else{
+                System.out.println("c is bigger than a");
+                System.out.println("c is the largest number");
+            }
+            } else {
+            System.out.println("b is bigger than a");
+            if (b > c) {
+                System.out.println("c is bigger than b");
+                System.out.println("b is the largest");
+            } else {
+                System.out.println(" c is greater than b");
+            }
+        }
+
 
 
 
