@@ -32,6 +32,17 @@ public class Main {
         }
         System.out.println("Hello World");
 
+        //ternary operator
+
+        int g = 12;
+        int d = 23;
+        int max = 0;
+
+        //ternary operator
+        max = (g>d) ? g : d;
+
+        System.out.println(max);
+
 
         //nested ifElse
 
@@ -68,6 +79,8 @@ public class Main {
                 System.out.println(" c is greater than b");
             }
         }
+
+
 
 
 
