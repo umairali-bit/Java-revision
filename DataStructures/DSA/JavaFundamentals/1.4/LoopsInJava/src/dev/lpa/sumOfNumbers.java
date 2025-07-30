@@ -16,7 +16,7 @@ public class sumOfNumbers {
         for (int i = 1; i <= n; i ++) {
 
             //sum = sum + 1 - sum of first 5 number
-            sum = sum + (2*i);// sum of first 5 even numbers
+            sum += (2*i);// sum of first 5 even numbers
         }
         System.out.println("Sum is: " + sum);
 
