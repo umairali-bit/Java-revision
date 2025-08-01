@@ -18,5 +18,12 @@ public class BreakAndContinue {
             if(j == 3) break;
         }
 
+
+        for (int k = 0; k <= 20; k += 1) {
+            if (k == 2 || k == 10) continue;
+            if (k == 15) break;
+            System.out.println("Toffee was distributed to " + k);
+        }
+
     }
 }
