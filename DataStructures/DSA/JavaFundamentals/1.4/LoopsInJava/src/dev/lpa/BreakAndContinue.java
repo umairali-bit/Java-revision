@@ -9,5 +9,14 @@ public class BreakAndContinue {
             if(i >= 10) break;
 
         }
+
+        int j = 0;
+        while (j <= 5) {
+            System.out.println(j);
+            j++;
+
+            if(j == 3) break;
+        }
+
     }
 }
