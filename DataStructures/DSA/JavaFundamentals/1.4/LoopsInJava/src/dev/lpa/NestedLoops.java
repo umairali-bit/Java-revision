@@ -9,7 +9,9 @@ public class NestedLoops {
         for (int count = 0; count <= 10; count++){
             for (int i = 1; i < 6; i++) {
                 System.out.print(i + " ");
+
             }
+            System.out.println(" printed " + count);
         }
     }
 }
