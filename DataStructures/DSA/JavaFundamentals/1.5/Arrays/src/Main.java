@@ -18,6 +18,18 @@ public class Main {
 
         System.out.println(marks[0]); //98
 
+  //      System.out.println(marks[8]);//arraysIndexOutOfBoundException
+
+        String names[] = {"Walter White", "Skyler White", "Jessie Pinkman", "Hank Schrader", "Gus Fring"};
+
+        for (int i = 0; i < names.length ; i++) {
+
+            System.out.println("Name is " + names[i]);
+
+        }
+
+
+
 
 
 
