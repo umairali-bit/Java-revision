@@ -97,6 +97,19 @@ public class Main {
         }
         System.out.println(min); //2
 
+        // max value
+        int max = numbers[0];
+
+        for (int i = 1; i < numbers.length; i++) {
+            if (numbers[i] > max) {
+                max = numbers[i];
+            }
+        }
+
+        System.out.println("Max is: " + max);
+
+
+
 
 
 
