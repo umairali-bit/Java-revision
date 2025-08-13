@@ -89,6 +89,16 @@ public class Main {
 
 
 
+        int min = Integer.MAX_VALUE;
+        for (int number : numbers) {
+            if (number < min) {
+                min = number;
+            }
+        }
+        System.out.println(min); //2
+
+
+
 
 
 
