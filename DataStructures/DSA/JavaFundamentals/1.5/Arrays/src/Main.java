@@ -1,3 +1,5 @@
+import java.util.Arrays;
+
 public class Main {
 
     public static void main(String[] args) {
@@ -26,6 +28,23 @@ public class Main {
 
             System.out.println("Name is " + names[i]);
 
+        }
+
+        for (String i : names) {
+            System.out.println(Arrays.toString(i.toCharArray()));
+        }
+
+        /*
+        [W, a, l, t, e, r,  , W, h, i, t, e]
+        [S, k, y, l, e, r,  , W, h, i, t, e]
+        [J, e, s, s, i, e,  , P, i, n, k, m, a, n]
+        [H, a, n, k,  , S, c, h, r, a, d, e, r]
+        [G, u, s,  , F, r, i, n, g]
+         */
+
+
+        for (String string : names) {
+            System.out.println("Name is " + string);
         }
 
 
