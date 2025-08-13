@@ -47,6 +47,33 @@ public class Main {
             System.out.println("Name is " + string);
         }
 
+        /*
+        Name is Walter White
+        Name is Skyler White
+        Name is Jessie Pinkman
+        Name is Hank Schrader
+        Name is Gus Fring
+
+         */
+
+        int numbers[] = {23, 12, 6,7,15,3,2,56};
+        int sum = 0;
+
+        for (int i = 0; i < numbers.length; i++) {
+
+            sum += numbers[i];
+
+        }
+        System.out.println(sum);
+
+
+        // using forEach method
+        int sum2 = 0;
+        for (int number : numbers) {
+            sum2 += number;
+        }
+        System.out.println(sum2);
+
 
 
 
