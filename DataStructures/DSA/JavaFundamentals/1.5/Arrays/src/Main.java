@@ -75,6 +75,19 @@ public class Main {
         System.out.println(sum2);
 
 
+        //returning the smallest number in the array
+        int smallest = numbers[0];
+        for (int i = 1; i < numbers.length ; i++) {
+            if (numbers[i] < smallest) {
+                smallest = numbers[i];
+                
+                
+            }
+
+        }
+        System.out.println("The smallest number is " + smallest);
+
+
 
 
 
