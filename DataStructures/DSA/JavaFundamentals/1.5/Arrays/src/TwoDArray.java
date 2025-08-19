@@ -1,0 +1,17 @@
+public class TwoDArray {
+
+    public static void main(String[] args) {
+
+        //two-dimensional array
+
+        int marks[][] = {
+                {12,98,34},
+                {12,67,87},
+                {12,98,23},
+                {14,67,36}
+        };
+
+
+
+    }
+}
