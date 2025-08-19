@@ -11,6 +11,8 @@ public class TwoDArray {
                 {14,67,36}
         };
 
+        System.out.println(marks[2][1]);
+
 
 
     }
