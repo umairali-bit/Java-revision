@@ -12,6 +12,7 @@ public class TwoDArray {
         };
 
         System.out.println(marks[2][1]);
+        System.out.println(marks[2][2]);
 
 
 
