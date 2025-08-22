@@ -24,6 +24,8 @@ public class Main {
 
         System.out.println("Average is: " + average(2,4, 9));
 
+        System.out.println("Minimum number is " +minNumber(2,4));
+
 
     }
 
@@ -49,6 +51,10 @@ public class Main {
     public static int average(int a, int b, int c) {
 
         return (a + b + c) /3;
+    }
+
+    public static int minNumber (int x, int y) {
+        return Math.min(x, y);
     }
 
 
