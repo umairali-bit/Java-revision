@@ -13,6 +13,13 @@ public class Main {
 
         greet();//works because we can call static methods
 
+        System.out.println(1);
+        System.out.println(2);
+        System.out.println(3);
+        greet();
+        System.out.println(5);
+        System.out.println(6);
+
 
     }
 
@@ -22,6 +29,8 @@ public class Main {
 
     static void greet() {
         System.out.println("Greetings");
+        System.out.println(4.1);
+        System.out.println(4.2);
     }
 
 
