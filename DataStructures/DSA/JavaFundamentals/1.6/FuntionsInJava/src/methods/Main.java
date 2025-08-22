@@ -20,7 +20,7 @@ public class Main {
         System.out.println(5);
         System.out.println(6);
 
-        average(2,7);
+        average(2,7, false);
 
         System.out.println("Average is: " + average(2,4, 9));
 
@@ -37,7 +37,11 @@ public class Main {
         System.out.println(4.2);
     }
 
-    public static void average (int a, int b) {
+    public static void average (int a, int b, boolean average) {
+        if (!average) {
+            System.out.println("Should not take an average");
+            return;
+        }
         int avg = (a+b)/2;
         System.out.println("Average is: " + avg);
     }
