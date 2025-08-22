@@ -20,6 +20,10 @@ public class Main {
         System.out.println(5);
         System.out.println(6);
 
+        average(2,7);
+
+        System.out.println("Average is: " + average(2,4, 9));
+
 
     }
 
@@ -31,6 +35,16 @@ public class Main {
         System.out.println("Greetings");
         System.out.println(4.1);
         System.out.println(4.2);
+    }
+
+    public static void average (int a, int b) {
+        int avg = (a+b)/2;
+        System.out.println("Average is: " + avg);
+    }
+
+    public static int average(int a, int b, int c) {
+
+        return (a + b + c) /3;
     }
 
 
