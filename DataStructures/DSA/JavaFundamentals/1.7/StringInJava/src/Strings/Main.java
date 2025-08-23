@@ -18,7 +18,7 @@ public class Main {
         name (reference) -> heap -> String Constant Pool -> Walter White
 
         Stack - nameA (reference)
-        nameA -> pointing to the same heap -> String Constant Pool -> Walter White
+        nameA -> heap -> (without String Constant Pool) -> Walter White
          */
 
     }
