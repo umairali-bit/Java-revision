@@ -52,6 +52,15 @@ public class Main {
         }
 
 
+        //to check if values in references are equal or not
+        if (nameA.equals(nameB)) {
+            System.out.println("Values are equal");
+        } else {
+            System.out.println("Values are not equal");
+
+        }
+
+
 
 
     }
