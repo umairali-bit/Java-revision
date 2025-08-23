@@ -1,5 +1,8 @@
 package Strings;
 
+import java.sql.SQLOutput;
+import java.util.Scanner;
+
 public class Main {
 
     public static void main(String[] args) {
@@ -59,6 +62,17 @@ public class Main {
             System.out.println("Values are not equal");
 
         }
+
+        Scanner names = new Scanner(System.in);
+        System.out.println("Enter your first name");
+        String fName = names.nextLine();
+
+        System.out.println("Enter your last name");
+        String lName = names.nextLine();
+
+        System.out.println(fName + " " + lName);
+
+
 
 
 
