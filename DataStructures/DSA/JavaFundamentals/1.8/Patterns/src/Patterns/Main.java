@@ -6,6 +6,7 @@ public class Main {
 
         Patterns.sevenBySeven();
         Patterns.incrementI();
+        Patterns.incrementIRight();
 
     }
 }
