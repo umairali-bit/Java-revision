@@ -7,7 +7,10 @@ public class Main {
         Patterns.sevenBySeven();
         Patterns.incrementI();
         Patterns.incrementIRight();
+        Patterns.incrementMiddle();
         Patterns.incrementNumbers();
+        Patterns.incrementNumbersRights();
+        Patterns.incrementNumbersMiddle();
 
     }
 }
