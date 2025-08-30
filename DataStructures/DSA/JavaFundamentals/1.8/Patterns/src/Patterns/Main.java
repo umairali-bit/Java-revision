@@ -11,6 +11,7 @@ public class Main {
         Patterns.incrementNumbers();
         Patterns.incrementNumbersRights();
         Patterns.incrementNumbersMiddle();
+        Patterns.diamondPattern();
 
     }
 }
