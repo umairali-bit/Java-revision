@@ -12,6 +12,7 @@ public class Main {
         Patterns.incrementNumbersRights();
         Patterns.incrementNumbersMiddle();
         Patterns.diamondPattern();
+        Patterns.invertedRightAngled();
 
     }
 }
