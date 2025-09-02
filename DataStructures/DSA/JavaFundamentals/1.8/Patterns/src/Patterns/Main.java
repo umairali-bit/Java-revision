@@ -14,6 +14,7 @@ public class Main {
         Patterns.diamondPattern();
         Patterns.invertedRightAngled();
         Patterns.invertedRightAngledRight();
+        Patterns.invertedRightAngledDigits();
 
     }
 }
