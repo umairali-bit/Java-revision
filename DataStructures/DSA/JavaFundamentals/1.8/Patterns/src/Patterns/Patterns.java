@@ -203,6 +203,36 @@ public class Patterns {
         }
     }
 
+    public static void diamondPatternStar() {
+        int n = 7;
+
+        // top half
+        for (int i = 1; i <= n; i++) {
+            // spaces
+            for (int j = 1; j <= n - i; j++) {
+                System.out.print(" ");
+            }
+            // stars and spaces inside
+            for (int k = 1; k <= 2 * i - 1; k++) {
+                System.out.print("*");
+            }
+            System.out.println();
+        }
+
+        // bottom half
+        for (int i = n - 1; i >= 0; i--) {
+            // spaces
+            for (int j = 1; j <= n - i; j++) {
+                System.out.print(" ");
+            }
+            // stars and spaces inside
+            for (int k = 1; k <= 2 * i - 1; k++) {
+                System.out.print("*");
+            }
+            System.out.println();
+        }
+    }
+
 
 
 
