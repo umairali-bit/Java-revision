@@ -15,6 +15,7 @@ public class Main {
         Patterns.invertedRightAngled();
         Patterns.invertedRightAngledRight();
         Patterns.invertedRightAngledDigits();
+        Patterns.palindromicNumberPyramid();
 
     }
 }

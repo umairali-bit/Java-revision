@@ -179,6 +179,33 @@ public class Patterns {
         }
     }
 
+    public static void palindromicNumberPyramid() {
+        int n = 7;
+        for (int i = 1; i <= n; i++) {
+            // spaces
+            for (int s = 1; s <= n-i; s++) {
+                System.out.print(" ");
+            }
+
+            // left side: i down to 1
+            for (int j = i; j >=1; j--) {
+                System.out.print(j);
+            }
+
+            // right side: 2 up to i
+            for (int j = 2; j <= i; j++) {
+                System.out.print(j);
+            }
+            System.out.println();
+
+
+
+        }
+    }
+
+
+
+
 
 
 
