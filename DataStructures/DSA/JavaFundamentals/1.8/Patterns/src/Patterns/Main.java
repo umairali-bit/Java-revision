@@ -1,5 +1,7 @@
 package Patterns;
 
+import java.util.regex.Pattern;
+
 public class Main {
 
     public static void main(String[] args) {
@@ -17,6 +19,7 @@ public class Main {
         Patterns.invertedRightAngledDigits();
         Patterns.palindromicNumberPyramid();
         Patterns.diamondPatternStar();
+        Patterns.pyramidPatternStar();
 
     }
 }
