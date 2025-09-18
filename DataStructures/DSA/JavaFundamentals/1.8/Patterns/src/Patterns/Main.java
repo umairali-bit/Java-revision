@@ -20,6 +20,7 @@ public class Main {
         Patterns.palindromicNumberPyramid();
         Patterns.diamondPatternStar();
         Patterns.pyramidPatternStar();
+        Patterns.hollowTrianglePattern();
 
     }
 }
