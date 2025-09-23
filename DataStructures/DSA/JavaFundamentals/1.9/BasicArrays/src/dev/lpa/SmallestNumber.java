@@ -1,9 +1,8 @@
 package dev.lpa;
 
-public class MaxNumber {
+public class SmallestNumber {
 
     public static void main(String[] args) {
-
 
         int[] a = {4,3,8,2,1,7};
 
@@ -13,26 +12,17 @@ public class MaxNumber {
         System.out.println("\nAfter: ");
         for (int num: a) System.out.print(num+" ");
 
-        maxNumber(a);
-
-
-
-
+        smallestNumber(a);
 
     }
 
-    public static void maxNumber (int[] a) {
+    public static void smallestNumber (int[] a) {
         int max = a[0];
         for (int i = 1; i < a.length; i++) {
-            if (a[i] > max) {
+            if (a[i] < max) {
                 max = a[i];
             }
         }
-        System.out.println("max: " + max);
+        System.out.println("min: " + max);
     }
-
-
-
-
-
 }
