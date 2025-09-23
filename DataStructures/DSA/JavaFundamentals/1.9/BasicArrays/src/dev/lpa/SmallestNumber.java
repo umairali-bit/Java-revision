@@ -6,23 +6,25 @@ public class SmallestNumber {
 
         int[] a = {4,3,8,2,1,7};
 
-        System.out.println("\nBefore: ");
-        for (int num: a) System.out.print(num+" ");
+        System.out.println("\nArray elements: ");
+        for (int num : a) System.out.print(num + " ");
 
-        System.out.println("\nAfter: ");
-        for (int num: a) System.out.print(num+" ");
+        int min = smallestNumber(a);
+        System.out.println("\nSmallest number: " + min);
 
-        smallestNumber(a);
+
 
     }
 
-    public static void smallestNumber (int[] a) {
-        int max = a[0];
+    public static int smallestNumber (int[] a) {
+        int min = a[0];
         for (int i = 1; i < a.length; i++) {
-            if (a[i] < max) {
-                max = a[i];
+            if (a[i] < min) {
+                min = a[i];
             }
         }
-        System.out.println("min: " + max);
+
+        return min;
+
     }
 }
