@@ -190,5 +190,69 @@ Collections.sort(people, (p1, p2) -> p1.getName().compareTo(p2.getName()));
 
 ---
 
-> 🏁 Once you master generics and comparators, you’ll write safer, cleaner, and smarter Java code—just like a pro barista knows which coffee to serve for every customer ☕.
+## ❓ What Are Wildcards in Generics?
 
+Wildcards (`?`) mean:
+
+👉 **“I don’t know the exact type, but I know its range.”**
+
+They make generic code more flexible and reusable, especially when working with collections.
+
+---
+
+## 🧩 Types of Wildcards
+
+### 1️⃣ Unbounded Wildcard (`?`)
+
+```java
+List<?> list;
+```
+
+**Meaning:**
+- Accepts a list of any type  
+- Elements can be read as `Object`  
+- ❌ Cannot add elements (except `null`)  
+
+**Use case:** Read‑only access
+
+---
+
+### 2️⃣ Upper‑Bounded Wildcard (`? extends T`)
+
+```java
+List<? extends Number> list;
+```
+
+**Meaning:**
+- Accepts `Number` or any subclass  
+- Safe to read  
+- ❌ Not safe to add elements  
+
+👉 **Rule:** `extends = read‑only`
+
+---
+
+### 3️⃣ Lower‑Bounded Wildcard (`? super T`)
+
+```java
+List<? super Integer> list;
+```
+
+**Meaning:**
+- Accepts `Integer` or its parent classes  
+- Safe to add `Integer` values  
+- Reading elements returns `Object`  
+
+👉 **Rule:** `super = write‑only`
+
+---
+
+## 🧠 One‑Line Memory Trick (PECS)
+
+**PECS Principle:**
+- **Producer → Extends**
+- **Consumer → Super**
+
+---
+
+🏁 Once you master generics and wildcards, you’ll write safer, cleaner, and smarter Java code ☕
