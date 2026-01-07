@@ -255,4 +255,190 @@ List<? super Integer> list;
 
 ---
 
-🏁 Once you master generics and wildcards, you’ll write safer, cleaner, and smarter Java code ☕
+# Java Generics — Top 10 Interview Questions (With Examples)
+
+Java **Generics** were introduced in **Java 5** to provide **type safety**, **code reusability**, and **compile-time checks**.
+
+This README focuses on the **most frequently asked Generics interview questions**, explained clearly with examples.
+
+---
+
+## 1) What are Generics in Java?
+
+Generics allow classes, interfaces, and methods to operate on **types as parameters**.
+
+### Benefits
+- Compile-time type safety
+- Eliminates explicit casting
+- Improves code readability and reuse
+
+```java
+List<String> names = new ArrayList<>();
+```
+
+---
+
+## 2) Why were Generics introduced in Java?
+
+Before Generics:
+- Type casting was required
+- Errors occurred at runtime
+
+With Generics:
+- Errors are caught at **compile time**
+- Cleaner and safer code
+
+---
+
+## 3) What is a Generic Class?
+
+A class that works with **type parameters**.
+
+```java
+class Box<T> {
+    private T value;
+
+    void set(T value) {
+        this.value = value;
+    }
+
+    T get() {
+        return value;
+    }
+}
+```
+
+---
+
+## 4) What is a Generic Method?
+
+A method that declares its **own type parameter**, independent of the class.
+
+```java
+public static <T> void print(T item) {
+    System.out.println(item);
+}
+```
+
+---
+
+## 5) What are Wildcards in Generics?
+
+Wildcards (`?`) represent an **unknown type**.
+
+### Types of Wildcards
+- `?` → Unbounded
+- `? extends T` → Upper bounded
+- `? super T` → Lower bounded
+
+```java
+List<? extends Number> nums;
+```
+
+---
+
+## 6) Difference between `? extends T` and `? super T`?
+
+| extends | super |
+|------|-------|
+| Read-only | Write-safe |
+| Upper bound | Lower bound |
+| Producer | Consumer |
+
+### Interview Rule (PECS)
+> **Producer → extends, Consumer → super**
+
+---
+
+## 7) What is Type Erasure?
+
+Generics exist only at **compile time**.
+
+At runtime:
+- Type information is removed
+- Replaced with `Object` or bounded type
+
+```java
+List<String> list = new ArrayList<>();
+List<Integer> list2 = new ArrayList<>();
+// Same runtime type
+```
+
+---
+
+## 8) Why can’t we use primitive types with Generics?
+
+Generics work with **reference types only**.
+
+❌ Invalid:
+```java
+List<int> nums;
+```
+
+✅ Valid:
+```java
+List<Integer> nums;
+```
+
+Reason:
+- Generics rely on type erasure
+- Primitives are not objects
+
+---
+
+## 9) Can we create an instance of a generic type?
+
+❌ No.
+
+```java
+class Box<T> {
+    T value = new T(); // Compilation error
+}
+```
+
+Reason:
+- Type information is erased at runtime
+
+---
+
+## 10) What is the difference between `List<Object>` and `List<?>`?
+
+| List<Object> | List<?> |
+|------------|---------|
+| Accepts Object only | Accepts any type |
+| Can add elements | Cannot add (except null) |
+| Not flexible | Flexible |
+
+```java
+void method(List<?> list) {}
+```
+
+---
+
+## Bonus Interview Questions (Quick Hits)
+
+- Can a generic class extend another generic class? ✅ Yes
+- Can we overload methods with generics? ⚠️ Type erasure issues
+- Can static methods use class-level generics? ❌ No
+
+---
+
+## Interview One-Liners
+
+- Generics provide **compile-time type safety**
+- Wildcards are used for **flexibility**
+- Type erasure removes generic info at runtime
+- PECS rule is critical for collections
+
+---
+
+## Interview Tip
+
+If you understand:
+- Wildcards
+- PECS
+- Type erasure
+- `List<Object>` vs `List<?>`
+
+You can answer **90% of Generics interview questions confidently**.
+ ☕
