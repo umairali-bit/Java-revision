@@ -1,4 +1,4 @@
-# 🌟 Java OOP Concepts: Generalization, Abstraction, Abstract Classes & Interfaces (Beginner-Friendly)
+# 🌟 Java OOP Concepts: Generalization, Abstraction, Abstract Classes & Interfaces 
 
 ---
 
@@ -245,5 +245,285 @@ private void helper() {
 > 💡 Think of abstract class as a "parent with partial instructions," and an interface as a "set of rules to follow."
 
 ---
+
+## Most Asked Interview Questions: Abstraction & Interfaces (Java)
+
+---
+
+## Abstraction — Interview Questions
+
+### 1) What is abstraction in Java?
+Abstraction is the concept of **hiding implementation details** and exposing **only essential behavior** to the user.
+
+---
+
+### 2) How is abstraction achieved in Java?
+Abstraction is achieved using:
+- **Abstract classes**
+- **Interfaces**
+
+---
+
+### 3) What is an abstract class?
+An abstract class:
+- Can have **abstract and concrete methods**
+- Can have **instance variables**
+- Can have **constructors**
+- Cannot be instantiated
+
+```java
+abstract class Vehicle {
+    abstract void move();
+    void start() {
+        System.out.println("Vehicle started");
+    }
+}
+```
+
+## 4) Why do abstract classes have constructors if we cannot create their objects?
+
+Even though you **cannot create objects of an abstract class**, abstract classes have constructors because:
+
+- Constructors are used to **initialize common state (fields)**
+- Abstract class constructors are invoked **when a subclass object is created**
+- They ensure the abstract part of the class is **properly initialized before subclass logic runs**
+
+### Example
+```java
+abstract class Animal {
+    String name;
+
+    Animal(String name) {
+        this.name = name;
+    }
+}
+
+class Dog extends Animal {
+    Dog(String name) {
+        super(name); // calls abstract class constructor
+    }
+}
+
+```
+
+## 5) Can an abstract class have a constructor?
+
+✅ **Yes.**  
+It is executed **during subclass instantiation**.
+
+---
+
+## 6) Can an abstract class have final methods?
+
+✅ **Yes.**  
+Final methods **cannot be overridden** by subclasses.
+
+---
+
+## 7) Can an abstract class implement an interface?
+
+✅ **Yes.**  
+It may choose **not to implement all interface methods**, leaving them for subclasses.
+
+---
+
+## 8) Can we create an object of an abstract class?
+
+❌ **No.**  
+Abstract classes cannot be instantiated directly.
+
+---
+
+## 9) When should you use an abstract class?
+
+Use an abstract class when:
+- You want **partial implementation**
+- You want to share **state (fields)**
+- You need **constructors**
+- You want **protected methods**
+
+---
+
+# Interfaces — Interview Questions
+
+---
+
+## 10) What is an interface in Java?
+
+An interface is a **contract** that specifies **what a class must do**, not **how it does it**.
+
+---
+
+## 11) How is an interface different from an abstract class?
+
+| Feature | Abstract Class | Interface |
+|------|----------------|-----------|
+| Methods | Abstract + Concrete | Abstract (default/static allowed) |
+| Variables | Instance variables | `public static final` only |
+| Constructors | Yes | No |
+| Multiple inheritance | No | Yes |
+| Access modifiers | Any | Methods are `public` by default |
+
+---
+
+## 12) Can an interface have method implementations?
+
+✅ **Yes (since Java 8):**
+- `default` methods
+- `static` methods
+
+```java
+interface Payment {
+    default void pay() {
+        System.out.println("Default payment");
+    }
+}
+```
+## 13) Can an interface have private methods?
+
+✅ **Yes (since Java 9).**  
+Private methods are used to **share common code among default methods** inside an interface.
+
+---
+
+## 14) Can an interface extend another interface?
+
+✅ **Yes.**  
+An interface can extend **multiple interfaces**.
+
+```java
+interface A {}
+interface B {}
+interface C extends A, B {}
+```
+
+## 15) Can a class implement multiple interfaces?
+
+✅ **Yes.**  
+Java supports **multiple inheritance via interfaces**.
+
+```java
+class Service implements A, B {}
+```
+
+## 16) What happens if two interfaces have the same default method?
+
+The implementing class must override the method to resolve ambiguity.
+
+```java
+class MyClass implements A, B {
+    @Override
+    public void show() {
+        A.super.show();
+    }
+}
+```
+
+## 17) Can interfaces have variables?
+
+✅ **Yes.** , but all interface variables are implicitly:
+
+1. public
+
+2. static
+
+3. final
+
+```java
+
+   interface Config {
+    int TIMEOUT = 5000;
+}
+```
+
+## 18) Difference between abstraction and encapsulation?
+
+- **Abstraction** → hides **implementation complexity**
+- **Encapsulation** → hides **data using access modifiers**
+
+---
+
+## 19) What is a functional interface?
+
+An interface with **exactly one abstract method**.
+
+### Examples
+- `Runnable`
+- `Callable`
+- `Comparator`
+
+```java
+@FunctionalInterface
+interface Task {
+    void execute();
+}
+```
+
+## 20) What is the @FunctionalInterface annotation?
+
+It ensures the interface has **only one abstract method** at compile time.
+
+---
+
+## 21) When should you use an interface?
+
+Use an interface when:
+- You need **multiple inheritance**
+- You want to define a **contract**
+- You want **loose coupling**
+- You are designing **APIs**
+
+---
+
+# Tricky Interview Questions
+
+---
+
+## 22) Can abstract class methods be private?
+
+❌ **No.**  
+Private methods cannot be overridden.
+
+---
+
+## 23) Can interfaces have constructors?
+
+❌ **No.**  
+Interfaces cannot be instantiated.
+
+---
+
+## 24) Can an abstract class be final?
+
+❌ **No.**  
+Final classes cannot be extended.
+
+---
+
+## 25) Why are interfaces preferred in frameworks?
+
+- Promote **loose coupling**
+- Allow **multiple implementations**
+- Easier to **mock and test**
+
+---
+
+## One-Line Interview Summary
+
+> Use **abstract classes** when you want **shared code and state**.  
+> Use **interfaces** when you want **contracts and flexibility**.
+
+---
+
+## Interview Tip
+
+Most abstraction & interface interview questions test:
+- Design decisions
+- Java 8+ features
+- Multiple inheritance handling
+- Real-world usage
+
+
+
 
 Need help applying this in code? Or want practice questions? Just ask! ✋
