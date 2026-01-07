@@ -235,6 +235,281 @@ When current size exceeds capacity.
 
 ---
 
+# Java Enums — Deep Dive (Interview-Focused)
+
+Enums in Java are **far more powerful than simple constants**.  
+They are special classes that provide **type safety**, **singleton guarantees**, and **rich behavior**.
+
+This SECTION explains enums **in depth**, including constructors, `ordinal()`, `name()`, methods, and **famous interview questions**.
+
+---
+
+## 1) Can Enums Have Constructors?
+
+✅ **Yes. Enums can have constructors.**
+
+### Important Rules
+- Enum constructors are **implicitly `private`**
+- You **cannot** create enum objects using `new`
+- Constructors are called **once per enum constant** at class-loading time
+
+### Example
+```java
+enum Status {
+    ACTIVE(1),
+    INACTIVE(2),
+    BLOCKED(3);
+
+    private int code;
+
+    Status(int code) {
+        this.code = code;
+    }
+
+    public int getCode() {
+        return code;
+    }
+}
+```
+
+Usage:
+```java
+Status s = Status.ACTIVE;
+System.out.println(s.getCode()); // 1
+```
+
+### Interview One-Liner
+> Enum constructors initialize constant-specific state and are always private.
+
+---
+
+## 2) Can Enums Have Fields and Methods?
+
+✅ **Yes**
+
+Enums are **special classes**, so they can have:
+- Fields
+- Methods
+- Constructors
+- Abstract methods
+
+```java
+enum Day {
+    MONDAY, TUESDAY;
+
+    public boolean isWeekend() {
+        return false;
+    }
+}
+```
+
+---
+
+## 3) What Is `ordinal()`?
+
+### Definition
+`ordinal()` returns the **position of the enum constant**, starting from `0`.
+
+```java
+enum Day {
+    MONDAY, TUESDAY, WEDNESDAY
+}
+
+System.out.println(Day.MONDAY.ordinal());   // 0
+System.out.println(Day.TUESDAY.ordinal());  // 1
+```
+
+### ⚠️ Important Warning
+- Depends on declaration order
+- Reordering enums breaks logic
+- ❌ **Never use `ordinal()` for business logic or persistence**
+
+### Interview One-Liner
+> `ordinal()` is for JVM internals, not business logic.
+
+---
+
+## 4) What Is `name()`?
+
+Returns the **exact enum constant name**.
+
+```java
+System.out.println(Status.ACTIVE.name()); // "ACTIVE"
+```
+
+### Notes
+- Stable across refactoring
+- Safe for logging and serialization
+- Preferred over `ordinal()`
+
+---
+
+## 5) `values()` and `valueOf()`
+
+### `values()`
+Returns all enum constants.
+
+```java
+for (Status s : Status.values()) {
+    System.out.println(s);
+}
+```
+
+### `valueOf(String)`
+Converts string to enum constant.
+
+```java
+Status s = Status.valueOf("ACTIVE");
+```
+
+⚠️ Throws `IllegalArgumentException` if value is invalid.
+
+---
+
+## 6) Can Enums Implement Interfaces?
+
+✅ **Yes**
+
+```java
+interface Printable {
+    void print();
+}
+
+enum Color implements Printable {
+    RED, BLUE;
+
+    public void print() {
+        System.out.println(this.name());
+    }
+}
+```
+
+---
+
+## 7) Can Enums Have Abstract Methods? (Advanced)
+
+✅ **Yes**
+
+```java
+enum Operation {
+    ADD {
+        public int apply(int a, int b) { return a + b; }
+    },
+    SUB {
+        public int apply(int a, int b) { return a - b; }
+    };
+
+    public abstract int apply(int a, int b);
+}
+```
+
+---
+
+## 8) Are Enums Singleton?
+
+✅ **Yes (By Design)**
+
+- JVM creates exactly **one instance per enum constant**
+- Thread-safe
+- Serialization-safe
+
+```java
+enum Singleton {
+    INSTANCE;
+}
+```
+
+### Interview One-Liner
+> Enum is the safest way to implement Singleton in Java.
+
+---
+
+## 9) Why Enums Are Preferred Over Constants?
+
+❌ Constants
+```java
+public static final int ACTIVE = 1;
+```
+
+✅ Enums
+```java
+enum Status { ACTIVE, INACTIVE }
+```
+
+### Advantages
+- Type safety
+- Compile-time checking
+- Namespace grouping
+- Rich behavior (methods, fields)
+
+---
+
+## 10) Can Enums Extend Classes?
+
+❌ **No**
+
+Enums already extend `java.lang.Enum`.
+
+✅ They **can implement interfaces**.
+
+---
+
+## 11) Common Enum Interview Questions
+
+### Can we compare enums using `==`?
+✅ Yes (recommended and safe)
+
+```java
+if (status == Status.ACTIVE) { }
+```
+
+---
+
+### Can enums be null?
+✅ Yes, enums are reference types.
+
+---
+
+### Are enums thread-safe?
+✅ Yes (immutable + JVM guarantees).
+
+---
+
+## 12) Enum Feature Summary Table
+
+| Feature | Allowed |
+|------|--------|
+| Constructors | ✅ (private) |
+| Fields | ✅ |
+| Methods | ✅ |
+| Abstract methods | ✅ |
+| Extend class | ❌ |
+| Implement interface | ✅ |
+| Singleton | ✅ |
+
+---
+
+## Final Interview One-Liners (Memorize)
+
+- Enums are special classes with predefined instances
+- Enum constructors are private and run once
+- Never use `ordinal()` in business logic
+- Prefer enums over constants
+- Enums are the best singleton implementation
+
+---
+
+## Interview Tip
+
+If you can explain:
+- `ordinal()` vs `name()`
+- Enum constructors
+- Enum vs constants
+- Enum singleton
+
+You can confidently answer **most Java enum interview questions**.
+
+
 ## 11) Interview One-Liners
 
 - ArrayList is backed by a dynamic array
