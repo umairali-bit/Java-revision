@@ -1,14 +1,23 @@
 package ExploringPathMethods;
 
+import java.io.IOException;
+import java.nio.file.Files;
 import java.nio.file.Path;
+import java.nio.file.StandardOpenOption;
+import java.time.Instant;
 
 public class Main {
 
     public static void main(String[] args) {
 
-        Path path = Path.of("files/testing.txt");
+        Path path = Path.of("this/is/several/folders/testing.txt");
 
-        printPathInfo(path);
+//        printPathInfo(path);
+
+       Main main = new  Main();
+       main.extraInfo(path);
+
+        logStatement(path);
 
 
 
@@ -37,6 +46,33 @@ public class Main {
         }
         System.out.println("----------------------------------");
 
+
+    }
+
+    private static void logStatement(Path path) {
+        try{
+            Path parent = path.getParent();
+            if (!Files.exists(parent)) {
+//                Files.createDirectory(parent);
+                Files.createDirectories(parent);
+            }
+
+            Files.writeString(path, Instant.now() + " hello file world\n",
+                    StandardOpenOption.CREATE,
+                    StandardOpenOption.APPEND);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    private void extraInfo(Path path) {
+
+        try{
+            var atts = Files.readAttributes(path, "*");
+            atts.entrySet().forEach(entry -> System.out.println(entry));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
 
     }
 }
